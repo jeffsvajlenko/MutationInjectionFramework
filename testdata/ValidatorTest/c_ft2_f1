@@ -1,0 +1,53 @@
+int initprocesstree_sysdep(ProcessTree_T ** reference)
+{
+
+    int      pid;
+    int      i;
+    int      treesize;
+
+    ProcessTree_T *  pt;
+
+    glob_t   globbuf;
+
+    ASSERT(reference);
+
+    /* Find all processes in the /proc directory */
+
+    if ( glob("/proc/[0-9]*",  GLOB_ONLYDIR, NULL, &globbuf) != 0 )
+    {
+
+        return 0;
+
+    }
+
+    treesize = globbuf.gl_pathc;
+
+    /* Allocate the tree */
+
+    pt = xcalloc(sizeof(ProcessTree_T), treesize);
+
+    /* Insert data from /proc directory */
+
+    for ( i = 0; i < treesize; i ++ )
+    {
+
+        pid=atoi(globbuf.gl_pathv[i]+strlen("/proc/"));
+
+        if (! getdatafromproc(pid, &pt[i] ))
+        {
+
+            continue;
+
+        }
+
+    }
+
+    * reference = pt;
+
+    /* Free globbing buffer */
+
+    globfree(&globbuf);
+
+    return treesize;
+
+}

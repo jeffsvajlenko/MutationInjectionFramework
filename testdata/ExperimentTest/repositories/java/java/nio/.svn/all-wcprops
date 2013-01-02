@@ -1,0 +1,485 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio
+END
+DirectDoubleBufferU.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/DirectDoubleBufferU.java
+END
+HeapDoubleBufferR.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/HeapDoubleBufferR.java
+END
+DirectCharBufferS.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/DirectCharBufferS.java
+END
+HeapCharBufferR.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/HeapCharBufferR.java
+END
+HeapShortBuffer.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/HeapShortBuffer.java
+END
+DirectByteBuffer.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/DirectByteBuffer.java
+END
+DirectLongBufferRU.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/DirectLongBufferRU.java
+END
+ByteBufferAsCharBufferRB.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/ByteBufferAsCharBufferRB.java
+END
+ByteBufferAsShortBufferB.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/ByteBufferAsShortBufferB.java
+END
+HeapFloatBuffer.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/HeapFloatBuffer.java
+END
+HeapDoubleBuffer.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/HeapDoubleBuffer.java
+END
+DirectIntBufferS.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/DirectIntBufferS.java
+END
+DirectDoubleBufferRS.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/DirectDoubleBufferRS.java
+END
+ByteBufferAsLongBufferL.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/ByteBufferAsLongBufferL.java
+END
+CharBuffer.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/CharBuffer.java
+END
+DirectLongBufferU.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/DirectLongBufferU.java
+END
+Buffer.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/Buffer.java
+END
+HeapShortBufferR.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/HeapShortBufferR.java
+END
+BufferOverflowException.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/BufferOverflowException.java
+END
+ByteBufferAsFloatBufferL.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/ByteBufferAsFloatBufferL.java
+END
+ByteBufferAsLongBufferRB.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/ByteBufferAsLongBufferRB.java
+END
+InvalidMarkException.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/InvalidMarkException.java
+END
+ByteBufferAsIntBufferRL.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/ByteBufferAsIntBufferRL.java
+END
+DirectIntBufferRU.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/DirectIntBufferRU.java
+END
+ByteBufferAsIntBufferB.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/ByteBufferAsIntBufferB.java
+END
+DirectShortBufferRS.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/DirectShortBufferRS.java
+END
+ByteBufferAsShortBufferRL.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/ByteBufferAsShortBufferRL.java
+END
+LongBuffer.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/LongBuffer.java
+END
+ShortBuffer.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/ShortBuffer.java
+END
+ByteBufferAsDoubleBufferRB.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/ByteBufferAsDoubleBufferRB.java
+END
+ByteBuffer.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/ByteBuffer.java
+END
+FloatBuffer.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/FloatBuffer.java
+END
+DirectFloatBufferRS.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/DirectFloatBufferRS.java
+END
+ByteBufferAsFloatBufferRL.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/ByteBufferAsFloatBufferRL.java
+END
+Bits.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/Bits.java
+END
+HeapIntBufferR.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/HeapIntBufferR.java
+END
+HeapCharBuffer.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/HeapCharBuffer.java
+END
+DirectShortBufferS.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/DirectShortBufferS.java
+END
+DirectCharBufferRS.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/DirectCharBufferRS.java
+END
+DirectByteBufferR.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/DirectByteBufferR.java
+END
+DirectFloatBufferU.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/DirectFloatBufferU.java
+END
+DirectDoubleBufferS.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/DirectDoubleBufferS.java
+END
+ByteBufferAsDoubleBufferL.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/ByteBufferAsDoubleBufferL.java
+END
+HeapIntBuffer.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/HeapIntBuffer.java
+END
+ByteBufferAsCharBufferL.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/ByteBufferAsCharBufferL.java
+END
+ReadOnlyBufferException.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/ReadOnlyBufferException.java
+END
+DirectCharBufferU.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/DirectCharBufferU.java
+END
+HeapLongBuffer.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/HeapLongBuffer.java
+END
+DirectLongBufferRS.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/DirectLongBufferRS.java
+END
+HeapByteBuffer.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/HeapByteBuffer.java
+END
+ByteBufferAsLongBufferB.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/ByteBufferAsLongBufferB.java
+END
+StringCharBuffer.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/StringCharBuffer.java
+END
+ByteOrder.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/ByteOrder.java
+END
+ByteBufferAsFloatBufferB.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/ByteBufferAsFloatBufferB.java
+END
+DirectIntBufferU.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/DirectIntBufferU.java
+END
+DirectDoubleBufferRU.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/DirectDoubleBufferRU.java
+END
+DirectLongBufferS.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/DirectLongBufferS.java
+END
+ByteBufferAsCharBufferRL.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/ByteBufferAsCharBufferRL.java
+END
+ByteBufferAsShortBufferL.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/ByteBufferAsShortBufferL.java
+END
+HeapLongBufferR.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/HeapLongBufferR.java
+END
+ByteBufferAsIntBufferRB.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/ByteBufferAsIntBufferRB.java
+END
+HeapByteBufferR.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/HeapByteBufferR.java
+END
+BufferUnderflowException.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/BufferUnderflowException.java
+END
+ByteBufferAsShortBufferRB.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/ByteBufferAsShortBufferRB.java
+END
+HeapFloatBufferR.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/HeapFloatBufferR.java
+END
+MappedByteBuffer.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/MappedByteBuffer.java
+END
+DirectIntBufferRS.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/DirectIntBufferRS.java
+END
+IntBuffer.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/IntBuffer.java
+END
+ByteBufferAsFloatBufferRB.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/ByteBufferAsFloatBufferRB.java
+END
+ByteBufferAsLongBufferRL.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/ByteBufferAsLongBufferRL.java
+END
+DirectShortBufferRU.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/DirectShortBufferRU.java
+END
+DirectFloatBufferRU.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/DirectFloatBufferRU.java
+END
+ByteBufferAsIntBufferL.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/ByteBufferAsIntBufferL.java
+END
+DoubleBuffer.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/DoubleBuffer.java
+END
+ByteBufferAsDoubleBufferRL.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/ByteBufferAsDoubleBufferRL.java
+END
+ByteBufferAsDoubleBufferB.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/ByteBufferAsDoubleBufferB.java
+END
+DirectShortBufferU.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/DirectShortBufferU.java
+END
+DirectCharBufferRU.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/DirectCharBufferRU.java
+END
+ByteBufferAsCharBufferB.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/ByteBufferAsCharBufferB.java
+END
+DirectFloatBufferS.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/DirectFloatBufferS.java
+END

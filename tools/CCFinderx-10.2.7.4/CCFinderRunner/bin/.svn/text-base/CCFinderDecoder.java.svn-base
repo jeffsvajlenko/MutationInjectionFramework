@@ -1,0 +1,719 @@
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.LineNumberReader;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Set;
+
+import org.apache.commons.collections.map.MultiKeyMap;
+
+
+public class CCFinderDecoder implements Serializable{
+
+    /**
+     * @param args
+     */
+    private File ccfxprepDir;
+    private File sourceDir;
+    private File resultFile;
+    private String subjectSystemName;
+    private HashMap genInformation;
+    private HashMap detailsInformation;
+    private HashMap fileMap;
+    private HashMap cloneSetMap;
+    private HashTableWithDups htwd;
+    private ArrayList cloneSetList;
+    private String VERSION;
+    private String PREPROCESSED_FILE_POSTFIX;
+    private String PREPROCESS_SCRIPT;
+    
+    private MultiKeyMap mkToken;
+    private MultiKeyMap mkId;
+    private MultiKeyMap mkCombinedTokenId;
+    private MultiKeyMap mkSTN;
+    private MultiKeyMap mkETN;
+    private HashMap hmFileToken;
+    private HashMap hmFileId;
+    
+    /* For the new Genealogy Extractor */
+    private MultiKeyMap hmTopLineList;    //For clone return the top three line
+    private MultiKeyMap hmTopTokenList;   //return tokens of top three lines
+    private MultiKeyMap hmBottomLineList; //return the bottom three line
+    private MultiKeyMap hmBottomTokenList;//return the tokens of bottom three line
+   
+    public MultiKeyMap getHmCombinedTokenIdList() {
+        return this.mkCombinedTokenId;
+    }
+    
+    public CCFinderDecoder(File sourceDir, File ccfxprepDir, File resultFile) {
+        this.sourceDir = sourceDir;
+        this.ccfxprepDir = ccfxprepDir;
+        this.resultFile = resultFile;
+
+        this.genInformation = new HashMap();
+        this.fileMap = new HashMap();
+        this.htwd = new HashTableWithDups();
+        this.cloneSetMap = new HashMap();
+        this.mkToken = new MultiKeyMap();
+        this.mkId    = new MultiKeyMap();
+        this.mkETN = new MultiKeyMap();
+        this.mkSTN = new MultiKeyMap();
+        
+        this.hmFileId = new HashMap();
+        this.hmFileToken = new HashMap();
+        
+        /* Initialize the Multikeymap. Input is the clone class ID and the pcid */
+        this.hmTopTokenList = new MultiKeyMap();
+        this.hmTopLineList = new MultiKeyMap();
+        this.hmBottomTokenList = new MultiKeyMap();
+        this.hmBottomLineList = new MultiKeyMap();
+        this.mkCombinedTokenId = new MultiKeyMap();
+        
+        try {
+            this.loadData();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        
+    }
+
+    public void loadData() throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader(resultFile));
+        String lineStr = "";
+
+        this.genInformation.put("CloneDetector", "CCFinder");
+        while ((lineStr = br.readLine()).startsWith("source_files") == false) {
+
+            if (lineStr.startsWith("version")) {
+                String splittedStr[] = lineStr.split(":");
+                this.genInformation.put(splittedStr[0], splittedStr[1]);
+                this.VERSION = splittedStr[1];
+
+            } else if (lineStr.startsWith("format")) {
+                String splittedStr[] = lineStr.split(":");
+                this.genInformation.put(splittedStr[0], splittedStr[1]);
+
+            } else if (lineStr.startsWith("option")) {
+                lineStr = lineStr.substring(new String("options:").length());
+                String splittedStr[] = lineStr.trim().split("\\s+");
+                
+
+                if (splittedStr[0].equals("-preprocessed_file_postfix")) {
+                    this.PREPROCESSED_FILE_POSTFIX = splittedStr[1];
+                }
+                else{
+                    //this.genInformation.put(splittedStr[0].trim(), splittedStr[1].trim());
+                    //Due to bad character we can not import this
+                }
+                    
+            } else if (lineStr.startsWith("preprocess_script")) {
+                String splittedStr[] = lineStr.split(":");
+                this.genInformation.put("preprocess-script", splittedStr[1]);
+            }
+        }
+
+        // Read the id and name of the source files
+        while (!(lineStr = br.readLine()).trim().equals("}")) {
+            String splittedStr[] = lineStr.split("\\s+");
+            this.fileMap.put(Integer.parseInt(splittedStr[0]), splittedStr[1]);
+        }
+
+        // this dummy helps to ignore the source_file_remarks part.
+        while (!(lineStr = br.readLine()).trim().startsWith("clone_pairs")) {
+        }
+
+        /* Now we need to group the clones based on the clone set thaey belong
+         * Format is: 179	4.234-284	4.284-334
+         * splittedStr[0]=179 This is the class id
+         * splittedStr[1]=4.234-284 A clone fragment info
+         * splittedStr[2]=4.284-334 Another clone fragment info
+         * splittedStr[1] and splittedStr[2] form a clone pair
+         */
+        while (!(lineStr = br.readLine()).equalsIgnoreCase("}")) {
+            String splittedStr[] = lineStr.split("\\s+");
+            this.htwd.putDuplicate((Object) Integer.parseInt(splittedStr[0]),
+                    (Object) splittedStr[1]);
+            this.htwd.putDuplicate(Integer.parseInt(splittedStr[0]),
+                    splittedStr[2]);
+        }
+        this.cloneSetList = this.createcloneSetList();
+        this.updateCFCloneFragments();
+        //Now the CloneSetList Contains all clone set/classes and clone class contains all clone fragents.
+    }
+
+    // Now update each cf with line number and the file they belong to
+    private void updateCFCloneFragments() {
+        for (int i = 0; i < cloneSetList.size(); i++) {
+            CloneSet cs = (CloneSet) cloneSetList.get(i);
+            ArrayList cfList = cs.getAllCFCloneFragments();
+            for (int j = 0; j < cfList.size(); j++) {
+                //((CFCloneFragment) cfList.get(j)).print();
+                CFCloneFragment cf = (CFCloneFragment) cfList.get(j);
+
+                String originalPath = (String) this.fileMap.get(cf.getFileId());//original path generated by CCFinder
+                
+                originalPath.replaceAll("\\\\", System.getProperty("file.separator"));
+                
+                //System.out.println("Original Path= "+originalPath);
+                //System.out.println("Source Dir = " + sourceDir);
+                
+                originalPath = this.sourceDir.getAbsolutePath()+System.getProperty("file.separator")+
+                               originalPath.substring(this.sourceDir.getName().length()+1+
+                               originalPath.indexOf(this.sourceDir.getName()));
+               // System.out.println(this.sourceDir);
+               // System.out.println("Original Path= "+originalPath);
+                
+                if(System.getProperty("file.separator").equals("/")){
+                    originalPath = originalPath.replace('\\', '/');
+                }else{
+                          originalPath = originalPath.replace('/', '\\');         
+                }
+                //System.out.println("+++Original Path= "+originalPath);
+                String pathToGenFile = this.ccfxprepDir.getPath()
+                        + System.getProperty("file.separator")
+                        + originalPath.substring(this.ccfxprepDir.getParentFile().getAbsolutePath().length())
+                        + this.PREPROCESSED_FILE_POSTFIX;
+                cf.setSourceFilePath(originalPath);
+                //System.out.println(pathToGenFile);
+                this.AddLineNumber(cf, pathToGenFile);
+                //System.out.print("SF=" + cf.getSourceFilePath() + " SL="
+                //        + cf.getStartLineNumber() + " EL="
+                //        + cf.getEndLineNumber() + "Clone Set Id=" + cs.getCloneSetId());
+
+            }
+        }
+    }
+
+    public MultiKeyMap getMkETN() {
+        return this.mkETN;
+    }
+
+    public MultiKeyMap getMkSTN() {
+        return this.mkSTN;
+    }
+
+    /* here str contain a line of afile in the ccfxprep dir file */
+    private int extractLineNumber(String str) {
+        String splittedStr[] = str.split("\\.");
+        return Integer.parseInt(splittedStr[0].trim(), 16); //Line number is in hexa.
+    }
+
+    /* cf contain the start and end token number that indicate the line number of the containing that 
+     * contains the start and end line number of the clone code 
+     */
+    protected void AddLineNumber(CFCloneFragment cf, String pathToGenFile) {
+        //System.out.println("Calling Add Line Numbers");
+        //System.out.println("StartTokenNumber=" +cf.getStartTokenNumber());
+                    
+        try {
+            String lineStr = "";
+            LineNumberReader br = new LineNumberReader(new FileReader(
+                    pathToGenFile));
+            while ((lineStr = br.readLine()) != null) {
+                if ((br.getLineNumber()-1) == cf.getStartTokenNumber()) {
+                    //System.out.println("StartLineNumber=" +this.extractLineNumber(lineStr));
+                    //System.out.println("LineNumber=" +br.getLineNumber());
+                    
+                    
+                    cf.setStartLineNumber(this.extractLineNumber(lineStr)-1);
+
+                } else if ((br.getLineNumber()-1) == cf.getEndTokenNumber()) {
+                    //System.out.println("EndTokenNumber=" +cf.getEndTokenNumber());
+                    
+                    //System.out.println("ExtractLineNumber="+lineStr+" EndLineNumber=" +(this.extractLineNumber(lineStr)-1));
+                    if(this.extractToken(lineStr).equals("eof")){
+                        cf.setEndLineNumber(this.extractLineNumber(lineStr)-2);
+                    }
+                    else cf.setEndLineNumber(this.extractLineNumber(lineStr)-1);
+                    break;
+
+                } else if ((br.getLineNumber()-1) > cf.getEndTokenNumber()) {
+                    break;
+                }
+            }
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block1
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        /*CCFinderDecoder ccDecoder = new CCFinderDecoder(
+                new File("C:\\junit4.9b2"),
+                new File("C:\\junit4.9b2\\.ccfxprepdir"),
+                new File(
+                "C:\\ccfx-win32-en\\bin\\customResult.txt"));
+        ArrayList tokenList = ccDecoder.getTokenIdList(1024, 1086, "c:\\junit4.9b2\\org\\junit\\samples\\money\\MoneyTest.java");
+        for (int i = 0; i < tokenList.size(); i++) {
+            System.out.println("Token = " + tokenList.get(i));
+        }*/
+        String str="/junit/v1_junit-4.7-RC1-src\\org\\junit\\Assert.java";
+        //System.out.println("new STr ="+str.replace('\\','/') );
+    }
+
+    protected ArrayList createcloneSetList() {
+        ArrayList cloneSetList = new ArrayList();
+        Enumeration e = htwd.keys();
+
+        while (e.hasMoreElements()) {
+            Object key = e.nextElement();
+            Object object[] = htwd.getDuplicates(key);
+            CloneSet cloneSet = new CloneSet((Integer) key);
+            for (int i = 0; i < object.length; i++) {// Each object has the format: 4.234-284
+                String splittedStr[] = ((String) object[i]).split("\\.");
+                String anotherSplittedStr[] = splittedStr[1].trim().split("-");
+
+                CFCloneFragment cf = new CFCloneFragment(
+                        Integer.parseInt(splittedStr[0]), //file id
+                        Integer.parseInt(anotherSplittedStr[0]), //start token number
+                        Integer.parseInt(anotherSplittedStr[1]));//end token number
+                cloneSet.addToCloneSet(cf);
+            }
+            cloneSetList.add(cloneSet);
+        }
+        return cloneSetList;
+    }
+
+    public ArrayList getTokenList(int startTokenNumber, int endTokenNumber, String sourceFilePath){
+        if(mkToken.containsKey(startTokenNumber,endTokenNumber,sourceFilePath)==false){
+               //System.out.print("Cash Miss");
+         
+        }
+        else{   //System.out.print("Cash Hit");
+         
+            return ((ArrayList)mkToken.get(startTokenNumber,endTokenNumber,sourceFilePath));
+        }
+        ArrayList tokenList = new ArrayList();
+
+        String originalPath = sourceFilePath;
+        //System.out.println("originalPath= "+originalPath);
+        //System.out.println("ccfxPath= "+this.ccfxprepDir.getPath());
+        //System.out.println("Source Dir= "+sourceDir);
+        
+        
+        String pathToGenFile = this.ccfxprepDir.getPath()
+                + System.getProperty("file.separator")
+                + originalPath.substring(this.ccfxprepDir.getParentFile().getName().length()+1)
+         
+                + this.PREPROCESSED_FILE_POSTFIX;
+        //System.out.println("Source= "+originalPath);
+        //System.out.println("GenFile= "+ pathToGenFile);
+
+        try {
+            String lineStr = "";
+            LineNumberReader br = new LineNumberReader(new FileReader(
+                    pathToGenFile));
+            while ((lineStr = br.readLine()) != null) {
+                //System.out.println("Number = "+br.readLine()+"   num="+br.getLineNumber());
+                if ((br.getLineNumber()-1) >= startTokenNumber && (br.getLineNumber()-1) <= endTokenNumber) {
+                    String str = extractToken(lineStr);
+                    if (str != null) {
+                        tokenList.add(str);
+                        //System.out.println("Token number "+br.getLineNumber()+"  token= "+str);
+                    }
+                } else if ((br.getLineNumber()-1) > endTokenNumber) {
+                    break;
+                }
+            }
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block1
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        mkToken.put(startTokenNumber,endTokenNumber,sourceFilePath,tokenList);
+        return tokenList;
+    }
+    
+    
+    
+    public ArrayList getFileTokenList(String sourceFilePath){
+        ArrayList fileTokenList = new ArrayList();
+            if(this.hmFileToken.containsKey(sourceFilePath)==false){
+            //System.out.println("Cash Miss");
+        }
+        else{
+            //System.out.print("Cash Hit");
+            return ((ArrayList)this.hmFileToken.get(sourceFilePath));
+        }
+   
+        String originalPath = sourceFilePath;
+        String pathToGenFile = this.ccfxprepDir.getPath()
+                + System.getProperty("file.separator")
+                + originalPath.substring(this.ccfxprepDir.getParentFile().getName().length()+1)
+         
+                + this.PREPROCESSED_FILE_POSTFIX;
+        try {
+            String lineStr = "";
+            LineNumberReader br = new LineNumberReader(new FileReader(
+                    pathToGenFile));
+            while ((lineStr = br.readLine()) != null) {
+                    String str = extractToken(lineStr);
+                    if (str != null) {
+                        fileTokenList.add(str);
+                        //System.out.println("Token number "+br.getLineNumber()+"  token= "+str);
+                    }
+                } 
+            }
+            catch (Exception e) {
+            // TODO Auto-generated catch block1
+            e.printStackTrace();
+        } 
+
+        this.hmFileToken.put(sourceFilePath,fileTokenList);
+        return fileTokenList;
+    
+    }
+    
+    public ArrayList getFileIdList(String sourceFilePath){
+        ArrayList fileIdList = new ArrayList();
+            if(this.hmFileId.containsKey(sourceFilePath)==false){
+            //System.out.println("Cash Miss");
+        }
+        else{
+            //System.out.print("Cash Hit");
+            return ((ArrayList)this.hmFileId.get(sourceFilePath));
+        }
+   
+        String originalPath = sourceFilePath;
+        String pathToGenFile = this.ccfxprepDir.getPath()
+                + System.getProperty("file.separator")
+                + originalPath.substring(this.ccfxprepDir.getParentFile().getName().length()+1)
+         
+                + this.PREPROCESSED_FILE_POSTFIX;
+        try {
+            String lineStr = "";
+            LineNumberReader br = new LineNumberReader(new FileReader(
+                    pathToGenFile));
+            while ((lineStr = br.readLine()) != null) {
+                    String str = extractId(lineStr);
+                    if (str != null) {
+                        fileIdList.add(str);
+                        //System.out.println("Token number "+br.getLineNumber()+"  token= "+str);
+                    }
+                } 
+            }
+            catch (Exception e) {
+            // TODO Auto-generated catch block1
+            e.printStackTrace();
+        } 
+
+        this.hmFileId.put(sourceFilePath,fileIdList);
+        return fileIdList;
+    
+    }
+    
+    public ArrayList getTokenIdList(int startTokenNumber, int endTokenNumber, String sourceFilePath) {
+        if(mkId.containsKey(startTokenNumber,endTokenNumber,sourceFilePath)==false){
+            //System.out.println("Cash Miss");
+        }
+        else{
+            //System.out.print("Cash Hit");
+            return ((ArrayList)mkId.get(startTokenNumber,endTokenNumber,sourceFilePath));
+        }
+        ArrayList tokenList = new ArrayList();
+
+        String originalPath = sourceFilePath;
+
+         //System.out.println("originalPath= "+originalPath);
+        //System.out.println("ccfxPath= "+this.ccfxprepDir.getPath());
+        //System.out.println("Source Dir= "+sourceDir);
+        
+         String pathToGenFile = this.ccfxprepDir.getPath()
+                + System.getProperty("file.separator")
+                + originalPath.substring(this.ccfxprepDir.getParentFile().getName().length()+1)
+         
+                + this.PREPROCESSED_FILE_POSTFIX;
+        // System.out.println("PathToGenFile = "+ pathToGenFile);
+       //System.out.println("Source= "+originalPath);
+        //System.out.println("GenFile= "+ pathToGenFile);
+
+        try {
+            String lineStr = "";
+            LineNumberReader br = new LineNumberReader(new FileReader(
+                    pathToGenFile));
+            while ((lineStr = br.readLine()) != null) {
+                //System.out.println("Number = "+br.readLine()+"   num="+br.getLineNumber());
+                if ((br.getLineNumber()-1) >= startTokenNumber && (br.getLineNumber()-1) <= endTokenNumber) {
+                    String str = extractId(lineStr);
+                    if (str != null) {
+                        tokenList.add(str);
+                        //System.out.println("Token number "+br.getLineNumber()+"  token= "+str);
+                    }
+                } else if ((br.getLineNumber()-1) > endTokenNumber) {
+                    break;
+                }
+            }
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block1
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        this.mkId.put(startTokenNumber, endTokenNumber,sourceFilePath,tokenList);
+        return tokenList;
+    }
+
+     public ArrayList getCombinedTokenIdList(int startTokenNumber, int endTokenNumber, String sourceFilePath) {
+        if(this.mkCombinedTokenId.containsKey(startTokenNumber,endTokenNumber,sourceFilePath)==false){
+        }
+        else{
+            return ((ArrayList)this.mkCombinedTokenId.get(startTokenNumber,endTokenNumber,sourceFilePath));
+        }
+        ArrayList cTokenIdList = new ArrayList();
+        String originalPath = sourceFilePath;
+
+        String pathToGenFile = this.ccfxprepDir.getPath()
+                + System.getProperty("file.separator")
+                + originalPath.substring(this.ccfxprepDir.getParentFile().getName().length()+1)
+         
+                + this.PREPROCESSED_FILE_POSTFIX;
+        try {
+            String lineStr = "";
+            LineNumberReader br = new LineNumberReader(new FileReader(
+                    pathToGenFile));
+            while ((lineStr = br.readLine()) != null) {
+                if ((br.getLineNumber()-1) >= startTokenNumber && (br.getLineNumber()-1) <= endTokenNumber) {
+                    String splittedStr[] = lineStr.split("\\s+");
+                    if (lineStr != null) {
+                        cTokenIdList.add(splittedStr[2]);
+                     }
+                } else if ((br.getLineNumber()-1) > endTokenNumber) {
+                    break;
+                }
+            }
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block1
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        this.mkCombinedTokenId.put(startTokenNumber, endTokenNumber,sourceFilePath,cTokenIdList);
+        return cTokenIdList;
+    }
+    protected String extractId(String str) {
+        String result = null;
+        String splittedStr[] = str.split("\\s+");
+        if (splittedStr[2].startsWith("id|")) {
+            return splittedStr[2].substring("id|".length());
+        } else {
+            return null;
+        }
+    }
+    protected String extractToken(String str) {
+        String result = null;
+        String splittedStr[] = str.split("\\s+");
+        if (splittedStr[2].startsWith("id|")) {
+            return splittedStr[2].substring(0,"id".length());
+        } else {
+            return splittedStr[2];
+        }
+    }
+
+    public File getCcfxprepDir() {
+        return ccfxprepDir;
+    }
+
+    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    // Additional parameters are transferred through list
+    public String createResultFile() {
+        String name="";
+        File temp = null;
+        BufferedWriter out = null;
+        String output="";
+        String result="";
+        try {
+            temp = new File(this.ccfxprepDir.getParentFile().getAbsolutePath()+System.getProperty("file.separator")+"result.rst");
+            name = temp.getAbsolutePath();
+            out = new BufferedWriter(new FileWriter(temp));
+
+
+            output = "<cloneDetectionResult>";
+            out.write(output);
+            result=result+output;
+            output = "";
+            
+            String info = "\n<info ";
+            
+            Set set = this.genInformation.keySet();
+            Iterator iterator = set.iterator();
+ 
+            while (iterator.hasNext()) {
+                String key = (String) iterator.next();
+                String value = (String) this.genInformation.get(key);
+                info = info + key.trim() + "=\"" + value.trim() + "\"  ";
+            }
+
+            output = output + info + "/>";
+            //System.out.println("info="+info);
+            out.write(output);
+            result=result+output;
+            output = "";
+
+            int pcid = 0;
+            for (int i = 0; i < cloneSetList.size(); i++) {
+                CloneSet cs = (CloneSet) cloneSetList.get(i);
+                ArrayList cfList = cs.getAllCFCloneFragments();
+                int nlines = 0;
+                for (int j = 0; j < cfList.size(); j++) {
+                    CFCloneFragment cf = (CFCloneFragment) cfList.get(j);
+                    nlines = nlines + cf.getEndLineNumber() - cf.getStartLineNumber() + 1;
+                }
+
+                output = output + "\n<class ccid=\"" + cs.getCloneSetId() + "\" nlines=\"" + nlines + "\" nfragments=\"" + cs.getAllCFCloneFragments().size() + "\">";
+                out.write(output);
+                result=result+output;
+                output = "";
+                for (int j = 0; j < cfList.size(); j++) {
+                    ((CFCloneFragment) cfList.get(j)).print();
+                    CFCloneFragment cf = (CFCloneFragment) cfList.get(j);
+
+                    output = output + "\n<source file=\"" + cf.getSourceFilePath() + "\" startline=\"" + cf.getStartLineNumber() + "\" endline=\"" + cf.getEndLineNumber() + "\" pcid=\"" + pcid + "\"></source>";
+                    out.write(output);
+                    result=result+output;
+                    output = "";
+                    this.mkSTN.put(cs.getCloneSetId(),pcid,cf.getStartTokenNumber());
+                    this.mkETN.put(cs.getCloneSetId(),pcid,cf.getEndTokenNumber());
+                    pcid++;
+                }
+                output = output + "\n</class>";
+                result=result+output;
+                out.write(output);
+                output = "";
+                
+            }
+            output = output + "\n</cloneDetectionResult>";
+            out.write(output);
+            result=result+output;
+            out.close();
+            temp = null;
+        } catch (Exception e) {
+            System.err.println("Error in grouping: " + e.getMessage());
+        }
+        return name;
+    }
+}
+/* equivalent to a clone class*/
+class CloneSet implements Serializable{
+
+    private int cloneSetId;
+    private MultiKeyMap mkMap;
+
+    public int getCloneSetId() {
+        return cloneSetId;
+    }
+
+    public CloneSet(int id) {
+        this.cloneSetId = id;
+        this.mkMap = new MultiKeyMap();
+    }
+
+    public void addToCloneSet(CFCloneFragment cf) {
+        if (!mkMap.containsKey(cf.getFileId(), cf.getStartTokenNumber(),
+                cf.getEndTokenNumber())) {
+            mkMap.put(cf.getFileId(), cf.getStartTokenNumber(),
+                    cf.getEndTokenNumber(), cf);
+        }
+    }
+
+    public boolean isEmpty() {
+        if (mkMap.size() == 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public ArrayList getAllCFCloneFragments() {
+        return new ArrayList(mkMap.values());
+    }
+}
+
+class CFCloneFragment implements Serializable{
+
+    private int fileId;
+    private int startTokenNumber;
+    private int endTokenNumber;
+    private int startLineNumber;
+    private int endLineNumber;
+    private String sourceFilePath;
+
+    public int getStartLineNumber() {
+        return startLineNumber;
+    }
+
+    public void setStartLineNumber(int _startLineNumber) {
+        this.startLineNumber = _startLineNumber;
+    }
+
+    public int getEndLineNumber() {
+        return endLineNumber;
+    }
+
+    public void setEndLineNumber(int _endLineNumber) {
+        this.endLineNumber = _endLineNumber;
+    }
+
+    public String getSourceFilePath() {
+        return sourceFilePath;
+    }
+
+    public void setSourceFilePath(String sourceFilePath) {
+        this.sourceFilePath = sourceFilePath;
+    }
+
+    public CFCloneFragment(int fid, int stn, int etn) {
+        this.fileId = fid;
+        this.startTokenNumber = stn;
+        this.endTokenNumber = etn;
+
+        this.startLineNumber = -5;
+        this.endLineNumber = -5;
+    }
+
+    public int getFileId() {
+        return fileId;
+    }
+
+    public void setFileId(int fileId) {
+        this.fileId = fileId;
+    }
+
+    public int getStartTokenNumber() {
+        return startTokenNumber;
+    }
+
+    public void setStartTokenNumber(int startTokenNumber) {
+        this.startTokenNumber = startTokenNumber;
+    }
+
+    public int getEndTokenNumber() {
+        return endTokenNumber;
+    }
+
+    public void setEndTokenNumber(int endTokenNumber) {
+        this.endTokenNumber = endTokenNumber;
+    }
+
+    public void print() {
+        //System.out.println("File Id= " + this.getFileId()
+        //        + "  startTokenNumber= " + this.getStartTokenNumber()
+        //        + "  EndTokenNumber" + this.getEndTokenNumber());
+    }
+}

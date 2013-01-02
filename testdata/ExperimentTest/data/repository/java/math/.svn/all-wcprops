@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/math
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/math/package-info.java
+END
+MutableBigInteger.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/math/MutableBigInteger.java
+END
+BitSieve.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/math/BitSieve.java
+END
+RoundingMode.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/math/RoundingMode.java
+END
+MathContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/math/MathContext.java
+END
+BigInteger.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/math/BigInteger.java
+END
+BigDecimal.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/math/BigDecimal.java
+END
+SignedMutableBigInteger.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/math/SignedMutableBigInteger.java
+END

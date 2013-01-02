@@ -1,0 +1,208 @@
+#!/bin/bash 
+# Generic simCad extract and find clones script
+
+usage() {
+    echo "Usage: Extract&Rename granularity language rename source-dir output-dir [forceExtract]"
+    echo "          where granularity   is one of:  { function block }"
+    echo "          and   language      is one of:  { c java cs py }"
+    echo "          and   rename        is one of:  { blind consistent }"
+    echo ""
+}
+
+debug_mode="false"
+
+# Find our installation
+lib="${0%%/scripts/ExtractAndRename}"
+
+if [ ! -d ${lib}/tools ]
+then
+    echo "*** Error:  cannot find simCad installation ${lib}"
+    echo ""
+    exit 99
+fi
+ 
+# check we compiled the tools
+if [ ! -x ${lib}/tools/streamprocess.x ]
+then
+    echo "*** Error:  Missing ${lib}/tools/streamprocess.x - type 'make' to make the simCad tools"
+    echo ""
+exit 99
+fi
+
+# check granularity
+if [ "$1" = "function" ] || [ "$1" = "block" ]
+then   
+	if [ "$1" = "function" ]
+	then    
+    	granularity="functions"
+    else
+    	granularity="blocks"
+    fi    
+    shift
+else
+    echo "error in granularity parameter"
+    usage
+    exit 99
+fi
+
+# check language
+if [ "$1" = "c" ] || [ "$1" = "java" ] || [ "$1" = "cs" ] || [ "$1" = "py" ] || [ "$1" = "wsdl" ]
+then
+    language=$1
+    shift
+else
+ echo "error in language parameter"
+    usage
+    exit 99
+fi
+
+#check rename
+if [ "$1" = "" ]
+then 
+    rename=none
+else
+    if [ "$1" = "blind" ] || [ "$1" = "consistent" ]
+    then
+        rename=$1
+	shift
+    else
+ echo "error in rename parameter"
+        usage
+        exit 99
+    fi
+fi
+
+# check we have a system directory
+if [ -d "$1" ]
+then
+    system=$1
+    shift
+else
+    echo "error in system dir parameter"
+    usage
+    exit 99
+fi
+
+# check we have a output directory
+if [ -d "$1" ]
+then
+    output_dir=$1
+    shift
+else
+    echo "error in output dir parameter"
+
+    usage
+    exit 99
+fi
+
+
+forceX="false"
+# check for force extraction
+if [ "$1" = "forceExtract" ]
+then
+    forceX="true"
+fi
+
+
+if [ ${debug_mode} = "true" ]
+then
+echo "system      =${system}"
+echo "output-dir  =${output_dir}"
+echo "granularity =${granularity}"
+echo "language    =${language}"
+echo "rename      =${rename}"
+echo "forceExtract=${forceX}"
+echo ""
+
+fi
+
+# Check we have a system
+if [ ! -d "${system}" ]
+then
+    echo "*** ERROR: Can't find system source directory ${system}"
+    exit 99
+fi
+
+# Extract potential clones
+#date
+datestamp=`date +%F-%T`
+echo "Starting source extraction process..."
+echo ""
+
+checklog=1
+
+
+if [ -s "${output_dir}/${granularity}.xml" ] && [ ${forceX} = "false" ]
+then
+    echo "Using previously extracted ${granularity} from ${language} files in ${output_dir}"
+    #echo > ${output_dir}/${granularity}-${datestamp}.log 2>&1
+    checklog=0
+else
+    
+echo "Extracting ${granularity} from ${language} files in ${system}"
+#time 
+${lib}/scripts/Extract ${granularity} ${language} "${system}"  "${output_dir}" > "${output_dir}"/${granularity}-${datestamp}.log 2>&1
+fi
+
+result=$?
+echo ""
+
+if [ $result -ge 99 ]
+then
+    echo "*** ERROR: Extraction failed, code $result"
+    echo "Detailed log in ${output_dir}/${granularity}-${datestamp}.log"
+    echo ""
+    exit 99
+fi
+
+# Check for parsing problems
+if [ ${checklog} = 1 ]
+then
+ syntaxerrors=`(grep "TXL019[12]E" "${output_dir}"/${granularity}-${datestamp}.log | wc -l)`
+ if [ ${syntaxerrors} != 0 ]
+ then
+    if [ ${syntaxerrors} = 1 ]
+    then
+	echo "*** Warning: 1 source file failed to parse"
+    else
+	echo "*** Warning: ${syntaxerrors} source files failed to parse"
+    fi
+    echo ""
+ fi
+fi
+
+# npcs=`grep "^<source " ${output_dir}/${granularity}.xml | wc -l`
+# echo "Extracted ${npcs} ${granularity}"
+# echo ""
+
+pcfile="${output_dir}"/${granularity}
+
+# Check for renaming to be done
+if [ ${rename} != none ]
+then
+    if [ -s "${pcfile}-${rename}.xml" ] && [ ${forceX} = "false" ]
+    then
+	echo "Using previously ${rename} renamed extracted ${granularity} from ${language} files in ${system}"
+    else
+	echo "Applying ${rename} renaming to extracted ${granularity} from ${language} files in ${system}"
+#time 
+    ${lib}/scripts/Rename ${granularity} ${language} "${pcfile}.xml" ${rename} >> "${output_dir}"/${granularity}-${datestamp}.log 2>&1
+    fi
+
+    result=$?
+    echo ""
+
+    if [ $result != 0 ]
+    then
+        echo "*** ERROR: Renaming failed, code $result"
+        echo "Detailed log in ${output_dir}/${granularity}-${datestamp}.log"
+        echo ""
+        exit 99
+    fi
+
+    pcfile=${pcfile}-${rename}
+fi
+
+echo "Source extraction and transformation complete..."
+echo ""
+exit 0

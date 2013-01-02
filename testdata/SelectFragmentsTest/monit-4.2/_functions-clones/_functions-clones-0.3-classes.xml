@@ -1,0 +1,63 @@
+<clones>
+<systeminfo processor="nicad3" system="_" granularity="unctions" threshold="30%" minlines="10" maxlines="2500"/>
+<cloneinfo npcs="437" npairs="25"/>
+<runinfo ncompares="10648" cputime="20000"/>
+<classinfo nclasses="10"/>
+
+<class classid="1" nclones="3" nlines="34" similarity="88">
+<source file="testdata/SelectFragmentsTest/monit-4.2/process/sysdep_OPENBSD.c.ifdefed" startline="149" endline="219" pcid="395"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/process/sysdep_DARWIN.c.ifdefed" startline="128" endline="197" pcid="411"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/process/sysdep_FREEBSD.c.ifdefed" startline="209" endline="278" pcid="434"></source>
+</class>
+
+<class classid="2" nclones="2" nlines="31" similarity="74">
+<source file="testdata/SelectFragmentsTest/monit-4.2/protocols/smtp.c.ifdefed" startline="47" endline="90" pcid="59"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/protocols/nntp.c.ifdefed" startline="46" endline="89" pcid="39"></source>
+</class>
+
+<class classid="3" nclones="3" nlines="26" similarity="88">
+<source file="testdata/SelectFragmentsTest/monit-4.2/process/sysdep_FREEBSD.c.ifdefed" startline="411" endline="470" pcid="436"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/process/sysdep_OPENBSD.c.ifdefed" startline="330" endline="388" pcid="397"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/process/sysdep_DARWIN.c.ifdefed" startline="310" endline="368" pcid="413"></source>
+</class>
+
+<class classid="4" nclones="2" nlines="24" similarity="91">
+<source file="testdata/SelectFragmentsTest/monit-4.2/protocols/ldap2.c.ifdefed" startline="56" endline="149" pcid="57"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/protocols/ldap3.c.ifdefed" startline="56" endline="149" pcid="60"></source>
+</class>
+
+<class classid="5" nclones="2" nlines="22" similarity="95">
+<source file="testdata/SelectFragmentsTest/monit-4.2/process/sysdep_SOLARIS.c.ifdefed" startline="177" endline="225" pcid="402"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/process/sysdep_LINUX.c.ifdefed" startline="233" endline="281" pcid="431"></source>
+</class>
+
+<class classid="6" nclones="2" nlines="20" similarity="75">
+<source file="testdata/SelectFragmentsTest/monit-4.2/net.c.ifdefed" startline="540" endline="563" pcid="321"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/net.c.ifdefed" startline="576" endline="599" pcid="322"></source>
+</class>
+
+<class classid="7" nclones="2" nlines="18" similarity="88">
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_LINUX.c.ifdefed" startline="70" endline="100" pcid="78"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_HPUX.c.ifdefed" startline="62" endline="92" pcid="72"></source>
+</class>
+
+<class classid="8" nclones="2" nlines="18" similarity="77">
+<source file="testdata/SelectFragmentsTest/monit-4.2/control.c.ifdefed" startline="116" endline="137" pcid="83"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/control.c.ifdefed" startline="90" endline="108" pcid="82"></source>
+</class>
+
+<class classid="9" nclones="5" nlines="15" similarity="93">
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_OPENBSD.c.ifdefed" startline="90" endline="111" pcid="65"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_FREEBSD.c.ifdefed" startline="90" endline="111" pcid="81"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_LINUX.c.ifdefed" startline="110" endline="131" pcid="79"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_DARWIN.c.ifdefed" startline="90" endline="111" pcid="69"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_HPUX.c.ifdefed" startline="102" endline="123" pcid="73"></source>
+</class>
+
+<class classid="10" nclones="3" nlines="10" similarity="100">
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_OPENBSD.c.ifdefed" startline="65" endline="80" pcid="64"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_DARWIN.c.ifdefed" startline="65" endline="80" pcid="68"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_FREEBSD.c.ifdefed" startline="65" endline="80" pcid="80"></source>
+</class>
+
+</clones>

@@ -1,0 +1,140 @@
+Version ../../data/bases/1
+	CloneClass	9
+		26	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/http/cervlet.c	522	545
+		25	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/http/cervlet.c	556	579
+	CloneClass	12
+		31	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/http/cervlet.c	824	847
+		32	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/http/cervlet.c	851	875
+	CloneClass	32
+		73	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/http/cervlet.c	889	954
+		74	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/http/cervlet.c	973	1035
+	CloneClass	31
+		71	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/http/cervlet.c	1148	1202
+		72	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/http/cervlet.c	1298	1372
+	CloneClass	30
+		69	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/http/cervlet.c	1294	1341
+		70	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/http/cervlet.c	1383	1428
+	CloneClass	21
+		52	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/http/cervlet.c	1354	1380
+		51	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/http/cervlet.c	1481	1507
+	CloneClass	10
+		27	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/http/cervlet.c	1550	1581
+		28	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/http/cervlet.c	1711	1742
+	CloneClass	29
+		67	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/http/cervlet.c	1587	1614
+		68	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/http/cervlet.c	1623	1648
+	CloneClass	80
+		139	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/protocols/imap.c	54	90
+		140	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/protocols/pop.c	53	88
+	CloneClass	24
+		57	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/process/sysdep_FREEBSD.c	23	146
+		58	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/process/sysdep_OPENBSD.c	23	147
+	CloneClass	23
+		55	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/process/sysdep_FREEBSD.c	354	398
+		56	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/process/sysdep_OPENBSD.c	277	317
+	CloneClass	15
+		38	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/process/sysdep_FREEBSD.c	411	470
+		37	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/process/sysdep_OPENBSD.c	330	388
+	CloneClass	6
+		20	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/validate.c	247	267
+		18	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/validate.c	349	369
+		19	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/validate.c	428	448
+	CloneClass	5
+		16	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/control.c	360	389
+		17	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/process/sysdep_AIX.c	176	205
+	CloneClass	33
+		75	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/protocols/nntp.c	50	78
+		76	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/protocols/pop.c	53	79
+	CloneClass	59
+		113	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/sha.c	369	379
+		114	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/sha.c	379	389
+	CloneClass	51
+		103	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/sha.c	389	399
+		104	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/sha.c	399	409
+	CloneClass	43
+		93	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/sha.c	409	419
+		94	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/sha.c	419	429
+	CloneClass	75
+		133	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/md5.c	103	119
+		134	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/sha.c	110	126
+	CloneClass	8
+		24	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/validate.c	242	269
+		23	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/validate.c	422	450
+	CloneClass	35
+		79	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/validate.c	321	345
+		80	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/validate.c	406	431
+	CloneClass	34
+		77	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/validate.c	1139	1166
+		78	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/validate.c	1172	1197
+	CloneClass	37
+		83	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/ssl.c	210	256
+		84	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/ssl.c	1050	1097
+	CloneClass	36
+		81	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/ssl.c	595	633
+		82	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/ssl.c	1392	1431
+	CloneClass	74
+		131	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/protocols/nntp.c	46	82
+		132	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/protocols/smtp.c	47	83
+	CloneClass	28
+		65	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/http/cervlet.c	1210	1233
+		66	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/util.c	756	778
+	CloneClass	27
+		63	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/http/cervlet.c	1413	1444
+		64	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/util.c	722	754
+	CloneClass	26
+		61	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/http/cervlet.c	1450	1478
+		62	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/util.c	656	683
+	CloneClass	25
+		59	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/http/cervlet.c	1584	1638
+		60	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/util.c	780	830
+	CloneClass	72
+		85	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/protocols/imap.c	54	81
+		86	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/protocols/nntp.c	50	78
+		53	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/protocols/pop.c	53	79
+		54	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/protocols/smtp.c	51	79
+	CloneClass	70
+		123	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/sha.c	350	355
+		121	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/sha.c	355	360
+		122	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/sha.c	360	365
+	CloneClass	65
+		117	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/sha.c	369	374
+		115	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/sha.c	374	379
+		111	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/sha.c	379	384
+		112	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/sha.c	384	389
+	CloneClass	57
+		107	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/sha.c	389	394
+		105	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/sha.c	394	399
+		101	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/sha.c	399	404
+		102	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/sha.c	404	409
+	CloneClass	49
+		97	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/sha.c	409	414
+		95	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/sha.c	414	419
+		91	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/sha.c	419	424
+		92	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/sha.c	424	429
+	CloneClass	79
+		89	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/process/sysdep_DARWIN.c	23	126
+		90	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/process/sysdep_FREEBSD.c	23	146
+		138	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/process/sysdep_OPENBSD.c	23	147
+	CloneClass	19
+		48	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/process/sysdep_DARWIN.c	131	183
+		46	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/process/sysdep_FREEBSD.c	212	263
+		47	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/process/sysdep_OPENBSD.c	152	204
+	CloneClass	77
+		87	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/process/sysdep_DARWIN.c	310	368
+		88	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/process/sysdep_FREEBSD.c	411	470
+		136	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/process/sysdep_OPENBSD.c	330	388
+	CloneClass	73
+		129	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/process/sysdep_LINUX.c	233	281
+		130	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/process/sysdep_SOLARIS.c	177	225
+	CloneClass	4
+		14	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/protocols/ldap2.c	56	149
+		15	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/protocols/ldap3.c	56	149
+	CloneClass	14
+		36	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/device/sysdep_HPUX.c	62	92
+		35	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/device/sysdep_LINUX.c	70	100
+	CloneClass	20
+		50	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/process/sysdep_DARWIN.c	128	183
+		49	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/process/sysdep_FREEBSD.c	209	263
+	CloneClass	18
+		45	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/process/sysdep_DARWIN.c	131	191
+		44	ment/workspace/MyMutationInjectionFramework/tools/iclones/../../data/bases/1/monit-4.2/process/sysdep_OPENBSD.c	152	215

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#$1 is file path
+dos2unix "$1"
+
+if [ $? -ne 0 ]
+then
+	exit 1	
+fi
+
+sed --in-place -e '$a\' "$1"
+
+if [ $? -ne 0 ]
+then
+	exit 1
+fi
+
+exit 0

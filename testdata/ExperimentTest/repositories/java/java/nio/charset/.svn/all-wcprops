@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/charset
+END
+UnmappableCharacterException.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/charset/UnmappableCharacterException.java
+END
+UnsupportedCharsetException.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/charset/UnsupportedCharsetException.java
+END
+IllegalCharsetNameException.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/charset/IllegalCharsetNameException.java
+END
+MalformedInputException.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/charset/MalformedInputException.java
+END
+CoderMalfunctionError.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/charset/CoderMalfunctionError.java
+END
+Charset.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/charset/Charset.java
+END
+CharsetEncoder.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/charset/CharsetEncoder.java
+END
+CoderResult.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/charset/CoderResult.java
+END
+CodingErrorAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/charset/CodingErrorAction.java
+END
+CharacterCodingException.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/charset/CharacterCodingException.java
+END
+CharsetDecoder.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/charset/CharsetDecoder.java
+END

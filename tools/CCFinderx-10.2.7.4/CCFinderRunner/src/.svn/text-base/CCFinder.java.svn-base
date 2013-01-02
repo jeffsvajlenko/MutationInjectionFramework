@@ -1,0 +1,162 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.PrintStream;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class CCFinder {
+
+	/**
+	 * Runs NiCad
+	 * @param args systemDir nicadInstallDir language granularity configFile
+	 */
+	public static void main(String args[]) {
+		CCFinder ccfinder = new CCFinder();
+		List<Clone> clones = ccfinder.runTool(args[0], args[1], args[2], args[3], args[4], args[5], args[6], args[7], args[8], args[9]);
+		if(clones == null) {
+			System.exit(1);
+		}
+		File out = new File(args[10]);
+		out.delete();
+		try {
+			out.createNewFile();
+		} catch (IOException e) {
+			System.exit(1);
+		}
+		PrintStream ps;
+		try {
+			ps = new PrintStream(out);
+			for(Clone c : clones) {
+				ps.println(c);
+			}
+		} catch (FileNotFoundException e) {
+			System.exit(1);
+		}
+		System.out.println(out.getAbsolutePath());
+	}
+
+	/**
+	 * Runs NiCad.
+	 * @param systemDirectory The directory of the system to analyze.
+	 * @param language The language of the system.
+	 * @param granularity The granularity of the clone search.
+	 * @param toolDirectory Directory containing NiCad.
+	 * @return
+	 */
+	public List<Clone> runTool(String systemDirectory, String language, String finstalldir, String toolDirectory, String granularity, String trdir, String minlines, String mintokens, String numthreads, String tks) {
+		List<Clone> clonelist = new LinkedList<Clone>();
+		
+		// Clear up any previous temporary files
+		//.......
+		
+	// Run CCFinder
+		if(language.equals("c")) {
+			language = "cpp";
+		} else if(language.equals("cs")) {
+			language = "csharp";
+		} else if(language.equals("java")) {
+			language = "java";
+		}
+		
+		String command = "wine ccfx D " + language + " --threads=" + Integer.parseInt(numthreads) + " -t " + Integer.parseInt(tks) + " -dn " + new File(systemDirectory).getAbsolutePath();
+		String envp[] = new String[1];
+		envp[0] = "PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin";
+		Runtime runtime = Runtime.getRuntime();
+		Process process;
+		int pretval;
+		
+		//run ccfx D
+		try {
+			process = runtime.exec(command, envp, new File(toolDirectory));
+			new StreamGobbler(process.getInputStream(), "");
+			new StreamGobbler(process.getErrorStream(), "");
+			pretval = process.waitFor();
+		} catch (IOException e) {
+			return null;
+		} catch (InterruptedException e) {
+			return null;
+		}
+		if(pretval != 0) {
+			return null;
+		}
+		
+		//format results propery
+		command = "./format";
+		try {
+			process = runtime.exec(command, envp, new File(toolDirectory));
+			new StreamGobbler(process.getInputStream(), "");
+			new StreamGobbler(process.getErrorStream(), "");
+			pretval = process.waitFor();
+		} catch (IOException e) {
+			return null;
+		} catch (InterruptedException e) {
+			return null;
+		}
+		if(pretval != 0) {
+			return null;
+		}
+		
+	//Convert to NiCad
+		File ccfxprepdir = new File(systemDirectory + "/.ccfxprepdir/");
+		File sourceDir = new File(systemDirectory);
+		File resultFile = new File(toolDirectory + "/b.ccfxd/");
+		CCFinderDecoder decoder = new CCFinderDecoder(sourceDir, ccfxprepdir, resultFile);
+		String nicadResultFile = decoder.createResultFile();
+		
+		// Extract Clones
+		//System.out.println(nicadResultFile);
+		File results = new File(nicadResultFile);
+		Scanner s;
+		try {
+			s = new Scanner(results);
+		} catch (FileNotFoundException e) {
+			return null;
+		}
+		Pattern pattern = Pattern.compile("<source file=\"(.*)\" startline=\"(.*)\" endline=\"([0-9]*)\"? pcid=\".*\"></source>");
+		Matcher matcher;
+		while(s.hasNextLine()) {
+			String line = s.nextLine();
+			
+			// found clone
+			LinkedList<Fragment> fragments = new LinkedList<Fragment>();
+			if(line.startsWith("<class")) {
+				Scanner sc = new Scanner(line);
+				sc.useDelimiter(" ");
+				sc.next();
+				sc.next();
+				sc.next();
+				line = sc.next();
+				line = line.substring(12, line.length()-2);
+				int numf = Integer.parseInt(line);
+				
+				for(int i =0; i < numf; i++) {
+					line = s.nextLine();
+					matcher = pattern.matcher(line);
+					matcher.matches();
+					
+					String srcfile1=matcher.group(1);
+					if(language.equals("c") || language.equals("cs")) {
+						if(srcfile1.endsWith(".ifdefed")) {
+							srcfile1 = srcfile1.substring(0, srcfile1.length()-8);
+						}
+					}
+					fragments.add(new Fragment(srcfile1, Integer.parseInt(matcher.group(2)), Integer.parseInt(matcher.group(3))));
+				}
+				
+				for(int i = 0; i < fragments.size(); i++) {
+					for(int j = i+1; j < fragments.size(); j++) {
+						clonelist.add(new Clone(fragments.get(i), fragments.get(j)));
+					}
+				}
+			}
+			
+		}
+		
+		return clonelist;
+	}
+
+}

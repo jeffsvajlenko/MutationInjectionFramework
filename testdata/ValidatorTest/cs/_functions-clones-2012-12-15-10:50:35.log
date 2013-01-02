@@ -1,0 +1,33 @@
+
+Sat Dec 15 10:50:35 CST 2012
+./tools/streamprocess.x './txl/cs-rename-blind-functions.x stdin' < examples/cs/_functions.xml > examples/cs/_functions-blind.xml
+
+real	0m0.496s
+user	0m0.312s
+sys	0m0.100s
+
+Sat Dec 15 10:50:35 CST 2012
+
+Sat Dec 15 10:50:35 CST 2012
+./tools/clonepairs.x examples/cs/_functions-blind.xml 0.0 10 2500 > examples/cs/_functions-blind-clones/_functions-blind-clones-0.0.xml
+Processing examples/cs/_functions-blind.xml with difference threshold 0%, clone size 10 .. 2500 lines
+Reading pcs . done.
+Total 391/7500000 potential clones of 10 lines or more
+Used 4852/125000000 total pc lines
+Used 115085/750000000 unique line text chars
+ and 2517/15000000 unique lines
+Sorting pcs . done.
+Finding clones  done.
+Total 444 pc comparisons
+Pruning embedded clone pairs . done.
+Pruned 0 embedded clone pairs
+Found 7 clone pairs
+Generating XML output . done.
+
+
+real	0m0.188s
+user	0m0.028s
+sys	0m0.132s
+
+Sat Dec 15 10:50:35 CST 2012
+

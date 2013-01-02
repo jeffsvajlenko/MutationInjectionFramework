@@ -1,0 +1,137 @@
+Version /home/jeff/Dropbox/MutationInjectionFramework/tools/iclones-0.1/examples/monit-4.2/
+	CloneClass	6
+		19	validate.c	242	269
+		18	validate.c	422	450
+	CloneClass	59
+		105	validate.c	321	345
+		106	validate.c	406	431
+	CloneClass	58
+		103	validate.c	1139	1166
+		104	validate.c	1172	1197
+	CloneClass	62
+		111	protocols/nntp.c	50	78
+		112	protocols/pop.c	53	79
+	CloneClass	22
+		53	ssl.c	210	256
+		54	ssl.c	1050	1097
+	CloneClass	21
+		51	ssl.c	595	633
+		52	ssl.c	1392	1431
+	CloneClass	77
+		57	process/sysdep_DARWIN.c	23	126
+		136	process/sysdep_FREEBSD.c	23	146
+		58	process/sysdep_OPENBSD.c	23	147
+	CloneClass	18
+		46	process/sysdep_DARWIN.c	131	183
+		44	process/sysdep_FREEBSD.c	212	263
+		45	process/sysdep_OPENBSD.c	152	204
+	CloneClass	75
+		55	process/sysdep_DARWIN.c	310	368
+		134	process/sysdep_FREEBSD.c	411	470
+		56	process/sysdep_OPENBSD.c	330	388
+	CloneClass	63
+		113	process/sysdep_LINUX.c	233	281
+		114	process/sysdep_SOLARIS.c	177	225
+	CloneClass	69
+		123	http/cervlet.c	1210	1233
+		124	util.c	756	778
+	CloneClass	68
+		121	http/cervlet.c	1413	1444
+		122	util.c	722	754
+	CloneClass	67
+		119	http/cervlet.c	1450	1478
+		120	util.c	656	683
+	CloneClass	66
+		117	http/cervlet.c	1584	1638
+		118	util.c	780	830
+	CloneClass	9
+		26	http/cervlet.c	522	545
+		25	http/cervlet.c	556	579
+	CloneClass	11
+		29	http/cervlet.c	824	847
+		30	http/cervlet.c	851	875
+	CloneClass	73
+		131	http/cervlet.c	889	954
+		132	http/cervlet.c	973	1035
+	CloneClass	72
+		129	http/cervlet.c	1148	1202
+		130	http/cervlet.c	1298	1372
+	CloneClass	71
+		127	http/cervlet.c	1294	1341
+		128	http/cervlet.c	1383	1428
+	CloneClass	20
+		50	http/cervlet.c	1354	1380
+		49	http/cervlet.c	1481	1507
+	CloneClass	10
+		27	http/cervlet.c	1550	1581
+		28	http/cervlet.c	1711	1742
+	CloneClass	70
+		125	http/cervlet.c	1587	1614
+		126	http/cervlet.c	1623	1648
+	CloneClass	26
+		61	process/sysdep_FREEBSD.c	23	146
+		62	process/sysdep_OPENBSD.c	23	147
+	CloneClass	25
+		59	process/sysdep_FREEBSD.c	354	398
+		60	process/sysdep_OPENBSD.c	277	317
+	CloneClass	13
+		33	process/sysdep_FREEBSD.c	411	470
+		34	process/sysdep_OPENBSD.c	330	388
+	CloneClass	19
+		48	process/sysdep_DARWIN.c	128	183
+		47	process/sysdep_FREEBSD.c	209	263
+	CloneClass	44
+		85	sha.c	369	379
+		86	sha.c	379	389
+	CloneClass	36
+		75	sha.c	389	399
+		76	sha.c	399	409
+	CloneClass	28
+		65	sha.c	409	419
+		66	sha.c	419	429
+	CloneClass	60
+		107	protocols/imap.c	54	90
+		108	protocols/pop.c	53	88
+	CloneClass	12
+		32	device/sysdep_HPUX.c	62	92
+		31	device/sysdep_LINUX.c	70	100
+	CloneClass	61
+		109	md5.c	103	119
+		110	sha.c	110	126
+	CloneClass	55
+		95	sha.c	350	355
+		93	sha.c	355	360
+		94	sha.c	360	365
+	CloneClass	4
+		14	protocols/ldap2.c	56	149
+		15	protocols/ldap3.c	56	149
+	CloneClass	17
+		43	process/sysdep_DARWIN.c	131	191
+		42	process/sysdep_OPENBSD.c	152	215
+	CloneClass	7
+		22	validate.c	247	267
+		20	validate.c	349	369
+		21	validate.c	428	448
+	CloneClass	50
+		89	sha.c	369	374
+		87	sha.c	374	379
+		83	sha.c	379	384
+		84	sha.c	384	389
+	CloneClass	42
+		79	sha.c	389	394
+		77	sha.c	394	399
+		73	sha.c	399	404
+		74	sha.c	404	409
+	CloneClass	34
+		69	sha.c	409	414
+		67	sha.c	414	419
+		63	sha.c	419	424
+		64	sha.c	424	429
+	CloneClass	79
+		101	protocols/imap.c	54	81
+		116	protocols/nntp.c	50	78
+		137	protocols/pop.c	53	79
+		102	protocols/smtp.c	51	79
+	CloneClass	56
+		99	protocols/nntp.c	46	82
+		100	protocols/smtp.c	47	83

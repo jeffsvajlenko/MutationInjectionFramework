@@ -1,0 +1,731 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt
+END
+RenderingHints.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/RenderingHints.java
+END
+FocusTraversalPolicy.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/FocusTraversalPolicy.java
+END
+SystemColor.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/SystemColor.java
+END
+Graphics2D.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/Graphics2D.java
+END
+PrintJob.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/PrintJob.java
+END
+Polygon.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/Polygon.java
+END
+DefaultFocusTraversalPolicy.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/DefaultFocusTraversalPolicy.java
+END
+MenuBar.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/MenuBar.java
+END
+KeyboardFocusManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/KeyboardFocusManager.java
+END
+ImageCapabilities.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/ImageCapabilities.java
+END
+AWTKeyStroke.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/AWTKeyStroke.java
+END
+TexturePaint.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/TexturePaint.java
+END
+FontMetrics.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/FontMetrics.java
+END
+DefaultKeyboardFocusManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/DefaultKeyboardFocusManager.java
+END
+Graphics.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/Graphics.java
+END
+KeyEventDispatcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/KeyEventDispatcher.java
+END
+ScrollPaneAdjustable.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/ScrollPaneAdjustable.java
+END
+MouseInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/MouseInfo.java
+END
+ModalEventFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/ModalEventFilter.java
+END
+Font.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/Font.java
+END
+RadialGradientPaint.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/RadialGradientPaint.java
+END
+Window.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/Window.java
+END
+BorderLayout.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/BorderLayout.java
+END
+List.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/List.java
+END
+Cursor.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/Cursor.java
+END
+PrintGraphics.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/PrintGraphics.java
+END
+ColorPaintContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/ColorPaintContext.java
+END
+PaintContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/PaintContext.java
+END
+ItemSelectable.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/ItemSelectable.java
+END
+ContainerOrderFocusTraversalPolicy.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/ContainerOrderFocusTraversalPolicy.java
+END
+Container.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/Container.java
+END
+GridLayout.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/GridLayout.java
+END
+BufferCapabilities.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/BufferCapabilities.java
+END
+LinearGradientPaint.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/LinearGradientPaint.java
+END
+SystemTray.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/SystemTray.java
+END
+Toolkit.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/Toolkit.java
+END
+GraphicsEnvironment.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/GraphicsEnvironment.java
+END
+Checkbox.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/Checkbox.java
+END
+TextField.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/TextField.java
+END
+GradientPaint.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/GradientPaint.java
+END
+LayoutManager2.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/LayoutManager2.java
+END
+CheckboxMenuItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/CheckboxMenuItem.java
+END
+PointerInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/PointerInfo.java
+END
+GridBagLayout.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/GridBagLayout.java
+END
+GradientPaintContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/GradientPaintContext.java
+END
+FontFormatException.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/FontFormatException.java
+END
+Dialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/Dialog.java
+END
+FileDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/FileDialog.java
+END
+AttributeValue.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/AttributeValue.java
+END
+MenuShortcut.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/MenuShortcut.java
+END
+TexturePaintContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/TexturePaintContext.java
+END
+Component.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/Component.java
+END
+AWTPermission.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/AWTPermission.java
+END
+CompositeContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/CompositeContext.java
+END
+Transparency.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/Transparency.java
+END
+Canvas.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/Canvas.java
+END
+Button.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/Button.java
+END
+SentEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/SentEvent.java
+END
+ActiveEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/ActiveEvent.java
+END
+ComponentOrientation.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/ComponentOrientation.java
+END
+GraphicsDevice.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/GraphicsDevice.java
+END
+GraphicsConfigTemplate.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/GraphicsConfigTemplate.java
+END
+Image.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/Image.java
+END
+Scrollbar.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/Scrollbar.java
+END
+Robot.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/Robot.java
+END
+EventQueue.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/EventQueue.java
+END
+GridBagConstraints.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/GridBagConstraints.java
+END
+EventFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/EventFilter.java
+END
+TrayIcon.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/TrayIcon.java
+END
+GraphicsConfiguration.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/GraphicsConfiguration.java
+END
+EventDispatchThread.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/EventDispatchThread.java
+END
+LinearGradientPaintContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/LinearGradientPaintContext.java
+END
+SplashScreen.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/SplashScreen.java
+END
+MediaTracker.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/MediaTracker.java
+END
+KeyEventPostProcessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/KeyEventPostProcessor.java
+END
+Shape.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/Shape.java
+END
+Composite.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/Composite.java
+END
+ScrollPane.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/ScrollPane.java
+END
+Conditional.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/Conditional.java
+END
+Rectangle.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/Rectangle.java
+END
+AWTError.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/AWTError.java
+END
+FlowLayout.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/FlowLayout.java
+END
+Insets.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/Insets.java
+END
+MenuContainer.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/MenuContainer.java
+END
+Stroke.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/Stroke.java
+END
+TextComponent.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/TextComponent.java
+END
+AlphaComposite.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/AlphaComposite.java
+END
+BasicStroke.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/BasicStroke.java
+END
+GridBagLayoutInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/GridBagLayoutInfo.java
+END
+DisplayMode.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/DisplayMode.java
+END
+Paint.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/Paint.java
+END
+IllegalComponentStateException.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/IllegalComponentStateException.java
+END
+Adjustable.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/Adjustable.java
+END
+SequencedEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/SequencedEvent.java
+END
+Color.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/Color.java
+END
+Label.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/Label.java
+END
+JobAttributes.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/JobAttributes.java
+END
+PageAttributes.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/PageAttributes.java
+END
+MenuItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/MenuItem.java
+END
+Dimension.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/Dimension.java
+END
+MenuComponent.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/MenuComponent.java
+END
+PopupMenu.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/PopupMenu.java
+END
+Point.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/Point.java
+END
+Choice.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/Choice.java
+END
+Frame.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/Frame.java
+END
+AWTEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/AWTEvent.java
+END
+Panel.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/Panel.java
+END
+CheckboxGroup.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/CheckboxGroup.java
+END
+Menu.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/Menu.java
+END
+MultipleGradientPaint.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/MultipleGradientPaint.java
+END
+CardLayout.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/CardLayout.java
+END
+HeadlessException.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/HeadlessException.java
+END
+LayoutManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/LayoutManager.java
+END
+Desktop.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/Desktop.java
+END
+MultipleGradientPaintContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/MultipleGradientPaintContext.java
+END
+AWTException.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/AWTException.java
+END
+AWTEventMulticaster.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/AWTEventMulticaster.java
+END
+RadialGradientPaintContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/RadialGradientPaintContext.java
+END
+TextArea.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/TextArea.java
+END
+GraphicsCallback.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/GraphicsCallback.java
+END
+Event.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/Event.java
+END

@@ -1,0 +1,317 @@
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image
+END
+WritableRenderedImage.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/WritableRenderedImage.java
+END
+ComponentSampleModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/ComponentSampleModel.java
+END
+DataBufferByte.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/DataBufferByte.java
+END
+MultiPixelPackedSampleModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/MultiPixelPackedSampleModel.java
+END
+PixelInterleavedSampleModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/PixelInterleavedSampleModel.java
+END
+ImageFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/ImageFilter.java
+END
+RasterFormatException.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/RasterFormatException.java
+END
+DataBufferFloat.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/DataBufferFloat.java
+END
+ConvolveOp.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/ConvolveOp.java
+END
+DataBufferDouble.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/DataBufferDouble.java
+END
+ColorModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/ColorModel.java
+END
+RasterOp.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/RasterOp.java
+END
+BandedSampleModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/BandedSampleModel.java
+END
+Raster.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/Raster.java
+END
+ShortLookupTable.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/ShortLookupTable.java
+END
+ByteLookupTable.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/ByteLookupTable.java
+END
+PackedColorModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/PackedColorModel.java
+END
+DataBufferUShort.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/DataBufferUShort.java
+END
+AreaAveragingScaleFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/AreaAveragingScaleFilter.java
+END
+CropImageFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/CropImageFilter.java
+END
+RescaleOp.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/RescaleOp.java
+END
+ColorConvertOp.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/ColorConvertOp.java
+END
+FilteredImageSource.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/FilteredImageSource.java
+END
+AffineTransformOp.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/AffineTransformOp.java
+END
+BufferedImageOp.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/BufferedImageOp.java
+END
+BufferedImage.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/BufferedImage.java
+END
+ImageProducer.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/ImageProducer.java
+END
+ReplicateScaleFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/ReplicateScaleFilter.java
+END
+IndexColorModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/IndexColorModel.java
+END
+ImagingOpException.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/ImagingOpException.java
+END
+ImageObserver.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/ImageObserver.java
+END
+DirectColorModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/DirectColorModel.java
+END
+WritableRaster.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/WritableRaster.java
+END
+BufferedImageFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/BufferedImageFilter.java
+END
+RenderedImage.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/RenderedImage.java
+END
+BufferStrategy.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/BufferStrategy.java
+END
+MemoryImageSource.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/MemoryImageSource.java
+END
+ImageConsumer.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/ImageConsumer.java
+END
+BandCombineOp.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/BandCombineOp.java
+END
+SampleModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/SampleModel.java
+END
+DataBuffer.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/DataBuffer.java
+END
+TileObserver.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/TileObserver.java
+END
+PixelGrabber.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/PixelGrabber.java
+END
+LookupOp.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/LookupOp.java
+END
+DataBufferInt.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/DataBufferInt.java
+END
+SinglePixelPackedSampleModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/SinglePixelPackedSampleModel.java
+END
+Kernel.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/Kernel.java
+END
+LookupTable.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/LookupTable.java
+END
+ComponentColorModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/ComponentColorModel.java
+END
+VolatileImage.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/VolatileImage.java
+END
+DataBufferShort.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/DataBufferShort.java
+END
+RGBImageFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/awt/image/RGBImageFilter.java
+END

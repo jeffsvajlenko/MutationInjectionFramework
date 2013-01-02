@@ -1,0 +1,38 @@
+void function()
+{
+	bool b1 = true;
+	bool b2 = false;
+	
+	int i1 = 123;
+	int i2 = -123;
+	int i3 = 0xF5;
+	int i4 = -0xF5;
+
+	float f1 = 100.50F;
+	float f2 = 1.62e3F;
+	float f3 = 1.62e3;
+	float f4 = 100.50
+	float f5 = -100.50F;
+	float f6 = -1.62e3F;
+	float f7 = -1.62e3;
+	float f8 = -100.50
+
+	string s = "Hello, World";
+
+	char c1 = 'a';
+	char c2 = 'Z';
+	char c3 = '\u0231';
+
+	uint u1 = 1000U;
+	long l1 = 10000L;
+	ulong u2 = 10002000300040005000UL;
+	double d1 = 123.764D;
+	decimal m2 = 4000.1234M;
+
+	byte b = 123;
+	sbyte sb = 123;
+	short s = 123;
+	ushort us = 123;
+
+	int* myVariable = null;
+}

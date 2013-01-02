@@ -1,0 +1,41 @@
+--------------------------------------------------------------------------------
+    iclones uses the following third-party libraries:
+--------------------------------------------------------------------------------
+
+CCSM-Commons
+    Technische Universitaet Muenchen
+    http://conqat.cs.tum.edu/index.php/CCSM_Commons
+    Apache License 2.0
+    licenses/ccsm-commons.txt
+    
+Scanner
+    Technische Universitaet Muenchen
+    http://conqat.cs.tum.edu/index.php/CCSM_Scanners
+    Apache License 2.0
+    licenses/ccsm-scanner.txt
+    
+java-diff-utils 
+    Dmitry Naumenko
+    http://code.google.com/p/java-diff-utils/
+    Apache License 2.0
+    licenses/java-diff-utils.txt
+    
+trove
+    http://trove.starlight-systems.com
+    Lesser GNU Public License 2.1 (LGPL)
+    http://www.gnu.org/licenses/lgpl-2.1.html
+    licenses/lgpl.txt
+	
+JOpt Simple
+    http://jopt-simple.sourceforge.net/
+    MIT License
+    http://www.opensource.org/licenses/mit-license.php
+    licenses/mit.txt
+	
+JLine
+    http://jline.sourceforge.net/
+    BSD License
+    http://www.opensource.org/licenses/bsd-license.php
+    licenses/bsd.txt
+    
+--------------------------------------------------------------------------------

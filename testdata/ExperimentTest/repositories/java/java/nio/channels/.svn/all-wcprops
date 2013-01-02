@@ -1,0 +1,215 @@
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels
+END
+ReadableByteChannel.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/ReadableByteChannel.java
+END
+UnsupportedAddressTypeException.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/UnsupportedAddressTypeException.java
+END
+ScatteringByteChannel.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/ScatteringByteChannel.java
+END
+Selector.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/Selector.java
+END
+NoConnectionPendingException.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/NoConnectionPendingException.java
+END
+NonReadableChannelException.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/NonReadableChannelException.java
+END
+AlreadyConnectedException.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/AlreadyConnectedException.java
+END
+GatheringByteChannel.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/GatheringByteChannel.java
+END
+WritableByteChannel.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/WritableByteChannel.java
+END
+FileLock.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/FileLock.java
+END
+ClosedSelectorException.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/ClosedSelectorException.java
+END
+NotYetBoundException.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/NotYetBoundException.java
+END
+FileLockInterruptionException.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/FileLockInterruptionException.java
+END
+NonWritableChannelException.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/NonWritableChannelException.java
+END
+Pipe.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/Pipe.java
+END
+ClosedByInterruptException.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/ClosedByInterruptException.java
+END
+IllegalBlockingModeException.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/IllegalBlockingModeException.java
+END
+ServerSocketChannel.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/ServerSocketChannel.java
+END
+Channel.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/Channel.java
+END
+FileChannel.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/FileChannel.java
+END
+UnresolvedAddressException.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/UnresolvedAddressException.java
+END
+OverlappingFileLockException.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/OverlappingFileLockException.java
+END
+InterruptibleChannel.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/InterruptibleChannel.java
+END
+ClosedChannelException.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/ClosedChannelException.java
+END
+SocketChannel.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/SocketChannel.java
+END
+ConnectionPendingException.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/ConnectionPendingException.java
+END
+NotYetConnectedException.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/NotYetConnectedException.java
+END
+IllegalSelectorException.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/IllegalSelectorException.java
+END
+Channels.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/Channels.java
+END
+SelectableChannel.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/SelectableChannel.java
+END
+ByteChannel.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/ByteChannel.java
+END
+SelectionKey.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/SelectionKey.java
+END
+AsynchronousCloseException.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/AsynchronousCloseException.java
+END
+CancelledKeyException.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/CancelledKeyException.java
+END
+DatagramChannel.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/DatagramChannel.java
+END

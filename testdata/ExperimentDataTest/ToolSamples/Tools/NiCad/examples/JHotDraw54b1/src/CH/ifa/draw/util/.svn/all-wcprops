@@ -1,0 +1,257 @@
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util
+END
+ReverseListEnumerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/ReverseListEnumerator.java
+END
+JDOStorageFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/JDOStorageFormat.java
+END
+CommandButton.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/CommandButton.java
+END
+Storable.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/Storable.java
+END
+FloatingTextField.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/FloatingTextField.java
+END
+StorageFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/StorageFormat.java
+END
+VersionManagement.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/VersionManagement.java
+END
+CommandListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/CommandListener.java
+END
+UndoableTool.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/UndoableTool.java
+END
+UndoableCommand.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/UndoableCommand.java
+END
+Undoable.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/Undoable.java
+END
+PaletteButton.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/PaletteButton.java
+END
+Bounds.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/Bounds.java
+END
+StorableInput.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/StorableInput.java
+END
+Animatable.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/Animatable.java
+END
+ReverseVectorEnumerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/ReverseVectorEnumerator.java
+END
+UndoCommand.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/UndoCommand.java
+END
+PaletteListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/PaletteListener.java
+END
+UndoableHandle.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/UndoableHandle.java
+END
+PaletteIcon.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/PaletteIcon.java
+END
+StorageFormatManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/StorageFormatManager.java
+END
+VersionControlStrategy.java
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/VersionControlStrategy.java
+END
+SerializationStorageFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/SerializationStorageFormat.java
+END
+ColorMap.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/ColorMap.java
+END
+Filler.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/Filler.java
+END
+Command.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/Command.java
+END
+VersionRequester.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/VersionRequester.java
+END
+Geom.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/Geom.java
+END
+RedoCommand.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/RedoCommand.java
+END
+CommandChoice.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/CommandChoice.java
+END
+StandardVersionControlStrategy.java
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/StandardVersionControlStrategy.java
+END
+UndoableAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/UndoableAdapter.java
+END
+StorableOutput.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/StorableOutput.java
+END
+UndoRedoActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/UndoRedoActivity.java
+END
+PaletteLayout.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/PaletteLayout.java
+END
+StandardStorageFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/StandardStorageFormat.java
+END
+Clipboard.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/Clipboard.java
+END
+GraphLayout.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/GraphLayout.java
+END
+Iconkit.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/Iconkit.java
+END
+UndoManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/UndoManager.java
+END
+CommandMenu.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/CommandMenu.java
+END
+CollectionsFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/util/CollectionsFactory.java
+END

@@ -1,0 +1,4 @@
+    construct XmlHeader [xml_source_coordinate]
+	<source file=FileNameString startline=LineNumberString endline=EndLineNumberString>
+    by
+	XmlHeader

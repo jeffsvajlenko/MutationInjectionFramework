@@ -1,0 +1,20 @@
+License
+========
+
+Copyright (c) 2009-2010 Advanced Industrial Science And Technology(AIST), Japan.
+
+AIST CCFinderX is distributed under the terms of the MIT License.
+(http://www.opensource.org/licenses/mit-license.html)
+
+That is, you may freely use, modify, or re-distribute CCFinderX
+for personal or commercial purpose, as long as you include this
+text without modification.
+
+CCFinderX is reusing the following products or libraries. As for license
+of them, refer the corresponding license documents.
+
+- Boost
+- ICU
+- SWT
+- Gnu Trove
+

@@ -1,0 +1,311 @@
+#!/bin/bash 
+
+usage() {
+echo ""
+echo "Usage: simcad2 [-version] [-v] -i item_to_search -s source_path -l language"
+echo "               [-g granularity] [-t clone_type]"
+echo "               [-c clone_grouping] [-x source_transform]"
+echo "               [-o output_path]"
+
+echo "-------------DESCRIPTION--------------"
+echo "-version          = display simcad version"
+echo "-v                = verbose mode, shows the detection in progress"
+echo "language          = c | java | cs | py"
+echo "granularity       = (block | b ) | (function | f) : default = (function | f)"
+echo "clone_type        = 1 | 2 | 3 | 12 | (23 | nearmiss) | 13 | (123 | all) : default = (123 | all)"
+echo "clone_grouping    = (group | cg) | (pair | cp) : default = (group | cg)"
+echo "source_transform  = (generous | g) | (greedy | G) : default = (generous | g)"
+echo "item_to_search    = absolute path to file/folder contains search item"
+echo "source_path       = absolute path to source folder"
+echo "output_path       = absolute path to output folder : default = {source_path}_simcad_clones"
+}
+
+simcad_version="SimCad 2.1 (August 2012) : University of Saskatchewan, Canada"
+
+debug_mode="false"
+
+# check we have TXL
+txlversion=`txl -V 2>&1 | grep 10.[5-9]`
+if [ "${txlversion}" = "" ]
+then
+echo "*** Error:  simCad requires FreeTXL 10.5 or higher"
+echo ""
+exit 99
+fi
+
+# check we have java
+javaversion=`java -version 2>&1 | grep 'java version \"1.'`
+if [ "${javaversion}" = "" ]
+then
+echo "*** Error: simCad requires Java 1.5 or higher"
+echo ""
+exit 99
+fi
+
+lib=.
+
+if [ ! -d ${lib}/tools ]
+then
+echo "*** Error: Cannot find simCad installation ${lib}"
+echo ""
+exit 99
+fi
+
+# check we compiled the tools
+if [ ! -x ${lib}/tools/streamprocess.x ]
+then
+echo "*** Error: Missing ${lib}/tools/streamprocess.x - type 'make' to make the simCad tools"
+echo ""
+exit 99
+fi
+
+if [ "$#" -eq 0 ]
+then
+usage
+exit 99
+fi
+
+GRANULARITY="function"
+CLONE_TYPE="123"
+SOURCE_TRANSFORM="generous"
+OUTPUT_DIR=""
+VERBOSE=""
+CLONE_GROUPING="group"
+
+while [ $# -gt 0 ]
+
+do
+case $1 in
+
+# display simcad version
+-version)
+echo "${simcad_version}"
+exit 0
+;;
+
+-v)
+VERBOSE=$1
+shift
+;;
+
+# check granularity
+-g)
+shift
+if [ "$1" = "block" ] || [ "$1" = "function" ] || [ "$1" = "b" ] || [ "$1" = "f" ]
+then
+    GRANULARITY=$1
+    if [ "${GRANULARITY}" = "b" ] || [ "${GRANULARITY}" = "block" ]
+    then
+        GRANULARITY="block"
+    else
+        GRANULARITY="function"
+    fi
+shift
+else
+    echo "*** ERROR: Invalid value {$1} for parameter -g (granularity). Valid options [ (block | b) | (function | f) ]"
+#usage
+    exit 99
+fi
+;;
+
+# check language
+-l)
+shift
+if [ "$1" = "c" ] || [ "$1" = "java" ] || [ "$1" = "cs" ] || [ "$1" = "py" ]
+then
+    LANGUAGE=$1
+    shift
+else
+    echo "*** ERROR: Invalid value {$1} for parameter -l (language). Valid options [ c | java | cs | py ]"
+#usage
+    exit 99
+fi
+;;
+
+-t)
+shift
+if [ "$1" = "1" ] || [ "$1" = "2" ] || [ "$1" = "3" ] || [ "$1" = "12" ] || [ "$1" = "13" ] || [ "$1" = "23" ] || [ "$1" = "123" ] || [ "$1" = "nearmiss" ] || [ "$1" = "all" ]
+then
+    CLONE_TYPE=$1
+    if [ "${CLONE_TYPE}" = "nearmiss" ] 
+    then
+        CLONE_TYPE="23"
+    fi
+    
+    if [ "${CLONE_TYPE}" = "all" ] 
+    then
+        CLONE_TYPE="123"
+    fi
+    shift
+else
+    echo "*** ERROR: Invalid value {$1} for parameter -t (clone type)."
+    echo "Valid options [ 1 | 2 | 3 | 12 | (23 | nearmiss) | 13 | (123 | all) : default : (123 | all) ]"
+#usage
+    exit 99
+fi
+;;
+
+
+# get the file containing search item
+-i)
+    shift
+    SEARCH_FILE=$1
+    shift
+;;
+
+# get the source directory
+-s)
+    shift
+    SOURCE_DIR=$1
+    shift
+;;
+
+-o)
+    shift
+    OUTPUT_DIR=$1
+    shift
+;;
+
+# get clone grouping type / clone_grouping
+-c)
+shift
+if [ "$1" = "group" ] || [ "$1" = "cg" ] || [ "$1" = "pair" ] || [ "$1" = "cp" ]
+then
+    CLONE_GROUPING=$1
+    if [ "${CLONE_GROUPING}" = "cg" ] 
+    then
+        CLONE_GROUPING="group"
+    fi
+
+    if [ "${CLONE_GROUPING}" = "cp" ] 
+    then
+        CLONE_GROUPING="pair"
+    fi
+    shift
+else
+    echo "*** ERROR: Invalid value {$1} for parameter -c (clone_grouping). Valid options [ (group | cg) | (pair | cp) : default = (group | cg) ]"
+#usage
+exit 99
+fi
+;;
+
+# get source transformation strategy
+-x)
+shift
+if [ "$1" = "generous" ] || [ "$1" = "g" ] || [ "$1" = "greedy" ] || [ "$1" = "G" ]
+then
+    SOURCE_TRANSFORM=$1
+    if [ "${CLONE_TYPE}" = "g" ] 
+    then
+        SOURCE_TRANSFORM="generous"
+    fi
+
+    if [ "${CLONE_TYPE}" = "G" ] 
+    then
+        SOURCE_TRANSFORM="greedy"
+    fi
+    shift
+else
+    echo "*** ERROR: Invalid value {$1} for parameter -x (source_transform). Valid options [ (generous | g) | (greedy | G) : default = (generous | g) ]"
+#usage
+exit 99
+fi
+;;
+
+*)
+echo "*** ERROR: Unknown option(s) {$1}"
+usage
+exit 99
+shift
+;;
+esac
+done
+
+
+# check if language selected
+if [ "${LANGUAGE}" = "" ]
+then
+echo "*** ERROR: Missing required parameter -l (language). Valid options [ c | java | cs | py ]"
+usage
+exit 99
+fi
+
+
+# check if search item is a valid file
+#if [ "${SEARCH_FILE}" = "" ]
+#then
+#echo "*** ERROR: Missing required parameter -i (item_to_search)"
+#usage
+#exit 99
+#fi
+
+
+# check if search item is a valid file
+if [ ! -z "${SEARCH_FILE}" ] 
+#&& ["${SEARCH_FILE}" != ""]
+then
+	if [ ! -f "${SEARCH_FILE}" ] && [ ! -d "${SEARCH_FILE}" ]
+	then
+		echo "*** ERROR: Can't find file/folder for item to search ${SEARCH_FILE}"
+		exit 99
+	fi
+else
+	SEARCH_FILE="NONE"	
+fi
+
+
+# check if source directory is a valid one
+if [ "${SOURCE_DIR}" = "" ]
+then
+echo "*** ERROR: Missing required parameter -s (source_path)"
+usage
+exit 99
+fi
+
+
+# check if source directory is a valid one
+if [ ! -d "${SOURCE_DIR}" ]
+then
+echo "*** ERROR: Can't find system source directory ${SOURCE_DIR}"
+exit 99
+fi
+
+#configure output_dir if not set
+if [ "${OUTPUT_DIR}" = "." ] || [ "${OUTPUT_DIR}" = "./" ] || [ "${OUTPUT_DIR}" = "" ]
+then 
+    OUTPUT_DIR=${SOURCE_DIR}_simcad_clones
+fi
+
+if [ ! -d "${OUTPUT_DIR}" ]
+then
+#echo ""
+	/bin/mkdir -p "${OUTPUT_DIR}"
+	/bin/chmod +rw "${OUTPUT_DIR}" 
+fi
+
+echo ""
+echo "${simcad_version}"
+
+if [ "${debug_mode}" = "true" ]
+then
+echo "verbose=${VERBOSE}"
+echo "item-to-search=${SEARCH_FILE}"
+echo "source-dir=${SOURCE_DIR}"
+echo "granularity=${GRANULARITY}"
+echo "language=${LANGUAGE}"
+echo "clone-type=${CLONE_TYPE}"
+echo "output-dir=${OUTPUT_DIR}"
+echo "source-transform=${SOURCE_TRANSFORM}"
+echo "clone_grouping=${CLONE_GROUPING}"
+exit 0
+fi
+echo ""
+
+#Detect Clone
+#echo ""
+#echo "java -Xmx1024m -jar ${lib}/tools/simLib.jar ${VERBOSE} ${SOURCE_DIR} ${LANGUAGE} ${GRANULARITY} ${CLONE_TYPE} ${CLONE_GROUPING} ${SOURCE_TRANSFORM} ${OUTPUT_DIR}"
+
+java -Xmx1024m -jar ${lib}/tools/simLib.jar ${VERBOSE} "${SEARCH_FILE}" "${SOURCE_DIR}" ${LANGUAGE} ${GRANULARITY} ${CLONE_TYPE} ${CLONE_GROUPING} ${SOURCE_TRANSFORM} "${OUTPUT_DIR}" 2>&1
+
+exit 0
+

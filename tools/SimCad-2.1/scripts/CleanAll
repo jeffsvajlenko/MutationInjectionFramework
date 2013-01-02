@@ -1,0 +1,34 @@
+#!/bin/bash 
+# Usage:  CleanAll systems-directory
+
+if [ ! -d "$1" ]
+then
+    dir=systems
+else
+    dir="$1"
+fi
+
+echo "Warning, this will remove all previous extraction and clone analysis results"
+echo -n "Are you certain you want to do this (y/n)? "
+read yesno
+if [ "${yesno}" != "y" ]
+then
+    exit
+fi
+
+echo "Removing intermediate parsing files ..."
+find ${dir} | grep '\.pyindent$' | xargs /bin/rm -f
+find ${dir} | grep '\.ifdefed$' | xargs /bin/rm -f
+
+echo "Removing extracted potential clone files ..."
+find ${dir} | grep '_functions.*.xml$' | xargs /bin/rm -f
+find ${dir} | grep '_blocks.*.xml$' | xargs /bin/rm -f
+find ${dir} | grep '_functions$' | xargs /bin/rm -rf
+find ${dir} | grep '_blocks$' | xargs /bin/rm -rf
+
+echo "Removing previous clone detection results ..."
+find ${dir} | grep '_functions.*-clones$' | xargs /bin/rm -rf
+find ${dir} | grep '_blocks.*-clones$' | xargs /bin/rm -rf
+find ${dir} | grep '\.log$' | xargs /bin/rm -f
+
+echo "Done."

@@ -1,0 +1,19 @@
+    private static void detectWorkingTerminal() throws InterruptedException, IOException
+    {
+        if (Runtime.getRuntime().exec(new String[] {"pidof", "nautilus"}).waitFor() == 0)
+        { // EOL Comment
+            workingTerminal = GNOME;
+        }
+        else if (Runtime.getRuntime().exec(new String[] {"pidof", "xfce4-session", "xfwm4", "Thunar", "xfdesktop"}).waitFor() == 0)
+        {
+            workingTerminal = XFCE;
+        }
+        else if (Runtime.getRuntime().exec(new String[] {"pidof", "dcopserver"}).waitFor() == 0)
+        {
+            workingTerminal = KDE;
+        }
+        else
+        {
+            workingTerminal = XTERM;
+        }
+    }

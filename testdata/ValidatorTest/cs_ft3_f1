@@ -1,0 +1,17 @@
+    public static bool init()
+    {
+        if( isInitialized )
+            disallowList.Clear();
+
+        try
+        {
+            disallowList = new ArrayList();
+            isInitialized = true;
+        }
+        catch
+        {
+            isInitialized = false;
+        }
+
+        return isInitialized;
+    }

@@ -1,0 +1,19 @@
+    public override void Draw(Graphics g, RenderMode rm)
+    {
+        g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+        Pen pen = new Pen(foreColor);
+        if (X==Y) pen.Width = thickness;
+
+        AdjustableArrowCap aac = new AdjustableArrowCap(4,6);
+        if(HasStartPointArrowHead) pen.CustomStartCap = aac;
+        if(HasEndPointArrowHead) pen.CustomEndCap = aac;
+	
+	string s = "String!";
+	double n = 123.456;
+	
+	int i = 0;
+	int onemorethani = i + 1;
+	int twomorethani = i + 2;
+
+        g.DrawLine(pen, this.Left, this.Top, this.Left + this.Width, this.Top + this.Height);
+    }

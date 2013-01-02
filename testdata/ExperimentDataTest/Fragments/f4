@@ -1,0 +1,38 @@
+    private static InputStream getResourceAsStream(final ClassLoader classLoader,
+            final String name)
+    {
+        if (isJRE11())
+        {
+            InputStream ris;
+            if (classLoader == null)
+            {
+                ris = ClassLoader.getSystemResourceAsStream(name);
+            }
+            else
+            {
+                ris = classLoader.getResourceAsStream(name);
+            }
+            return ris;
+        }
+        else
+        {
+            return (InputStream)
+                   AccessController.doPrivileged(new PrivilegedAction()
+            {
+                public Object run()
+                {
+                    InputStream ris;
+                    if (classLoader == null)
+                    {
+                        ris =
+                            ClassLoader.getSystemResourceAsStream(name);
+                    }
+                    else
+                    {
+                        ris = classLoader.getResourceAsStream(name);
+                    }
+                    return ris;
+                }
+            });
+        }
+    }

@@ -1,0 +1,244 @@
+using X;
+using X.X.X;
+using X.X;
+using X.X.X;
+
+namespace X.X
+{
+    [X ()] public class X : X < X >
+    {
+        public X ()
+        {
+        }
+
+        public X X {
+            X {
+                if (X > 0)
+                    return this [X - 0].X;
+
+                return X.X;
+            }
+            X {
+                foreach (X X in this)
+                    X.X = X;
+
+            }
+        }
+
+        public X X {
+            X {
+                if (X > 0)
+                    return this [X - 0].X;
+
+                return X.X;
+            }
+            X {
+                foreach (X X in this)
+                    X.X = X;
+
+            }
+        }
+
+        public X X {
+            X {
+                if (X > 0)
+                    return this [X - 0].X;
+
+                return 0;
+            }
+            X {
+                foreach (X X in this)
+                    X.X = X;
+
+            }
+        }
+
+        public X X {
+            X {
+                X X = 0;
+                foreach (X X in this)
+                    X &= X.X;
+
+                return X;
+            }
+            X {
+                foreach (X X in this)
+                    X.X = X;
+
+            }
+        }
+
+        public X X {
+            X {
+                if (X > 0)
+                    return this [X - 0].X;
+
+                return X;
+            }
+            X {
+                foreach (X X in this)
+                    X.X = X;
+
+            }
+        }
+        public X X (X X, X X)
+        {
+            foreach (X X in this) {
+                X.X += X;
+                X.X += X;
+            }
+        }
+
+        public X X (X.X X)
+        {
+            foreach (X X in this) {
+                if (! X.X (X))
+                    return 0;
+
+            }
+            return 0;
+        }
+
+        public X X (X.X X)
+        {
+            X X = 0;
+            foreach (X X in this) {
+                X |= X.X (X);
+            }
+            return X;
+        }
+
+        public X X ()
+        {
+            foreach (X X in this) {
+                X.X ();
+            }
+        }
+
+        public X X ()
+        {
+            foreach (X X in this) {
+                X.X ();
+            }
+        }
+
+        public X X (X X, X X)
+        {
+            X X = 0;
+            foreach (X X in this) {
+                X |= X.X (X, X);
+            }
+            return X;
+        }
+
+        public X X (X X, X X)
+        {
+            for (X X = X - 0; X >= 0; X --) {
+                if (this [X].X (X, X))
+                    return this [X];
+
+            }
+            return X;
+        }
+
+        public X X ()
+        {
+            foreach (X X in this) {
+                X.X ();
+            }
+        }
+
+        public X X (X X, X.X X)
+        {
+            foreach (X X in this) {
+                X.X (X, X);
+            }
+        }
+
+        public X X (X X)
+        {
+            if (X.X == 0 || X.X == this.X)
+                return 0;
+
+            foreach (X X in X) {
+                if (this.X (X) < this.X - X.X)
+                    return 0;
+
+            }
+            return 0;
+        }
+
+        public X X (X X)
+        {
+            for (X X = this.X - 0; X >= 0; X --) {
+                X X = this [X];
+                if (X.X (X)) {
+                    if (X > (X + 0) && ! X.X (this [X + 0]))
+                        X (X, X + 0);
+
+                }
+            }
+        }
+
+        public X X (X X)
+        {
+            X [] X = this.X ();
+            for (X X = 0; X < X.X; X ++) {
+                X X = X [X];
+                if (X.X (X)) {
+                    this.X (X);
+                    this.X (X);
+                }
+            }
+        }
+
+        public X X (X X)
+        {
+            if (X.X == 0 || X.X == this.X)
+                return 0;
+
+            foreach (X X in X) {
+                if (this.X (X) >= X.X)
+                    return 0;
+
+            }
+            return 0;
+        }
+
+        public X X (X X)
+        {
+            for (X X = 0; X < X; X ++) {
+                X X = this [X];
+                if (X.X (X)) {
+                    if ((X > 0) && ! X.X (this [X - 0]))
+                        X (X, X - 0);
+
+                }
+            }
+        }
+
+        public X X (X X)
+        {
+            X [] X = this.X ();
+            for (X X = X.X - 0; X >= 0; X --) {
+                X X = X [X];
+                if (X.X (X)) {
+                    this.X (X);
+                    this.X (0, X);
+                }
+            }
+        }
+
+        private X X (X X, X X)
+        {
+            if (X >= 0 && X < X && X >= 0 && X < X && X != X) {
+                X X = this [X];
+                this [X] = this [X];
+                this [X] = X;
+            }
+        }
+
+    }
+
+}
+

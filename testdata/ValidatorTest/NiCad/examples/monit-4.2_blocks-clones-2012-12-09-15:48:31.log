@@ -1,0 +1,28 @@
+Sun  9 Dec 2012 15:48:31 CST
+./txl/c-extract-blocks.x -s 400 ALL.c >> examples/monit-4.2_blocks.xml
+
+Sun  9 Dec 2012 15:48:35 CST
+
+Sun  9 Dec 2012 15:48:35 CST
+./tools/clonepairs.x examples/monit-4.2_blocks.xml 0.0 10 2500 > examples/monit-4.2_blocks-clones/monit-4.2_blocks-clones-0.0.xml
+Processing examples/monit-4.2_blocks.xml with difference threshold 0%, clone size 10 .. 2500 lines
+Reading pcs .. done.
+Total 1376/7500000 potential clones of 10 lines or more
+Used 9793/125000000 total pc lines
+Used 284920/750000000 unique line text chars
+ and 4916/15000000 unique lines
+Sorting pcs . done.
+Finding clones . done.
+Total 3431 pc comparisons
+Pruning embedded clone pairs . done.
+Pruned 0 embedded clone pairs
+Found 11 clone pairs
+Generating XML output . done.
+
+
+real	0m0.097s
+user	0m0.025s
+sys	0m0.061s
+
+Sun  9 Dec 2012 15:48:35 CST
+

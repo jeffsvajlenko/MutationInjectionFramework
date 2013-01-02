@@ -1,0 +1,689 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl
+END
+cs-rename-consistent-blocks.txl
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/cs-rename-consistent-blocks.txl
+END
+py-filter-functions.x
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/py-filter-functions.x
+END
+c.x
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/c.x
+END
+cs-extract-functions.txl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/cs-extract-functions.txl
+END
+c-rename-consistent-functions.txl
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/c-rename-consistent-functions.txl
+END
+py-filter-blocks.x
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/py-filter-blocks.x
+END
+java-rename-blind-blocks.x
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/java-rename-blind-blocks.x
+END
+wsdl-extract-functions.x
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/wsdl-extract-functions.x
+END
+py.txl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/py.txl
+END
+java-abstract-functions.txl
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/java-abstract-functions.txl
+END
+java-rename-consistent-blocks.x
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/java-rename-consistent-blocks.x
+END
+cs-extract-blocks.txl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/cs-extract-blocks.txl
+END
+py-rename-blind-functions.x
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/py-rename-blind-functions.x
+END
+c-abstract-functions.txl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/c-abstract-functions.txl
+END
+c-rename-consistent-blocks.x
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/c-rename-consistent-blocks.x
+END
+java-abstract-blocks.x
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/java-abstract-blocks.x
+END
+cs-filter-functions.txl
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/cs-filter-functions.txl
+END
+py-rename-blind-blocks.x
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/py-rename-blind-blocks.x
+END
+generic-filter.txl
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/generic-filter.txl
+END
+python.grm
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/python.grm
+END
+py-rename-consistent-blocks.txl
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/py-rename-consistent-blocks.txl
+END
+getoriginal.x
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/getoriginal.x
+END
+java-extract-blocks.x
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/java-extract-blocks.x
+END
+py-abstract-blocks.x
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/py-abstract-blocks.x
+END
+py-extract-functions.x
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/py-extract-functions.x
+END
+generic-rename-blind.txl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/generic-rename-blind.txl
+END
+java-filter-functions.x
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/java-filter-functions.x
+END
+a
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/a
+END
+java-normalize-ifconditions-functions.x
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/java-normalize-ifconditions-functions.x
+END
+cs-rename-blind-blocks.x
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/cs-rename-blind-blocks.x
+END
+c-filter-functions.x
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/c-filter-functions.x
+END
+b
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/b
+END
+cs-rename-consistent-blocks.x
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/cs-rename-consistent-blocks.x
+END
+c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/c
+END
+cs-abstract-functions.txl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/cs-abstract-functions.txl
+END
+py-filter-functions.txl
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/py-filter-functions.txl
+END
+cs-abstract-blocks.x
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/cs-abstract-blocks.x
+END
+java.x
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/java.x
+END
+c-rename-blind-functions.x
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/c-rename-blind-functions.x
+END
+c-rename-consistent-functions.x
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/c-rename-consistent-functions.x
+END
+java-rename-blind-blocks.txl
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/java-rename-blind-blocks.txl
+END
+wsdl-extract-functions.txl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/wsdl-extract-functions.txl
+END
+cs-extract-blocks.x
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/cs-extract-blocks.x
+END
+py.x
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/py.x
+END
+java-abstract-functions.x
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/java-abstract-functions.x
+END
+c-rename-consistent-blocks.txl
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/c-rename-consistent-blocks.txl
+END
+py-rename-blind-functions.txl
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/py-rename-blind-functions.txl
+END
+pyindent.txl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/pyindent.txl
+END
+py-rename-consistent-functions.txl
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/py-rename-consistent-functions.txl
+END
+java-abstract-blocks.txl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/java-abstract-blocks.txl
+END
+cs-filter-functions.x
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/cs-filter-functions.x
+END
+java.grm
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/java.grm
+END
+cs.x
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/cs.x
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/Makefile
+END
+py-extract-blocks.x
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/py-extract-blocks.x
+END
+java-normalize-ifconditions-functions.txl
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/java-normalize-ifconditions-functions.txl
+END
+cs-rename-blind-blocks.txl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/cs-rename-blind-blocks.txl
+END
+c-filter-functions.txl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/c-filter-functions.txl
+END
+cs-abstract-functions.x
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/cs-abstract-functions.x
+END
+ifdef.x
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/ifdef.x
+END
+java-filter-blocks.x
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/java-filter-blocks.x
+END
+c-filter-blocks.txl
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/c-filter-blocks.txl
+END
+java.txl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/java.txl
+END
+cs-abstract-blocks.txl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/cs-abstract-blocks.txl
+END
+java-rename-blind-functions.txl
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/java-rename-blind-functions.txl
+END
+c-rename-blind-functions.txl
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/c-rename-blind-functions.txl
+END
+java-rename-consistent-functions.x
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/java-rename-consistent-functions.x
+END
+c-rename-blind-blocks.txl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/c-rename-blind-blocks.txl
+END
+.csblocks.txl.swp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/srlab/jes518/!svn/ver/770/MyMutationInjectionFramework/tools/NiCad/txl/.csblocks.txl.swp
+END
+py-rename-consistent-functions.x
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/py-rename-consistent-functions.x
+END
+pyindent.x
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/pyindent.x
+END
+bom.grm
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/bom.grm
+END
+c-abstract-blocks.txl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/c-abstract-blocks.txl
+END
+java-extract-functions.x
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/java-extract-functions.x
+END
+py-abstract-functions.x
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/py-abstract-functions.x
+END
+c.grm
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/c.grm
+END
+c-extract-functions.txl
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/c-extract-functions.txl
+END
+cs-filter-blocks.x
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/cs-filter-blocks.x
+END
+cs.txl
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/cs.txl
+END
+c-extract-blocks.x
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/c-extract-blocks.x
+END
+cs-rename-blind-functions.txl
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/cs-rename-blind-functions.txl
+END
+cs-rename-consistent-functions.x
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/cs-rename-consistent-functions.x
+END
+generic-rename-consistent.txl
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/generic-rename-consistent.txl
+END
+generic-normalize.txl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/generic-normalize.txl
+END
+py-extract-blocks.txl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/py-extract-blocks.txl
+END
+ifdef.txl
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/ifdef.txl
+END
+generic-abstract.txl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/generic-abstract.txl
+END
+java-filter-blocks.txl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/java-filter-blocks.txl
+END
+c-filter-blocks.x
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/c-filter-blocks.x
+END
+c.txl
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/c.txl
+END
+java-rename-blind-functions.x
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/java-rename-blind-functions.x
+END
+cs-extract-functions.x
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/cs-extract-functions.x
+END
+java-rename-consistent-functions.txl
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/java-rename-consistent-functions.txl
+END
+py-filter-blocks.txl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/py-filter-blocks.txl
+END
+wsdl.grm
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/wsdl.grm
+END
+java-rename-consistent-blocks.txl
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/java-rename-consistent-blocks.txl
+END
+c-rename-blind-blocks.x
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/c-rename-blind-blocks.x
+END
+c-abstract-functions.x
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/c-abstract-functions.x
+END
+csharp.grm
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/csharp.grm
+END
+py-rename-blind-blocks.txl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/py-rename-blind-blocks.txl
+END
+c-abstract-blocks.x
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/c-abstract-blocks.x
+END
+py-abstract-functions.txl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/py-abstract-functions.txl
+END
+py-rename-consistent-blocks.x
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/py-rename-consistent-blocks.x
+END
+java-extract-functions.txl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/java-extract-functions.txl
+END
+c-extract-functions.x
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/c-extract-functions.x
+END
+cs-filter-blocks.txl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/cs-filter-blocks.txl
+END
+py-abstract-blocks.txl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/py-abstract-blocks.txl
+END
+getoriginal.txl
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/getoriginal.txl
+END
+java-extract-blocks.txl
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/java-extract-blocks.txl
+END
+c-extract-blocks.txl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/c-extract-blocks.txl
+END
+py-extract-functions.txl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/py-extract-functions.txl
+END
+cs-rename-blind-functions.x
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/srlab/jes518/!svn/ver/789/MyMutationInjectionFramework/tools/NiCad/txl/cs-rename-blind-functions.x
+END
+cs-rename-consistent-functions.txl
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/cs-rename-consistent-functions.txl
+END
+java-filter-functions.txl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/txl/java-filter-functions.txl
+END

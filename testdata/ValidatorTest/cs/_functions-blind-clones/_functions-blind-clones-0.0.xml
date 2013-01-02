@@ -1,0 +1,41 @@
+<clones>
+<systeminfo processor="nicad3" system="_" granularity="unctions-blind" threshold="0%" minlines="10" maxlines="2500"/>
+<cloneinfo npcs="391" npairs="7"/>
+<runinfo ncompares="444" cputime="140000"/>
+
+<clone nlines="12" similarity="100">
+<source file="examples/cs/OpenWebSpiderCS/lists.cs.ifdefed" startline="215" endline="231" pcid="366"></source>
+<source file="examples/cs/OpenWebSpiderCS/lists.cs.ifdefed" startline="253" endline="269" pcid="367"></source>
+</clone>
+
+<clone nlines="12" similarity="100">
+<source file="examples/cs/Greenshot-SRC-0.7.009/Forms/ImageEditorForm.cs.ifdefed" startline="454" endline="468" pcid="286"></source>
+<source file="examples/cs/Greenshot-SRC-0.7.009/Forms/ImageEditorForm.cs.ifdefed" startline="470" endline="484" pcid="287"></source>
+</clone>
+
+<clone nlines="10" similarity="100">
+<source file="examples/cs/OpenWebSpiderCS/lists.cs.ifdefed" startline="355" endline="368" pcid="370"></source>
+<source file="examples/cs/OpenWebSpiderCS/lists.cs.ifdefed" startline="133" endline="146" pcid="361"></source>
+</clone>
+
+<clone nlines="10" similarity="100">
+<source file="examples/cs/OpenWebSpiderCS/lists.cs.ifdefed" startline="355" endline="368" pcid="370"></source>
+<source file="examples/cs/OpenWebSpiderCS/lists.cs.ifdefed" startline="18" endline="31" pcid="355"></source>
+</clone>
+
+<clone nlines="10" similarity="100">
+<source file="examples/cs/OpenWebSpiderCS/lists.cs.ifdefed" startline="133" endline="146" pcid="361"></source>
+<source file="examples/cs/OpenWebSpiderCS/lists.cs.ifdefed" startline="18" endline="31" pcid="355"></source>
+</clone>
+
+<clone nlines="10" similarity="100">
+<source file="examples/cs/Greenshot-SRC-0.7.009/Forms/SettingsForm.cs.ifdefed" startline="159" endline="170" pcid="128"></source>
+<source file="examples/cs/Greenshot-SRC-0.7.009/Forms/LanguageDialog.cs.ifdefed" startline="33" endline="44" pcid="186"></source>
+</clone>
+
+<clone nlines="10" similarity="100">
+<source file="examples/cs/Greenshot-SRC-0.7.009/Forms/ImageEditorForm.cs.ifdefed" startline="442" endline="453" pcid="285"></source>
+<source file="examples/cs/Greenshot-SRC-0.7.009/Forms/ImageEditorForm.cs.ifdefed" startline="429" endline="440" pcid="284"></source>
+</clone>
+
+</clones>

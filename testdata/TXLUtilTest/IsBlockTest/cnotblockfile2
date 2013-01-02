@@ -1,0 +1,29 @@
+    pid_t pid;
+
+    if ( (pid= exist_daemon()) > 0 )
+    {
+
+        if ( kill(pid, sig) < 0 )
+        {
+
+            log("%s: Cannot send signal to daemon process -- %s\n",prog, STRERROR);
+            return FALSE;
+
+        }
+
+    }
+    else
+    {
+
+        log("%s: No daemon process found\n", prog);
+        return TRUE;
+
+    }
+
+    if(sig == SIGTERM)
+    {
+
+        fprintf(stdout, "%s daemon with pid [%d] killed\n", prog, (int)pid)/*comment*/;
+        fflush(stdout);
+
+    }

@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/interfaces
+END
+RSAPrivateKey.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/interfaces/RSAPrivateKey.java
+END
+RSAMultiPrimePrivateCrtKey.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/interfaces/RSAMultiPrimePrivateCrtKey.java
+END
+DSAParams.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/interfaces/DSAParams.java
+END
+DSAPrivateKey.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/interfaces/DSAPrivateKey.java
+END
+ECPrivateKey.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/interfaces/ECPrivateKey.java
+END
+RSAPublicKey.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/interfaces/RSAPublicKey.java
+END
+RSAKey.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/interfaces/RSAKey.java
+END
+DSAPublicKey.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/interfaces/DSAPublicKey.java
+END
+ECPublicKey.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/interfaces/ECPublicKey.java
+END
+DSAKey.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/interfaces/DSAKey.java
+END
+ECKey.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/interfaces/ECKey.java
+END
+RSAPrivateCrtKey.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/interfaces/RSAPrivateCrtKey.java
+END
+DSAKeyPairGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/interfaces/DSAKeyPairGenerator.java
+END

@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/rmi
+END
+NoSuchObjectException.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/rmi/NoSuchObjectException.java
+END
+MarshalException.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/rmi/MarshalException.java
+END
+NotBoundException.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/rmi/NotBoundException.java
+END
+ConnectException.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/rmi/ConnectException.java
+END
+Naming.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/rmi/Naming.java
+END
+StubNotFoundException.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/rmi/StubNotFoundException.java
+END
+UnmarshalException.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/rmi/UnmarshalException.java
+END
+RemoteException.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/rmi/RemoteException.java
+END
+RMISecurityManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/rmi/RMISecurityManager.java
+END
+UnknownHostException.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/rmi/UnknownHostException.java
+END
+ServerError.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/rmi/ServerError.java
+END
+AccessException.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/rmi/AccessException.java
+END
+UnexpectedException.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/rmi/UnexpectedException.java
+END
+ServerException.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/rmi/ServerException.java
+END
+AlreadyBoundException.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/rmi/AlreadyBoundException.java
+END
+ServerRuntimeException.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/rmi/ServerRuntimeException.java
+END
+Remote.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/rmi/Remote.java
+END
+RMISecurityException.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/rmi/RMISecurityException.java
+END
+ConnectIOException.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/rmi/ConnectIOException.java
+END
+MarshalledObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/rmi/MarshalledObject.java
+END

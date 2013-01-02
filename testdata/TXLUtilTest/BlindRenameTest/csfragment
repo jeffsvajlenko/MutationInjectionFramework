@@ -1,0 +1,13 @@
+    public DrawableContainer(SerializationInfo info, StreamingContext ctxt)
+    {
+        childLabel.ForeColor = foreColor = (Color)info.GetValue("foreColor", typeof(Color));
+        backColor = (Color)info.GetValue("backColor", typeof(Color));
+        thickness = info.GetInt16("thickness");
+        supportedProperties = (List<Property>)info.GetValue("supportedProperties",typeof(List<Property>));
+        left = info.GetInt16("left");
+        top = info.GetInt16("top");
+        width = info.GetInt16("width");
+        height = info.GetInt16("height");
+	int i = 10;
+	String s = "hello";
+    }

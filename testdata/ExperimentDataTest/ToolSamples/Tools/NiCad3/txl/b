@@ -1,0 +1,1 @@
+	[not token]				% disallow output form in input parse

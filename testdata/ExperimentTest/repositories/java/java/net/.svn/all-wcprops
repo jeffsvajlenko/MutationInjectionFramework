@@ -1,0 +1,425 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net
+END
+NetPermission.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/NetPermission.java
+END
+ContentHandlerFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/ContentHandlerFactory.java
+END
+URL.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/URL.java
+END
+PasswordAuthentication.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/PasswordAuthentication.java
+END
+URLEncoder.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/URLEncoder.java
+END
+FileNameMap.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/FileNameMap.java
+END
+SocketTimeoutException.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/SocketTimeoutException.java
+END
+ServerSocket.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/ServerSocket.java
+END
+URLClassLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/URLClassLoader.java
+END
+ProxySelector.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/ProxySelector.java
+END
+HttpURLConnection.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/HttpURLConnection.java
+END
+SocketInputStream.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/SocketInputStream.java
+END
+URISyntaxException.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/URISyntaxException.java
+END
+CookieStore.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/CookieStore.java
+END
+URI.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/URI.java
+END
+SocketPermission.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/SocketPermission.java
+END
+ConnectException.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/ConnectException.java
+END
+HttpCookie.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/HttpCookie.java
+END
+Authenticator.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/Authenticator.java
+END
+IDN.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/IDN.java
+END
+Inet4AddressImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/Inet4AddressImpl.java
+END
+URLStreamHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/URLStreamHandler.java
+END
+SocksConsts.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/SocksConsts.java
+END
+Inet6AddressImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/Inet6AddressImpl.java
+END
+MulticastSocket.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/MulticastSocket.java
+END
+AbstractPlainSocketImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/AbstractPlainSocketImpl.java
+END
+AbstractPlainDatagramSocketImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/AbstractPlainDatagramSocketImpl.java
+END
+Inet4Address.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/Inet4Address.java
+END
+Inet6Address.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/Inet6Address.java
+END
+DatagramSocketImplFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/DatagramSocketImplFactory.java
+END
+SocketOptions.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/SocketOptions.java
+END
+InterfaceAddress.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/InterfaceAddress.java
+END
+SocketException.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/SocketException.java
+END
+ContentHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/ContentHandler.java
+END
+JarURLConnection.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/JarURLConnection.java
+END
+Proxy.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/Proxy.java
+END
+ResponseCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/ResponseCache.java
+END
+SocketOutputStream.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/SocketOutputStream.java
+END
+InetAddressImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/InetAddressImpl.java
+END
+URLDecoder.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/URLDecoder.java
+END
+SecureCacheResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/SecureCacheResponse.java
+END
+CookiePolicy.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/CookiePolicy.java
+END
+PortUnreachableException.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/PortUnreachableException.java
+END
+PlainSocketImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/PlainSocketImpl.java
+END
+SocketAddress.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/SocketAddress.java
+END
+PlainDatagramSocketImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/PlainDatagramSocketImpl.java
+END
+UnknownServiceException.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/UnknownServiceException.java
+END
+SocketImplFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/SocketImplFactory.java
+END
+URLStreamHandlerFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/URLStreamHandlerFactory.java
+END
+CookieManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/CookieManager.java
+END
+InetAddress.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/InetAddress.java
+END
+CookieHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/CookieHandler.java
+END
+DatagramPacket.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/DatagramPacket.java
+END
+MalformedURLException.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/MalformedURLException.java
+END
+DefaultDatagramSocketImplFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/DefaultDatagramSocketImplFactory.java
+END
+SocketImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/SocketImpl.java
+END
+NetworkInterface.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/NetworkInterface.java
+END
+NoRouteToHostException.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/NoRouteToHostException.java
+END
+DatagramSocketImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/DatagramSocketImpl.java
+END
+CacheRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/CacheRequest.java
+END
+UnknownHostException.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/UnknownHostException.java
+END
+SocksSocketImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/SocksSocketImpl.java
+END
+InetSocketAddress.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/InetSocketAddress.java
+END
+ProtocolException.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/ProtocolException.java
+END
+URLConnection.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/URLConnection.java
+END
+CacheResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/CacheResponse.java
+END
+HttpRetryException.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/HttpRetryException.java
+END
+Socket.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/Socket.java
+END
+DatagramSocket.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/DatagramSocket.java
+END
+BindException.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/net/BindException.java
+END

@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/srlab/jes518/!svn/ver/770/MyMutationInjectionFramework/data/systems/cs/greenshot/Helpers
+END
+GuiRectangle.cs
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/srlab/jes518/!svn/ver/770/MyMutationInjectionFramework/data/systems/cs/greenshot/Helpers/GuiRectangle.cs
+END
+DrawingHelper.cs
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/srlab/jes518/!svn/ver/770/MyMutationInjectionFramework/data/systems/cs/greenshot/Helpers/DrawingHelper.cs
+END
+WindowCapture.cs
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/srlab/jes518/!svn/ver/770/MyMutationInjectionFramework/data/systems/cs/greenshot/Helpers/WindowCapture.cs
+END
+PrintHelper.cs
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/srlab/jes518/!svn/ver/770/MyMutationInjectionFramework/data/systems/cs/greenshot/Helpers/PrintHelper.cs
+END
+PropertyItemProvider.cs
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/srlab/jes518/!svn/ver/770/MyMutationInjectionFramework/data/systems/cs/greenshot/Helpers/PropertyItemProvider.cs
+END
+EnvironmentInfo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/srlab/jes518/!svn/ver/770/MyMutationInjectionFramework/data/systems/cs/greenshot/Helpers/EnvironmentInfo.cs
+END
+FilenameHelper.cs
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/srlab/jes518/!svn/ver/770/MyMutationInjectionFramework/data/systems/cs/greenshot/Helpers/FilenameHelper.cs
+END
+ImageOutput.cs
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/srlab/jes518/!svn/ver/770/MyMutationInjectionFramework/data/systems/cs/greenshot/Helpers/ImageOutput.cs
+END
+ShortcutManager.cs
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/srlab/jes518/!svn/ver/770/MyMutationInjectionFramework/data/systems/cs/greenshot/Helpers/ShortcutManager.cs
+END
+ScaleHelper.cs
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/srlab/jes518/!svn/ver/770/MyMutationInjectionFramework/data/systems/cs/greenshot/Helpers/ScaleHelper.cs
+END

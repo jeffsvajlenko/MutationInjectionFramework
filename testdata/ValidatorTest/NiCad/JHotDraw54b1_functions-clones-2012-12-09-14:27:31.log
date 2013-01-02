@@ -1,0 +1,24 @@
+
+Sun  9 Dec 2012 14:27:32 CST
+./tools/clonepairs.x JHotDraw54b1_functions.xml 0.3 10 2500 > JHotDraw54b1_functions-clones/JHotDraw54b1_functions-clones-0.3.xml
+Processing JHotDraw54b1_functions.xml with difference threshold 30%, clone size 10 .. 2500 lines
+Reading pcs ... done.
+Total 2886/7500000 potential clones of 10 lines or more
+Used 6807/125000000 total pc lines
+Used 654426/750000000 unique line text chars
+ and 11025/15000000 unique lines
+Sorting pcs . done.
+Finding clones .. done.
+Total 40057 pc comparisons
+Pruning embedded clone pairs . done.
+Pruned 0 embedded clone pairs
+Found 48 clone pairs
+Generating XML output . done.
+
+
+real	0m0.189s
+user	0m0.060s
+sys	0m0.057s
+
+Sun  9 Dec 2012 14:27:32 CST
+

@@ -1,0 +1,194 @@
+package models;
+
+import java.io.IOException;
+
+import java.nio.file.Files;
+
+import java.nio.file.Path;
+
+import java.util.ArrayList;
+
+import java.util.Collections;
+
+import java.util.LinkedList;
+
+import java.util.List;
+
+import java.util.Objects;
+
+import java.util.Random;
+
+import util.FileUtil;
+
+import util.SelectFunctionFragments;
+
+public class InventoriedSystem {
+    private Path location;
+    private List < Path > files;
+    private List < Path > directories;
+    private List < Path > leafDirectories;
+    private List < FunctionFragment > functionFragments;
+    private List < Path > selectFiles;
+    private List < Path > selectDirectories;
+    private List < Path > selectLeafDirectories;
+    private List < FunctionFragment > selectFunctionFragments;
+    private Random random;
+    private String language;
+
+    public InventoriedSystem (Path systemdir, String language) throws IOException {
+        Objects.requireNonNull (systemdir);
+        Objects.requireNonNull (language);
+        if (! Files.exists (systemdir)) {
+            throw new IllegalArgumentException ("System does not exist.");
+        }
+        if (! Files.isDirectory (systemdir)) {
+            throw new IllegalArgumentException ("System is not a directory.");
+        }
+        this.location = systemdir.toAbsolutePath ().normalize ();
+        this.language = language.toLowerCase ();
+        files = FileUtil.fileInventory (systemdir);
+        selectFiles = new ArrayList < Path > (files);
+        directories = FileUtil.directoryInventory (systemdir);
+        selectDirectories = new ArrayList < Path > (directories);
+        leafDirectories = new ArrayList < Path > ();
+        for (Path p : directories) {
+            if (FileUtil.isLeafDirectory (p)) {
+                leafDirectories.add (p);
+            }
+        }
+        selectLeafDirectories = new ArrayList < Path > (leafDirectories);
+        this.functionFragments = SelectFunctionFragments.getFragments (this.location.toFile (), this.language);
+        this.selectFunctionFragments = new LinkedList < FunctionFragment > (this.functionFragments);
+        random = new Random ();
+    }
+
+    public int numFiles () {
+        return this.files.size ();
+    }
+
+    public int numDirectories () {
+        return this.directories.size ();
+    }
+
+    public int numLeafDirectories () {
+        return this.leafDirectories.size ();
+    }
+
+    public List < Path > getFiles () {
+        return Collections.unmodifiableList (this.files);
+    }
+
+    public List < Path > getDirectories () {
+        return Collections.unmodifiableList (this.directories);
+    }
+
+    public List < Path > getLeafDirectories () {
+        return Collections.unmodifiableList (this.leafDirectories);
+    }
+
+    public List < FunctionFragment > getFunctionFragments () {
+        return Collections.unmodifiableList (this.functionFragments);
+    }
+
+    public Path getLocation () {
+        return this.location;
+    }
+
+    public String getLanguage () {
+        return this.language;
+    }
+
+    public Path getRandomFile () {
+        if (files.size () == 0) {
+            return null;
+        } else {
+            int index = random.nextInt (files.size ());
+            return files.get (index);
+        }
+    }
+
+    public Path getRandomDirectory () {
+        if (directories.size () == 0) {
+            return null;
+        } else {
+            int index = random.nextInt (directories.size ());
+            return directories.get (index);
+        }
+    }
+
+    public Path getRandomLeafDirectory () {
+        if (leafDirectories.size () == 0) {
+            return null;
+        } else {
+            int index = random.nextInt (leafDirectories.size ());
+            return leafDirectories.get (index);
+        }
+    }
+
+    public Fragment getRandomFunctionFragment () {
+        if (functionFragments.size () == 0) {
+            return null;
+        } else {
+            int index = random.nextInt (functionFragments.size ());
+            return functionFragments.get (index);
+        }
+    }
+
+    public Path getRandomFileNoRepeats () {
+        if (selectFiles.size () == 0) {
+            return null;
+        } else {
+            int index = random.nextInt (selectFiles.size ());
+            Path p = selectFiles.remove (index);
+            return p;
+        }
+    }
+
+    public void resetRandomFileRepeat () {
+        this.selectFiles = new ArrayList < Path > (this.files);
+    }
+
+    public Path getRandomDirectoryNoRepeats () {
+        if (selectDirectories.size () == 0) {
+            return null;
+        } else {
+            int index = random.nextInt (selectDirectories.size ());
+            Path p = selectDirectories.remove (index);
+            return p;
+        }
+    }
+
+    public void resetRandomDirectoryRepeat () {
+        this.selectDirectories = new ArrayList < Path > (this.directories);
+    }
+
+    public Path getRandomLeafDirectoryNoRepeats () {
+        if (selectLeafDirectories.size () == 0) {
+            return null;
+        } else {
+            int index = random.nextInt (selectLeafDirectories.size ());
+            Path p = selectLeafDirectories.remove (index);
+            return p;
+        }
+    }
+
+    public void resetRandomLeafDirectoryRepeat () {
+        this.selectLeafDirectories = new ArrayList < Path > (this.leafDirectories);
+    }
+
+    public FunctionFragment getRandomFunctionFragmentNoRepeats () {
+        if (selectFunctionFragments.size () == 0) {
+            return null;
+        } else {
+            int index = random.nextInt (selectFunctionFragments.size ());
+            FunctionFragment f = selectFunctionFragments.remove (index);
+            return f;
+        }
+    }
+
+    public void resetRandomFunctionFragmentRepeat () {
+        this.selectFunctionFragments = new ArrayList < FunctionFragment > (this.functionFragments);
+    }
+
+}
+

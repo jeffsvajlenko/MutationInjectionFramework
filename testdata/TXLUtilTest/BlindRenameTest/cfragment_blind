@@ -1,0 +1,41 @@
+static X X (X X) {
+    X X;
+    X X;
+    X X = X->X;
+    for (X = X->X; X; X = X->X) {
+        if (X->X && X->X != X) {
+            X->X = X;
+            X (X, X -> X, X (X));
+        }
+    }
+    X X = 0;
+    X X = 0;
+    for (X = X->X; X; X = X->X) {
+        if (X->X && X->X != X) {
+            X->X = X;
+            X (X, X -> X, X (X));
+        }
+    }
+}
+
+static X X (X X) {
+    X X;
+    X X = X->X;
+    for (X = X->X; X; X = X->X) {
+        if (X->X && X->X != X) {
+            X->X = X;
+            X (X, X -> X, X (X));
+        }
+    }
+}
+
+static X X (X X) {
+    X X;
+    X X = X->X;
+    for (X = X->X; X; X = X->X) {
+        if (X->X && X->X != X) {
+            X->X = X;
+            X (X, X -> X, X (X));
+        }
+    }
+}

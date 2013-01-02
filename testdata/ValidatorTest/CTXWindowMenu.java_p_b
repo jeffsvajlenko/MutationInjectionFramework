@@ -1,0 +1,174 @@
+package X.X.X.X;
+
+import X.X.X.*;
+
+import X.X.*;
+
+import X.X.*;
+
+import X.X.X.*;
+
+import X.X.X.X.X;
+
+import X.X.X.X.X;
+
+import X.X.X.X.X;
+
+public class X extends X {
+    private X X;
+    private X X;
+    private X X;
+    private X X;
+    private X X;
+    private X X;
+    private X X;
+
+    public X (X X, X X, X X) {
+        X (X);
+        X.X = X;
+        X = new X (new X (0, X) {
+
+            public X X () {
+                X.X.X.X ();
+            }
+
+            public X X () {
+                return X.X () && (X.X.X.X ().X > 0);
+            }
+
+        }
+
+        );
+        X = new X (new X (0, X) {
+
+            public X X () {
+                X.X.X.X ();
+            }
+
+            public X X () {
+                return X.X () && (X.X.X.X ().X > 0);
+            }
+
+        }
+
+        );
+        X = new X (new X (0, X) {
+
+            public X X () {
+                X.X.X.X ();
+            }
+
+            public X X () {
+                return X.X () && (X.X.X.X ().X > 0);
+            }
+
+        }
+
+        );
+        X = new X (new X (0, X) {
+
+            public X X () {
+                X.X.X.X ();
+            }
+
+            public X X () {
+                return X.X () && (X.X.X.X ().X > 0);
+            }
+
+        }
+
+        );
+        X = new X (new X (0, X) {
+
+            public X X () {
+                X.X.X.X ();
+            }
+
+            public X X () {
+                return X.X () && (X.X.X.X ().X > 0);
+            }
+
+        }
+
+        );
+        X (new X () {
+
+            public X X (X X) {
+            }
+
+            public X X (X X) {
+                X ();
+            }
+
+            public X X (X X) {
+                X ();
+            }
+
+        }
+
+        );
+        X (X);
+        X (X);
+        X (X);
+        X (X);
+        X (X);
+        X = 0;
+    }
+
+    protected X X () {
+        while (X.X () > X) {
+            X (X);
+        }
+    }
+
+    private X X () {
+        X [] X = X.X ();
+        X.X (X.X > 0);
+        X.X (X.X > 0);
+        X.X (X.X > 0);
+        X.X (X.X > 0);
+        X.X (X.X > 0);
+        if (X.X == 0) {
+            return;
+        }
+        X ();
+        for (X X = 0;
+        X < X.X; X ++) {
+            X X = new X (X [X]);
+            X.X (X == 0);
+            X.X (new X () {
+
+                public X X (X X) {
+                    X X = ((X) X.X ()).X ();
+                    X.X ();
+                    try {
+                        X.X (0);
+                    } catch (X X) {
+                        X.X ();
+                    }
+                }
+
+            }
+
+            );
+            X.X (X [X].X ());
+            X (X);
+        }
+    }
+
+    class X extends X {
+        private X X;
+
+        public X (X X) {
+            X (X.X ());
+            X.X = X;
+        }
+
+        public X X () {
+            return X;
+        }
+
+    }
+
+}
+

@@ -1,0 +1,19 @@
+    private Object getScannedValue(int selectedItem, String fetcherId)
+    {
+        int fetcherIndex = fetcherRegistry.getSelectedFetcherIndex(fetcherId);
+        if (fetcherIndex < 0)
+        {
+            throw new UserErrorException("opener.unknownFetcher", fetcherId);
+        }
+
+        Object value = scanningResults.getResult(selectedItem).getValues().get(fetcherIndex);
+
+        if ((value == null || value instanceof Empty) && fetcherId.equals(HostnameFetcher.ID))
+        {
+            // small innocent hardcode:
+            // if we request a hostname, but get null, use the IP
+            value = scanningResults.getResult(selectedItem).getAddress().getHostAddress /* Comment */ ();
+        }
+
+        return value;
+    }

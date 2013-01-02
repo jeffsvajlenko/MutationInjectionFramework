@@ -1,0 +1,61 @@
+<clones>
+<systeminfo processor="nicad3" system="monit-4.2" granularity="blocks" threshold="0%" minlines="10" maxlines="2500"/>
+<cloneinfo npcs="1376" npairs="11"/>
+<runinfo ncompares="3431" cputime="7"/>
+
+<clone nlines="15" similarity="100">
+<source file="examples/monit-4.2/device/sysdep_LINUX.c.ifdefed" startline="115" endline="137" pcid="115"></source>
+<source file="examples/monit-4.2/device/sysdep_DARWIN.c.ifdefed" startline="93" endline="115" pcid="99"></source>
+</clone>
+
+<clone nlines="15" similarity="100">
+<source file="examples/monit-4.2/device/sysdep_LINUX.c.ifdefed" startline="115" endline="137" pcid="115"></source>
+<source file="examples/monit-4.2/device/sysdep_OPENBSD.c.ifdefed" startline="93" endline="115" pcid="119"></source>
+</clone>
+
+<clone nlines="15" similarity="100">
+<source file="examples/monit-4.2/device/sysdep_LINUX.c.ifdefed" startline="115" endline="137" pcid="115"></source>
+<source file="examples/monit-4.2/device/sysdep_FREEBSD.c.ifdefed" startline="93" endline="115" pcid="103"></source>
+</clone>
+
+<clone nlines="15" similarity="100">
+<source file="examples/monit-4.2/device/sysdep_DARWIN.c.ifdefed" startline="93" endline="115" pcid="99"></source>
+<source file="examples/monit-4.2/device/sysdep_OPENBSD.c.ifdefed" startline="93" endline="115" pcid="119"></source>
+</clone>
+
+<clone nlines="15" similarity="100">
+<source file="examples/monit-4.2/device/sysdep_DARWIN.c.ifdefed" startline="93" endline="115" pcid="99"></source>
+<source file="examples/monit-4.2/device/sysdep_FREEBSD.c.ifdefed" startline="93" endline="115" pcid="103"></source>
+</clone>
+
+<clone nlines="15" similarity="100">
+<source file="examples/monit-4.2/device/sysdep_OPENBSD.c.ifdefed" startline="93" endline="115" pcid="119"></source>
+<source file="examples/monit-4.2/device/sysdep_FREEBSD.c.ifdefed" startline="93" endline="115" pcid="103"></source>
+</clone>
+
+<clone nlines="11" similarity="100">
+<source file="examples/monit-4.2/http/cervlet.c.ifdefed" startline="1479" endline="1499" pcid="397"></source>
+<source file="examples/monit-4.2/http/cervlet.c.ifdefed" startline="1571" endline="1591" pcid="402"></source>
+</clone>
+
+<clone nlines="10" similarity="100">
+<source file="examples/monit-4.2/device/sysdep_DARWIN.c.ifdefed" startline="66" endline="82" pcid="97"></source>
+<source file="examples/monit-4.2/device/sysdep_FREEBSD.c.ifdefed" startline="66" endline="82" pcid="101"></source>
+</clone>
+
+<clone nlines="10" similarity="100">
+<source file="examples/monit-4.2/device/sysdep_DARWIN.c.ifdefed" startline="66" endline="82" pcid="97"></source>
+<source file="examples/monit-4.2/device/sysdep_OPENBSD.c.ifdefed" startline="66" endline="82" pcid="117"></source>
+</clone>
+
+<clone nlines="10" similarity="100">
+<source file="examples/monit-4.2/device/sysdep_FREEBSD.c.ifdefed" startline="66" endline="82" pcid="101"></source>
+<source file="examples/monit-4.2/device/sysdep_OPENBSD.c.ifdefed" startline="66" endline="82" pcid="117"></source>
+</clone>
+
+<clone nlines="10" similarity="100">
+<source file="examples/monit-4.2/http/cervlet.c.ifdefed" startline="2264" endline="2273" pcid="467"></source>
+<source file="examples/monit-4.2/http/cervlet.c.ifdefed" startline="2247" endline="2256" pcid="465"></source>
+</clone>
+
+</clones>

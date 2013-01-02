@@ -1,0 +1,12 @@
+<clones>
+<systeminfo processor="nicad3" system="_" granularity="unctions" threshold="30%" minlines="10" maxlines="2500"/>
+<cloneinfo npcs="310" npairs="1"/>
+<runinfo ncompares="1143" cputime="140000"/>
+<classinfo nclasses="1"/>
+
+<class classid="1" nclones="2" nlines="12" similarity="83">
+<source file="/home/jeff/Development/java/workspace/MutationInjectionFramework/testdata/SelectFragmentsTest/greenshot/Forms/ImageEditorForm.cs.ifdefed" startline="470" endline="484" pcid="287"></source>
+<source file="/home/jeff/Development/java/workspace/MutationInjectionFramework/testdata/SelectFragmentsTest/greenshot/Forms/ImageEditorForm.cs.ifdefed" startline="454" endline="468" pcid="286"></source>
+</class>
+
+</clones>

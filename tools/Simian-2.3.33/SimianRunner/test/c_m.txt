@@ -1,0 +1,54 @@
+Similarity Analyser 2.3.33 - http://www.harukizaemon.com/simian
+Copyright (c) 2003-2011 Simon Harris.  All rights reserved.
+Simian is not free unless used solely for non-commercial or evaluation purposes.
+{failOnDuplication=true, ignoreCharacterCase=true, ignoreCurlyBraces=true, ignoreIdentifierCase=true, ignoreIdentifiers=true, ignoreLiterals=true, ignoreModifiers=true, ignoreStringCase=true, ignoreVariableNames=true, language=C, threshold=15}
+Found 15 duplicate lines in the following files:
+ Between lines 390 and 424 in /home/jeff/Dropbox/MutationInjectionFramework/tools/Simian-2.3.33/examples/monit-4.2_other/gc.c
+ Between lines 378 and 412 in /home/jeff/Dropbox/MutationInjectionFramework/tools/Simian-2.3.33/examples/monit-4.2_other/gc.c
+Found 15 duplicate lines in the following files:
+ Between lines 22 and 50 in /home/jeff/Dropbox/MutationInjectionFramework/tools/Simian-2.3.33/examples/monit-4.2_other/http.c
+ Between lines 22 and 55 in /home/jeff/Dropbox/MutationInjectionFramework/tools/Simian-2.3.33/examples/monit-4.2_other/protocols/http.c
+ Between lines 22 and 50 in /home/jeff/Dropbox/MutationInjectionFramework/tools/Simian-2.3.33/examples/monit-4.2_other/state.c
+ Between lines 26 and 54 in /home/jeff/Dropbox/MutationInjectionFramework/tools/Simian-2.3.33/examples/monit-4.2_other/files.c
+ Between lines 22 and 50 in /home/jeff/Dropbox/MutationInjectionFramework/tools/Simian-2.3.33/examples/monit-4.2_other/files.c
+Found 15 duplicate lines in the following files:
+ Between lines 22 and 75 in /home/jeff/Dropbox/MutationInjectionFramework/tools/Simian-2.3.33/examples/monit-4.2_other/status.c
+ Between lines 30 and 79 in /home/jeff/Dropbox/MutationInjectionFramework/tools/Simian-2.3.33/examples/monit-4.2_other/files.c
+Found 15 duplicate lines in the following files:
+ Between lines 325 and 339 in /home/jeff/Dropbox/MutationInjectionFramework/tools/Simian-2.3.33/examples/monit-4.2_other/md5.c
+ Between lines 324 and 338 in /home/jeff/Dropbox/MutationInjectionFramework/tools/Simian-2.3.33/examples/monit-4.2_other/md5.c
+Found 16 duplicate lines in the following files:
+ Between lines 403 and 439 in /home/jeff/Dropbox/MutationInjectionFramework/tools/Simian-2.3.33/examples/monit-4.2_other/event.c
+ Between lines 417 and 452 in /home/jeff/Dropbox/MutationInjectionFramework/tools/Simian-2.3.33/examples/monit-4.2_other/event.c
+Found 16 duplicate lines in the following files:
+ Between lines 26 and 56 in /home/jeff/Dropbox/MutationInjectionFramework/tools/Simian-2.3.33/examples/monit-4.2_other/files.c
+ Between lines 22 and 52 in /home/jeff/Dropbox/MutationInjectionFramework/tools/Simian-2.3.33/examples/monit-4.2_other/files.c
+ Between lines 22 and 52 in /home/jeff/Dropbox/MutationInjectionFramework/tools/Simian-2.3.33/examples/monit-4.2_other/state.c
+ Between lines 22 and 52 in /home/jeff/Dropbox/MutationInjectionFramework/tools/Simian-2.3.33/examples/monit-4.2_other/http.c
+Found 18 duplicate lines in the following files:
+ Between lines 38 and 55 in /home/jeff/Dropbox/MutationInjectionFramework/tools/Simian-2.3.33/examples/monit-4.2_other/gc.c
+ Between lines 37 and 54 in /home/jeff/Dropbox/MutationInjectionFramework/tools/Simian-2.3.33/examples/monit-4.2_other/gc.c
+Found 20 duplicate lines in the following files:
+ Between lines 54 and 88 in /home/jeff/Dropbox/MutationInjectionFramework/tools/Simian-2.3.33/examples/monit-4.2_other/protocols/imap.c
+ Between lines 53 and 86 in /home/jeff/Dropbox/MutationInjectionFramework/tools/Simian-2.3.33/examples/monit-4.2_other/protocols/pop.c
+Found 24 duplicate lines in the following files:
+ Between lines 196 and 226 in /home/jeff/Dropbox/MutationInjectionFramework/tools/Simian-2.3.33/examples/monit-4.2_other/getloadavg.c
+ Between lines 200 and 230 in /home/jeff/Dropbox/MutationInjectionFramework/tools/Simian-2.3.33/examples/monit-4.2_other/getloadavg.c
+Found 30 duplicate lines in the following files:
+ Between lines 143 and 200 in /home/jeff/Dropbox/MutationInjectionFramework/tools/Simian-2.3.33/examples/monit-4.2_other/gc.c
+ Between lines 139 and 196 in /home/jeff/Dropbox/MutationInjectionFramework/tools/Simian-2.3.33/examples/monit-4.2_other/gc.c
+Found 31 duplicate lines in the following files:
+ Between lines 22 and 88 in /home/jeff/Dropbox/MutationInjectionFramework/tools/Simian-2.3.33/examples/monit-4.2_other/protocols/smtp.c
+ Between lines 22 and 87 in /home/jeff/Dropbox/MutationInjectionFramework/tools/Simian-2.3.33/examples/monit-4.2_other/protocols/nntp.c
+Found 47 duplicate lines in the following files:
+ Between lines 356 and 406 in /home/jeff/Dropbox/MutationInjectionFramework/tools/Simian-2.3.33/examples/monit-4.2_other/md5.c
+ Between lines 355 and 405 in /home/jeff/Dropbox/MutationInjectionFramework/tools/Simian-2.3.33/examples/monit-4.2_other/md5.c
+Found 62 duplicate lines in the following files:
+ Between lines 22 and 147 in /home/jeff/Dropbox/MutationInjectionFramework/tools/Simian-2.3.33/examples/monit-4.2_other/protocols/ldap2.c
+ Between lines 22 and 147 in /home/jeff/Dropbox/MutationInjectionFramework/tools/Simian-2.3.33/examples/monit-4.2_other/protocols/ldap3.c
+Found 78 duplicate lines in the following files:
+ Between lines 101 and 264 in /home/jeff/Dropbox/MutationInjectionFramework/tools/Simian-2.3.33/examples/monit-4.2_other/protocols/protocol.c
+ Between lines 88 and 252 in /home/jeff/Dropbox/MutationInjectionFramework/tools/Simian-2.3.33/examples/monit-4.2_other/protocols/protocol.c
+Found 821 duplicate lines in 29 blocks in 16 files
+Processed a total of 3936 significant (8616 raw) lines in 31 files
+Processing time: 0.374sec

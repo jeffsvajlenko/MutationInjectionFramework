@@ -1,0 +1,44 @@
+Wed Nov  7 13:47:13 CST 2012
+/usr/local/lib/nicad/txl/c-extract-blocks.x -s 400 ALL.c >> testdata/SelectFragmentsTest/monit-4.2/_blocks.xml
+
+Wed Nov  7 13:47:14 CST 2012
+
+Wed Nov  7 13:47:14 CST 2012
+/usr/local/lib/nicad/tools/clonepairs.x testdata/SelectFragmentsTest/monit-4.2/_blocks.xml 0.3 10 2500 > testdata/SelectFragmentsTest/monit-4.2/_blocks-clones/_blocks-clones-0.3.xml
+Processing testdata/SelectFragmentsTest/monit-4.2/_blocks.xml with difference threshold 30%, clone size 10 .. 2500 lines
+Reading pcs .. done.
+Total 1506/7500000 potential clones of 10 lines or more
+Used 11705/125000000 total pc lines
+Used 342541/750000000 unique line text chars
+ and 5563/15000000 unique lines
+Sorting pcs . done.
+Finding clones . done.
+Total 35067 pc comparisons
+Pruning embedded clone pairs . done.
+Pruned 11 embedded clone pairs
+Found 33 clone pairs
+Generating XML output . done.
+
+
+real	0m0.049s
+user	0m0.032s
+sys	0m0.016s
+
+Wed Nov  7 13:47:14 CST 2012
+
+Wed Nov  7 13:47:14 CST 2012
+/usr/local/lib/nicad/tools/cloneclasses.x testdata/SelectFragmentsTest/monit-4.2/_blocks-clones/_blocks-clones-0.3.xml > testdata/SelectFragmentsTest/monit-4.2/_blocks-clones/_blocks-clones-0.3-classes.xml
+Processing testdata/SelectFragmentsTest/monit-4.2/_blocks-clones/_blocks-clones-0.3.xml
+Reading clone pairs . done.
+Total 33 pairs
+Computing classes  done.
+Clustered clone pairs into 18 classes
+Generating XML output . done.
+
+
+real	0m0.022s
+user	0m0.000s
+sys	0m0.020s
+
+Wed Nov  7 13:47:14 CST 2012
+

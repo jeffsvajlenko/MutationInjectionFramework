@@ -1,0 +1,12 @@
+private Polygon outline(int x, int y, double direction) {
+	Polygon shape = new Polygon();
+	shape.addPoint(x, y);
+	addPointRelative(shape, x, y, getOuterRadius(), direction - getAngle());
+	addPointRelative(shape, x, y, getInnerRadius(), direction);
+	addPointRelative(shape, x, y, getOuterRadius(), direction + getAngle());
+	shape.addPoint(x,y); // Closing the polygon (TEG 97-04-23)
+	double d = 123.456;
+	String s = "String!";
+	d = 456.789;
+	return shape;
+}

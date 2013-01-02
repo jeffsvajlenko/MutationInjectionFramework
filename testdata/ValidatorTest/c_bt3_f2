@@ -1,0 +1,20 @@
+    {
+        switch (s->checksum->type)
+        {
+        case HASH_MD5:
+            out_print(res, "<tr><td>Associated checksum</td><td>"
+                      "if failed MD5(%s) then %s</td></tr>",
+                      s->checksum->hash, actionnames[s->checksum->action]);
+            break;
+        case HASH_SHA1:
+            out_print(res, "<tr><td>Associated checksum</td><td>"
+                      "if failed SHA1(%s) then %s</td></tr>",
+                      s->checksum->hash, actionnames[s->checksum->action]);
+            break;
+        default:
+            out_print(res, "<tr><td>Associated checksum</td><td>"
+                      "if failed UNKNOWN(%s) then %s</td></tr>",
+                      s->checksum->hash, actionnames[s->checksum->action]);
+            break;
+        }
+    }

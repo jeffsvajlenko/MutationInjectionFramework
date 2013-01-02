@@ -1,0 +1,17 @@
+{
+
+    ASSERT(d&&*d);
+
+    if((*d)->next)
+    {
+        _gcdevice(&(*d)->next);
+    }
+
+    if((*d)->exec)
+    {
+        _gccmd(&(*d)->exec);
+    }
+
+    FREE(*d);
+
+}

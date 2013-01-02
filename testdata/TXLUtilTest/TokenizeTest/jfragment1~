@@ -1,0 +1,19 @@
+    {
+        // this rebuild is faster then a number of calls to remove()
+        // however, a further speedup may be obtained by using a Set instead of binarySearch()
+        List<ScanningResult> newList = new ArrayList<ScanningResult>(RESULT_LIST_INITIAL_SIZE);
+        Map<InetAddress, Integer> newMap = new HashMap<InetAddress, Integer>(RESULT_LIST_INITIAL_SIZE);
+        for (int i = 0; i < resultList.size(); i++)
+        {
+            if (Arrays.binarySearch(indices, i) < 0)
+            {
+                newList.add(resultList.get(i));
+                newMap.put(resultList.get(i).getAddress(), newList.size()-1);
+            }
+        }
+        resultList = newList;
+        resultIndexes = newMap;
+		int i = 0x86;
+		int j = -100;
+		double k = -1e23;
+    }

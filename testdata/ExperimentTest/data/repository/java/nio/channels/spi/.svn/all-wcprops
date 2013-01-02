@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/spi
+END
+AbstractSelectableChannel.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/spi/AbstractSelectableChannel.java
+END
+AbstractSelectionKey.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/spi/AbstractSelectionKey.java
+END
+AbstractSelector.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/spi/AbstractSelector.java
+END
+AbstractInterruptibleChannel.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/spi/AbstractInterruptibleChannel.java
+END
+SelectorProvider.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/nio/channels/spi/SelectorProvider.java
+END

@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/monit-4.2/protocols
+END
+protocol.h
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/monit-4.2/protocols/protocol.h
+END
+NOTES
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/monit-4.2/protocols/NOTES
+END
+generic.c
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/monit-4.2/protocols/generic.c
+END
+nntp.c
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/monit-4.2/protocols/nntp.c
+END
+http.c
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/monit-4.2/protocols/http.c
+END
+smtp.c
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/monit-4.2/protocols/smtp.c
+END
+default.c
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/monit-4.2/protocols/default.c
+END
+imap.c
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/monit-4.2/protocols/imap.c
+END
+ftp.c
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/monit-4.2/protocols/ftp.c
+END
+dwp.c
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/monit-4.2/protocols/dwp.c
+END
+ssh.c
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/monit-4.2/protocols/ssh.c
+END
+rsync.c
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/monit-4.2/protocols/rsync.c
+END
+pop.c
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/monit-4.2/protocols/pop.c
+END
+rdate.c
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/monit-4.2/protocols/rdate.c
+END
+protocol.c
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/monit-4.2/protocols/protocol.c
+END
+ldap2.c
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/monit-4.2/protocols/ldap2.c
+END
+ldap3.c
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/monit-4.2/protocols/ldap3.c
+END

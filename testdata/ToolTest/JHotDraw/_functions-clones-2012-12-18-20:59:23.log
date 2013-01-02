@@ -1,0 +1,15 @@
+Tue Dec 18 20:59:23 CST 2012
+./txl/java-extract-functions.x -s 400 ALL.java >> /home/jeff/Dropbox/MutationInjectionFramework/testdata/ToolTest/JHotDraw/_functions.xml
+
+Tue Dec 18 20:59:38 CST 2012
+
+Tue Dec 18 20:59:39 CST 2012
+./tools/clonepairs.x /home/jeff/Dropbox/MutationInjectionFramework/testdata/ToolTest/JHotDraw/_functions-blind-abstract.xml 0.35 15 2500 > /home/jeff/Dropbox/MutationInjectionFramework/testdata/ToolTest/JHotDraw/_functions-blind-abstract-clones/_functions-blind-abstract-clones-0.35.xml
+./scripts/FindClonePairs: line 47: 33922 Killed                  ${lib}/tools/clonepairs.x ${basename}.xml $* > ${resultsdir}/${systemname}-clones-${threshold}.xml
+
+real	0m0.009s
+user	0m0.000s
+sys	0m0.000s
+
+Tue Dec 18 20:59:39 CST 2012
+

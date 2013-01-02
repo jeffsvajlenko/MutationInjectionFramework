@@ -1,0 +1,198 @@
+Parsing ./getloadavg.c
+Merging parameters: 100, 5, 3
+syntax error: 823.31
+syntax error: 826.8
+syntax error: 840.7
+syntax error: 877.20
+syntax error: 878.23
+syntax error: 1078.0
+failed to parse file: ./getloadavg.c
+Parsing ./files.c
+Merging parameters: 100, 5, 3
+syntax error: 221.41
+syntax error: 230.19
+syntax error: 230.35
+syntax error: 233.8
+syntax error: 354.38
+typeCount before init() = 226
+typeCount after init() = 226
+Total counted terminals:688
+Line range used: All [0, 0]
+# basic vectors:4
+Total nodes > 1132 (some children of atomic nodes are skipped), # nodes in the Sq tree:269
+Moved steps = 111, merged vectors = 23
+# vectors:27, including must-gen nodes:4
+Parsing ./log.c
+Merging parameters: 100, 5, 3
+syntax error: 92.13
+syntax error: 137.12
+syntax error: 202.49
+syntax error: 211.8
+typeCount before init() = 226
+typeCount after init() = 226
+Total counted terminals:362
+Line range used: All [0, 0]
+# basic vectors:1
+Total nodes > 656 (some children of atomic nodes are skipped), # nodes in the Sq tree:163
+Moved steps = 54, merged vectors = 11
+# vectors:12, including must-gen nodes:1
+Parsing ./state.c
+Merging parameters: 100, 5, 3
+syntax error: 93.30
+syntax error: 94.13
+syntax error: 95.44
+syntax error: 96.53
+syntax error: 108.13
+syntax error: 130.28
+syntax error: 189.11
+syntax error: 192.19
+syntax error: 235.13
+syntax error: 256.30
+syntax error: 263.41
+syntax error: 279.50
+typeCount before init() = 226
+typeCount after init() = 226
+Total counted terminals:732
+Line range used: All [0, 0]
+# basic vectors:3
+Total nodes > 949 (some children of atomic nodes are skipped), # nodes in the Sq tree:252
+Moved steps = 96, merged vectors = 20
+# vectors:23, including must-gen nodes:3
+Parsing ./process.c
+Merging parameters: 100, 5, 3
+syntax error: 111.35
+syntax error: 113.15
+syntax error: 176.50
+syntax error: 183.39
+syntax error: 190.3
+syntax error: 192.19
+syntax error: 206.50
+typeCount before init() = 226
+typeCount after init() = 226
+Total counted terminals:501
+Line range used: All [0, 0]
+# basic vectors:1
+Total nodes > 692 (some children of atomic nodes are skipped), # nodes in the Sq tree:188
+Moved steps = 62, merged vectors = 13
+# vectors:14, including must-gen nodes:1
+Parsing ./status.c
+Merging parameters: 100, 5, 3
+syntax error: 80.17
+typeCount before init() = 226
+typeCount after init() = 226
+Total counted terminals:170
+Line range used: All [0, 0]
+# basic vectors:5
+Total nodes > 302 (some children of atomic nodes are skipped), # nodes in the Sq tree:73
+Moved steps = 12, merged vectors = 3
+# vectors:8, including must-gen nodes:5
+Parsing ./http.c
+Merging parameters: 100, 5, 3
+typeCount before init() = 226
+typeCount after init() = 226
+Total counted terminals:254
+Line range used: All [0, 0]
+# basic vectors:3
+Total nodes > 466 (some children of atomic nodes are skipped), # nodes in the Sq tree:121
+Moved steps = 32, merged vectors = 7
+# vectors:10, including must-gen nodes:3
+Parsing ./signal.c
+Merging parameters: 100, 5, 3
+syntax error: 52.9
+syntax error: 52.34
+typeCount before init() = 226
+typeCount after init() = 226
+Total counted terminals:156
+Line range used: All [0, 0]
+# basic vectors:0
+Total nodes > 286 (some children of atomic nodes are skipped), # nodes in the Sq tree:74
+Moved steps = 11, merged vectors = 3
+# vectors:3, including must-gen nodes:0
+Parsing ./xmalloc.c
+Merging parameters: 100, 5, 3
+typeCount before init() = 226
+typeCount after init() = 226
+Total counted terminals:314
+Line range used: All [0, 0]
+# basic vectors:0
+Total nodes > 670 (some children of atomic nodes are skipped), # nodes in the Sq tree:162
+Moved steps = 54, merged vectors = 11
+# vectors:11, including must-gen nodes:0
+Parsing ./socket.c
+Merging parameters: 100, 5, 3
+syntax error: 68.8
+syntax error: 71.18
+syntax error: 72.25
+syntax error: 73.1
+syntax error: 92.19
+syntax error: 94.24
+syntax error: 104.22
+syntax error: 107.12
+syntax error: 167.30
+syntax error: 167.46
+syntax error: 175.10
+syntax error: 179.17
+syntax error: 229.12
+syntax error: 266.27
+syntax error: 297.30
+syntax error: 317.32
+syntax error: 332.32
+syntax error: 346.37
+syntax error: 361.45
+syntax error: 380.27
+syntax error: 384.12
+syntax error: 409.27
+syntax error: 447.26
+syntax error: 492.30
+typeCount before init() = 226
+typeCount after init() = 226
+Total counted terminals:1069
+Line range used: All [0, 0]
+# basic vectors:7
+Total nodes > 2006 (some children of atomic nodes are skipped), # nodes in the Sq tree:563
+Moved steps = 235, merged vectors = 47
+# vectors:54, including must-gen nodes:7
+Parsing ./external/strftime.c
+Merging parameters: 100, 5, 3
+syntax error: 133.27
+syntax error: 141.30
+syntax error: 157.33
+syntax error: 237.31
+syntax error: 250.31
+syntax error: 266.22
+syntax error: 300.28
+syntax error: 334.29
+syntax error: 440.38
+typeCount before init() = 226
+typeCount after init() = 226
+Total counted terminals:3398
+Line range used: All [0, 0]
+# basic vectors:11
+Total nodes > 5380 (some children of atomic nodes are skipped), # nodes in the Sq tree:2320
+Moved steps = 956, merged vectors = 192
+# vectors:203, including must-gen nodes:11
+Parsing ./md5.c
+Merging parameters: 100, 5, 3
+syntax error: 86.17
+syntax error: 87.17
+syntax error: 88.17
+syntax error: 89.17
+syntax error: 105.18
+syntax error: 117.17
+syntax error: 118.17
+syntax error: 132.9
+syntax error: 134.1
+syntax error: 142.17
+syntax error: 154.8
+syntax error: 171.45
+syntax error: 179.19
+syntax error: 270.26
+syntax error: 271.20
+syntax error: 273.20
+syntax error: 432.10
+syntax error: 619.0
+failed to parse file: ./md5.c
+
+real	0m0.450s
+user	0m0.208s
+sys	0m0.124s

@@ -1,0 +1,18 @@
+void
+sumTimes
+(int n) {
+float sum=
+0.0;
+double product =
+1.0;
+for (
+int i=1;
+i<=n;
+i++){
+sum=
+sum + (i * i);
+product=
+product * (i * i);
+fun
+(sum, product);
+}}

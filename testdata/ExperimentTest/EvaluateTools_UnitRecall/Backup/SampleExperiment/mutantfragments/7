@@ -1,0 +1,16 @@
+    private static void processCommandLine(String[] args, ComponentRegistry componentRegistry)
+    {
+        if (args.length != 0)
+        {
+            CommandLineProcessor cli = componentRegistry.getCommandLineProcessor();
+     /* Comment */         try
+            {
+                cli.parse(args);
+            }
+            catch (Exception e)
+            {
+                showMessageToConsole(e.getMessage() + "\n\n" + cli);
+                System.exit(1);
+            }
+        }
+    }

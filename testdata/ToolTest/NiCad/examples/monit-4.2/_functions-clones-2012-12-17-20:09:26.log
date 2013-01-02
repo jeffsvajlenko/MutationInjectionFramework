@@ -1,0 +1,11 @@
+
+Mon Dec 17 20:09:26 CST 2012
+./tools/clonepairs.x examples/monit-4.2/_functions.xml 0.3 10 2500 > examples/monit-4.2/_functions-clones/_functions-clones-0.3.xml
+./scripts/FindClonePairs: line 47:  7372 Killed                  ${lib}/tools/clonepairs.x ${basename}.xml $* > ${resultsdir}/${systemname}-clones-${threshold}.xml
+
+real	0m0.001s
+user	0m0.000s
+sys	0m0.001s
+
+Mon Dec 17 20:09:26 CST 2012
+

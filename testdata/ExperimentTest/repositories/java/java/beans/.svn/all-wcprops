@@ -1,0 +1,257 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans
+END
+DefaultPersistenceDelegate.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/DefaultPersistenceDelegate.java
+END
+XMLDecoder.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/XMLDecoder.java
+END
+PropertyChangeSupport.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/PropertyChangeSupport.java
+END
+AppletInitializer.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/AppletInitializer.java
+END
+ChangeListenerMap.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/ChangeListenerMap.java
+END
+PropertyEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/PropertyEditor.java
+END
+SimpleBeanInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/SimpleBeanInfo.java
+END
+PropertyChangeEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/PropertyChangeEvent.java
+END
+Expression.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/Expression.java
+END
+PropertyVetoException.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/PropertyVetoException.java
+END
+PropertyChangeListenerProxy.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/PropertyChangeListenerProxy.java
+END
+ConstructorProperties.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/ConstructorProperties.java
+END
+Customizer.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/Customizer.java
+END
+PersistenceDelegate.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/PersistenceDelegate.java
+END
+MethodDescriptor.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/MethodDescriptor.java
+END
+EventHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/EventHandler.java
+END
+MetaData.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/MetaData.java
+END
+BeanInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/BeanInfo.java
+END
+PropertyDescriptor.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/PropertyDescriptor.java
+END
+IndexedPropertyDescriptor.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/IndexedPropertyDescriptor.java
+END
+PropertyEditorManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/PropertyEditorManager.java
+END
+Visibility.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/Visibility.java
+END
+NameGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/NameGenerator.java
+END
+PropertyEditorSupport.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/PropertyEditorSupport.java
+END
+Beans.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/Beans.java
+END
+FeatureDescriptor.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/FeatureDescriptor.java
+END
+Introspector.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/Introspector.java
+END
+EventSetDescriptor.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/EventSetDescriptor.java
+END
+IndexedPropertyChangeEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/IndexedPropertyChangeEvent.java
+END
+PropertyChangeListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/PropertyChangeListener.java
+END
+XMLEncoder.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/XMLEncoder.java
+END
+BeanDescriptor.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/BeanDescriptor.java
+END
+ExceptionListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/ExceptionListener.java
+END
+Statement.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/Statement.java
+END
+VetoableChangeSupport.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/VetoableChangeSupport.java
+END
+ReflectionUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/ReflectionUtils.java
+END
+VetoableChangeListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/VetoableChangeListener.java
+END
+DesignMode.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/DesignMode.java
+END
+IntrospectionException.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/IntrospectionException.java
+END
+ParameterDescriptor.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/ParameterDescriptor.java
+END
+Encoder.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/Encoder.java
+END
+VetoableChangeListenerProxy.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/VetoableChangeListenerProxy.java
+END

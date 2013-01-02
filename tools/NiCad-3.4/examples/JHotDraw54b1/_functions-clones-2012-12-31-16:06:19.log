@@ -1,0 +1,11 @@
+
+Mon Dec 31 16:06:19 CST 2012
+./tools/clonepairs.x examples/JHotDraw54b1/_functions.xml 0.3 10 2500 > examples/JHotDraw54b1/_functions-clones/_functions-clones-0.3.xml
+./scripts/FindClonePairs: line 47:  7985 Killed                  ${lib}/tools/clonepairs.x ${basename}.xml $* > ${resultsdir}/${systemname}-clones-${threshold}.xml
+
+real	0m0.012s
+user	0m0.008s
+sys	0m0.000s
+
+Mon Dec 31 16:06:19 CST 2012
+

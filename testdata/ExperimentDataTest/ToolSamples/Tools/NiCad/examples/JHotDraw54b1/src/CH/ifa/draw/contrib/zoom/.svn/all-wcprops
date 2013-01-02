@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/zoom
+END
+ZoomDrawingView.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/zoom/ZoomDrawingView.java
+END
+DoubleBufferImage.class
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/zoom/DoubleBufferImage.class
+END
+ZoomUpdateStrategy.class
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/zoom/ZoomUpdateStrategy.class
+END
+ScalingGraphics.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/zoom/ScalingGraphics.java
+END
+MiniMapZoomableView.class
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/zoom/MiniMapZoomableView.class
+END
+ZoomTool.class
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/zoom/ZoomTool.class
+END
+ZoomCommand.class
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/zoom/ZoomCommand.class
+END
+DoubleBufferImage.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/zoom/DoubleBufferImage.java
+END
+ScalingGraphics$ScalingFontMetrics.class
+K 25
+svn:wc:ra_dav:version-url
+V 163
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/zoom/ScalingGraphics$ScalingFontMetrics.class
+END
+AreaTracker.class
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/zoom/AreaTracker.class
+END
+ZoomUpdateStrategy.java
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/zoom/ZoomUpdateStrategy.java
+END
+ZoomAreaTracker.class
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/zoom/ZoomAreaTracker.class
+END
+MiniMapZoomableView.java
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/zoom/MiniMapZoomableView.java
+END
+ZoomDrawingView.class
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/zoom/ZoomDrawingView.class
+END
+ZoomTool.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/zoom/ZoomTool.java
+END
+ZoomCommand.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/zoom/ZoomCommand.java
+END
+AreaTracker.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/zoom/AreaTracker.java
+END
+ScalingGraphics.class
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/zoom/ScalingGraphics.class
+END
+ZoomAreaTracker.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/zoom/ZoomAreaTracker.java
+END

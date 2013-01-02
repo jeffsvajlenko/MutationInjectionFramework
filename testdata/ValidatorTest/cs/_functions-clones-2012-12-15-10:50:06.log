@@ -1,0 +1,28 @@
+Sat Dec 15 10:50:06 CST 2012
+./txl/cs-extract-functions.x -s 400 ALL.cs >> examples/cs/_functions.xml
+
+Sat Dec 15 10:50:10 CST 2012
+
+Sat Dec 15 10:50:10 CST 2012
+./tools/clonepairs.x examples/cs/_functions.xml 0.0 10 2500 > examples/cs/_functions-clones/_functions-clones-0.0.xml
+Processing examples/cs/_functions.xml with difference threshold 0%, clone size 10 .. 2500 lines
+Reading pcs . done.
+Total 391/7500000 potential clones of 10 lines or more
+Used 4871/125000000 total pc lines
+Used 286008/750000000 unique line text chars
+ and 4662/15000000 unique lines
+Sorting pcs . done.
+Finding clones  done.
+Total 436 pc comparisons
+Pruning embedded clone pairs . done.
+Pruned 0 embedded clone pairs
+Found 3 clone pairs
+Generating XML output . done.
+
+
+real	0m0.503s
+user	0m0.036s
+sys	0m0.228s
+
+Sat Dec 15 10:50:11 CST 2012
+

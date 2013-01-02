@@ -1,0 +1,263 @@
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert
+END
+CertificateEncodingException.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/CertificateEncodingException.java
+END
+X509Certificate.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/X509Certificate.java
+END
+CertificateFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/CertificateFactory.java
+END
+CertPath.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/CertPath.java
+END
+CollectionCertStoreParameters.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/CollectionCertStoreParameters.java
+END
+PKIXCertPathValidatorResult.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/PKIXCertPathValidatorResult.java
+END
+PKIXCertPathBuilderResult.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/PKIXCertPathBuilderResult.java
+END
+CRL.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/CRL.java
+END
+CRLSelector.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/CRLSelector.java
+END
+Certificate.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/Certificate.java
+END
+X509CertSelector.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/X509CertSelector.java
+END
+CertStoreSpi.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/CertStoreSpi.java
+END
+X509CRLEntry.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/X509CRLEntry.java
+END
+CertPathValidatorSpi.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/CertPathValidatorSpi.java
+END
+CertStoreParameters.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/CertStoreParameters.java
+END
+CertSelector.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/CertSelector.java
+END
+LDAPCertStoreParameters.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/LDAPCertStoreParameters.java
+END
+CRLException.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/CRLException.java
+END
+CertPathBuilderException.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/CertPathBuilderException.java
+END
+CertificateException.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/CertificateException.java
+END
+CertStore.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/CertStore.java
+END
+TrustAnchor.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/TrustAnchor.java
+END
+PolicyQualifierInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/PolicyQualifierInfo.java
+END
+CertPathValidatorResult.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/CertPathValidatorResult.java
+END
+CertPathBuilderResult.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/CertPathBuilderResult.java
+END
+CertPathValidator.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/CertPathValidator.java
+END
+CertPathBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/CertPathBuilder.java
+END
+CertificateExpiredException.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/CertificateExpiredException.java
+END
+CertificateNotYetValidException.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/CertificateNotYetValidException.java
+END
+CertificateParsingException.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/CertificateParsingException.java
+END
+CertificateFactorySpi.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/CertificateFactorySpi.java
+END
+CertStoreException.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/CertStoreException.java
+END
+PKIXCertPathChecker.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/PKIXCertPathChecker.java
+END
+CertPathHelperImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/CertPathHelperImpl.java
+END
+CertPathBuilderSpi.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/CertPathBuilderSpi.java
+END
+CertPathParameters.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/CertPathParameters.java
+END
+CertPathValidatorException.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/CertPathValidatorException.java
+END
+PKIXParameters.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/PKIXParameters.java
+END
+X509Extension.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/X509Extension.java
+END
+PolicyNode.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/PolicyNode.java
+END
+PKIXBuilderParameters.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/PKIXBuilderParameters.java
+END
+X509CRL.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/X509CRL.java
+END
+X509CRLSelector.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/security/cert/X509CRLSelector.java
+END

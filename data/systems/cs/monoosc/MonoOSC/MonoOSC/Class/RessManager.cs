@@ -1,0 +1,204 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Windows.Forms;
+using System.Collections;
+using System.Drawing;
+using System.IO;
+using System.Xml.Serialization;
+using MonoOBSFramework;
+
+namespace MonoOSC
+{
+public static class RessManager
+{
+    #region Save
+
+    public static void SaveRess(Dictionary<string, Font> ResXData, string FsPath)
+    {
+        System.Resources.ResXResourceWriter test = new System.Resources.ResXResourceWriter(FsPath);
+        try
+        {
+            foreach (KeyValuePair<string, Font> item in ResXData)
+            {
+                test.AddResource(new System.Resources.ResXDataNode(item.Key.ToString(), item.Value));
+            }
+        }
+        catch (Exception Ex)
+        {
+            if(!VarGlobal.LessVerbose)Console.WriteLine("{0}{1}{1}{2}", Ex.Message, Environment.NewLine, Ex.StackTrace);
+        }
+        try
+        {
+            if (null != test) test.Close();
+        }
+        catch (Exception Ex)
+        {
+            if(!VarGlobal.LessVerbose)Console.WriteLine("{0}{1}{1}{2}", Ex.Message, Environment.NewLine, Ex.StackTrace);
+        }
+    }
+
+    public static void MonoBug()
+    {
+        if (File.Exists(VarGlobale.SkinFontPath))
+        {
+            string XmlDt = File.ReadAllText(VarGlobale.SkinFontPath);
+            int Idx = 0;
+            string BadBoy = @"</root>";
+            /*List<int> IdxFind = new List<int>();
+            while (Idx >= 0) {
+                Idx = XmlDt.IndexOf(BadBoy,Idx);
+                if(Idx > -1)
+                {
+                    IdxFind.Add(Idx);
+                    Idx +=1;
+                }
+            }
+            if(IdxFind.Count >= 2)*/
+            Idx = XmlDt.IndexOf(BadBoy, Idx);
+            if (Idx > -1)
+            {
+                int StartDel = Idx + BadBoy.Length;
+                if (StartDel < XmlDt.Length)
+                    XmlDt = XmlDt.Remove(StartDel);
+            }
+
+            File.WriteAllText(VarGlobale.SkinFontPath, XmlDt);
+        }
+    }
+
+    public static void SaveRess(Dictionary<string, string[]> ResXData, string FsPath)
+    {
+        System.Resources.ResXResourceWriter test = new System.Resources.ResXResourceWriter(FsPath);
+        try
+        {
+            foreach (KeyValuePair<string, string[]> item in ResXData)
+            {
+                test.AddResource(new System.Resources.ResXDataNode(item.Key.ToString(), item.Value));
+            }
+        }
+        catch (Exception Ex)
+        {
+            if(!VarGlobal.LessVerbose)Console.WriteLine("{0}{1}{1}{2}", Ex.Message, Environment.NewLine, Ex.StackTrace);
+        }
+        try
+        {
+            if (null != test) test.Close();
+        }
+        catch (Exception Ex)
+        {
+            if(!VarGlobal.LessVerbose)Console.WriteLine("{0}{1}{1}{2}", Ex.Message, Environment.NewLine, Ex.StackTrace);
+        }
+    }
+    #endregion
+
+    #region Load
+
+    public static Dictionary<string, Font> LoadRess(string FsPath)
+    {
+        MonoBug();
+        System.Resources.ResXResourceReader test = new System.Resources.ResXResourceReader(FsPath);
+        Dictionary<string, Font> ResXData = new Dictionary<string, Font>();
+        // Iterate through the resources and display the contents to the console.
+        try
+        {
+            foreach (DictionaryEntry d in test)
+            {
+                ResXData.Add(d.Key.ToString(), (Font)d.Value);
+                //if(!VarGlobal.LessVerbose)Console.WriteLine(d.Key.ToString() + ":\t" + d.Value.ToString());
+            }
+        }
+        catch (Exception Ex)
+        {
+            if(!VarGlobal.LessVerbose)Console.WriteLine("{0}{1}{1}{2}", Ex.Message, Environment.NewLine, Ex.StackTrace);
+            MonoBug();
+        }
+        try
+        {
+            if (null != test) test.Close();
+        }
+        catch (Exception Ex)
+        {
+            if(!VarGlobal.LessVerbose)Console.WriteLine("{0}{1}{1}{2}", Ex.Message, Environment.NewLine, Ex.StackTrace);
+            MonoBug();
+        }
+        return ResXData;
+    }
+
+    public static Dictionary<string, string[]> LoadStringRess(string FsPath)
+    {
+        System.Resources.ResXResourceReader test = new System.Resources.ResXResourceReader(FsPath);
+        Dictionary<string, string[]> ResXData = new Dictionary<string, string[]>();
+        // Iterate through the resources and display the contents to the console.
+        try
+        {
+            foreach (DictionaryEntry d in test)
+            {
+                ResXData.Add(d.Key.ToString(), (string[])d.Value);
+                //if(!VarGlobal.LessVerbose)Console.WriteLine(d.Key.ToString() + ":\t" + d.Value.ToString());
+            }
+        }
+        catch (Exception Ex)
+        {
+            if(!VarGlobal.LessVerbose)Console.WriteLine("{0}{1}{1}{2}", Ex.Message, Environment.NewLine, Ex.StackTrace);
+        }
+        try
+        {
+            if (null != test) test.Close();
+        }
+        catch (Exception Ex)
+        {
+            if(!VarGlobal.LessVerbose)Console.WriteLine("{0}{1}{1}{2}", Ex.Message, Environment.NewLine, Ex.StackTrace);
+        }
+        return ResXData;
+    }
+    #endregion
+}
+
+public static class GenericXmlSerializer
+{
+    public static void Serialize(object obj, string Path)
+    {
+        StreamWriter oStreamWriter = null;
+        try
+        {
+            XmlSerializer oXmlSerializer = new XmlSerializer(obj.GetType());
+            oStreamWriter = new StreamWriter(Path);
+            oXmlSerializer.Serialize(oStreamWriter, obj);
+            oStreamWriter.Close();
+        }
+        catch (Exception Ex)
+        {
+            if(!VarGlobal.LessVerbose)Console.WriteLine("{0}{1}{2}{3}{4}", Ex.Message, Environment.NewLine,
+                        Ex.StackTrace, Environment.NewLine, Ex.InnerException.Message);
+        }
+        finally
+        {
+            if (oStreamWriter != null) oStreamWriter.Close();
+        }
+    }
+    public static object Deserialize(string Path, Type t)
+    {
+        StreamReader oStreamReader = null;
+        object obj = null;
+        try
+        {
+            XmlSerializer oXmlSerializer = new XmlSerializer(t);
+            oStreamReader = new StreamReader(Path);
+            obj = oXmlSerializer.Deserialize(oStreamReader);
+            oStreamReader.Close();
+            //return obj;
+        }
+        catch (Exception Ex)
+        {
+            if(!VarGlobal.LessVerbose)Console.WriteLine("{0}{1}{2}", Ex.Message, Environment.NewLine, Ex.StackTrace);
+        }
+        finally
+        {
+            if (oStreamReader != null) oStreamReader.Close();
+        }
+        return obj;
+    }
+}//class
+
+}

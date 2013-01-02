@@ -1,0 +1,171 @@
+<clones>
+<systeminfo processor="nicad3" system="_" granularity="locks" threshold="30%" minlines="10" maxlines="2500"/>
+<cloneinfo npcs="1506" npairs="33"/>
+<runinfo ncompares="35067" cputime="20000"/>
+
+<clone nlines="34" similarity="91">
+<source file="testdata/SelectFragmentsTest/monit-4.2/process/sysdep_OPENBSD.c.ifdefed" startline="149" endline="219" pcid="1357"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/process/sysdep_DARWIN.c.ifdefed" startline="128" endline="197" pcid="1412"></source>
+</clone>
+
+<clone nlines="34" similarity="88">
+<source file="testdata/SelectFragmentsTest/monit-4.2/process/sysdep_OPENBSD.c.ifdefed" startline="149" endline="219" pcid="1357"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/process/sysdep_FREEBSD.c.ifdefed" startline="209" endline="278" pcid="1488"></source>
+</clone>
+
+<clone nlines="34" similarity="94">
+<source file="testdata/SelectFragmentsTest/monit-4.2/process/sysdep_DARWIN.c.ifdefed" startline="128" endline="197" pcid="1412"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/process/sysdep_FREEBSD.c.ifdefed" startline="209" endline="278" pcid="1488"></source>
+</clone>
+
+<clone nlines="31" similarity="77">
+<source file="testdata/SelectFragmentsTest/monit-4.2/protocols/smtp.c.ifdefed" startline="47" endline="90" pcid="206"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/protocols/nntp.c.ifdefed" startline="46" endline="89" pcid="157"></source>
+</clone>
+
+<clone nlines="26" similarity="100">
+<source file="testdata/SelectFragmentsTest/monit-4.2/process/sysdep_FREEBSD.c.ifdefed" startline="411" endline="470" pcid="1502"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/process/sysdep_OPENBSD.c.ifdefed" startline="330" endline="388" pcid="1373"></source>
+</clone>
+
+<clone nlines="26" similarity="88">
+<source file="testdata/SelectFragmentsTest/monit-4.2/process/sysdep_FREEBSD.c.ifdefed" startline="411" endline="470" pcid="1502"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/process/sysdep_DARWIN.c.ifdefed" startline="310" endline="368" pcid="1423"></source>
+</clone>
+
+<clone nlines="26" similarity="88">
+<source file="testdata/SelectFragmentsTest/monit-4.2/process/sysdep_OPENBSD.c.ifdefed" startline="330" endline="388" pcid="1373"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/process/sysdep_DARWIN.c.ifdefed" startline="310" endline="368" pcid="1423"></source>
+</clone>
+
+<clone nlines="24" similarity="95">
+<source file="testdata/SelectFragmentsTest/monit-4.2/protocols/ldap3.c.ifdefed" startline="56" endline="149" pcid="212"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/protocols/ldap2.c.ifdefed" startline="56" endline="149" pcid="197"></source>
+</clone>
+
+<clone nlines="24" similarity="75">
+<source file="testdata/SelectFragmentsTest/monit-4.2/socket.c.ifdefed" startline="447" endline="478" pcid="34"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/socket.c.ifdefed" startline="409" endline="437" pcid="29"></source>
+</clone>
+
+<clone nlines="23" similarity="86">
+<source file="testdata/SelectFragmentsTest/monit-4.2/http/cervlet.c.ifdefed" startline="555" endline="579" pcid="671"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/http/cervlet.c.ifdefed" startline="521" endline="545" pcid="662"></source>
+</clone>
+
+<clone nlines="22" similarity="95">
+<source file="testdata/SelectFragmentsTest/monit-4.2/process/sysdep_LINUX.c.ifdefed" startline="233" endline="281" pcid="1479"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/process/sysdep_SOLARIS.c.ifdefed" startline="177" endline="225" pcid="1388"></source>
+</clone>
+
+<clone nlines="20" similarity="80">
+<source file="testdata/SelectFragmentsTest/monit-4.2/net.c.ifdefed" startline="576" endline="599" pcid="1056"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/net.c.ifdefed" startline="540" endline="563" pcid="1051"></source>
+</clone>
+
+<clone nlines="19" similarity="94">
+<source file="testdata/SelectFragmentsTest/monit-4.2/http/cervlet.c.ifdefed" startline="1550" endline="1580" pcid="753"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/http/cervlet.c.ifdefed" startline="1711" endline="1741" pcid="768"></source>
+</clone>
+
+<clone nlines="18" similarity="88">
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_HPUX.c.ifdefed" startline="62" endline="92" pcid="238"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_LINUX.c.ifdefed" startline="70" endline="100" pcid="252"></source>
+</clone>
+
+<clone nlines="18" similarity="83">
+<source file="testdata/SelectFragmentsTest/monit-4.2/control.c.ifdefed" startline="116" endline="137" pcid="266"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/control.c.ifdefed" startline="90" endline="108" pcid="262"></source>
+</clone>
+
+<clone nlines="15" similarity="73">
+<source file="testdata/SelectFragmentsTest/monit-4.2/alert.c.ifdefed" startline="100" endline="127" pcid="1005"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/alert.c.ifdefed" startline="148" endline="168" pcid="1011"></source>
+</clone>
+
+<clone nlines="15" similarity="100">
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_LINUX.c.ifdefed" startline="110" endline="131" pcid="256"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_DARWIN.c.ifdefed" startline="90" endline="111" pcid="234"></source>
+</clone>
+
+<clone nlines="15" similarity="100">
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_LINUX.c.ifdefed" startline="110" endline="131" pcid="256"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_FREEBSD.c.ifdefed" startline="90" endline="111" pcid="260"></source>
+</clone>
+
+<clone nlines="15" similarity="100">
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_LINUX.c.ifdefed" startline="110" endline="131" pcid="256"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_OPENBSD.c.ifdefed" startline="90" endline="111" pcid="224"></source>
+</clone>
+
+<clone nlines="15" similarity="93">
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_LINUX.c.ifdefed" startline="110" endline="131" pcid="256"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_HPUX.c.ifdefed" startline="102" endline="123" pcid="242"></source>
+</clone>
+
+<clone nlines="15" similarity="100">
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_DARWIN.c.ifdefed" startline="90" endline="111" pcid="234"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_FREEBSD.c.ifdefed" startline="90" endline="111" pcid="260"></source>
+</clone>
+
+<clone nlines="15" similarity="100">
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_DARWIN.c.ifdefed" startline="90" endline="111" pcid="234"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_OPENBSD.c.ifdefed" startline="90" endline="111" pcid="224"></source>
+</clone>
+
+<clone nlines="15" similarity="93">
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_DARWIN.c.ifdefed" startline="90" endline="111" pcid="234"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_HPUX.c.ifdefed" startline="102" endline="123" pcid="242"></source>
+</clone>
+
+<clone nlines="15" similarity="100">
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_FREEBSD.c.ifdefed" startline="90" endline="111" pcid="260"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_OPENBSD.c.ifdefed" startline="90" endline="111" pcid="224"></source>
+</clone>
+
+<clone nlines="15" similarity="93">
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_FREEBSD.c.ifdefed" startline="90" endline="111" pcid="260"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_HPUX.c.ifdefed" startline="102" endline="123" pcid="242"></source>
+</clone>
+
+<clone nlines="15" similarity="93">
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_OPENBSD.c.ifdefed" startline="90" endline="111" pcid="224"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_HPUX.c.ifdefed" startline="102" endline="123" pcid="242"></source>
+</clone>
+
+<clone nlines="14" similarity="71">
+<source file="testdata/SelectFragmentsTest/monit-4.2/net.c.ifdefed" startline="512" endline="529" pcid="1049"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/net.c.ifdefed" startline="485" endline="502" pcid="1047"></source>
+</clone>
+
+<clone nlines="13" similarity="76">
+<source file="testdata/SelectFragmentsTest/monit-4.2/util.c.ifdefed" startline="653" endline="671" pcid="438"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/http/cervlet.c.ifdefed" startline="1447" endline="1465" pcid="749"></source>
+</clone>
+
+<clone nlines="11" similarity="100">
+<source file="testdata/SelectFragmentsTest/monit-4.2/http/cervlet.c.ifdefed" startline="1325" endline="1341" pcid="736"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/http/cervlet.c.ifdefed" startline="1412" endline="1428" pcid="741"></source>
+</clone>
+
+<clone nlines="10" similarity="100">
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_DARWIN.c.ifdefed" startline="65" endline="80" pcid="232"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_FREEBSD.c.ifdefed" startline="65" endline="80" pcid="258"></source>
+</clone>
+
+<clone nlines="10" similarity="100">
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_DARWIN.c.ifdefed" startline="65" endline="80" pcid="232"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_OPENBSD.c.ifdefed" startline="65" endline="80" pcid="222"></source>
+</clone>
+
+<clone nlines="10" similarity="100">
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_FREEBSD.c.ifdefed" startline="65" endline="80" pcid="258"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/device/sysdep_OPENBSD.c.ifdefed" startline="65" endline="80" pcid="222"></source>
+</clone>
+
+<clone nlines="10" similarity="100">
+<source file="testdata/SelectFragmentsTest/monit-4.2/http/cervlet.c.ifdefed" startline="2034" endline="2043" pcid="806"></source>
+<source file="testdata/SelectFragmentsTest/monit-4.2/http/cervlet.c.ifdefed" startline="2020" endline="2029" pcid="804"></source>
+</clone>
+
+</clones>

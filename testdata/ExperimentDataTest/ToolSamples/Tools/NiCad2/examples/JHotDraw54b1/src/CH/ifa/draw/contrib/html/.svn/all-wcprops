@@ -1,0 +1,401 @@
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html
+END
+ResourceContentProducer.class
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/ResourceContentProducer.class
+END
+DisposableResourceHolder.class
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/DisposableResourceHolder.class
+END
+TextHolderContentProducer.java
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/TextHolderContentProducer.java
+END
+HTMLContentProducer.class
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/HTMLContentProducer.class
+END
+DisposalThread.class
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/DisposalThread.class
+END
+TriangleFigureGeometricAdapter.class
+K 25
+svn:wc:ra_dav:version-url
+V 159
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/TriangleFigureGeometricAdapter.class
+END
+FigureDataContentProducer.class
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/FigureDataContentProducer.class
+END
+RoundRectangleGeometricAdapter.class
+K 25
+svn:wc:ra_dav:version-url
+V 159
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/RoundRectangleGeometricAdapter.class
+END
+URLContentProducer.java
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/URLContentProducer.java
+END
+HTMLColorContentProducer.java
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/HTMLColorContentProducer.java
+END
+ContentProducer.class
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/ContentProducer.class
+END
+TextHolderContentProducer.class
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/TextHolderContentProducer.class
+END
+ContentProducerRegistry.java
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/ContentProducerRegistry.java
+END
+ResourceDisposabilityStrategy.java
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/ResourceDisposabilityStrategy.java
+END
+RoundRectangleGeometricAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/RoundRectangleGeometricAdapter.java
+END
+DisposableResourceManager.class
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/DisposableResourceManager.class
+END
+ColorContentProducer.java
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/ColorContentProducer.java
+END
+DiamondFigureGeometricAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/DiamondFigureGeometricAdapter.java
+END
+ETSLADisposalStrategy.class
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/ETSLADisposalStrategy.class
+END
+ResourceManagerNotSetException.class
+K 25
+svn:wc:ra_dav:version-url
+V 159
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/ResourceManagerNotSetException.class
+END
+ContentProducerContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/ContentProducerContext.java
+END
+FigureContentProducerContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/FigureContentProducerContext.java
+END
+URLContentProducer.class
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/URLContentProducer.class
+END
+HTMLTextAreaFigure.class
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/HTMLTextAreaFigure.class
+END
+DisposableResourceManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/DisposableResourceManager.java
+END
+HTMLTextAreaFigure$InvalidAttributeMarker.class
+K 25
+svn:wc:ra_dav:version-url
+V 170
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/HTMLTextAreaFigure$InvalidAttributeMarker.class
+END
+HTMLLayouter.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/HTMLLayouter.java
+END
+PolygonFigureGeometricAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/PolygonFigureGeometricAdapter.java
+END
+AttributeContentProducerContext.class
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/AttributeContentProducerContext.class
+END
+DisposableResourceHolder.java
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/DisposableResourceHolder.java
+END
+StandardDisposableResourceHolder.class
+K 25
+svn:wc:ra_dav:version-url
+V 161
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/StandardDisposableResourceHolder.class
+END
+DiamondFigureGeometricAdapter.class
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/DiamondFigureGeometricAdapter.class
+END
+ColorContentProducer.class
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/ColorContentProducer.class
+END
+AbstractContentProducer.java
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/AbstractContentProducer.java
+END
+HTMLContentProducer.java
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/HTMLContentProducer.java
+END
+HTMLTextAreaFigure.java
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/HTMLTextAreaFigure.java
+END
+GeometricFigure.class
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/GeometricFigure.class
+END
+DisposableResourceManagerFactory.class
+K 25
+svn:wc:ra_dav:version-url
+V 161
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/DisposableResourceManagerFactory.class
+END
+TriangleFigureGeometricAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/TriangleFigureGeometricAdapter.java
+END
+FigureContentProducerContext.class
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/FigureContentProducerContext.class
+END
+StandardDisposableResourceHolder.java
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/StandardDisposableResourceHolder.java
+END
+PolygonFigureGeometricAdapter.class
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/PolygonFigureGeometricAdapter.class
+END
+HTMLLayouter.class
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/HTMLLayouter.class
+END
+DisposableResourceManagerFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/DisposableResourceManagerFactory.java
+END
+GeometricFigure.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/GeometricFigure.java
+END
+EllipseFigureGeometricAdapter.class
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/EllipseFigureGeometricAdapter.class
+END
+ResourceContentProducer.java
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/ResourceContentProducer.java
+END
+HTMLColorContentProducer.class
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/HTMLColorContentProducer.class
+END
+AttributeFigureContentProducer.class
+K 25
+svn:wc:ra_dav:version-url
+V 159
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/AttributeFigureContentProducer.class
+END
+HTMLContentProducerContext.class
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/HTMLContentProducerContext.class
+END
+ResourceDisposabilityStrategy.class
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/ResourceDisposabilityStrategy.class
+END
+AttributeFigureContentProducer.java
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/AttributeFigureContentProducer.java
+END
+AttributeContentProducerContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 159
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/AttributeContentProducerContext.java
+END
+HTMLContentProducerContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/HTMLContentProducerContext.java
+END
+StandardDisposableResourceManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 161
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/StandardDisposableResourceManager.java
+END
+FigureDataContentProducer.java
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/FigureDataContentProducer.java
+END
+ContentProducer.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/ContentProducer.java
+END
+HTMLTextAreaTool.class
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/HTMLTextAreaTool.class
+END
+AbstractContentProducer.class
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/AbstractContentProducer.class
+END
+ETSLADisposalStrategy.java
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/ETSLADisposalStrategy.java
+END
+ContentProducerRegistry.class
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/ContentProducerRegistry.class
+END
+StandardDisposableResourceManager.class
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/StandardDisposableResourceManager.class
+END
+ResourceManagerNotSetException.java
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/ResourceManagerNotSetException.java
+END
+EllipseFigureGeometricAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/EllipseFigureGeometricAdapter.java
+END
+HTMLTextAreaTool.java
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/HTMLTextAreaTool.java
+END
+ContentProducerContext.class
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/src/CH/ifa/draw/contrib/html/ContentProducerContext.class
+END

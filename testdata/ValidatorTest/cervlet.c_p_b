@@ -1,0 +1,1059 @@
+#include <config.h>
+#ifdef HAVE_STDIO_H
+#include <stdio.h>
+#endif
+#ifdef HAVE_STDLIB_H
+#include <stdlib.h>
+#endif
+#ifdef HAVE_ERRNO_H
+#include <errno.h>
+#endif
+#ifdef HAVE_SYS_TYPES_H
+#include <sys/types.h>
+#endif
+#ifdef HAVE_SYS_SOCKET_H
+#include <sys/socket.h>
+#endif
+#ifdef HAVE_STRING_H
+#include <string.h>
+#endif
+#ifdef HAVE_STRINGS_H
+#include <strings.h>
+#endif
+#ifdef HAVE_UNISTD_H
+#include <unistd.h>
+#endif
+#ifdef HAVE_SYS_STAT_H
+#include <sys/stat.h>
+#endif
+#include "monitor.h"
+#include "cervlet.h"
+#include "engine.h"
+#include "processor.h"
+#include "base64.h"
+#include "event.h"
+#include "alert.h"
+#include "process.h"
+#include "device.h"
+#define ACTION(c) !strncasecmp(req->url, c, sizeof(c))
+#define HOME        "/"
+#define STOP        "/_stop"
+#define TEST        "/_monit"
+#define ABOUT       "/_about"
+#define PIXEL       "/_pixel"
+#define STATUS      "/_status"
+#define RUN         "/_runtime"
+#define VIEWLOG     "/_viewlog"
+#define XML_STATUS   0
+#define TEXT_STATUS  1
+static X X (X);
+static X X (X);
+static X X (X, X);
+static X X (X, X);
+static X X (X, X);
+static X X (X, X);
+static X X (X, X);
+static X X (X, X);
+static X X (X, X);
+static X X (X, X);
+static X X (X, X);
+static X X (X, X);
+static X X (X, X);
+static X X (X, X);
+static X X (X, X);
+static X X (X, X);
+static X X (X, X, X *);
+static X X (X, X, X);
+static X X (X, X, X);
+static X X (X, X, X);
+static X X (X, X, X);
+static X X (X, X, X);
+static X X (X, X);
+static X X (X, X, X);
+static X X (X, X);
+static X X (X, X);
+static X X (X, X);
+static X X (X, X);
+static X X (X, X);
+static X X (X, X);
+static X X (X);
+static struct {
+    const X *X;
+    const X *X;
+    const X *X;
+} X [] = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
+
+X X () {
+    X ((X *) X, (X *) X);
+}
+
+static X X (X X, X X) {
+    X (X, X);
+}
+
+static X X (X X, X X) {
+    X (X, 0);
+    if (X (X)) {
+        X (X.X)
+        X (X, X);
+        X;
+    }
+    else if (X (X)) {
+        X (X.X)
+        X (X, X);
+        X;
+    }
+    else if (X (X)) {
+        X (X, X);
+    }
+    else if (X (X)) {
+        X (X, X);
+    }
+    else if (X (X)) {
+        X (X, X);
+    }
+    else if (X (X)) {
+        if (X (X)) {
+            X (X, X, 0);
+        }
+        else {
+            X (X, X, 0);
+            X ();
+        }
+    }
+    else if (X (X)) {
+        X (X);
+    }
+    else if (X (X)) {
+        const X *X = X (X, 0);
+        if (X && X (X, 0))
+            X (X, X);
+        else {
+            X (X, X);
+        }
+    }
+    else {
+        X (X, X);
+    }
+}
+
+static X X (X X, X X) {
+    X X;
+    X X = X ();
+    if (X) {
+        X = X;
+    }
+    else {
+        X = X;
+    }
+    X (X, X);
+}
+
+static X X (X X, X X) {
+    X *X = X (X.X, 0);
+    X (0, X.X)
+    X (X, 0 0 0 0 0 0 0 0 0 0 0 0 0 0, X.X, X);
+    X (X);
+    X (X, X);
+    X (X, X);
+    X (X, X);
+    X (X, X);
+    X (X, X);
+    X
+}
+
+static X X (X X, X X) {
+    X (X, 0 0 0 X 0);
+    X (X, 0 0 0 0 0 0);
+    X (X, 0 0 0 0);
+    X (X, 0 0 0 0 0 0 0 0 0 0 0 0);
+}
+
+static X X (X X, X X) {
+    X X = X ();
+    X (0, 0)
+    X (X, 0);
+    X (X, 0 0 0);
+    X (X, 0, X.X);
+    X (X, 0, X);
+    X (X, 0 0, X.X.X);
+    X (X, 0, X.X);
+    if (X.X)
+        X (X, 0, X.X);
+    X (X, 0, X.X);
+    X (X, 0, X.X);
+    X (X, 0, X.X ? 0 : 0);
+    X (X, 0, X.X ? 0 : 0);
+    X (X, 0, X.X ? 0 : 0);
+    X (X, 0);
+    if (X.X) {
+        X X = X.X;
+        for (X = X.X; X; X = X->X)
+            X (X, 0, X->X);
+        X (X, 0);
+    }
+    else {
+        X (X, 0);
+    }
+    if (X.X.X)
+        X (X, 0, X.X.X);
+    if (X.X.X)
+        X (X, 0, X.X.X);
+    if (X.X.X)
+        X (X, 0, X.X.X);
+    X (X, 0, X.X);
+    X (X, 0, X.X ? X.X : 0);
+    X (X, 0, X.X);
+    X (X, 0, X.X ? 0 : 0);
+    X (X, 0, X.X ? 0 : 0);
+    if (X.X) {
+        X (X, 0, X.X);
+        if (X.X != X) {
+            X (X, 0 0, 0);
+            X (X, 0 0, X.X);
+        }
+        else {
+            X (X, 0 0, 0);
+        }
+        X (X, 0 0, X.X ? 0 : 0);
+    }
+    X (X, 0, (X.X != X) && X () ? 0 : (X.X != X) ? 0 : X () ? 0 : 0);
+    X (X, X.X);
+    X (X, 0);
+    if (!X (X)) {
+        X (X, 0 0 0 0 0, X);
+        if (X.X && !X.X) {
+            X (X, 0 0 0 0 0, X);
+        }
+    }
+    X (X, 0);
+    X
+}
+
+static X X (X X, X X) {
+    if (X (X)) {
+        X (X, X, 0);
+        return;
+    }
+    X (0, 0)
+    if (X.X && !X.X) {
+        struct  X X;
+        if (!X (X.X, &X)) {
+            X *X = X (X.X, 0);
+            if (X) {
+                X X;
+                X X [0];
+                X (X, 0);
+                while ((X = X (X, sizeof (X), 0, X)) > 0) {
+                    X[X] = 0;
+                    X (X, 0, X);
+                }
+                X (X);
+                X (X, 0);
+            }
+            else {
+                X (X, 0, X);
+            }
+        }
+        else {
+            X (X, 0, X);
+        }
+    }
+    else {
+        X (X, 0);
+        if (!X.X) {
+            X (X, 0);
+        }
+        else {
+            X (X, 0);
+        }
+    }
+    X
+}
+
+static X X (X X, X X) {
+    X *X = X->X;
+    const X *X = X (X, 0);
+    if (X (++X)) {
+        if (X) {
+            X X = X (X);
+            if (X (X)) {
+                X (X, X, 0);
+                return;
+            }
+            if (X (X, 0)) {
+                if (X->X) {
+                    X (X -> X)
+                    X (X, X);
+                    if (X->X == X) {
+                        X X = X.X;
+                        while (X-- && !X.X) {
+                            if (X (X))
+                                break;
+                            X (0);
+                        }
+                    }
+                    X;
+                    if (X->X == X && !X (X)) {
+                        X (X, X, 0);
+                        goto X;
+                    }
+                }
+                else {
+                    X (X, X, 0);
+                    goto X;
+                }
+            }
+            else if (X (X, 0)) {
+                if (X->X) {
+                    X (X -> X)
+                    X (X, X);
+                    X;
+                }
+                else {
+                    X (X, X, 0);
+                    goto X;
+                }
+            }
+            else if (X (X, 0)) {
+                if (X->X && X->X) {
+                    X (X -> X)
+                    X (X, X);
+                    if (X->X == X) {
+                        X X = X.X;
+                        while (X-- && !X.X) {
+                            if (X (X))
+                                break;
+                            X (0);
+                        }
+                    }
+                    X;
+                    if (X->X == X && !X (X)) {
+                        X (X, X, 0);
+                        goto X;
+                    }
+                }
+                else {
+                    X (X, X, 0);
+                    goto X;
+                }
+            }
+            else if (X (X, 0)) {
+                X (X -> X)
+                X (X, X);
+                X;
+            }
+            else if (X (X, 0)) {
+                X (X -> X)
+                X (X, X);
+                X;
+            }
+        }
+        X (X.X)
+        X (X, X, X);
+        X;
+    }
+    else {
+        X (X, X);
+    }
+X :
+    X ();
+}
+
+static X X (X X, X X, X *X) {
+    X X = X (X);
+    X (X, 0)
+    switch (X->X) {
+    case X :
+        X (X, X, X);
+        break;
+    case X :
+        X (X, X, X);
+        break;
+    case X :
+        X (X, X, X);
+        break;
+    case X :
+        X (X, X, X);
+        break;
+    case X :
+        X (X, X, X);
+        break;
+    default :
+        break;
+    }
+    X
+}
+
+static X X (X X) {
+    static X X;
+    X X = X->X;
+    static X *X = X;
+    if (!X) {
+        X = X (sizeof (X), X (X));
+        X = X (X, X);
+    }
+    if (X) {
+        X->X = X;
+        X (X, 0);
+        X (X, 0, X);
+        X (X, 0);
+        X (X, 0);
+        X (X, X, X);
+    }
+}
+
+static X X (X X, X X) {
+    X (X, X, 0);
+}
+
+static X X (X X, X X) {
+    X X = X;
+    X X = X;
+    X X;
+    for (X = X; X; X = X->X) {
+        X X;
+        X *X;
+        if (X->X != X)
+            continue;
+        if (X) {
+            if (X.X) {
+                X (X, 0 0 0 0 0 0 0 0 0);
+            }
+            else {
+                X (X, 0 0 0 0 0 0);
+            }
+            X = X;
+        }
+        X = X (X);
+        X = X (X->X, 0);
+        if (X.X) {
+            X X = X->X;
+            if (X) {
+                X (X, 0 0 0 0 0, X ? 0 : 0, X -> X, X -> X, ! X -> X ? 0 : X ? 0 : 0, X, X -> X / 0, X -> X / 0, X -> X);
+            }
+            else {
+                X (X, 0 0 0 0 0 0, X ? 0 : 0, X -> X, X -> X, ! X -> X ? 0 : 0);
+            }
+        }
+        else {
+            X (X, 0 0 0 0, X ? 0 : 0, X -> X, X -> X, ! X -> X ? 0 : X ? 0 : 0, X ? X : 0);
+        }
+        X = X ? X : X;
+        X (X);
+    }
+    if (!X)
+        X (X, 0);
+}
+
+static X X (X X, X X) {
+    X X;
+    X X = X;
+    X X = X;
+    for (X = X; X; X = X->X) {
+        if (X->X != X)
+            continue;
+        if (X) {
+            X (X, 0 0 0 0 0 0 0 0);
+            X = X;
+        }
+        if (!X (X->X, X->X)) {
+            X (X, 0 0 0 0 0 0, X ? 0 : 0, X -> X, X -> X, ! X -> X ? 0 : 0);
+        }
+        else {
+            if (X->X->X > 0) {
+                X (X, 0 0 0 0 0 0, X ? 0 : 0, X -> X, X -> X, (X -> X && X -> X -> X) ? 0 : (X -> X && X -> X -> X) ? 0 : ! X -> X ? 0 : (X -> X && X -> X -> X) ? 0 : 0, (X) 0 * (X -> X -> X - X -> X -> X) / X -> X -> X, (X) (X -> X -> X - X -> X -> X) / 0 * X -> X -> X, (X) 0 * (X -> X -> X - X -> X -> X) / X -> X -> X, X -> X -> X - X -> X -> X);
+            }
+            else {
+                X (X, 0 0 0 0 0 0, X ? 0 : 0, X -> X, X -> X, (X -> X && X -> X -> X) ? 0 : (X -> X && X -> X -> X) ? 0 : ! X -> X ? 0 : (X -> X && X -> X -> X) ? 0 : 0, (X) 0 * (X -> X -> X - X -> X -> X) / X -> X -> X, (X) (X -> X -> X - X -> X -> X) / 0 * X -> X -> X);
+            }
+        }
+        X = X ? X : X;
+    }
+    if (!X)
+        X (X, 0);
+}
+
+static X X (X X, X X) {
+    X X;
+    X X = X;
+    X X = X;
+    struct  X X;
+    for (X = X; X; X = X->X) {
+        if (X->X != X)
+            continue;
+        if (X) {
+            X (X, 0 0 0 0 0 0 0 0 0 0);
+            X = X;
+        }
+        if ((X (X->X, &X) != 0) || !X (X.X)) {
+            X (X, 0 0 0 0 0 0 0 0, X ? 0 : 0, X -> X, X -> X, ! X -> X ? 0 : 0);
+        }
+        else {
+            X (X, 0 0 0 0 0 0 0 0, X ? 0 : 0, X -> X, X -> X, (X -> X && X -> X -> X) ? 0 : (X -> X && X -> X -> X) ? 0 : ! X -> X ? 0 : (X -> X && X -> X -> X) ? 0 : 0, (X) X.X, X.X & 0, X.X, X.X);
+        }
+        X = X ? X : X;
+    }
+    if (!X)
+        X (X, 0);
+}
+
+static X X (X X, X X) {
+    X X;
+    X X = X;
+    X X = X;
+    struct  X X;
+    for (X = X; X; X = X->X) {
+        if (X->X != X)
+            continue;
+        if (X) {
+            X (X, 0 0 0 0 0 0 0 0 0);
+            X = X;
+        }
+        if ((X (X->X, &X) != 0) || !X (X.X)) {
+            X (X, 0 0 0 0 0 0 0, X ? 0 : 0, X -> X, X -> X, ! X -> X ? 0 : 0);
+        }
+        else {
+            X (X, 0 0 0 0 0 0 0, X ? 0 : 0, X -> X, X -> X, (X -> X && X -> X -> X) ? 0 : (X -> X && X -> X -> X) ? 0 : ! X -> X ? 0 : (X -> X && X -> X -> X) ? 0 : 0, X.X & 0, X.X, X.X);
+        }
+        X = X ? X : X;
+    }
+    if (!X)
+        X (X, 0);
+}
+
+static X X (X X, X X) {
+    X X;
+    X X;
+    X X;
+    X X = X;
+    X X = X;
+    for (X = X; X; X = X->X) {
+        if (X->X != X)
+            continue;
+        if (X) {
+            X (X, 0 0 0 0 0 0 0);
+            X = X;
+        }
+        X (X, 0, X ? 0 : 0, X -> X, X -> X);
+        if (X->X) {
+            X X = X;
+            for (X = X->X; X; X = X->X) {
+                if (!X->X) {
+                    X = X;
+                    break;
+                }
+            }
+            if (X) {
+                X (X, 0 0, ! X -> X ? 0 : 0);
+                for (X = X->X; X; X = X->X) {
+                    if (X != X->X)
+                        X (X, 0);
+                    X (X, 0, X -> X -> X, X -> X);
+                }
+                X (X, 0);
+            }
+            else {
+                X (X, 0 0, ! X -> X ? 0 : 0, X -> X -> X, X -> X);
+            }
+        }
+        else if (X->X) {
+            X X = X;
+            for (X = X->X; X; X = X->X) {
+                if (!X->X) {
+                    X = X;
+                    break;
+                }
+            }
+            if (X) {
+                X (X, 0 0 0);
+            }
+            else {
+                X (X, 0 0 0);
+            }
+        }
+        X (X, 0);
+        X = X ? X : X;
+    }
+    if (!X)
+        X (X, 0);
+}
+
+static X X (X X, X X, X X) {
+    struct  X X;
+    X X = (X (X->X, X->X) && X (X->X, &X) == 0);
+    X (X, 0);
+    X (X, 0 0 0);
+    X (X, 0, X -> X);
+    X (X, 0, (X -> X && X -> X -> X) ? 0 : (X -> X && X -> X -> X) ? 0 : (X -> X && X -> X -> X) ? 0 : X ? 0 : 0);
+    X (X, 0, X -> X);
+    X (X, X);
+    if (X->X)
+        X (X, 0 0, X->X->X, X[X->X->X]);
+    if (X->X)
+        X (X, 0 0, (X) X->X->X, X[X->X->X]);
+    if (X->X)
+        X (X, 0 0, (X) X->X->X, X[X->X->X]);
+    X (X, 0, (X -> X && X -> X -> X) ? 0 : 0, X.X & 0);
+    X (X, 0, (X -> X && X -> X -> X) ? 0 : 0, (X) X.X);
+    X (X, 0, (X -> X && X -> X -> X) ? 0 : 0, (X) X.X);
+    {
+        X X;
+        if (X->X) {
+            for (X = X->X; X; X = X->X) {
+                if (X->X == X) {
+                    X (X, 0 0, X [X -> X], (X -> X > - 0) ? X -> X : X -> X, (X -> X > - 0) ? 0 : 0, X [X -> X]);
+                }
+                else if (X->X == X) {
+                    X (X, 0 0, X [X -> X], (X -> X > - 0) ? X -> X : X -> X, (X -> X > - 0) ? 0 : 0, X [X -> X]);
+                }
+            }
+        }
+        if (X) {
+            X (X, 0, X -> X -> X, (X) X -> X -> X / 0 * X -> X -> X);
+            X (X, 0 0, X -> X -> X, (X) X -> X -> X / 0 * X -> X -> X, (X) 0 * X -> X -> X / X -> X -> X);
+            X (X, 0 0, X -> X -> X, (X) X -> X -> X / 0 * X -> X -> X, (X) 0 * X -> X -> X / X -> X -> X);
+            X (X, 0, X -> X -> X);
+            if (X->X->X > 0) {
+                X (X, 0, X -> X -> X);
+                X (X, 0 0, X -> X -> X, (X) 0 * X -> X -> X / X -> X -> X);
+            }
+        }
+        else {
+            X (X, 0);
+            X (X, 0 0);
+            X (X, 0);
+            X (X, 0);
+            X (X, 0);
+            X (X, 0);
+        }
+    }
+    X (X, X -> X);
+    X (X, 0);
+    X (X, X, X);
+}
+
+static X X (X X, X X, X X) {
+    struct  X X;
+    X X = ((X (X->X, &X) == 0) && X (X.X));
+    X (X, 0);
+    X (X, 0 0 0);
+    X (X, 0, X -> X);
+    X (X, 0, (X -> X && X -> X -> X) ? 0 : (X -> X && X -> X -> X) ? 0 : (X -> X && X -> X -> X) ? 0 : X ? 0 : 0);
+    X (X, 0, X -> X);
+    X (X, X);
+    {
+        struct  X *X;
+        for (X = X->X; X; X = X->X) {
+            if (X->X) {
+                X (X, 0 0, X [X -> X]);
+            }
+            else {
+                X (X, 0 0, X [X -> X], X -> X, X [X -> X]);
+            }
+        }
+    }
+    if (X->X)
+        X (X, 0 0, X->X->X, X[X->X->X]);
+    if (X->X)
+        X (X, 0 0, (X) X->X->X, X[X->X->X]);
+    if (X->X)
+        X (X, 0 0, (X) X->X->X, X[X->X->X]);
+    X (X, 0, (X -> X && X -> X -> X) ? 0 : 0, X.X & 0);
+    X (X, 0, (X -> X && X -> X -> X) ? 0 : 0, (X) X.X);
+    X (X, 0, (X -> X && X -> X -> X) ? 0 : 0, (X) X.X);
+    X (X, X -> X);
+    X (X, 0);
+    X (X, X, X);
+}
+
+static X X (X X, X X, X X) {
+    struct  X X;
+    X X = ((X (X->X, &X) == 0) && X (X.X));
+    X (X, 0);
+    X (X, 0 0 0);
+    X (X, 0, X -> X);
+    X (X, 0, (X -> X && X -> X -> X) ? 0 : (X -> X && X -> X -> X) ? 0 : (X -> X && X -> X -> X) ? 0 : X ? 0 : 0);
+    X (X, 0, X -> X);
+    X (X, X);
+    {
+        struct  X *X;
+        for (X = X->X; X; X = X->X) {
+            if (X->X) {
+                X (X, 0 0, X [X -> X]);
+            }
+            else {
+                X (X, 0 0, X [X -> X], X -> X, X [X -> X]);
+            }
+        }
+    }
+    {
+        X X;
+        for (X = X->X; X; X = X->X) {
+            if (X->X) {
+                X (X, 0 0, X [X -> X]);
+            }
+            else {
+                X (X, 0 0, X [X -> X], X -> X, X [X -> X]);
+            }
+        }
+    }
+    if (X->X) {
+        switch (X->X->X) {
+        case X :
+            X (X, 0 0, X->X->X, X[X->X->X]);
+            break;
+        case X :
+            X (X, 0 0, X->X->X, X[X->X->X]);
+            break;
+        default :
+            X (X, 0 0, X->X->X, X[X->X->X]);
+            break;
+        }
+    }
+    if (X->X)
+        X (X, 0 0, X->X->X, X[X->X->X]);
+    if (X->X)
+        X (X, 0 0, (X) X->X->X, X[X->X->X]);
+    if (X->X)
+        X (X, 0 0, (X) X->X->X, X[X->X->X]);
+    X (X, 0, (X) X.X);
+    X (X, 0, (X -> X && X -> X -> X) ? 0 : 0, X.X & 0);
+    X (X, 0, (X -> X && X -> X -> X) ? 0 : 0, (X) X.X);
+    X (X, 0, (X -> X && X -> X -> X) ? 0 : 0, (X) X.X);
+    X (X, X -> X);
+    X (X, 0);
+    X (X, X, X);
+}
+
+static X X (X X, X X, X X) {
+    X X = X (X);
+    X (X, 0);
+    X (X, 0 0 0);
+    X (X, 0, X -> X);
+    X (X, 0, X);
+    X (X, 0, X ? 0 : 0);
+    X (X, 0, X -> X);
+    X (X, X);
+    if (X.X) {
+        X X = X->X;
+        X (X, 0, X -> X / 0);
+        X (X, 0, X -> X / 0, X -> X);
+        X (X, 0, X -> X);
+        X (X, 0 0, X -> X / 0, X -> X);
+    }
+    {
+        X X;
+        for (X = X->X; X; X = X->X) {
+            if (X->X == X) {
+                if (X->X.X) {
+                    X (X, 0 0 0, X -> X, X -> X, X -> X ? X -> X : 0, X -> X -> X, X [X -> X]);
+                    if (X->X.X != X) {
+                        X (X, 0, X -> X.X);
+                    }
+                }
+                else {
+                    X (X, 0 0, X -> X, X -> X, X -> X ? X -> X : 0, X -> X -> X, X [X -> X]);
+                }
+            }
+            else if (X->X == X) {
+                X (X, 0 0, X -> X, X -> X -> X, X [X -> X]);
+            }
+        }
+    }
+    {
+        X X;
+        for (X = X->X; X; X = X->X) {
+            switch (X->X) {
+            case X :
+                X (X, 0 0, X[X->X], X->X / 0, X->X, X[X->X]);
+                break;
+            case X :
+                X (X, 0 0, X[X->X], X->X / 0, X->X, X[X->X]);
+                break;
+            case X :
+                X (X, 0 0, X[X->X], X->X, X->X, X[X->X]);
+                break;
+            case X :
+                X (X, 0 0, X[X->X], X->X / 0, X->X, X[X->X]);
+                break;
+            case X :
+                X (X, 0 0, X[X->X], X->X / 0, X->X, X[X->X]);
+                break;
+            case X :
+                X (X, 0 0, X[X->X], X->X / 0, X->X, X[X->X]);
+                break;
+            case X :
+                X (X, 0 0, X[X->X], X->X, X->X, X[X->X]);
+                break;
+            case X :
+                X (X, 0 0, X[X->X], X->X, X->X, X[X->X]);
+                break;
+            case X :
+                X (X, 0 0, X[X->X], X->X / 0, X->X, X[X->X]);
+                break;
+            }
+        }
+    }
+    X (X, X -> X);
+    X (X, 0);
+    X (X, X, X);
+}
+
+static X X (X X, X X, X X) {
+    X X;
+    X X;
+    X X = X;
+    for (X = X->X; X; X = X->X) {
+        if (!X->X) {
+            X = X;
+            break;
+        }
+    }
+    for (X = X->X; X; X = X->X) {
+        if (!X->X) {
+            X = X;
+            break;
+        }
+    }
+    X (X, 0);
+    X (X, 0 0 0);
+    X (X, 0, X -> X);
+    X (X, 0, X ? 0 : 0);
+    X (X, X);
+    {
+        X X;
+        for (X = X->X; X; X = X->X) {
+            if (X->X == X) {
+                if (X->X.X) {
+                    X (X, 0 0, X -> X, X -> X, X -> X ? X -> X : 0, X -> X -> X, X [X -> X]);
+                    if (X->X.X != X) {
+                        X (X, 0, X -> X.X);
+                    }
+                }
+                else {
+                    X (X, 0 0, X -> X, X -> X, X -> X ? X -> X : 0, X -> X -> X, X [X -> X]);
+                }
+            }
+            else if (X->X == X) {
+                X (X, 0 0, X -> X, X -> X -> X, X [X -> X]);
+            }
+        }
+    }
+    {
+        X X;
+        for (X = X->X; X; X = X->X)
+            X (X, 0 0, X[X->X], X->X, X[X->X]);
+    }
+    X (X, X -> X);
+    X (X, 0);
+    X (X, X, X);
+}
+
+static X X (X X, X X) {
+    X X;
+    for (X = X; X; X = X->X) {
+        X (X, 0 0, X -> X ? X -> X : 0);
+        X (X, 0);
+        if (X->X == (~((X) 0))) {
+            X (X, 0);
+        }
+        else {
+            if (X (X->X, X))
+                X (X, 0);
+            if (X (X->X, X))
+                X (X, 0);
+            if (X (X->X, X))
+                X (X, 0);
+            if (X (X->X, X))
+                X (X, 0);
+            if (X (X->X, X))
+                X (X, 0);
+            if (X (X->X, X))
+                X (X, 0);
+            if (X (X->X, X))
+                X (X, 0);
+            if (X (X->X, X))
+                X (X, 0);
+            if (X (X->X, X))
+                X (X, 0);
+            if (X (X->X, X))
+                X (X, 0);
+            if (X (X->X, X))
+                X (X, 0);
+            if (X (X->X, X))
+                X (X, 0);
+            if (X (X->X, X))
+                X (X, 0);
+        }
+        X (X, 0);
+    }
+}
+
+static X X (X X, X X, X X) {
+    X *X [] = {0, 0};
+    X *X [] = {0, 0};
+    if (X (X)) {
+        return;
+    }
+    X (X, 0);
+    if (X->X)
+        X (X, 0 0 0 0, X->X);
+    if (X->X)
+        X (X, 0 0 0 0, X->X);
+    if (X->X && X->X)
+        X (X, 0 0 0 0, X->X);
+    X (X, 0 0 0 0, X -> X, X [X -> X], X [X -> X]);
+}
+
+static X X (X X, X X) {
+    X X;
+    if (X->X)
+        X (X, 0 0, X->X);
+    X (X, 0, X [X -> X]);
+    X (X, 0 0, X [X -> X]);
+    for (X = X->X; X; X = X->X) {
+        if (X->X != X) {
+            X (X, 0 0, X -> X, X -> X);
+        }
+    }
+    if (X->X) {
+        X X = 0;
+        X (X, 0);
+        while (X->X->X[X])
+            X (X, 0, X->X->X[X++]);
+        X (X, 0);
+    }
+    if (X->X) {
+        X X = 0;
+        X (X, 0);
+        while (X->X->X[X])
+            X (X, 0, X->X->X[X++]);
+        X (X, 0);
+    }
+    X (X, 0, X -> X ? X -> X : 0);
+    if (X->X) {
+        X (X, 0 0, X -> X, X -> X);
+    }
+}
+
+static X X (X X) {
+    if (X->X) {
+        return ((X) X (X->X))->X;
+    }
+    return X;
+}
+
+static X X (X X, X X) {
+    X X;
+    X (X, 0);
+    X (X, X);
+    for (X = X; X; X = X->X) {
+        if (X == X) {
+            X (X, X);
+        }
+        else {
+            X (X, X);
+        }
+    }
+    X (X, X);
+}
+
+static X X (X X, X X) {
+    X *X = X (X.X, 0);
+    if (X == X) {
+        X (X, 0);
+        X (X, 0 0, X, X (X));
+    }
+    else {
+        X (X, 0, X);
+    }
+    X (X);
+}
+
+static X X (X X, X X) {
+    if (X == X)
+        X (X, 0);
+}
+
+static X X (X X, X X) {
+    X (X, 0 0 0, X [X -> X].X, X -> X, X (X), X -> X);
+}
+
+static X X (X X, X X) {
+    X X [X];
+    X (X, X, 0, X [X -> X].X, X -> X);
+    X (X, 0, X, ! X -> X ? 0 : X (X) ? X [X -> X].X : X [X -> X].X);
+}
+
+static X X (X X) {
+    struct  X X;
+    switch (X->X) {
+    case X :
+        return (X (X) > 0);
+        break;
+    case X :
+        if (X (X->X, X->X) && X (X->X, &X) == 0) {
+            if (X->X && X->X->X)
+                return X;
+            else if (X->X && X->X->X)
+                return X;
+            else
+                return X;
+        }
+        else {
+            return X;
+        }
+        break;
+    case X :
+        if ((X (X->X, &X) == 0) && X (X.X)) {
+            if (X->X && X->X->X)
+                return X;
+            else if (X->X && X->X->X)
+                return X;
+            else if (X->X && X->X->X)
+                return X;
+            else
+                return X;
+        }
+        else {
+            return X;
+        }
+        break;
+    case X :
+        if ((X (X->X, &X) == 0) && X (X.X)) {
+            if (X->X && X->X->X)
+                return X;
+            else if (X->X && X->X->X)
+                return X;
+            else if (X->X && X->X->X)
+                return X;
+            else
+                return X;
+        }
+        else {
+            return X;
+        }
+        break;
+    case X :
+        if (X->X) {
+            X X;
+            X X = X;
+            for (X = X->X; X; X = X->X) {
+                if (!X->X) {
+                    X = X;
+                    break;
+                }
+            }
+            return X;
+        }
+        else {
+            return X;
+        }
+        break;
+    default :
+        break;
+    }
+    return X;
+}
+

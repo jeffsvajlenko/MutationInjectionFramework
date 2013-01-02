@@ -1,0 +1,1 @@
+/home/jeff/Development/workspace/MutationInjectionFramework/testdata/ExperimentDataTest/exprdata/angryipscanner/net/azib/ipscan/feeders/RandomFeeder.java,101,112,/home/jeff/Development/workspace/MutationInjectionFramework/testdata/ExperimentDataTest/exprdata/angryipscanner/net/azib/ipscan/core/PortIterator.java,105,116

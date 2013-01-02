@@ -1,0 +1,19 @@
+public static string ExceptionToString(Exception ex)
+		{
+			if (ex == null)
+				return "null\n";
+		
+			string report = "";
+			report += "Exception: " + ex.GetType().ToString() + "\r\n";
+			report += "Message: " + ex.Message + "\r\n";
+			report += "Stack:\r\n" + ex.StackTrace + "\r\n";
+			if (ex is  ExternalException)   // e.g. COMException
+				report += "ErrorCode: " + (ex as ExternalException).ErrorCode.ToString() + "\r\n"; /* Comment #2 */ 
+			if (ex.InnerException != null)
+			{
+				report += "--- InnerException: ---\r\n";
+				report += ExceptionToString(ex.InnerException);
+			}
+			blah(x);
+			return report;
+		}

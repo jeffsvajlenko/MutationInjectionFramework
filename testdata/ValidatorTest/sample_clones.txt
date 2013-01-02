@@ -1,0 +1,63 @@
+=============
+=Java Clones=
+=============
+testdata/ValidatorTest/
+
+Type1
+-----
+	-Function-
+testdata/ValidatorTest/JHotDraw54b1/src/CH/ifa/draw/contrib/CTXCommandMenu.java 126 137
+testdata/ValidatorTest/JHotDraw54b1/src/CH/ifa/draw/util/CommandMenu.java 90 101
+	-Block-
+testdata/ValidatorTest/JHotDraw54b1/src/CH/ifa/draw/standard/ConnectionTool.java 356 368
+testdata/ValidatorTest/JHotDraw54b1/src/CH/ifa/draw/standard/ConnectionHandle.java 159 171
+
+Type2
+-----
+	-Function-
+testdata/ValidatorTest/JHotDraw54b1/src/CH/ifa/draw/contrib/MDIDesktopPane.java 544 605
+testdata/ValidatorTest/JHotDraw54b1/src/CH/ifa/draw/contrib/MDIDesktopPane.java 476 537
+	-Block-
+testdata/ValidatorTest/JHotDraw54b1/src/CH/ifa/draw/util/UndoCommand.java 42 63
+testdata/ValidatorTest/JHotDraw54b1/src/CH/ifa/draw/util/RedoCommand.java 36 56
+
+Type3
+-----
+	-Function- (Token:  Line: )
+testdata/ValidatorTest/JHotDraw54b1/src/CH/ifa/draw/contrib/CTXWindowMenu.java 160 202
+testdata/ValidatorTest/JHotDraw54b1/src/CH/ifa/draw/contrib/WindowMenu.java 79 116
+	-Block- (Token:  Line: )
+testdata/ValidatorTest/JHotDraw54b1/src/CH/ifa/draw/contrib/CompositeFigureCreationTool.java 37 59
+testdata/ValidatorTest/JHotDraw54b1/src/CH/ifa/draw/contrib/NestedCreationTool.java 35 54
+
+
+==========
+=C Clones=
+==========
+
+Type1
+-----
+	-Function-
+testdata/ValidatorTest/monit-4.2/device/sysdep_FREEBSD.c 92 115
+testdata/ValidatorTest/monit-4.2/device/sysdep_LINUX.c 114 137
+	-Block-
+sys 2264 2273
+testdata/ValidatorTest/monit-4.2/http/cervlet.c 2247 2256
+
+Type2
+-----
+	-Function-
+testdata/ValidatorTest/monit-4.2/process/sysdep_LINUX.c 244 296
+testdata/ValidatorTest/monit-4.2/process/sysdep_SOLARIS.c 188 240
+	-Block-
+testdata/ValidatorTest/monit-4.2/gc.c 299 315
+testdata/ValidatorTest/monit-4.2/gc.c 319 335
+
+Type3
+-----
+	-Function-
+testdata/ValidatorTest/monit-4.2/socket.c 490 527
+testdata/ValidatorTest/monit-4.2/socket.c 446 480
+	-Block-
+testdata/ValidatorTest/monit-4.2/util.c 708 727
+testdata/ValidatorTest/monit-4.2/http/cervlet.c 1615 1634

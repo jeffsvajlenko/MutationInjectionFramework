@@ -1,0 +1,299 @@
+using X;
+using X.X;
+
+namespace X
+{
+    class X
+    {
+        private static volatile X X;
+        private static volatile X X = 0;
+        public static X X ()
+        {
+            try {
+                X = new X ();
+                X = 0;
+            }
+            catch {
+                X = 0;
+            }
+            return X;
+        }
+
+        public static X X ()
+        {
+            X.X ();
+        }
+
+        public static X X (X.X X)
+        {
+            if (X) {
+                if (X.X ()) {
+                    if (X.X.X == 0) {
+                        if (X.X.X > - 0 && X.X > X.X.X)
+                            return 0;
+
+                    } else {
+                        if (X.X.X > - 0 && X.X > X.X.X)
+                            return 0;
+
+                    }
+                    if (X (X.X, X.X, X.X) == 0)
+                        X.X (X);
+
+                } else
+                    return 0;
+
+            } else {
+                return 0;
+            }
+            return 0;
+        }
+
+        public static X X (X X, X X, X X)
+        {
+            if (X && X.X > 0) {
+                foreach (X.X X in X) {
+                    if (X.X == X && X.X == X && X.X == X)
+                        return 0;
+
+                }
+            }
+            return 0;
+        }
+
+        public static X.X X (X X)
+        {
+            if (X && X.X > 0) {
+                foreach (X.X X in X) {
+                    if (X.X == X)
+                        return X;
+
+                }
+            }
+            return X;
+        }
+
+        public static X X ()
+        {
+            if (X)
+                return (X) X.X;
+
+            return 0;
+        }
+
+    }
+
+    class X
+    {
+        public static volatile X X;
+        public static volatile X X = 0;
+        public static X X ()
+        {
+            try {
+                X = new X ();
+                X = 0;
+            }
+            catch {
+                X = 0;
+            }
+            return X;
+        }
+
+        public static X X ()
+        {
+            X.X ();
+        }
+
+        public static X X (X.X X)
+        {
+            if (X) {
+                if (X.X) {
+                    if (X (X.X, X.X, X.X) == 0)
+                        X.X (X);
+
+                } else
+                    return 0;
+
+            } else {
+                return 0;
+            }
+            return 0;
+        }
+
+        public static X X (X X, X X, X X)
+        {
+            if (X && X.X > 0) {
+                foreach (X.X X in X) {
+                    if (X.X == X && X.X == X && X.X == X)
+                        return 0;
+
+                }
+            }
+            return 0;
+        }
+
+        public static X X ()
+        {
+            if (X)
+                return (X) X.X;
+
+            return 0;
+        }
+
+    }
+
+    class X
+    {
+        public static volatile X X;
+        public static volatile X X = 0;
+        public static X X ()
+        {
+            if (X)
+                X.X ();
+
+            try {
+                X = new X ();
+                X = 0;
+            }
+            catch {
+                X = 0;
+            }
+            return X;
+        }
+
+    }
+
+    class X
+    {
+        public static volatile X X;
+        public static volatile X X = 0;
+        public class X
+        {
+            public X.X X;
+            public X.X X;
+            public X (X.X X, X.X X)
+            {
+                X = X;
+                X = X;
+            }
+
+        }
+        public static X X ()
+        {
+            if (X)
+                X.X ();
+
+            try {
+                X = new X ();
+                X = 0;
+            }
+            catch {
+                X = 0;
+            }
+            return X;
+        }
+
+        public static X X (X.X X, X.X X)
+        {
+            if (X.X.X == 0 || X.X.X == 0) {
+                X X = new X (X, X);
+                if (X (X) == 0) {
+                    if (X != X) {
+                        X.X.X (X);
+                        return 0;
+                    }
+                }
+            }
+            return 0;
+        }
+
+        public static X X (X X)
+        {
+            if (X.X.X == 0) {
+                foreach (X X in X) {
+                    if (X.X.X == X.X.X && X.X.X == X.X.X)
+                        return 0;
+
+                }
+            } else if (X.X.X == 0) {
+                foreach (X X in X) {
+                    if (X.X.X == X.X.X && X.X.X == X.X.X && X.X.X == X.X.X && X.X.X == X.X.X)
+                        return 0;
+
+                }
+            } else
+                return 0;
+
+            return 0;
+        }
+
+    }
+
+    class X
+    {
+        public static volatile X X;
+        public static volatile X X = 0;
+        public class X
+        {
+            public X.X X;
+            public X.X X;
+            public X X;
+            public X X;
+            public X (X.X X, X.X X, X X, X X)
+            {
+                X = X;
+                X = X;
+                X = X;
+                X = X;
+            }
+
+        }
+        public static X X ()
+        {
+            try {
+                X = new X ();
+                X = 0;
+            }
+            catch {
+                X = 0;
+            }
+            return X;
+        }
+
+        public static X X ()
+        {
+            X.X ();
+        }
+
+        public static X X (X.X X, X.X X, X X, X X)
+        {
+            if (X) {
+                if (X.X) {
+                    if (X (X.X, X.X, X.X) == 0) {
+                        X.X (new X (X, X, X, X));
+                    }
+                } else
+                    return 0;
+
+            } else {
+                return 0;
+            }
+            return 0;
+        }
+
+        public static X X (X X, X X, X X)
+        {
+            if (X && X.X > 0) {
+                foreach (X X in X) {
+                    if (X.X.X == X && X.X.X == X && X.X.X == X)
+                        return 0;
+
+                }
+            }
+            return 0;
+        }
+
+    }
+
+}
+

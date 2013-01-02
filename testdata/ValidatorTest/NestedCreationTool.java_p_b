@@ -1,0 +1,66 @@
+package X.X.X.X;
+
+import X.X.X.X.X;
+
+import X.X.X.X.X;
+
+import X.X.X.X.X;
+
+import X.X.X.X.X;
+
+import X.X.X.X;
+
+public class X extends X {
+    private X X;
+
+    public X (X X, X X) {
+        X (X, X);
+    }
+
+    public X X (X X, X X, X X) {
+        X X = X ().X (X.X (), X.X ());
+        if (X != X) {
+            X = X.X ();
+            if (X instanceof X) {
+                X ((X) X);
+                X.X (X, X, X);
+            } else {
+                X ();
+            }
+        } else {
+            X ();
+        }
+    }
+
+    public X X (X X, X X, X X) {
+        if ((X () != X) && ! X ().X (X.X (), X.X ())) {
+            X ();
+        } else {
+            X.X (X, X, X);
+        }
+    }
+
+    public X X (X X, X X, X X) {
+        if ((X () != X) && (X () != X) && X ().X (X.X (), X.X ())) {
+            X ().X (X ());
+        }
+        X ();
+    }
+
+    protected X X (X X) {
+        X = X;
+    }
+
+    public X X () {
+        return X;
+    }
+
+    protected X X () {
+        X (X);
+        X (X);
+        X (X);
+        X ().X ();
+    }
+
+}
+

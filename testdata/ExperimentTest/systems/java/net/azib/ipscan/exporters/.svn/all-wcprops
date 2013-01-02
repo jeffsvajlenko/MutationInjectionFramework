@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/exporters
+END
+AbstractExporter.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/exporters/AbstractExporter.java
+END
+IPListExporter.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/exporters/IPListExporter.java
+END
+ExportProcessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/exporters/ExportProcessor.java
+END
+ExporterRegistry.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/exporters/ExporterRegistry.java
+END
+CSVExporter.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/exporters/CSVExporter.java
+END
+ExporterException.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/exporters/ExporterException.java
+END
+Exporter.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/exporters/Exporter.java
+END
+SQLExporter.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/exporters/SQLExporter.java
+END
+TXTExporter.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/exporters/TXTExporter.java
+END
+XMLExporter.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/exporters/XMLExporter.java
+END

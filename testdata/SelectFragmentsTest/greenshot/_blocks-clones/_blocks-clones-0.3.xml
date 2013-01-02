@@ -1,0 +1,16 @@
+<clones>
+<systeminfo processor="nicad3" system="_" granularity="locks" threshold="30%" minlines="10" maxlines="2500"/>
+<cloneinfo npcs="659" npairs="2"/>
+<runinfo ncompares="3061" cputime="100000"/>
+
+<clone nlines="12" similarity="91">
+<source file="/home/jeff/Development/java/workspace/MutationInjectionFramework/testdata/SelectFragmentsTest/greenshot/Forms/ImageEditorForm.cs.ifdefed" startline="471" endline="484" pcid="624"></source>
+<source file="/home/jeff/Development/java/workspace/MutationInjectionFramework/testdata/SelectFragmentsTest/greenshot/Forms/ImageEditorForm.cs.ifdefed" startline="455" endline="468" pcid="621"></source>
+</clone>
+
+<clone nlines="10" similarity="80">
+<source file="/home/jeff/Development/java/workspace/MutationInjectionFramework/testdata/SelectFragmentsTest/greenshot/Drawing/DrawableContainerList.cs.ifdefed" startline="312" endline="323" pcid="43"></source>
+<source file="/home/jeff/Development/java/workspace/MutationInjectionFramework/testdata/SelectFragmentsTest/greenshot/Drawing/DrawableContainerList.cs.ifdefed" startline="262" endline="273" pcid="35"></source>
+</clone>
+
+</clones>

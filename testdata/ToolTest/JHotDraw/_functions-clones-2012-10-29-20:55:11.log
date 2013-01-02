@@ -1,0 +1,46 @@
+Mon Oct 29 20:55:11 PDT 2012
+./txl/java-extract-functions.x -s 400 ALL.java >> ../JHotDraw//_functions.xml
+
+Mon Oct 29 20:55:20 PDT 2012
+
+Mon Oct 29 20:55:20 PDT 2012
+./tools/streamprocess.x './txl/java-rename-blind-functions.x stdin' < ../JHotDraw//_functions.xml > ../JHotDraw//_functions-blind.xml
+
+real	0m1.586s
+user	0m0.532s
+sys	0m0.772s
+
+Mon Oct 29 20:55:21 PDT 2012
+
+Mon Oct 29 20:55:22 PDT 2012
+./tools/streamprocess.x './txl/java-abstract-functions.x stdin - literal' < ../JHotDraw//_functions-blind.xml > ../JHotDraw//_functions-blind-abstract.xml
+
+real	0m2.071s
+user	0m0.872s
+sys	0m0.876s
+
+Mon Oct 29 20:55:24 PDT 2012
+
+Mon Oct 29 20:55:24 PDT 2012
+./tools/clonepairs.x ../JHotDraw//_functions-blind-abstract.xml 0.3 10 2500 > ../JHotDraw//_functions-blind-abstract-clones/_functions-blind-abstract-clones-0.3.xml
+Processing ../JHotDraw//_functions-blind-abstract.xml with difference threshold 30%, clone size 10 .. 2500 lines
+Reading pcs ... done.
+Total 2886/7500000 potential clones of 10 lines or more
+Used 6893/125000000 total pc lines
+Used 367053/750000000 unique line text chars
+ and 4868/15000000 unique lines
+Sorting pcs . done.
+Finding clones .. done.
+Total 39967 pc comparisons
+Pruning embedded clone pairs . done.
+Pruned 0 embedded clone pairs
+Found 90 clone pairs
+Generating XML output . done.
+
+
+real	0m1.581s
+user	0m0.048s
+sys	0m1.336s
+
+Mon Oct 29 20:55:25 PDT 2012
+

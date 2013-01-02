@@ -1,0 +1,43 @@
+    private void buildChildMenus()
+    {
+        JInternalFrame[] array = desktop.getAllFrames();
+
+        // update window organization commands
+        cascadeCommand.setEnabled(array.length > 0);
+        tileHCommand.setEnabled(array.length > 0);
+        tileVCommand.setEnabled(array.length > 0);
+        arrangeHCommand.setEnabled(array.length > 0);
+        arrangeVCommand.setEnabled(array.length > 0);
+
+        if (array.length == 0)
+        {
+            return;
+        }
+
+        addSeparator();
+
+        for (int i = 0; i < array.length; i++)
+        {
+            ChildMenuItem menu = new ChildMenuItem(array[i]);
+            menu.setState(i == 0);
+            menu.addActionListener(
+                new ActionListener()
+            {
+                public void actionPerformed(ActionEvent ae)
+                {
+                    JInternalFrame frame = ((ChildMenuItem)ae.getSource()).getFrame();
+                    frame.moveToFront();
+                    try
+                    {
+                        frame.setSelected(true);
+                    }
+                    catch (PropertyVetoException e)
+                    {
+                        e.printStackTrace();
+                    }
+                }
+            });
+            menu.setIcon(array[i].getFrameIcon());
+            add(menu);
+        }
+    }

@@ -1,0 +1,26 @@
+<clones>
+<systeminfo processor="nicad3" system="_" granularity="unctions-blind-abstract" threshold="35%" minlines="10" maxlines="2500"/>
+<cloneinfo npcs="737" npairs="4"/>
+<runinfo ncompares="8090" cputime="80000"/>
+
+<clone nlines="28" similarity="96">
+<source file="/home/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/data_AutomaticJavaFunctions/mutantbase/net/azib/ipscan/gui/actions/ColumnsActions.java" startline="161" endline="208" pcid="227"></source>
+<source file="/home/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/data_AutomaticJavaFunctions/mutantbase/net/azib/ipscan/gui/actions/GotoMenuActions.java" startline="183" endline="230" pcid="310"></source>
+</clone>
+
+<clone nlines="13" similarity="92">
+<source file="/home/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/data_AutomaticJavaFunctions/mutantbase/net/azib/ipscan/util/InetAddressUtils.java" startline="54" endline="72" pcid="431"></source>
+<source file="/home/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/data_AutomaticJavaFunctions/mutantbase/net/azib/ipscan/util/InetAddressUtils.java" startline="34" endline="52" pcid="430"></source>
+</clone>
+
+<clone nlines="11" similarity="72">
+<source file="/home/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/data_AutomaticJavaFunctions/mutantbase/net/azib/ipscan/exporters/CSVExporter.java" startline="31" endline="43" pcid="37"></source>
+<source file="/home/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/data_AutomaticJavaFunctions/mutantbase/net/azib/ipscan/exporters/CSVExporter.java" startline="45" endline="55" pcid="38"></source>
+</clone>
+
+<clone nlines="10" similarity="100">
+<source file="/home/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/data_AutomaticJavaFunctions/mutantbase/net/azib/ipscan/gui/ConfigDetectorDialog.java" startline="112" endline="123" pcid="169"></source>
+<source file="/home/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/data_AutomaticJavaFunctions/mutantbase/net/azib/ipscan/gui/ConfigDetectorDialog.java" startline="125" endline="136" pcid="171"></source>
+</clone>
+
+</clones>

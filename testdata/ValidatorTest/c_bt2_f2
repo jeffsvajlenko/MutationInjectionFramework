@@ -1,0 +1,17 @@
+{
+
+    ASSERT(i&&*i);
+
+    if((*i)->next)
+    {
+        _gcicmp(&(*i)->next);
+    }
+
+    if((*i)->exec)
+    {
+        _gccmd(&(*i)->exec);
+    }
+
+    FREE(*i);
+
+}

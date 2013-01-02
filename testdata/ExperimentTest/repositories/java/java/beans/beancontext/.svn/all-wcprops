@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/beancontext
+END
+BeanContextServicesListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/beancontext/BeanContextServicesListener.java
+END
+BeanContextMembershipEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/beancontext/BeanContextMembershipEvent.java
+END
+BeanContextMembershipListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/beancontext/BeanContextMembershipListener.java
+END
+BeanContextServiceAvailableEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/beancontext/BeanContextServiceAvailableEvent.java
+END
+BeanContextChildComponentProxy.java
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/beancontext/BeanContextChildComponentProxy.java
+END
+BeanContextServiceProvider.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/beancontext/BeanContextServiceProvider.java
+END
+BeanContextSupport.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/beancontext/BeanContextSupport.java
+END
+BeanContextServiceProviderBeanInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/beancontext/BeanContextServiceProviderBeanInfo.java
+END
+BeanContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/beancontext/BeanContext.java
+END
+BeanContextChildSupport.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/beancontext/BeanContextChildSupport.java
+END
+BeanContextServicesSupport.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/beancontext/BeanContextServicesSupport.java
+END
+BeanContextProxy.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/beancontext/BeanContextProxy.java
+END
+BeanContextEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/beancontext/BeanContextEvent.java
+END
+BeanContextServiceRevokedEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/beancontext/BeanContextServiceRevokedEvent.java
+END
+BeanContextServices.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/beancontext/BeanContextServices.java
+END
+BeanContextChild.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/beancontext/BeanContextChild.java
+END
+BeanContextContainerProxy.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/beancontext/BeanContextContainerProxy.java
+END
+BeanContextServiceRevokedListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/beans/beancontext/BeanContextServiceRevokedListener.java
+END

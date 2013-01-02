@@ -1,0 +1,10 @@
+        {
+            if(s->perm&&s->perm->has_error)
+                return FALSE;
+            else if(s->uid&&s->uid->has_error)
+                return FALSE;
+            else if(s->gid&&s->gid->has_error)
+                return FALSE;
+            else
+                return TRUE;
+        }

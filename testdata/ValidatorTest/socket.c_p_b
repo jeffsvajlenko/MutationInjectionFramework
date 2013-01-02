@@ -1,0 +1,265 @@
+#include "config.h"
+#ifdef HAVE_SYS_TYPES_H
+#include <sys/types.h>
+#endif
+#ifdef HAVE_STRING_H
+#include <string.h>
+#endif
+#ifdef HAVE_SYS_SOCKET_H
+#include <sys/socket.h>
+#endif
+#ifdef HAVE_STRINGS_H
+#include <strings.h>
+#endif
+#ifdef HAVE_UNISTD_H
+#include <unistd.h>
+#endif
+#include "net.h"
+#include "ssl.h"
+#include "monitor.h"
+#include "socket.h"
+#define TYPE_LOCAL  0
+#define TYPE_ACCEPT 1
+struct X {
+    X X;
+    X X;
+    X X;
+    X *X;
+    X X;
+    X X;
+    X X;
+    X *X;
+    X *X;
+};
+
+X X (const X *X, X X, X X, X X) {
+    return X (X, X, X, X, X);
+}
+
+X X (X *X) {
+    X X;
+    X X;
+    X X = X;
+    X (X);
+    if ((X = X (X)) != -0) {
+        X (X);
+        X->X = X;
+        X->X = X->X;
+        X->X = X->X;
+        X->X = X->X;
+        X->X = X;
+        if (X->X == X) {
+            X->X = X (X);
+        }
+        else {
+            X->X = X (X->X);
+        }
+        if (X->X.X) {
+            if (!(X->X = X (X, X->X.X))) {
+                goto X;
+            }
+            if (!X (X->X, X->X)) {
+                goto X;
+            }
+            if (X->X.X) {
+                if (!X (X->X, X->X.X)) {
+                    goto X;
+                }
+            }
+        }
+        X->X = X;
+        return X;
+    X :
+        X (&X);
+        return X;
+    }
+    return X;
+}
+
+X X (const X *X, X X, X X, X X, X X) {
+    X X;
+    X X;
+    X X = X == X ? X : X;
+    X (X);
+    X ((X == X) || (X == X));
+    if (X) {
+        X (X == X);
+    }
+    X (X > 0);
+    if ((X = X (X, X, X, X)) != -0) {
+        X (X);
+        X->X = X;
+        X->X = X;
+        X->X = X;
+        X->X = X;
+        X->X = X (X);
+        X->X = X;
+        if (X) {
+            if (!(X->X = X (X, X))) {
+                goto X;
+            }
+            if (!X (X->X, X->X)) {
+                goto X;
+            }
+        }
+        return X;
+    X :
+        X (&X);
+        return X;
+    }
+    return X;
+}
+
+X X (X X, const X *X, X X, X *X) {
+    X X;
+    X (X >= 0);
+    X (X);
+    X (X);
+    X->X = X;
+    X->X = X;
+    X->X = X;
+    X->X = X;
+    X->X = X (X);
+    X->X = X;
+    if (X) {
+        X->X = X;
+        if (!(X->X = X (X->X))) {
+            goto X;
+        }
+        if (!X (X->X, X->X)) {
+            goto X;
+        }
+    }
+    return X;
+X :
+    X (&X);
+    return X;
+}
+
+X X (X *X) {
+    X (X && * X);
+#ifdef HAVE_OPENSSL
+    if ((*X)->X && (*X)->X->X) {
+        if ((*X)->X == X) {
+            X ((* X) -> X);
+            X ((* X) -> X);
+        }
+        else if ((*X)->X == X && (*X)->X) {
+            X ((* X) -> X, (* X) -> X);
+        }
+    }
+#endif
+    X ((* X) -> X);
+    X ((* X) -> X);
+    X (*X);
+    (*X) = X;
+}
+
+X X (X X) {
+    X (X);
+    switch (X->X) {
+    case X :
+        return X (X->X);
+    case X :
+        return X (X->X);
+    default :
+        break;
+    }
+    return X;
+}
+
+X X (X X) {
+    X (X);
+    return X->X;
+}
+
+X *X (X X) {
+    X (X);
+    return X->X;
+}
+
+X X (X X) {
+    X (X);
+    return X->X;
+}
+
+const X *X (X X) {
+    X (X);
+    return X->X;
+}
+
+X X (X X, const X *X, ... ) {
+    X X;
+    X X;
+    X X;
+    X *X = X;
+    X (X);
+    X (X);
+    X (X, X);
+    X = X (X, X, &X);
+    X (X);
+    X = X (X, X, X);
+    X (X);
+    return X;
+}
+
+X X (X X, X *X, X X) {
+    X X = 0;
+    X *X = X;
+    X (X);
+    while (X > 0) {
+        if (X->X) {
+            X = X (X->X, X, X);
+        }
+        else {
+            X = X (X->X, X, X);
+        }
+        if (X <= 0)
+            break;
+        X += X;
+        X -= X;
+    }
+    if (X < 0) {
+        return -0;
+    }
+    return (X) X - (X) X;
+}
+
+X X (X X, X *X, X X) {
+    X X = 0;
+    X *X = X;
+    X X = 0;
+    X (X);
+    X = X->X;
+    while (X > 0) {
+        if (X->X) {
+            X = X (X->X, X, X, X);
+        }
+        else {
+            X = X (X->X, X, X, X);
+        }
+        if (X <= 0)
+            break;
+        X += X;
+        X -= X;
+        X = 0;
+    }
+    if (X < 0 && X == X) {
+        return -0;
+    }
+    return (X) X - (X) X;
+}
+
+X *X (X X, X *X, X X) {
+    X *X = X;
+    X (X);
+    while (--X && ((X (X, X, 0)) > 0)) {
+        if (*X++ == 0)
+            break;
+    }
+    *X = 0;
+    if (*X)
+        return X;
+    return X;
+}
+

@@ -1,0 +1,33 @@
+
+Sun  9 Dec 2012 14:26:30 CST
+./tools/streamprocess.x './txl/java-rename-blind-blocks.x stdin' < JHotDraw54b1_blocks.xml > JHotDraw54b1_blocks-blind.xml
+
+real	0m2.652s
+user	0m1.006s
+sys	0m0.848s
+
+Sun  9 Dec 2012 14:26:33 CST
+
+Sun  9 Dec 2012 14:26:33 CST
+./tools/clonepairs.x JHotDraw54b1_blocks-blind.xml 0.0 10 2500 > JHotDraw54b1_blocks-blind-clones/JHotDraw54b1_blocks-blind-clones-0.0.xml
+Processing JHotDraw54b1_blocks-blind.xml with difference threshold 0%, clone size 10 .. 2500 lines
+Reading pcs ..... done.
+Total 4543/7500000 potential clones of 10 lines or more
+Used 9725/125000000 total pc lines
+Used 538921/750000000 unique line text chars
+ and 6664/15000000 unique lines
+Sorting pcs . done.
+Finding clones .... done.
+Total 12100 pc comparisons
+Pruning embedded clone pairs . done.
+Pruned 4 embedded clone pairs
+Found 25 clone pairs
+Generating XML output . done.
+
+
+real	0m0.122s
+user	0m0.037s
+sys	0m0.057s
+
+Sun  9 Dec 2012 14:26:33 CST
+

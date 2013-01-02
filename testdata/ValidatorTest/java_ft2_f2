@@ -1,0 +1,62 @@
+    public void arrangeFramesVertically()
+    {
+        Component[] allFrames = getAllFrames();
+        // do nothing if no frames to work with
+        if (allFrames.length == 0)
+        {
+            return;
+        }
+
+        manager.setNormalSize();
+
+        int vertFrames = (int)Math.floor(Math.sqrt(allFrames.length));
+        int horFrames = (int)Math.ceil(Math.sqrt(allFrames.length));
+
+        // first arrange the windows that have equal size
+        int frameWidth = getBounds().width / horFrames;
+        int frameHeight = getBounds().height / vertFrames;
+        int x = 0;
+        int y = 0;
+        int frameIdx = 0;
+        for (int horCnt = 0; horCnt < horFrames-1; horCnt++)
+        {
+            y = 0;
+            for (int vertCnt = 0; vertCnt < vertFrames; vertCnt++)
+            {
+                try
+                {
+                    ((JInternalFrame)allFrames[frameIdx]).setMaximum(false);
+                }
+                catch (PropertyVetoException e)
+                {
+                    e.printStackTrace();
+                }
+
+                allFrames[frameIdx].setBounds(x, y, frameWidth, frameHeight);
+                frameIdx++;
+                y = y + frameHeight;
+            }
+            x = x + frameWidth;
+        }
+
+        // the rest of the frames are tiled down on the last column with equal
+        // height
+        frameHeight = getBounds().height / (allFrames.length - frameIdx);
+        y = 0;
+        for (; frameIdx < allFrames.length; frameIdx++)
+        {
+            try
+            {
+                ((JInternalFrame)allFrames[frameIdx]).setMaximum(false);
+            }
+            catch (PropertyVetoException e)
+            {
+                e.printStackTrace();
+            }
+
+            allFrames[frameIdx].setBounds(x, y, frameWidth, frameHeight);
+            y = y + frameHeight;
+        }
+
+        checkDesktopSize();
+    }

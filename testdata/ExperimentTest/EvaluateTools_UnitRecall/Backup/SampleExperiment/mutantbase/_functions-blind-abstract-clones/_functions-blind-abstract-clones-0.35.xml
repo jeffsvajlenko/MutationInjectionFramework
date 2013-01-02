@@ -1,0 +1,156 @@
+<clones>
+<systeminfo processor="nicad3" system="_" granularity="unctions-blind-abstract" threshold="35%" minlines="10" maxlines="2500"/>
+<cloneinfo npcs="1220" npairs="30"/>
+<runinfo ncompares="23036" cputime="8"/>
+
+<clone nlines="17" similarity="76">
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/feeders/FileFeederTest.java" startline="105" endline="123" pcid="1108"></source>
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/feeders/RangeFeederTest.java" startline="82" endline="98" pcid="1126"></source>
+</clone>
+
+<clone nlines="17" similarity="76">
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/feeders/FileFeederTest.java" startline="105" endline="123" pcid="1108"></source>
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/feeders/RandomFeederTest.java" startline="121" endline="137" pcid="1120"></source>
+</clone>
+
+<clone nlines="15" similarity="66">
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/feeders/RescanFeederTest.java" startline="41" endline="60" pcid="1130"></source>
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/feeders/FileFeederTest.java" startline="26" endline="38" pcid="1103"></source>
+</clone>
+
+<clone nlines="15" similarity="66">
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/feeders/RescanFeederTest.java" startline="41" endline="60" pcid="1130"></source>
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/feeders/RangeFeederTest.java" startline="16" endline="27" pcid="1122"></source>
+</clone>
+
+<clone nlines="15" similarity="86">
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/feeders/RangeFeederTest.java" startline="82" endline="98" pcid="1126"></source>
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/feeders/RandomFeederTest.java" startline="121" endline="137" pcid="1120"></source>
+</clone>
+
+<clone nlines="15" similarity="73">
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/feeders/RangeFeederTest.java" startline="43" endline="64" pcid="1124"></source>
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/exporters/ExporterRegistryTest.java" startline="45" endline="67" pcid="1079"></source>
+</clone>
+
+<clone nlines="15" similarity="73">
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/exporters/AbstractExporterTestCase.java" startline="102" endline="117" pcid="1059"></source>
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/exporters/IPListExporterTest.java" startline="42" endline="58" pcid="1082"></source>
+</clone>
+
+<clone nlines="15" similarity="66">
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/exporters/AbstractExporterTestCase.java" startline="102" endline="117" pcid="1059"></source>
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/exporters/XMLExporterTest.java" startline="51" endline="62" pcid="1097"></source>
+</clone>
+
+<clone nlines="15" similarity="73">
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/core/ScannerTest.java" startline="71" endline="93" pcid="965"></source>
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/core/ScannerTest.java" startline="55" endline="69" pcid="964"></source>
+</clone>
+
+<clone nlines="13" similarity="92">
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/src/net/azib/ipscan/util/InetAddressUtils.java" startline="34" endline="52" pcid="881"></source>
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/src/net/azib/ipscan/util/InetAddressUtils.java" startline="54" endline="72" pcid="882"></source>
+</clone>
+
+<clone nlines="12" similarity="66">
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/feeders/RangeFeederTest.java" startline="66" endline="80" pcid="1125"></source>
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/feeders/FileFeederTest.java" startline="26" endline="38" pcid="1103"></source>
+</clone>
+
+<clone nlines="12" similarity="66">
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/feeders/RangeFeederTest.java" startline="66" endline="80" pcid="1125"></source>
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/feeders/RangeFeederTest.java" startline="16" endline="27" pcid="1122"></source>
+</clone>
+
+<clone nlines="12" similarity="83">
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/feeders/FileFeederTest.java" startline="26" endline="38" pcid="1103"></source>
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/feeders/RangeFeederTest.java" startline="16" endline="27" pcid="1122"></source>
+</clone>
+
+<clone nlines="11" similarity="100">
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/src/net/azib/ipscan/Main.java" startline="135" endline="150" pcid="160"></source>
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/exporters/AbstractExporterTestCase.java" startline="69" endline="84" pcid="1057"></source>
+</clone>
+
+<clone nlines="11" similarity="100">
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/src/net/azib/ipscan/Main.java" startline="135" endline="150" pcid="160"></source>
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/src/net/azib/ipscan/core/values/IntegerWithUnit.java" startline="53" endline="69" pcid="379"></source>
+</clone>
+
+<clone nlines="11" similarity="100">
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/ext/rocksaw/src/java/org/savarese/rocksaw/net/RawSocket.java" startline="616" endline="642" pcid="28"></source>
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/ext/rocksaw/src/java/org/savarese/rocksaw/net/RawSocket.java" startline="554" endline="585" pcid="26"></source>
+</clone>
+
+<clone nlines="11" similarity="100">
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/gui/actions/GotoActionsTest.java" startline="75" endline="86" pcid="1190"></source>
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/gui/actions/GotoActionsTest.java" startline="38" endline="49" pcid="1187"></source>
+</clone>
+
+<clone nlines="11" similarity="81">
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/gui/actions/GotoActionsTest.java" startline="75" endline="86" pcid="1190"></source>
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/gui/actions/GotoActionsTest.java" startline="51" endline="61" pcid="1188"></source>
+</clone>
+
+<clone nlines="11" similarity="81">
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/gui/actions/GotoActionsTest.java" startline="38" endline="49" pcid="1187"></source>
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/gui/actions/GotoActionsTest.java" startline="51" endline="61" pcid="1188"></source>
+</clone>
+
+<clone nlines="11" similarity="81">
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/exporters/XMLExporterTest.java" startline="51" endline="62" pcid="1097"></source>
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/exporters/AbstractExporterTestCase.java" startline="130" endline="140" pcid="1061"></source>
+</clone>
+
+<clone nlines="11" similarity="100">
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/exporters/AbstractExporterTestCase.java" startline="69" endline="84" pcid="1057"></source>
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/src/net/azib/ipscan/core/values/IntegerWithUnit.java" startline="53" endline="69" pcid="379"></source>
+</clone>
+
+<clone nlines="11" similarity="100">
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/core/values/NotScannedTest.java" startline="32" endline="43" pcid="1048"></source>
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/core/values/NotAvailableTest.java" startline="32" endline="43" pcid="1045"></source>
+</clone>
+
+<clone nlines="11" similarity="81">
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/config/NamedListConfigTest.java" startline="77" endline="88" pcid="939"></source>
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/config/OpenersConfigTest.java" startline="100" endline="110" pcid="949"></source>
+</clone>
+
+<clone nlines="11" similarity="72">
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/src/net/azib/ipscan/exporters/CSVExporter.java" startline="31" endline="43" pcid="397"></source>
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/src/net/azib/ipscan/exporters/CSVExporter.java" startline="45" endline="55" pcid="398"></source>
+</clone>
+
+<clone nlines="10" similarity="80">
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/gui/actions/GotoActionsTest.java" startline="63" endline="73" pcid="1189"></source>
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/gui/actions/GotoActionsTest.java" startline="51" endline="61" pcid="1188"></source>
+</clone>
+
+<clone nlines="10" similarity="100">
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/gui/PreferencesDialogTest.java" startline="53" endline="64" pcid="1174"></source>
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/test/net/azib/ipscan/gui/PreferencesDialogTest.java" startline="40" endline="51" pcid="1173"></source>
+</clone>
+
+<clone nlines="10" similarity="100">
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/ext/vserv-tcpip/src/java/org/savarese/vserv/tcpip/ICMPPacket.java" startline="146" endline="158" pcid="44"></source>
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/ext/vserv-tcpip/src/java/org/savarese/vserv/tcpip/TCPPacket.java" startline="175" endline="187" pcid="106"></source>
+</clone>
+
+<clone nlines="10" similarity="100">
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/ext/vserv-tcpip/src/java/org/savarese/vserv/tcpip/ICMPPacket.java" startline="146" endline="158" pcid="44"></source>
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/ext/vserv-tcpip/src/java/org/savarese/vserv/tcpip/UDPPacket.java" startline="83" endline="95" pcid="140"></source>
+</clone>
+
+<clone nlines="10" similarity="100">
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/ext/vserv-tcpip/src/java/org/savarese/vserv/tcpip/TCPPacket.java" startline="175" endline="187" pcid="106"></source>
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/ext/vserv-tcpip/src/java/org/savarese/vserv/tcpip/UDPPacket.java" startline="83" endline="95" pcid="140"></source>
+</clone>
+
+<clone nlines="10" similarity="100">
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/src/net/azib/ipscan/gui/ConfigDetectorDialog.java" startline="125" endline="136" pcid="558"></source>
+<source file="/Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase//ipscan/src/net/azib/ipscan/gui/ConfigDetectorDialog.java" startline="112" endline="123" pcid="556"></source>
+</clone>
+
+</clones>

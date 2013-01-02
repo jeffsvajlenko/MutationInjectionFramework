@@ -1,0 +1,29 @@
+    private X X () {
+        X X;
+        X [] X = X.X ();
+        X (new X (X));
+        X (new X (X));
+        if (X.X > 0) {
+            X ();
+        }
+        for (X X = 0;
+        X < X.X; X ++) {
+            X = new X (X [X]);
+            X.X (X == 0);
+            X.X (new X () {
+                public X X (X X) {
+                    X X = ((X) X.X ()).X ();
+                    X.X ();
+                    try {
+                        X.X (0);
+                    } catch (X X) {
+                        X.X ();
+                    }
+                }
+
+            }
+            );
+            X.X (X [X].X ());
+            X (X);
+        }
+    }

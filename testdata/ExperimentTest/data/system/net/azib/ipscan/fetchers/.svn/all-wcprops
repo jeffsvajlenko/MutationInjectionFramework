@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/fetchers
+END
+CommentFetcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/fetchers/CommentFetcher.java
+END
+LastAliveTimeFetcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/fetchers/LastAliveTimeFetcher.java
+END
+AbstractFetcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/fetchers/AbstractFetcher.java
+END
+WebDetectFetcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/fetchers/WebDetectFetcher.java
+END
+PortsFetcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/fetchers/PortsFetcher.java
+END
+PacketLossFetcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/fetchers/PacketLossFetcher.java
+END
+IPFetcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/fetchers/IPFetcher.java
+END
+FetcherRegistry.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/fetchers/FetcherRegistry.java
+END
+HostnameFetcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/fetchers/HostnameFetcher.java
+END
+NetBIOSInfoFetcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/fetchers/NetBIOSInfoFetcher.java
+END
+FetcherPrefs.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/fetchers/FetcherPrefs.java
+END
+Fetcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/fetchers/Fetcher.java
+END
+HTTPSenderFetcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/fetchers/HTTPSenderFetcher.java
+END
+FetcherRegistryUpdateListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/fetchers/FetcherRegistryUpdateListener.java
+END
+PingTTLFetcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/fetchers/PingTTLFetcher.java
+END
+FilteredPortsFetcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/fetchers/FilteredPortsFetcher.java
+END
+PortTextFetcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/fetchers/PortTextFetcher.java
+END
+FetcherRegistryImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/fetchers/FetcherRegistryImpl.java
+END
+PingFetcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/fetchers/PingFetcher.java
+END
+FetcherException.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/fetchers/FetcherException.java
+END

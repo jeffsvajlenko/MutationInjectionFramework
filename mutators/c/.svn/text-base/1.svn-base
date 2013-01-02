@@ -1,0 +1,28 @@
+static void handle_resource (Event_T E) {
+	int i = -10;
+	double i2 = -1e23;
+	float i3 = 2e23;
+	signed i4;
+	unsigned i5;
+	short i6;
+	char i7;
+	long i8;
+	long double i9;
+	signed int i10;
+	unsigned int i11;
+	long int i12;
+	short int i13;
+	signed short i14;
+	unsigned short i15;
+	long long i16;
+	signed long i17;
+	unsigned long i18;
+	unsigned char i19;
+	signed char i20;
+	signed long long i21;
+	unsigned long long i22;
+	unsigned short int i23;
+	signed short int i24;
+	signed long int i25;
+	unsigned long int i26;
+}

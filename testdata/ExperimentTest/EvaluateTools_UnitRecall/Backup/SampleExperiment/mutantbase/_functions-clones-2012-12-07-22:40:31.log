@@ -1,0 +1,46 @@
+Fri Dec  7 22:40:31 CST 2012
+./txl/java-extract-functions.x -s 400 ALL.java >> /Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase/_functions.xml
+
+Fri Dec  7 22:40:38 CST 2012
+
+Fri Dec  7 22:40:38 CST 2012
+./tools/streamprocess.x './txl/java-rename-blind-functions.x stdin' < /Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase/_functions.xml > /Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase/_functions-blind.xml
+
+real	0m1.247s
+user	0m0.568s
+sys	0m0.280s
+
+Fri Dec  7 22:40:39 CST 2012
+
+Fri Dec  7 22:40:39 CST 2012
+./tools/streamprocess.x './txl/java-abstract-functions.x stdin - literal' < /Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase/_functions-blind.xml > /Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase/_functions-blind-abstract.xml
+
+real	0m1.711s
+user	0m0.666s
+sys	0m0.309s
+
+Fri Dec  7 22:40:41 CST 2012
+
+Fri Dec  7 22:40:41 CST 2012
+./tools/clonepairs.x /Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase/_functions-blind-abstract.xml 0.35 10 2500 > /Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase/_functions-blind-abstract-clones/_functions-blind-abstract-clones-0.35.xml
+Processing /Users/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/mutantbase/_functions-blind-abstract.xml with difference threshold 35%, clone size 10 .. 2500 lines
+Reading pcs .. done.
+Total 1220/7500000 potential clones of 10 lines or more
+Used 5579/125000000 total pc lines
+Used 367021/750000000 unique line text chars
+ and 3078/15000000 unique lines
+Sorting pcs . done.
+Finding clones . done.
+Total 23036 pc comparisons
+Pruning embedded clone pairs . done.
+Pruned 0 embedded clone pairs
+Found 30 clone pairs
+Generating XML output . done.
+
+
+real	0m0.150s
+user	0m0.047s
+sys	0m0.055s
+
+Fri Dec  7 22:40:41 CST 2012
+

@@ -1,0 +1,41 @@
+static void handle_resource (Event_T E) {
+    Device_T d;
+    Resource_T r;
+    Service_T s = E->source;
+    for (d = s->devicelist; d; d = d->next) {
+        if (d->event_flag && d->exec != NULL) {
+            d->event_flag = FALSE;
+            spawn (s, d -> exec, EVENT_DESCRIPTION (E));
+        }
+    }
+    int i = 10;
+    String str = "a string!";
+    for (r = s->resourcelist; r; r = r->next) {
+        if (r->event_flag && r->exec != NULL) {
+            r->event_flag = FALSE;
+            spawn (s, r -> exec, EVENT_DESCRIPTION (E));
+        }
+    }
+}
+
+static void handle_timestamp (Event_T E) {
+    Timestamp_T t;
+    Service_T s = E->source;
+    for (t = s->timestamplist; t; t = t->next) {
+        if (t->event_flag && t->exec != NULL) {
+            t->event_flag = FALSE;
+            spawn (s, t -> exec, EVENT_DESCRIPTION (E));
+        }
+    }
+}
+
+static void handle_size (Event_T E) {
+    Size_T sl;
+    Service_T s = E->source;
+    for (sl = s->sizelist; sl; sl = sl->next) {
+        if (sl->event_flag && sl->exec != NULL) {
+            sl->event_flag = FALSE;
+            spawn (s, sl -> exec, EVENT_DESCRIPTION (E));
+        }
+    }
+}

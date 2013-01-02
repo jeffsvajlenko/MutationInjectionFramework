@@ -1,0 +1,18 @@
+#!/bin/bash
+# $1 = system directory
+# $2 = language {java, c, cs, py}
+# $3 = frameowkr install dir
+# $4 = tool dir
+# $5 = fragmnet type (function|block)
+# $6 = tool runner directory
+# $7 = minlines
+
+#public List<Clone> runTool(String systemDirectory, String installdir, String language, String minblock, String minclone) 
+sysdir=$1
+outfile=$6/clones.txt
+installdir=$4
+language=$2
+minblock=10
+minclone=40
+cd $6
+java -jar IClonesRunner.jar $sysdir $installdir $language $minblock $minclone $outfile

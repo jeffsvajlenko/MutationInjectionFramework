@@ -1,0 +1,23 @@
+Cluster every vector groups...
+Clustering './vectors/vdb_100_5_g17_2.236068_50_100000' 6.572671 ...Done clustering './vectors/vdb_100_5_g17_2.236068_50_100000' 6.572671. Log: ./times/cluster_vdb_100_5_g17_2.236068_50_100000
+Clustering './vectors/vdb_100_5_g15_2.236068_50_100000' 6 ...Done clustering './vectors/vdb_100_5_g15_2.236068_50_100000' 6. Log: ./times/cluster_vdb_100_5_g15_2.236068_50_100000
+Clustering './vectors/vdb_100_5_g21_2.236068_50_100000' 7.848567 ...Done clustering './vectors/vdb_100_5_g21_2.236068_50_100000' 7.848567. Log: ./times/cluster_vdb_100_5_g21_2.236068_50_100000
+Clustering './vectors/vdb_100_5_g24_2.236068_50_100000' 8.921883 ...Done clustering './vectors/vdb_100_5_g24_2.236068_50_100000' 8.921883. Log: ./times/cluster_vdb_100_5_g24_2.236068_50_100000
+Clustering './vectors/vdb_100_5_g13_2.236068_50_100000' 5.477226 ...Done clustering './vectors/vdb_100_5_g13_2.236068_50_100000' 5.477226. Log: ./times/cluster_vdb_100_5_g13_2.236068_50_100000
+Clustering './vectors/vdb_100_5_g27_2.236068_50_100000' 10.13903 ...Done clustering './vectors/vdb_100_5_g27_2.236068_50_100000' 10.13903. Log: ./times/cluster_vdb_100_5_g27_2.236068_50_100000
+Clustering './vectors/vdb_100_5_g26_2.236068_50_100000' 9.715966 ...Done clustering './vectors/vdb_100_5_g26_2.236068_50_100000' 9.715966. Log: ./times/cluster_vdb_100_5_g26_2.236068_50_100000
+Clustering './vectors/vdb_100_5_g34_2.236068_50_100000' 13.62351 ...Done clustering './vectors/vdb_100_5_g34_2.236068_50_100000' 13.62351. Log: ./times/cluster_vdb_100_5_g34_2.236068_50_100000
+Clustering './vectors/vdb_100_5_g35_2.236068_50_100000' 14.20563 ...Done clustering './vectors/vdb_100_5_g35_2.236068_50_100000' 14.20563. Log: ./times/cluster_vdb_100_5_g35_2.236068_50_100000
+Clustering './vectors/vdb_100_5_g20_2.236068_50_100000' 7.509993 ...Done clustering './vectors/vdb_100_5_g20_2.236068_50_100000' 7.509993. Log: ./times/cluster_vdb_100_5_g20_2.236068_50_100000
+Clustering './vectors/vdb_100_5_g52_2.236068_50_100000' 28.80278 ...Done clustering './vectors/vdb_100_5_g52_2.236068_50_100000' 28.80278. Log: ./times/cluster_vdb_100_5_g52_2.236068_50_100000
+Clustering './vectors/vdb_100_5_g25_2.236068_50_100000' 9.316652 ...Done clustering './vectors/vdb_100_5_g25_2.236068_50_100000' 9.316652. Log: ./times/cluster_vdb_100_5_g25_2.236068_50_100000
+Clustering './vectors/vdb_100_5_g19_2.236068_50_100000' 7.183314 ...Done clustering './vectors/vdb_100_5_g19_2.236068_50_100000' 7.183314. Log: ./times/cluster_vdb_100_5_g19_2.236068_50_100000
+Clustering './vectors/vdb_100_5_g18_2.236068_50_100000' 6.870226 ...Done clustering './vectors/vdb_100_5_g18_2.236068_50_100000' 6.870226. Log: ./times/cluster_vdb_100_5_g18_2.236068_50_100000
+Clustering './vectors/vdb_100_5_g55_2.236068_50_100000' 32.60368 ...Done clustering './vectors/vdb_100_5_g55_2.236068_50_100000' 32.60368. Log: ./times/cluster_vdb_100_5_g55_2.236068_50_100000
+Clustering './vectors/vdb_100_5_g57_2.236068_50_100000' 35.41186 ...Done clustering './vectors/vdb_100_5_g57_2.236068_50_100000' 35.41186. Log: ./times/cluster_vdb_100_5_g57_2.236068_50_100000
+Clustering './vectors/vdb_100_5_g56_2.236068_50_100000' 33.97941 ...Done clustering './vectors/vdb_100_5_g56_2.236068_50_100000' 33.97941. Log: ./times/cluster_vdb_100_5_g56_2.236068_50_100000
+Clustering './vectors/vdb_100_5_g28_2.236068_50_100000' 10.58301 ...Done clustering './vectors/vdb_100_5_g28_2.236068_50_100000' 10.58301. Log: ./times/cluster_vdb_100_5_g28_2.236068_50_100000
+Clustering './vectors/vdb_100_5_g14_2.236068_50_100000' 5.744563 ...Done clustering './vectors/vdb_100_5_g14_2.236068_50_100000' 5.744563. Log: ./times/cluster_vdb_100_5_g14_2.236068_50_100000
+Clustering './vectors/vdb_100_5_g22_2.236068_50_100000' 8.197561 ...Done clustering './vectors/vdb_100_5_g22_2.236068_50_100000' 8.197561. Log: ./times/cluster_vdb_100_5_g22_2.236068_50_100000
+Clustering './vectors/vdb_100_5_g16_2.236068_50_100000' 6.276942 ...Done clustering './vectors/vdb_100_5_g16_2.236068_50_100000' 6.276942. Log: ./times/cluster_vdb_100_5_g16_2.236068_50_100000
+Done clustering. Check log: ./times/cluster_vdb_100_5_allg_2.236068_50 and ./times/cluster_vdb_100_5_g[0-9]+_2.236068_50

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+#$1 contains the command
+
+ulimit -s hard
+$1

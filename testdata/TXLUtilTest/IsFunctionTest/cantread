@@ -1,0 +1,46 @@
+/**
+	 * Creates an inventoried system from the specified directory.
+	 * @param systemdir The directory containing the system.
+	 * @throws IOException
+	 */
+	public InventoriedSystem(Path systemdir, String language) throws IOException {
+		// Check input
+		Objects.requireNonNull(systemdir);
+		Objects.requireNonNull(language);
+		if(!Files.exists(systemdir)) {
+			throw new IllegalArgumentException("System does not exist.");
+		}
+		if(!Files.isDirectory(systemdir)) {
+			throw new IllegalArgumentException("System is not a directory.");
+		}
+		
+		//System Location
+		this.location = systemdir.toAbsolutePath().normalize();
+		
+		//Language
+		this.language = language.toLowerCase();
+		
+		//Files
+		files = FileUtil.fileInventory(systemdir);
+		selectFiles = new ArrayList<Path>(files);
+		
+		//Directories
+		directories = FileUtil.directoryInventory(systemdir);
+		selectDirectories = new ArrayList<Path>(directories);
+		
+		//LeafDirectories
+		leafDirectories = new ArrayList<Path>();
+		for(Path p : directories) {
+			if(FileUtil.isLeafDirectory(p)) {
+				leafDirectories.add(p);
+			}
+		}
+		selectLeafDirectories = new ArrayList<Path>(leafDirectories);
+		
+		//Function Fragments
+		this.functionFragments = SelectFunctionFragments.getFragments(this.location.toFile(), this.language);
+		this.selectFunctionFragments = new LinkedList<FunctionFragment>(this.functionFragments);
+		
+		//Random Number Generator
+		random = new Random();
+	}

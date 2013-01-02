@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/core/values
+END
+InetAddressHolder.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/core/values/InetAddressHolder.java
+END
+IntegerWithUnit.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/core/values/IntegerWithUnit.java
+END
+NumericRangeList.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/core/values/NumericRangeList.java
+END
+NotScanned.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/core/values/NotScanned.java
+END
+Empty.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/core/values/Empty.java
+END
+NotAvailable.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/srlab/jes518/!svn/ver/679/MyMutationInjectionFramework/data/system/angryipscanner/net/azib/ipscan/core/values/NotAvailable.java
+END

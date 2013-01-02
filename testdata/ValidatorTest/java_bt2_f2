@@ -1,0 +1,21 @@
+   {
+        super.execute();
+        UndoManager um = getDrawingEditor().getUndoManager();
+        if ((um == null) || !um.isRedoable())
+        {
+            return;
+        }
+
+        Undoable lastRedoable = um.popRedo();
+        // Execute redo
+        boolean hasBeenUndone = lastRedoable.redo();
+        // Add to undo stack
+        if (hasBeenUndone && lastRedoable.isUndoable())
+        {
+            um.pushUndo(lastRedoable);
+        }
+
+        lastRedoable.getDrawingView().checkDamage();
+
+        getDrawingEditor().figureSelectionChanged(lastRedoable.getDrawingView());
+    }

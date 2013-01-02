@@ -1,0 +1,12 @@
+public LineContainer(Control parent) : base(parent)
+    {
+        supportedProperties.Add(DrawableContainer.Property.LINECOLOR);
+        supportedProperties.Add(DrawableContainer.Property.ARROWHEADS);
+        supportedProperties.Add(DrawableContainer.Property.THICKNESS);
+        grippers[1].Enabled = false;
+        grippers[2].Enabled = false;
+        grippers[3].Enabled = false;
+        grippers[5].Enabled = false;
+        grippers[6].Enabled = false;
+        grippers[7].Enabled = false;
+    }

@@ -1,0 +1,46 @@
+Sat Dec  1 10:31:57 PST 2012
+./txl/java-extract-functions.x -s 400 ALL.java >> /home/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/data_AutomaticJavaFunctions/mutantbase/_functions.xml
+
+Sat Dec  1 10:32:00 PST 2012
+
+Sat Dec  1 10:32:00 PST 2012
+./tools/streamprocess.x './txl/java-rename-blind-functions.x stdin' < /home/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/data_AutomaticJavaFunctions/mutantbase/_functions.xml > /home/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/data_AutomaticJavaFunctions/mutantbase/_functions-blind.xml
+
+real	0m0.507s
+user	0m0.252s
+sys	0m0.164s
+
+Sat Dec  1 10:32:01 PST 2012
+
+Sat Dec  1 10:32:01 PST 2012
+./tools/streamprocess.x './txl/java-abstract-functions.x stdin - literal' < /home/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/data_AutomaticJavaFunctions/mutantbase/_functions-blind.xml > /home/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/data_AutomaticJavaFunctions/mutantbase/_functions-blind-abstract.xml
+
+real	0m0.599s
+user	0m0.316s
+sys	0m0.140s
+
+Sat Dec  1 10:32:01 PST 2012
+
+Sat Dec  1 10:32:01 PST 2012
+./tools/clonepairs.x /home/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/data_AutomaticJavaFunctions/mutantbase/_functions-blind-abstract.xml 0.35 10 2500 > /home/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/data_AutomaticJavaFunctions/mutantbase/_functions-blind-abstract-clones/_functions-blind-abstract-clones-0.35.xml
+Processing /home/jeff/Dropbox/MutationInjectionFramework/testdata/ExperimentTest/data_AutomaticJavaFunctions/mutantbase/_functions-blind-abstract.xml with difference threshold 35%, clone size 10 .. 2500 lines
+Reading pcs . done.
+Total 737/7500000 potential clones of 10 lines or more
+Used 4023/125000000 total pc lines
+Used 201527/750000000 unique line text chars
+ and 2053/15000000 unique lines
+Sorting pcs . done.
+Finding clones  done.
+Total 8090 pc comparisons
+Pruning embedded clone pairs . done.
+Pruned 0 embedded clone pairs
+Found 4 clone pairs
+Generating XML output . done.
+
+
+real	0m0.130s
+user	0m0.036s
+sys	0m0.076s
+
+Sat Dec  1 10:32:01 PST 2012
+

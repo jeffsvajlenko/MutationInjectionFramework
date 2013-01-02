@@ -1,0 +1,37 @@
+    private static String getServiceValue(final ClassLoader classLoader)
+    {
+        String serviceId = "META-INF/services/" + PROPERTY;
+        // try to find services in CLASSPATH
+        try
+        {
+            InputStream is = getResourceAsStream(classLoader, serviceId);
+
+            if (is != null)
+            {
+                BufferedReader rd;
+                try
+                {
+                    rd =
+                        new BufferedReader(new InputStreamReader(is, "UTF-8"),
+                                           DEFAULT_LINE_LENGTH);
+                }
+                catch (java.io.UnsupportedEncodingException e)
+                {
+                    rd =
+                        new BufferedReader(new InputStreamReader(is),
+                                           DEFAULT_LINE_LENGTH);
+                }
+                String serviceValue = rd.readLine();
+                rd.close();
+                if (serviceValue != null && serviceValue.length() > 0)
+                {
+                    return serviceValue;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            return null;
+        }
+        return null;
+    }

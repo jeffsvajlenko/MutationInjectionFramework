@@ -1,0 +1,57 @@
+#pragma -char -newline -raw -comment
+
+include "csharp.grm"
+
+tokens
+	newline "\n" | "\n"
+end tokens
+
+redefine program
+	[repeat programelement]
+end define
+
+define programelement
+	[repeat comment_nl][comment]
+|	[token]
+|	[key]
+end define
+
+define comment_nl
+	[comment]
+|	[newline]
+end define
+
+function main
+	replace [program]
+		P [program]
+	by
+		P [fixNLComments][fixOtherComments]
+end function
+
+rule fixNLComments
+	construct Newline [newline]
+		_[parse ""]
+	replace $ [comment_nl]
+		Comment [comment]
+	construct CEnd [number]
+		_[# Comment]
+	construct CIndex [number]
+		CEnd [- 1]
+	construct LastTwo [comment]
+		Comment [: CIndex CEnd]
+	construct FirstTwo [comment]
+		Comment [: 1 2]	
+	where not
+		LastTwo [= "*/"]
+	where not
+		FirstTwo [= "//"]
+	by
+		Newline
+end rule
+
+rule fixOtherComments
+	replace $ [comment]
+		Comment [comment]
+	by
+		_
+end rule

@@ -1,0 +1,34 @@
+        public void handleEvent(Event e)
+        {
+            // modify menu text a bit
+            TableColumn tableColumn = (TableColumn) e.widget;
+            Fetcher fetcher = (Fetcher) tableColumn.getData();
+
+            MenuItem sortMenuItem = columnsMenu.getItem(0);
+            MenuItem preferencesMenuItem = columnsMenu.getItem(1);
+            MenuItem aboutMenuItem = columnsMenu.getItem(2);
+
+            if (tableColumn.getParent().getSortColumn() == tableColumn)
+            {
+                sortMenuItem.setText(Labels.getLabel("menu.columns.sortDirection"));
+            }
+            else
+            {
+                sortMenuItem.setText(Labels.getLabel("menu.columns.sortBy") + fetcher.getName());
+            }
+
+            // disable these menu items if scanning
+            sortMenuItem.setEnabled(stateMachine.inState(ScanningState.IDLE));
+            /* Comment */  preferencesMenuItem.setEnabled(fetcher.getPreferencesClass() != null && stateMachine.inState(ScanningState.IDLE));
+
+
+            // focus the table to make Enter work after using the menu
+            tableColumn.getParent().forceFocus();
+ // EOL Comment
+            // remember the clicked column (see SortBy, FetcherPreferences, and AboutFetcher below)
+            columnsMenu.setData(tableColumn);
+
+            // show the menu
+            columnsMenu.setLocation(e.display.getCursorLocation());
+            columnsMenu.setVisible(true);
+        }

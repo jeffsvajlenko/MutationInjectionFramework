@@ -1,0 +1,76 @@
+<clones>
+<systeminfo processor="nicad3" system="monit-4.2" granularity="functions-blind" threshold="0%" minlines="10" maxlines="2500"/>
+<cloneinfo npcs="402" npairs="14"/>
+<runinfo ncompares="1060" cputime="5"/>
+
+<clone nlines="22" similarity="100">
+<source file="examples/monit-4.2/process/sysdep_LINUX.c.ifdefed" startline="244" endline="296" pcid="227"></source>
+<source file="examples/monit-4.2/process/sysdep_SOLARIS.c.ifdefed" startline="188" endline="240" pcid="236"></source>
+</clone>
+
+<clone nlines="15" similarity="100">
+<source file="examples/monit-4.2/device/sysdep_FREEBSD.c.ifdefed" startline="92" endline="115" pcid="30"></source>
+<source file="examples/monit-4.2/device/sysdep_HPUX.c.ifdefed" startline="106" endline="129" pcid="32"></source>
+</clone>
+
+<clone nlines="15" similarity="100">
+<source file="examples/monit-4.2/device/sysdep_FREEBSD.c.ifdefed" startline="92" endline="115" pcid="30"></source>
+<source file="examples/monit-4.2/device/sysdep_LINUX.c.ifdefed" startline="114" endline="137" pcid="34"></source>
+</clone>
+
+<clone nlines="15" similarity="100">
+<source file="examples/monit-4.2/device/sysdep_FREEBSD.c.ifdefed" startline="92" endline="115" pcid="30"></source>
+<source file="examples/monit-4.2/device/sysdep_DARWIN.c.ifdefed" startline="92" endline="115" pcid="28"></source>
+</clone>
+
+<clone nlines="15" similarity="100">
+<source file="examples/monit-4.2/device/sysdep_FREEBSD.c.ifdefed" startline="92" endline="115" pcid="30"></source>
+<source file="examples/monit-4.2/device/sysdep_OPENBSD.c.ifdefed" startline="92" endline="115" pcid="36"></source>
+</clone>
+
+<clone nlines="15" similarity="100">
+<source file="examples/monit-4.2/device/sysdep_HPUX.c.ifdefed" startline="106" endline="129" pcid="32"></source>
+<source file="examples/monit-4.2/device/sysdep_LINUX.c.ifdefed" startline="114" endline="137" pcid="34"></source>
+</clone>
+
+<clone nlines="15" similarity="100">
+<source file="examples/monit-4.2/device/sysdep_HPUX.c.ifdefed" startline="106" endline="129" pcid="32"></source>
+<source file="examples/monit-4.2/device/sysdep_DARWIN.c.ifdefed" startline="92" endline="115" pcid="28"></source>
+</clone>
+
+<clone nlines="15" similarity="100">
+<source file="examples/monit-4.2/device/sysdep_HPUX.c.ifdefed" startline="106" endline="129" pcid="32"></source>
+<source file="examples/monit-4.2/device/sysdep_OPENBSD.c.ifdefed" startline="92" endline="115" pcid="36"></source>
+</clone>
+
+<clone nlines="15" similarity="100">
+<source file="examples/monit-4.2/device/sysdep_LINUX.c.ifdefed" startline="114" endline="137" pcid="34"></source>
+<source file="examples/monit-4.2/device/sysdep_DARWIN.c.ifdefed" startline="92" endline="115" pcid="28"></source>
+</clone>
+
+<clone nlines="15" similarity="100">
+<source file="examples/monit-4.2/device/sysdep_LINUX.c.ifdefed" startline="114" endline="137" pcid="34"></source>
+<source file="examples/monit-4.2/device/sysdep_OPENBSD.c.ifdefed" startline="92" endline="115" pcid="36"></source>
+</clone>
+
+<clone nlines="15" similarity="100">
+<source file="examples/monit-4.2/device/sysdep_DARWIN.c.ifdefed" startline="92" endline="115" pcid="28"></source>
+<source file="examples/monit-4.2/device/sysdep_OPENBSD.c.ifdefed" startline="92" endline="115" pcid="36"></source>
+</clone>
+
+<clone nlines="10" similarity="100">
+<source file="examples/monit-4.2/device/sysdep_DARWIN.c.ifdefed" startline="65" endline="82" pcid="27"></source>
+<source file="examples/monit-4.2/device/sysdep_FREEBSD.c.ifdefed" startline="65" endline="82" pcid="29"></source>
+</clone>
+
+<clone nlines="10" similarity="100">
+<source file="examples/monit-4.2/device/sysdep_DARWIN.c.ifdefed" startline="65" endline="82" pcid="27"></source>
+<source file="examples/monit-4.2/device/sysdep_OPENBSD.c.ifdefed" startline="65" endline="82" pcid="35"></source>
+</clone>
+
+<clone nlines="10" similarity="100">
+<source file="examples/monit-4.2/device/sysdep_FREEBSD.c.ifdefed" startline="65" endline="82" pcid="29"></source>
+<source file="examples/monit-4.2/device/sysdep_OPENBSD.c.ifdefed" startline="65" endline="82" pcid="35"></source>
+</clone>
+
+</clones>

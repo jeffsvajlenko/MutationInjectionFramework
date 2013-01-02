@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/srlab/jes518/!svn/ver/770/MyMutationInjectionFramework/data/systems/cs/greenshot/Drawing
+END
+DrawableContainerList.cs
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/srlab/jes518/!svn/ver/770/MyMutationInjectionFramework/data/systems/cs/greenshot/Drawing/DrawableContainerList.cs
+END
+EllipseContainer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/srlab/jes518/!svn/ver/770/MyMutationInjectionFramework/data/systems/cs/greenshot/Drawing/EllipseContainer.cs
+END
+DrawableContainer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/srlab/jes518/!svn/ver/770/MyMutationInjectionFramework/data/systems/cs/greenshot/Drawing/DrawableContainer.cs
+END
+RoundedRectangle.cs
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/srlab/jes518/!svn/ver/770/MyMutationInjectionFramework/data/systems/cs/greenshot/Drawing/RoundedRectangle.cs
+END
+RectangleContainer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/srlab/jes518/!svn/ver/770/MyMutationInjectionFramework/data/systems/cs/greenshot/Drawing/RectangleContainer.cs
+END
+TextContainer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/srlab/jes518/!svn/ver/770/MyMutationInjectionFramework/data/systems/cs/greenshot/Drawing/TextContainer.cs
+END
+Surface.cs
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/srlab/jes518/!svn/ver/770/MyMutationInjectionFramework/data/systems/cs/greenshot/Drawing/Surface.cs
+END
+LineContainer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/srlab/jes518/!svn/ver/770/MyMutationInjectionFramework/data/systems/cs/greenshot/Drawing/LineContainer.cs
+END

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/srlab/jes518/!svn/ver/508/MyMutationInjectionFramework/tools/deckard/scripts/bugdetect
+END
+bugfiltering
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/srlab/jes518/!svn/ver/508/MyMutationInjectionFramework/tools/deckard/scripts/bugdetect/bugfiltering
+END
+bugcounting
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/srlab/jes518/!svn/ver/508/MyMutationInjectionFramework/tools/deckard/scripts/bugdetect/bugcounting
+END
+mergecomments
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/srlab/jes518/!svn/ver/508/MyMutationInjectionFramework/tools/deckard/scripts/bugdetect/mergecomments
+END
+bugmerging
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/srlab/jes518/!svn/ver/508/MyMutationInjectionFramework/tools/deckard/scripts/bugdetect/bugmerging
+END
+bugtypecounting
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/srlab/jes518/!svn/ver/508/MyMutationInjectionFramework/tools/deckard/scripts/bugdetect/bugtypecounting
+END
+bugordering
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/srlab/jes518/!svn/ver/508/MyMutationInjectionFramework/tools/deckard/scripts/bugdetect/bugordering
+END
+deckardd.sh
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/srlab/jes518/!svn/ver/508/MyMutationInjectionFramework/tools/deckard/scripts/bugdetect/deckardd.sh
+END

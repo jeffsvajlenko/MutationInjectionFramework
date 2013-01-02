@@ -1,0 +1,486 @@
+Change History
+==============
+
+Known Bugs
+  - [Ubuntu] CCFinderX possibly fail to write files, when used on ext4
+    file system. (see "Apps That Rely On Ext3's Commit Interval May 
+    Lose Data In Ext4"
+    http://linux.slashdot.org/article.pl?sid=09/03/11/2031231 )
+  - [Win32] CCFinderX aborts when name of a source file is very long.
+    (Thanks to K. Sasaki and J. Osanai)
+  - [Win32] CCFinderX doesn't work with Cygwin's Python. (Thanks to J.
+    Samson)
+  - When a COBOL source file includes Japanese Zenkaku characters,
+    the comment starting at 73 column is not recognized correctly.
+    (Thanks to Y. Kurei)
+  - Scroll bars of GemX sometimes disappear after a screen saver invocation
+    or resuming from suspend state. (Thanks to K. Urago)
+  - Some mailers make a invalid licensedata.eml, by inserting some
+    locale-dependent characters on saving the mail. (Thanks to Y. Kurei)
+  - CCFinderX can't handle a source file whose modification 
+    timestamp is a future date.
+  - When a vb code has an identifier including Japanese characters,
+    CCFinderX fails in parsing such code.
+  - Can not save clone data (or file list) to a file in "desktop" 
+    directory.
+  - ccfx.exe seems to abort by assertion error in detecting clone, when 
+    it is executed on a Samba drive(Thanks to Wiebe Hordijk).
+
+10.2.7.4 2010/Apr/08
+  - In 10.2.7.3, preprocess routine didn't work. (Thanks to 
+    Y. Higo).
+  - A preprocess file was not generated when the input source file is empty
+    (contains 0 bytes).
+  - [Win32] Replaced Boost 1.40 with 1.42
+  - [Win32] When ccfx failed to call GetShortPathName() function, it caused
+    infinite recursive call.
+  - Removed support for OpenMP.
+  - [Win32] Remoevd icons from ccfx.exe.
+
+10.2.7.3 2010/Jan/25
+  - [Win32] Bug fix: An option of GemX, "Prescreening" doesn't work 
+    (10.2.7.2 enbug) (Thanks to T. Toyoda)
+  - Modified to stop when the value of option --threads of ccfx d exceeds
+    twice of OpenMP threads. (Thanks to Daniel M. German)
+  - [Win32] Replaced Boost 1.39 with 1.40.
+  - [Win32] Replaced SWT 3.4 with 3.5.1.
+  - The prescreening now removes a long source files (20k tokens).
+    This is an ad-hoc but (hopefully) effective workaround for
+    the following case: A tool generated code (esp. by yacc/lex) sometimes 
+    takes horribly long time in clone detection (Thanks to Livieri Simone, 
+    Daniel M. German).
+  - [Ubuntu i386] The libicu of Ubuntu 9.10 is 4.0.1, so added icu4j-\*-4_0_1.jar
+    in the distribution in order to match the version of both icu's.
+  - Removed license-file check routine.
+  - [Win32] Removed Python Interpreter from the distribution.
+  - Modified copyright-holder name to AIST in source code.
+
+10.2.7.2 2009/Jun/08
+  - Modified ccfx's verbose message (option -v) when option -k- is 
+    specified.
+  - [Win32] Replaced Boost 1.37.0 with 1.39.0.
+  - [Win32] Added Python interpreter to the distribution to avoid
+    a version problem between VC++ compiler and the interpreter.
+  - Modified not to enclose simplejson, but to use json module,
+    which is the standardized one of the simplejson.
+  - An experimental feature. Added an option "-pp-" to ccfx d.
+    An exact match option.
+  - Bug fix: When an option "-w w+f-g-" was given to ccfx d, preprocessed
+    files were generated in wrong directories.
+  - An experimental feature. Developed a script file for C/C++, which
+    doesn't skip (neglect) #define lines (cpp.py.develop).
+  - The source text view of GemX seemed sometimes fail to display
+    scroll bar. So, changed the timing to manipulate scroll bars.
+  - An experimental feature, to save an image of scatter plot to as
+    a png file.
+  - An experimental feature. A new option "--errorfiles" of "ccfx d",
+    which makes ccfx continue to detect clones when some input files
+    causes errors in preprocessing. (Thanks to Daniel M. German)
+  - [Win32] Changed the directory for a license-key file. The new
+    location is the "application-data folder".
+  - In GemX's scatter plot, file selection status can be cleared 
+    by clicking somewhere out of the scatter plot. This function is 
+    supposed to be used when there is one file in scope.
+
+10.2.7.1a 2009/Apr/03
+  - [Win32] Bug-fix. Because of miss-packaging, CCFinderX was not able to run 
+    with Python 2.6.
+
+10.2.7.1 2009/Jan/19
+  - BugFix: When Python 2.6 final is installed, CCFinderX aborted in clone 
+    detection. Because a script used both spaces and tabs as indent, and 
+    such a mixed use of space and tab is regarded as an error in the 
+    strict syntax rule of the newer interpreter. (Thanks to Krishnaprasad S)
+  - [Win32] Either .pyd for Python 2.6 or one for 2.5 is selected automatically
+    in execution, depending on the version of Python interpreter.
+  - [Win32] Modified to use nolock functions in file operations.
+  - [Win32] Replaced boost 1.36.0 with 1.37.0
+  - [Ubuntu i386] Compiled on Ubuntu 8.10, that is, changed compiler g++
+    4.2 to 4.3.
+  - Replaced Trove 2.0.2 with 2.0.4.
+  - Modified GemX's multiple-invocation checking. When the existing 
+    process terminated (aborted), simply continue invocation without 
+    showing a warning dialog.
+
+10.2.7.0 2008/Aug/29
+  - [Win32] Replaced SWT 3.4RC3 with 3.4 Final.
+  - [Win32] Modified link to VC2008 runtime by Side-by-Side.
+  - Bug fix: In command line of ccfx d, mixing two ways to specify input 
+    source files resulted in a runtime error. One way is immediate file 
+    name at command line and the other way is via option -i with file list.
+  - Bug fix: Prescreening did not work.
+  - Bug fix: The "dangling else" in COBOL was not processed correctly. 
+    (Thanks to Y. Kurei)
+  - Added option --preprocessedextension to "ccfx f". Also, renamed
+    option -d to --listoptions.
+  - [Win32] Bug fix: Because of timing error related with sub-processes
+    and file operations, clone detection sometimes failed and source
+    text display in GemX sometimes went wrong. (Thanks to Y. Kurei)
+  - Bug fix: In mode "ccfx d", when chunk size is set to "unlimited" (by
+    option "-k 0" or "-k-"), the merge-sort routine of detected code 
+    clones divided the code clones into unnecessary small groups.
+  - [Win32] In case of Python 2.4.X, easytorq module sometimes can't
+    be loaded. (Thanks to S. Souza)
+  - Modified to record the contents of literals in preprocessed file.
+    The name of identifiers have been recorded in the previous versions,
+    however, the contents of literals were dropped. Also, only the tokens
+    whose name begin with ``id|`` or ``word|`` are regarded as parameter
+    by this change. NOTE. This change introduces backward incompatibility,
+    that is, the preprocessed files generated by newer version of CCFindeX 
+    will not be treated correctly in the older version. However, some
+    kind of tools, which extract data from preprocessed files, will be
+    able to use contents of literals.
+  - The installer sometimes missed installing VC2008. Added explanation
+    at installation section of the document. (10.2.5.0 enbug) (Thanks 
+    to K. Nakajima)
+  - [Win32] Some executable files have been re-compiled by VC++ 2008 SP1.
+  - [Win32] Replaced boost library 1.35.0 with 1.36.0.
+  - Bug fix: When GemX invoked a subprocess, its standard output and
+    its standard error were not redirected. This sometimes caused
+    deadlock of Process#waitFor().
+  - Bug fix: "Ccfx s" exited without printing error message, when 
+    it couldn't open input clone data file.
+
+10.2.6.1 2008/Jul/9
+  - GemX aborted when try to search with Search Box before showing
+    some text in Source Text view. (10.2.6.0 enbug)
+  - In GemX, ALT+click on Scatter Plot has been removed, because
+    ALT+click is unavailable in Ubuntu. The directory
+    selection function is now trigged by a right-click menu.
+  - [Ubunti i386] ccfx aborted on Ubuntu 8.4.1, because it was linked
+    to ICU 3.6. Modified ccfx link to ICU 3.8. (Thanks to D. German)
+  - Fixed typos in GemX's menus with spell checker.
+
+10.2.6.0 2008/Jul/2
+  - [Win32] ccfx.exe aborted when you modified PATH environment variable 
+    to include CCFinderX installation directory. (10.2.5.0 enbug)
+  - [Win32] When temporary directory includes non-ascii characters,
+    some functions didn't work. (10.2.5.0 enbug)
+  - Command "ccfx d" accepts multiple option -r values.
+  - Slight modification in output format of option -h of command ccfx f.
+  - Modified tools/clonedatareader.py to improve compatibility with
+    IronPython interpreter.
+  - Reduction of redundant repainting ruler in Source Text view, in GemX.
+  - Relpaced SWT 3.4M6 with 3.4RC3.
+  - Bug fix: In COBOL source files, the words beginning with number
+    (such as 10-START) were not accepted. (Thanks to Y. Kurei)
+  - Bug fix: Preprocess scripts for C++, C# did not change the 
+    extensions of preprocessed files when option -r was specified. 
+    (Thanks to Y. Kurei)
+  - Bug fix: Preprocess scripts for Java, C++, C# dit not correctly
+    recognized the structure of code around try or foreach statement.
+    (Thanks to Y. Kurei)
+  - Bug fix: A preprocess script for C# did not recogized operator & 
+    and &=.
+  - Modified not to complement {} at dangling-else in Java, C++, C#.
+    (Previously, "if () {} else if () {}" was accepted as 
+    "if () {} else { if () {} }".)
+  - Revised a routine to perform preprocessing in multi-processing,
+    by eliminating polling from the routine.
+  - [Win32] Changed option values in compiling with VC++.
+  - Improvement of response in showing text of a long source file 
+    in GemX.
+  - GemX has been modified to try to show spinning-wheel cusror at 
+    appropriate timing. (Thanks to S. Livieri)
+  - When a clone pair is shown in Source Text view of GemX, if both 
+    left- and right-side files are the same file, the lines in ruler 
+    (that mean the correspondence of code fragments) were drawn
+    untied to the code fragments.
+  - Performance tuning for multi-core CPUs (with sacrifice of the
+    performance in single thread).
+  - Bug fix: Very rarely, the preprocess script aborted by failure 
+    in making directory, when ccfx runs with multi-thread option 
+    (--threads).
+  - Modified to neglect initializer lists in C++ source code.
+  - Bug fix: The routine to calculate metric RNR sometimes returned 
+    a wrong value, which is much greater than actual.
+  - The "where" condition in picosel command line now permits 
+    including inequality signs, by enclosing them with double 
+    quotation marks.
+  - Bug fix: In GemX settings, the item "Show pair of code fragments 
+    when click in Clone-Set Table" did not affect the behavior of
+    GemX. (10.2.5.0 enbug)
+  - [Win32] Bundle easytorq.pyd.python26 for Python 2.6b1, which is 
+    compiled with VC++ 2008.
+
+10.2.5.0 2008/May/5
+  - Bug fix: option -e of preprocessing_helper.py did not work.
+  - Added option -j to ccfx, which turn on/off majoritarian shaper.
+  - Also, soft shaper and hard shaper have been renamed to soft block 
+    shaper and hard block shaper.
+  - Bug fix: In some cases such as whole lines of a file are a clone,
+    such clone were not detected. (Thanks to Y. Kurei)
+  - Bug fix: Encoding option of GemX did not work. (Thanks to Y. Kurei)
+  - Bug fix: clonedatareader.py did not work when a clone data file
+    is including remarks.
+  - Introduced preprocessed-file directory feature. The option -n has 
+    been totally renewed.
+  - Fixed typo in error messages "cannot not" -> "can't".
+  - Added simple search functions to GemX.
+  - When ccfx fails to parse a source file, ccfx shows its file name in
+    error message.
+  - Bug fix: Calculation of line-based metrics failed when the name of
+    source file including Japanese characters. (Thanks to M. Matsuda)
+  - Added new option to ccfx, which is to read command-line arguments
+    from file.
+  - In GemX, clicking a clone set in Clone-Set Table is to show a pair
+    of code fragments of the clone set.
+  - Added an option -k to preprocess scripts for Java, C++, and C#.
+  - [Win32] Replaced SWT 3.4M4 with 3.4M6.
+  - [Win32] Replaced ICU4C 3.6 with 3.8.1.
+  - Replaced boost 1.34.1 with 1.35.0.
+  - Ccfx's mode t has been eliminated, no longer available.
+  - Added option -l to ccfx F.
+  - Some temporary files that ccfx generates did not have extension ".tmp".
+  - [Win32] In order to avoid DLL version problem when ccfx is invoked in 
+    Windows XP Home, replaced ICU 3.8.1 with 3.6.
+  - [Win32] Now CCFinderX can be installed in a directory whose path
+    includes spaces.
+  - Bug fix: When GemX's window was going to extremely small size, GemX
+    aborted.
+  - [Ubuntu i386] GmeX's menus, [help]-[about] and [help]-[user registration]
+    have been fixed (these menus try to directly invoke Firefox).
+  - Added a menu item to GemX's help menu, which is to open document page.
+  - [Win32] To become more Windows-friendly, locations of temporary 
+    directory and GemX's property file (gemx.properties) have beem 
+    modified.
+  - [Win32] Bug fix: Because of specification change between Visual C++
+    2003 and 2008, a file including non-ascii chars could not be handled.
+
+Beta 2.1 (10.2.4.1) 2008/Feb/01
+  - Some of .py files were wrongly modified through merging them with 
+    the preprpcessing scripts of 10.1.X. (Thanks to Y. Kurei)
+  - [Win32] Introduced asynchronous i/o partially, as a performance tuning
+    for multi-core CPU.
+  - In clonedatareader.py, a pretty printer (which is provides as a
+    reference implementation) was hard-coded to use codec CP932. Except 
+    for Windows Japanese version, it printed wrong file name or failed,
+    when name of input file included non-ascii chars.
+  - Clone scatter plot has been updated to show boundary of files 
+    including clones and files without clones.
+
+Beta 2 (10.2.4.0) 2008/Jan/28
+  - Added line-based metrics CLOC and CVRL.
+  - [Win32] Bug fix: ccfx failed to invoke Python interpreter when
+    environmental variable CCFINDERX_PYTHON_INTERPRETER_PATH was set.
+    (Thanks to M. Matsuda)
+  - Modified preprocess scripts for the convenience of a serach
+    function (which is currently experimental one, not published yet).
+  - Bug fix: The "this" keyword in Java source files was rarely not 
+    recognized as a token.
+  - Added support for Java anotation's syntax.
+  - Bug fix: In Java source code, when return value of a method is 
+    generic type (e.g., <T> getHoge()), its method body was not 
+    recognized as a block.
+  - Default mode of ccfx has been removed. The command line "ccfx d ..."
+    is not able to be shortened into "ccfx ..." any more.
+  - Bug fix: Display of line number of the source text view was not 
+    updated when the visible area of source code was moved by dragging 
+    in ruler.
+  - Bug fix: Clone-set filtering menu of GemX did not work.
+  - [Win32] Recompiled some executable files with Visual C++ 2008.
+  - [Win32] Replaced SWT runtime 3.4M2 with 3.4M4.
+  - Bug fix: Preprocess script for C# did not recognize a method 
+    definition block, which returns string. (Thanks to Y. Kurei).
+  - Added support for Java's array creation without new keyword, such
+    as "Type ary[] = { .... }".
+  - Bug fix: In C/C++ source files, when a macro defined by #define
+    contains multi lines and contains a comment beginning with 
+    slash and asterisk, the lines after the comment were not recognized
+    as a part of the macro.
+  - Bug fix: In Cobol source files, Perform command as calling (not loop) 
+    and command Exit Perform were recognized as a loop. (Thanks to Y. 
+    Kurei)
+  - Bug fix: Block structures in Cobol source files, such as if ... end-if,
+    perform ... end-perform, were not correctly recognized as block.
+  - In preprocess scripts, a literal expression "&#xnnnn;" did not work.
+    (Thanks to S. Yui)
+  - Bug fix: In Cobol source files, END METHOD was not recognized as a
+    reserved word. (Thanks to Y. Kurei)
+  - Added COBOL 2002 support about reserved words INTERFACE and 
+    END-INTERFACE.
+  - Modified block structure recognition for Cobol program.
+  - Modified to recognize a string (characters enclosed by quotation marks)
+    after INVOKE, METHOD-ID, or CALL as identifier, in Cobol programs. 
+    (Thanks to Y. Kurei)
+  - Bug fix: Method definitions of length() or equals() in Java source files
+    were not recognized as method definitions. (Thanks to Y. Kurei)
+
+Beta 1.5 (10.2.3.5) 2007/Nov/26
+  - Bug fix: a bug which is almost identical to a bug found by Kawaguchi 
+    reproduced in more rarely case. (Thanks to S. Kawaguchi)
+  - In a ruler of source text view, the frame showing visible part of 
+    source code is draggable.
+  - Added keyboard shortcuts to swich focus of GemX's views.
+  - Added checking routine of file names before clone detection. If a
+    file name of given source file is not able to be converted utf-8 
+    safely, ccfx prints out an error message and stops clone detection.
+  - Bug fix: a script written in Python is not able to run with Python 
+    2.4, because it uses conditional expression, introduced in Python 2.5.
+  - Modified specification of preprocess pack file. Now it is called
+    preprocess cache file. The preprocess-cache function is disabled at 
+    this version.
+  - Modified options ccfx d -ci and -threads. Modified specification of
+    command line of preprocess_helper.py.
+  - [Win32] Bug fix: convertxto7 was linked to the older version of ICU. 
+    (Thanks to J. Samson)
+  - Added a new mode "ccfx C", which is to manipulate preprocess cache 
+    file.
+  - Bug fix: Convertxto7 sometimes aborted when an eof token was
+    missed in preprocessed file for any reason. (Thanks to J. Samson)
+  - Modified the code clone detection wizard. Users can select multiple 
+    directories.
+  - Added a new option "ccfx D -d". This option is a kind of short cut 
+    at command line. The command line "ccfx D prep -d somedir" is roughly 
+    equivalent to "ccfx F prep somedir -o filelist" + "ccfx D prep -i 
+    filelist", except for the former does not create the file "filelist".
+  - Bug fix: In a dialog of GemX'e menu [File]-[Re-Detect Clones], a
+    value of "P-match application" was always inverted.
+  - [Ubuntu i386] Bug fix: A routine to find files of "ccfx F" missed
+    calling closedir() for the opend directory streams with opendir().
+  - [Win32] Bug-fix: Wrong version of preprocessing_helper.py was
+    included by the distribution package. (Thanks to Y. Kurei)
+
+Beta 1.4 (10.2.3.4) 2007/Nov/01
+  - Bug fix: When p-match is turned on, ccfx rarely failed to detect a 
+    code clone whose code fragments are beginning at a token next of an 
+    identifier token. (Thanks to S. Kawaguchi)
+  - Updated C/C++ preprocess script for stdint.h.
+  - Bug fix: The preprocess script for C# generated an incorrect token 
+    sequence for "delegate { ... };". (Thanks to Y. Kurei)
+  - Added support of C#'s keywords alias, partial, yield and operators
+    =>, :: for preprocess script of C#.
+  - Replaced Gnu trove 2.0 with 2.0.1
+  - [Win32] Replaced SWT runtime 3.3 with 3.4M2.
+  - Brushed up preprocess scripts for Java and C++.
+
+Beta 1.3 (10.2.3.3)
+  - Replaced ICU 3.4 with 3.6.
+  - Bug fix: a C#'s using statement was parsed incorrectly, so that a
+    a wrong token sequence was generated around a using statement.
+    (Thanks to Y. Kurei)
+
+Beta 1.2 (10.2.3.2) 2007/Aug/07
+  - Bug fix: The menu [File]-[Save File List As] of GemX did not work
+    (10.2.1.0 enbug).
+  - Bug fix: The option "ccfx f -c" printed preprocess script names,
+    after printing available encodings.
+  - Modified to call python.exe directly. (The previous version called
+    it indirectly, via cmd.exe.)
+  - Replaced subprocess.Process() with os.popen(). Becase the former 
+    looked sometimes caused runtime error in subprocess invocation. 
+    (Thanks to Y. Kurei).
+  - Modified to use the latest libraries. Boost 1.34.0, GNU Trove 2.0, 
+    and SWT 3.3.
+  - Revised a proprocess script for C/C++.
+  - Bug fix: When no text was selected in source text view of GemX,
+    the context menu "copy text" caused null pointer error.
+  - Modified the scrapbook of GemX.
+  - Implements multithreading option in preprocess.
+
+Beta 1 (10.2.3.0) 2007/Jun/25
+  - Added: preprocess pack. CCFinderX generates an archive file
+    (.ccfxprep.pack), which contains preprocess result files.
+  - Added: envrionment variable CCFINDER_TEMPORARY_DIRECTORY. When this
+    variable is set, temporary files are created in the named directory.
+  - Bug fix: In case of opening a file generated by a subprocess 
+    immediately after finish of the subprocess, it sometimes cause a file
+    i/o error. Modified to wait 50 ms after the subprocess finished.
+  - convertxto7 has been updated to handle .ccfxprep.pack.
+
+Alpha 2 (10.2.2.0) 2007/Jun/06
+  - Modified the Scatter Plot view to show the name of each directory.
+  - A directory can be selected with ALT + click in Scatter Plot view.
+  - Re-implemented the interpreter of preprocess as a Python library (.pyd).
+    Also, the preprocess scripts have been re-implemented as Python scripts
+    (.py).
+  - A name of a preprocessed file contains version number of the
+    preprocess script that generated the file.
+  - Modified the generator of temporary file name.
+
+Alpha 1.1 (10.2.1.1) 2007/May/31
+  - Added check boxes to File Table and Clone-Set Table.
+  - Replaced the independent mode of Source Text view with a Scrapbook 
+    view. The scrapbook is more comprehensive than the independent mode.
+  - Added an initial position marker to Source Text view. The marker shows
+    the position where the source code is initially shown in the view.
+  - Bug fix: Calculation of metrics sometimes caused error, when the clone
+    data file was opend from GemX's menu [File]-[Open Clone Data]. 
+    (10.2.1.0 enbug)
+  - Replaced SWT runtime 3.3M6 with 3.3RC2.
+
+Alpha 1 (10.2.1.0) 2007/May/24
+  - Modified the drawing of the lines in the "map" area at the left side
+    of the source text view, in oder to reduce number of lines when 
+    three or more files are shown in the view.
+  - Modified specification of command-line "ccfx d". A name of preprocess
+    script is always needed. (In order to allow two distinct preprocess
+    scripts correspond to the same extension of source file.) Some dialogs
+    of GemX have been updated to follow up this modification.
+  - Bug fix: The pretty printer printed out options (such as -b or -t) in 
+    an incompatible format.
+  - Modified format of source-file remark of the pretty printer.
+  - Modified file list format. The new file list can include file remarks.
+  - Removed options -ia and -io of "ccfx d".
+  - Renamed option -m (chunk size) to -k. Additionally, the value of -k is
+    recorded in a clone data file.
+  - Added an option -mr to "ccfx d".
+  - Renewed "ccfx p" options and functions.
+  - Added an option -w to "ccfx d". This option is like options -cw and -cf 
+    of the old CCFinder.
+  - Bug fix: A value of RNR of a file sometimes became > 1.0. Also, the
+    definition of RNR for zero-length file has been modified. Such RNR 
+    value will be 1.0 (the value was 0.0 in previous versions).
+  - Added prescreening step to the clone detection wizard of GemX. (It is
+    an experimental implementation, yet.)
+  - Merged the unpretty printing (ccfxunp.exe) to ccfx.exe. It can be 
+    called by "ccfx p -a". Removed ccfxunp.exe from the package.
+  - Bug fix: ConvertXto7 could not read a clone data of 10.2.X format.
+
+Alpha 0 (10.2.0.0) 2007/May/14
+  - Bug fix: In Java source files, a character literal '"' was wrongly 
+    preprocessed. (Thanks to Jan Vlegels)
+  - Added a reverse conversion tool, which converts a pretty-printed clone 
+    data file (with ccfx P) into a binary format data.
+  - Some codes of file accesses were using 32-bit offset. Modified such
+    codes to use 64-bit offset.
+  - Bug fix: In Java source files, a number literal which stars with a dot
+    (such as .5f) was divided into two tokens, a dot and a number.
+    (Thanks to Jan Vlegels)
+  - In Java source files, when both "<" and ">" appear in an expression,
+    such code was often mis-recognized as a parameter of generics.
+    (Thanks to Jan Vlegels)
+  - Modified to support a syntax of Generics of Java 1.5, (e.g., 
+    public static <T extends Object & Comparable<? super T>> T
+    min(Collection<? extends T> coll) { .... })
+  - Bug fix: A definition of a method with an array type as a return 
+    value was not recognized as a block.
+  - Changed the file format of the clone data file (.ccfxd).
+  - Attached unpretty printer (ccfxunp) to the distribution package.
+
+Pre-alpha 2 (10.1.99.2) 2007/Apr/04
+  - Replaced SWT 3.3M5 with 3.3M6.
+  - Re-compiled with JDK 1.5.0_11.
+  - Bug fix: From ccfx f or GemX's menu [file]-[detect clones], the files 
+    that has Japanese characters in its name were not identified.
+    (Thanks to Y. Kurei)
+  - Bug fix: the files that has Japanese characters in its name were
+    shown entirely as a comment in Source Text view. (Thanks to Y. Kurei)
+
+Pre-alpha 1 (10.1.99.1) 2007/Mar/22
+  - Replaced SWT 3.2 with 3.3M5.
+  - Modified to paint a border of tab folder with focus in blue, like 
+    Eclipse IDE(But this code is somehow hacky, because it is depending 
+    on the implementation of CTabFolder).
+  - Added an Edit menu to GemX.
+  - Added color configration freature with a configration file to GemX.
+
+Pre-alpha 0 (10.1.99.0) 2007/Jan/24
+  - Implemented new option -ia to ccfx.exe.
+  - Implemented majoritarian shaper(tentative).
+  - Implemented prefix/postfix suppresser(tentative).
+  - Modified some preprocessing rules.
+  - The RNR value is also calculated for source files (not only for clones).
+  - Imported modifications from 10.1.12.6.
+
+

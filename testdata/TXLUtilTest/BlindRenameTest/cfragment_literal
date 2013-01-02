@@ -1,0 +1,69 @@
+void function()
+{
+	int integer1 = 1234;
+	int integer2 = -1234;
+	int hex1 = 0x12f;
+	int hex2 = -0x12f;
+	int octal1 = 01;
+	int octal2 = -01;
+
+	float f1 = 1.1234;
+	float f2 = -1.1234;
+	float f3 = 123.4f;
+	float f4 = -123.4f;
+	float f5 = 1.234e2;
+	float f6 = -1.234e2;
+
+	double d1 = 123.4;
+	double d2 = 1.234e2;
+
+	String str = "hello";
+	
+	char c1 = "a";
+	char c2 = 'a';
+	char c3 = '\u2312';
+
+	short s = 10;
+	long l = 1000;
+
+	char c;
+	signed char c2;
+	unsigned char c3;
+
+	short s1;
+	short int s2;
+	signed short s3;
+	signed short int s4;
+	unsigned short s5;
+	unsigned short int s6;
+
+	int i1;
+	signed int i2;
+	unsigned i3;
+	unsigned int i4;
+	
+	long l1;
+	long int l2;
+	signed long l3;
+	signed long int l4;
+	unsigned long l5;
+	unsigned long int l6;
+
+	long long l5;
+	long long int l6;
+	signed long long l7;
+	signed long long int l8;
+	unsigned long long l9;
+	unsigned long long int l10;
+
+	float ff;
+
+	double dd;
+
+	long double dd2;
+
+	char *amessage = "This is a string literal.";
+	char *omessage = null;
+	char c = 'a';
+	void *ptr = null;
+}

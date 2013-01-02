@@ -1,0 +1,22 @@
+    public void removeAttribute (int index)
+    {
+        if (index >= 0 && index < length)
+        {
+            if (index < length - 1)
+            {
+                System.arraycopy(data, (index+1)*5, data, index*5,
+                                 (length-index-1)*5);
+            }
+            index = (length - 1) * 5;
+            data [index++] = null; //EOL Comment #1
+            data [index++] = null;
+            data [index++] = null;
+            data [index++] = null;
+            data [index] = null;
+            length--;
+        }
+        else
+        {
+            badIndex(index);
+        }
+    }

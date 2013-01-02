@@ -1,0 +1,30 @@
+Clustering './vectors/vdb_100_5_g19_2.236068_50_100000' 7.183314 ...Warning: output all clones. Takes more time...
+Using the following R-NN DS parameters (from ./vectors/vdb_100_5_g19_2.236068_50_100000.param):
+N radii = 1, nPoints = 140
+R
+7.183313847
+Success probability
+0.899999976
+Dimension
+226
+R^2
+51.599998474
+Use <u> functions
+1
+k
+6
+m [# independent tuples of LSH functions]
+7
+L
+21
+W
+4.000000000
+T
+140
+typeHT
+3
+
+real	0m0.015s
+user	0m0.008s
+sys	0m0.004s
+Done clustering './vectors/vdb_100_5_g19_2.236068_50_100000' 7.183314. Log: ./times/cluster_vdb_100_5_g19_2.236068_50_100000

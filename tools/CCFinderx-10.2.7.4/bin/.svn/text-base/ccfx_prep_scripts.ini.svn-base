@@ -1,0 +1,6 @@
+cpp=.c;.cpp;.cxx;.cc;.h;.hpp;.hxx;.hh
+cobol=.cbl;.cob;.cobol
+java=.java
+visualbasic=.vb;.bas;.frm
+csharp=.cs
+plaintext=.txt

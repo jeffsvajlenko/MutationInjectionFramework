@@ -1,0 +1,14 @@
+        public static X X ()
+        {
+            if (X)
+                X.X ();
+
+            try {
+                X = new X ();
+                X = 0;
+            }
+            catch {
+                X = 0;
+            }
+            return X;
+        }

@@ -1,0 +1,13 @@
+    {
+        FigureEnumeration fe = drawing.figuresReverse();
+        while (fe.hasNextFigure())
+        {
+            Figure figure = fe.nextFigure();
+            if (!figure.includes(getConnection()) && figure.canConnect()
+                    && figure.containsPoint(x, y))
+            {
+                return figure;
+            }
+        }
+        return null;
+    }

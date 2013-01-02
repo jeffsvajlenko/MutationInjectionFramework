@@ -1,0 +1,61 @@
+Clustering './vectors/vdb_100_5_g18_2.236068_50_100000' 6.870226 ...Warning: output all clones. Takes more time...
+Warning: will compute parameters
+Using the following R-NN DS parameters (from ./vectors/vdb_100_5_g18_2.236068_50_100000.param):
+N radii = 1, nPoints = 162
+R
+6.870225906
+Success probability
+0.899999976
+Dimension
+226
+R^2
+47.200004578
+Use <u> functions
+1
+k
+6
+m [# independent tuples of LSH functions]
+7
+L
+21
+W
+4.000000000
+T
+162
+typeHT
+3
+
+real	0m0.490s
+user	0m0.396s
+sys	0m0.040s
+Done clustering './vectors/vdb_100_5_g18_2.236068_50_100000' 6.870226. Log: ./times/cluster_vdb_100_5_g18_2.236068_50_100000
+Clustering './vectors/vdb_100_5_g18_2.236068_50_100000' 6.870226 ...Warning: output all clones. Takes more time...
+Using the following R-NN DS parameters (from ./vectors/vdb_100_5_g18_2.236068_50_100000.param):
+N radii = 1, nPoints = 162
+R
+6.870225906
+Success probability
+0.899999976
+Dimension
+226
+R^2
+47.200004578
+Use <u> functions
+1
+k
+6
+m [# independent tuples of LSH functions]
+7
+L
+21
+W
+4.000000000
+T
+162
+typeHT
+3
+
+real	0m0.016s
+user	0m0.008s
+sys	0m0.004s
+Done clustering './vectors/vdb_100_5_g18_2.236068_50_100000' 6.870226. Log: ./times/cluster_vdb_100_5_g18_2.236068_50_100000

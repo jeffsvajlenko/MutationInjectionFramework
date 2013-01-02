@@ -1,0 +1,15 @@
+Mon Dec 17 20:09:03 CST 2012
+./txl/c-extract-functions.x -s 400 ALL.c >> examples/monit-4.2/_functions.xml
+
+Mon Dec 17 20:09:06 CST 2012
+
+Mon Dec 17 20:09:06 CST 2012
+./tools/clonepairs.x examples/monit-4.2/_functions.xml 0.3 10 2500 > examples/monit-4.2/_functions-clones/_functions-clones-0.3.xml
+./scripts/FindClonePairs: line 47:  6681 Killed                  ${lib}/tools/clonepairs.x ${basename}.xml $* > ${resultsdir}/${systemname}-clones-${threshold}.xml
+
+real	0m0.026s
+user	0m0.000s
+sys	0m0.000s
+
+Mon Dec 17 20:09:06 CST 2012
+

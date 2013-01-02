@@ -1,0 +1,11 @@
+<clones>
+<systeminfo processor="nicad3" system="JHotDraw54b1" granularity="functions" threshold="0%" minlines="10" maxlines="2500"/>
+<cloneinfo npcs="2886" npairs="1"/>
+<runinfo ncompares="5805" cputime="7"/>
+
+<clone nlines="10" similarity="100">
+<source file="JHotDraw54b1/src/CH/ifa/draw/contrib/CTXCommandMenu.java" startline="126" endline="137" pcid="164"></source>
+<source file="JHotDraw54b1/src/CH/ifa/draw/util/CommandMenu.java" startline="90" endline="101" pcid="2501"></source>
+</clone>
+
+</clones>

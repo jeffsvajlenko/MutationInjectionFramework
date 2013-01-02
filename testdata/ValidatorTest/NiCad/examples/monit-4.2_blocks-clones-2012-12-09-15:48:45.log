@@ -1,0 +1,33 @@
+
+Sun  9 Dec 2012 15:48:45 CST
+./tools/streamprocess.x './txl/c-rename-blind-blocks.x stdin' < examples/monit-4.2_blocks.xml > examples/monit-4.2_blocks-blind.xml
+
+real	0m1.032s
+user	0m0.609s
+sys	0m0.275s
+
+Sun  9 Dec 2012 15:48:46 CST
+
+Sun  9 Dec 2012 15:48:46 CST
+./tools/clonepairs.x examples/monit-4.2_blocks-blind.xml 0.0 10 2500 > examples/monit-4.2_blocks-blind-clones/monit-4.2_blocks-blind-clones-0.0.xml
+Processing examples/monit-4.2_blocks-blind.xml with difference threshold 0%, clone size 10 .. 2500 lines
+Reading pcs .. done.
+Total 1376/7500000 potential clones of 10 lines or more
+Used 9746/125000000 total pc lines
+Used 211500/750000000 unique line text chars
+ and 3308/15000000 unique lines
+Sorting pcs . done.
+Finding clones . done.
+Total 3406 pc comparisons
+Pruning embedded clone pairs . done.
+Pruned 0 embedded clone pairs
+Found 19 clone pairs
+Generating XML output . done.
+
+
+real	0m0.106s
+user	0m0.024s
+sys	0m0.051s
+
+Sun  9 Dec 2012 15:48:47 CST
+

@@ -1,0 +1,15 @@
+#!/bin/bash
+# $1 = system directory
+# $2 = language {java, c, cs, py}
+# $3 = frameowkr install dir
+# $4 = tool dir
+# $5 = fragmnet type (function|block)
+# $6 = tool runner directory
+# $7 = minlines
+
+mintok=40
+tks=12
+numthreads=4
+
+cd $6
+java -jar CCFinderRunner.jar "$1" "$2" "$3" "$4" "$5" "$6" "$7" "$mintok" "$numthreads" "$tks" "clones.txt"

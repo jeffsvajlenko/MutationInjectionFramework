@@ -1,0 +1,12 @@
+public LineContainer(SerializationInfo info, StreamingContext ctxt) : base(info,ctxt)
+    {
+        HasStartPointArrowHead = info.GetBoolean("hasStartPointArrowHead");
+        HasEndPointArrowHead = info.GetBoolean("hasEndPointArrowHead");
+
+    }
+    public override void GetObjectData(SerializationInfo info, StreamingContext ctxt)
+    {
+        base.GetObjectData(info,ctxt);
+        info.AddValue("hasStartPointArrowHead", HasStartPointArrowHead);
+        info.AddValue("hasEndPointArrowHead", HasEndPointArrowHead);
+    }

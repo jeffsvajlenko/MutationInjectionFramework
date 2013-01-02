@@ -1,0 +1,18 @@
+    public String getMessage()
+    {
+        String superMessage = super.getMessage();
+        String headlessMessage = GraphicsEnvironment.getHeadlessMessage();
+
+        if (superMessage == null)
+        {
+            return headlessMessage;
+        }
+        else if (headlessMessage == null)
+        {
+            return superMessage;
+        }
+        else
+        {
+            return superMessage + headlessMessage;
+        }
+    }

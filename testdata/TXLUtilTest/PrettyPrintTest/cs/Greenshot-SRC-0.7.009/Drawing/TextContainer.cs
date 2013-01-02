@@ -1,0 +1,99 @@
+using System;
+using System.Drawing;
+using System.Windows.Forms;
+using Greenshot.Helpers;
+using System.Collections.Generic;
+using System.Runtime.Serialization;
+
+namespace Greenshot.Drawing
+{
+/// <summary>
+/// Description of TextContainer.
+/// </summary>
+[Serializable()]
+public class TextContainer : DrawableContainer
+{
+    public TextContainer(Control parent) : base(parent)
+    {
+        supportedProperties.Add(DrawableContainer.Property.LINECOLOR);
+    }
+
+    #region serialization
+    public TextContainer(SerializationInfo info, StreamingContext ctxt) : base(info,ctxt)
+    {
+        childLabel = new Label();
+        childLabel.Text = (string)info.GetValue("Text", typeof(string));
+        childLabel.Font = (Font)info.GetValue("Font", typeof(Font));
+    }
+    public override void GetObjectData(SerializationInfo info, StreamingContext ctxt)
+    {
+        base.GetObjectData(info,ctxt);
+        info.AddValue("Text",childLabel.Text);
+        info.AddValue("Font",childLabel.Font);
+    }
+    #endregion
+
+    public override Color ForeColor
+    {
+        set
+        {
+            foreColor = childLabel.ForeColor = value;
+        }
+        get
+        {
+            return foreColor;
+        }
+    }
+
+    public string Text
+    {
+        set
+        {
+            childLabel.Text = value;
+        }
+        get
+        {
+            return childLabel.Text;
+        }
+    }
+
+    public override bool InitContent()
+    {
+        return ShowTextInput(true);
+    }
+
+    public override void OnDoubleClick()
+    {
+        ShowTextInput(false);
+    }
+
+    private bool ShowTextInput(bool isNew)
+    {
+        TextInputForm textInput = new TextInputForm();
+        if (!isNew)
+        {
+            textInput.UpdateFromLabel(childLabel);
+        }
+        textInput.InputText.ForeColor = childLabel.ForeColor;
+        textInput.ShowDialog(parent);
+        if (textInput.DialogResult == DialogResult.Cancel)
+        {
+            return false;
+        }
+        string text = textInput.InputText.Text;
+        childLabel.Text = textInput.InputText.Text;
+        childLabel.Font = textInput.InputText.Font;
+        ForeColor = textInput.InputText.ForeColor;
+        parent.Invalidate();
+        return true;
+    }
+
+    public override void Draw(Graphics g, RenderMode rm)
+    {
+        Rectangle rect = GuiRectangle.GetGuiRectangle(this.Left, this.Top, this.Width, this.Height);
+        if(Selected && rm.Equals(RenderMode.EDIT)) DrawSelectionBorder(g, rect);
+        Brush fontBrush = new SolidBrush(foreColor);
+        g.DrawString(childLabel.Text, childLabel.Font, fontBrush, rect);
+    }
+}
+}

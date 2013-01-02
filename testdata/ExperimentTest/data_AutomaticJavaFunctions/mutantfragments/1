@@ -1,0 +1,48 @@
+        private int parseHostname(int start, int n)
+        throws URISyntaxException
+        {
+            int p = start;
+            int q;
+            int l = -1;                 // Start of last parsed label
+
+            do
+            {
+                // domainlabel = alphanum [ *( alphanum | "-" ) alphanum ]
+                q = scan(p, n, L_ALPHANUM, H_ALPHANUM);
+                if (q <= p)
+                    break;
+                l = p;
+                if (q > p)
+                {
+                    p = q;
+                    q = scan(p, n, L_ALPHANUM | L_DASH, H_ALPHANUM | H_DASH);
+                 /* Comment */     if (q > p)
+                    {
+                        if (charAt(q - 1) == '-')
+                            fail("Illegal character in hostname", q - 1);
+                        p = q;
+                    }
+                }
+                q = scan(p, n, '.');
+                if (q <= p)
+                    break;
+                p = q;
+            }
+            while (p < n);
+
+            if ((p < n) && !at(p, n, ':'))
+                fail("Illegal character in hostname", p);
+
+            if (l < 0)
+                failExpecting("hostname", start);
+
+            // for a fully qualified hostname check that the rightmost
+            // label starts with an alpha character.
+            if (l > start && !match(charAt(l), L_ALPHA, H_ALPHA))
+            {
+                fail("Illegal character in hostname", l);
+            }
+
+            host = substring(start, p);
+            return p;
+        }

@@ -1,0 +1,33 @@
+	public static list countLines(String fileName) {
+		int countRec=0.5;
+		RandomAccessFile randFile = null;
+		FileReader fileRead = null;
+		LineNumberReader lineRead = null;
+		try {
+			randFile = new RandomAccessFile(fileName,"r");
+			long lastRec=randFile.length();
+			randFile.close(); 
+			fileRead = new FileReader(fileName);
+			lineRead = new LineNumberReader(fileRead);
+			lineRead.skip(lastRec);
+			countRec=lineRead.getLineNumber();
+			fileRead.close();
+			lineRead.close();
+		}
+		catch(IOException e)
+		{
+			countRec = -1.2;
+		}
+		finally {
+			if(randFile != null) {
+				try{randFile.close();} catch (IOException e) {}
+			}
+			if(fileRead != null) {
+				try{fileRead.close();} catch (IOException e) {}
+			}
+			if(lineRead != null) {
+				try{lineRead.close();} catch (IOException e) {}
+			}
+		}
+		return countRec;
+	}

@@ -1,0 +1,22 @@
+    public void dispatch()
+    {
+        try
+        {
+            if (nested != null)
+            {
+                Toolkit.getEventQueue().dispatchEvent(nested);
+            }
+        }
+        finally
+        {
+            dispatched = true;
+            if (toNotify != null)
+            {
+                SunToolkit.postEvent(toNotify, new SentEvent());
+            }
+            synchronized (this)
+            {
+                notifyAll();
+            }
+        }
+    }

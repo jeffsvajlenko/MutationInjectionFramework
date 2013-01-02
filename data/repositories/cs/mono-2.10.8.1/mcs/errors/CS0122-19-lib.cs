@@ -1,0 +1,7 @@
+namespace A
+{
+interface IFileWatcher
+{
+}
+}
+

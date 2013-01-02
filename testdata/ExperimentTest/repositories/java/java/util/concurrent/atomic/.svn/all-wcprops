@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/util/concurrent/atomic
+END
+AtomicIntegerArray.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/util/concurrent/atomic/AtomicIntegerArray.java
+END
+AtomicStampedReference.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/util/concurrent/atomic/AtomicStampedReference.java
+END
+AtomicInteger.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/util/concurrent/atomic/AtomicInteger.java
+END
+AtomicMarkableReference.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/util/concurrent/atomic/AtomicMarkableReference.java
+END
+AtomicReferenceArray.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/util/concurrent/atomic/AtomicReferenceArray.java
+END
+AtomicLongArray.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/util/concurrent/atomic/AtomicLongArray.java
+END
+AtomicReference.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/util/concurrent/atomic/AtomicReference.java
+END
+AtomicBoolean.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/util/concurrent/atomic/AtomicBoolean.java
+END
+AtomicLong.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/util/concurrent/atomic/AtomicLong.java
+END
+AtomicIntegerFieldUpdater.java
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/util/concurrent/atomic/AtomicIntegerFieldUpdater.java
+END
+AtomicReferenceFieldUpdater.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/util/concurrent/atomic/AtomicReferenceFieldUpdater.java
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/util/concurrent/atomic/package-info.java
+END
+AtomicLongFieldUpdater.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/srlab/jes518/!svn/ver/800/MyMutationInjectionFramework/data/fragmentsrcs/java/java/util/concurrent/atomic/AtomicLongFieldUpdater.java
+END

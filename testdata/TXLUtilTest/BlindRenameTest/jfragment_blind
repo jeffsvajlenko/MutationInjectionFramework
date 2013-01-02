@@ -1,0 +1,23 @@
+    {
+        // this rebuild is faster then a number of calls to remove()
+        // however, a further speedup may be obtained by using a Set instead of binarySearch()
+        X<X> X = new X<X>(X);
+        X<X, X> X = new X<X, X>(X);
+        for (X X = 0; X < X.X(); X++)
+        {
+            if (X.X(X, X) < 0)
+            {
+                X.X(X.X(X));
+                X.X(X.X(X).X(), X.X()-0);
+            }
+        }
+        X = X;
+        X = X;
+		X X = 0;
+		X X = -0;
+		X X = -0;
+	X X = X*X;
+	if(X == 0)
+		X++;
+	X X = 0;
+    }

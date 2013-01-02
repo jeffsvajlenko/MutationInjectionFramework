@@ -1,0 +1,234 @@
+#!/bin/bash 
+
+usage() {
+echo ""
+echo "Usage: simcad2xml [-version] [-v] [-n] -s o_source_xml [-x t_source_xml]"
+echo "                [-t clone_type] [-c clone_grouping] [-o output_path]"
+
+echo "-------------DESCRIPTION--------------"
+echo "-version          = display simcad version"
+echo "-v                = verbose mode, shows the detection in progress"
+echo "-n                = non-exclusive fragments, a fragment might contain in another bigger fragment"
+echo "o_source_xml      = absolute path to xml file containing original source fragments"
+echo "t_source_xml      = absolute path to xml file containing transformed source fragments"
+echo "clone_type        = 1 | 2 | 3 | 12 | (23 | nearmiss) | 13 | (123 | all) : default = (123 | all)"
+echo "clone_grouping    = (group | cg) | (pair | cp) : default = (group | cg)"
+echo "output_path       = absolute path to output folder : default = {source_path}_simcad_clones"
+}
+
+simcad_version="SimCad 2.1 (August 2012) : University of Saskatchewan, Canada"
+
+debug_mode="false"
+
+# check we have TXL
+txlversion=`txl -V 2>&1 | grep 10.[5-9]`
+if [ "${txlversion}" = "" ]
+then
+echo "*** Error:  simCad requires FreeTXL 10.5 or higher"
+echo ""
+exit 99
+fi
+
+# check we have java
+javaversion=`java -version 2>&1 | grep 'java version \"1.'`
+if [ "${javaversion}" = "" ]
+then
+echo "*** Error: simCad requires Java 1.5 or higher"
+echo ""
+exit 99
+fi
+
+lib=.
+
+if [ ! -d ${lib}/tools ]
+then
+echo "*** Error: Cannot find simCad installation ${lib}"
+echo ""
+exit 99
+fi
+
+# check we compiled the tools
+if [ ! -x ${lib}/tools/streamprocess.x ]
+then
+echo "*** Error: Missing ${lib}/tools/streamprocess.x - type 'make' to make the simCad tools"
+echo ""
+exit 99
+fi
+
+if [ "$#" -eq 0 ]
+then
+usage
+exit 99
+fi
+
+GRANULARITY="function"
+CLONE_TYPE="123"
+CLONE_GROUPING="group"
+OUTPUT_DIR=""
+VERBOSE=""
+
+while [ $# -gt 0 ]
+
+do
+case $1 in
+
+# display simcad version
+-version)
+echo "${simcad_version}"
+exit 0
+;;
+
+-v)
+VERBOSE=$1
+shift
+;;
+
+# check granularity
+-n)
+GRANULARITY="block"
+shift 
+;;
+
+-t)
+shift
+if [ "$1" = "1" ] || [ "$1" = "2" ] || [ "$1" = "3" ] || [ "$1" = "12" ] || [ "$1" = "13" ] || [ "$1" = "23" ] || [ "$1" = "123" ] || [ "$1" = "nearmiss" ] || [ "$1" = "all" ]
+then
+    CLONE_TYPE=$1
+    if [ "${CLONE_TYPE}" = "nearmiss" ] 
+    then
+        CLONE_TYPE="23"
+    fi
+    
+    if [ "${CLONE_TYPE}" = "all" ] 
+    then
+        CLONE_TYPE="123"
+    fi
+    shift
+else
+    echo "*** ERROR: Invalid value {$1} for parameter -t (clone type)."
+    echo "Valid options [ 1 | 2 | 3 | 12 | (23 | nearmiss) | 13 | (123 | all) : default : (123 | all) ]"
+#usage
+    exit 99
+fi
+;;
+
+
+# get the original source xml
+-s)
+    shift
+    O_SOURCE_XML=$1
+    shift
+;;
+
+# get the transformed source xml
+-x)
+    shift
+    T_SOURCE_XML=$1
+    shift
+;;
+
+-o)
+    shift
+    OUTPUT_DIR=$1
+    shift
+;;
+
+# get clone grouping type / clone_grouping
+-c)
+shift
+if [ "$1" = "group" ] || [ "$1" = "cg" ] || [ "$1" = "pair" ] || [ "$1" = "cp" ]
+then
+    CLONE_GROUPING=$1
+    if [ "${CLONE_GROUPING}" = "cg" ] 
+    then
+        CLONE_GROUPING="group"
+    fi
+
+    if [ "${CLONE_GROUPING}" = "cp" ] 
+    then
+        CLONE_GROUPING="pair"
+    fi
+    shift
+else
+    echo "*** ERROR: Invalid value {$1} for parameter -c (clone_grouping). Valid options [ (group | cg) | (pair | cp) : default = (group | cg) ]"
+#usage
+exit 99
+fi
+;;
+
+
+*)
+echo "*** ERROR: Unknown option {$1}"
+usage
+exit 99
+shift
+;;
+esac
+done
+
+
+# check if original source xml is a valid file
+if [ ! -z "${O_SOURCE_XML}" ] 
+then
+	if [ ! -f "${O_SOURCE_XML}" ] 
+	then
+		echo "*** ERROR: Original Source XML file {$O_SOURCE_XML} does not exist or not a valid file"
+		exit 99
+	fi
+else
+	echo "*** ERROR: Missing required parameter -s (o_source_xml)"
+	exit 99
+fi
+
+
+# check if transformed source xml is a valid file
+if [ ! -z "${T_SOURCE_XML}" ] 
+then
+	if [ ! -f "${T_SOURCE_XML}" ] 
+	then
+		echo "*** ERROR: Transformed Source XML file {$T_SOURCE_XML} does not exist or not a valid file"
+		exit 99
+	fi
+else
+	T_SOURCE_XML="NONE"
+fi
+
+
+#configure output_dir if not set
+if [ "${OUTPUT_DIR}" = "." ] || [ "${OUTPUT_DIR}" = "./" ] || [ "${OUTPUT_DIR}" = "" ]
+then 
+#echo $(echo ${O_SOURCE_XML} | sed 's|\(.*\)[/\\].*|\1|' |sed 's/\\/\//g')_simcad_clones
+    OUTPUT_DIR=$(echo ${O_SOURCE_XML} | sed 's|\(.*\)[/\\].*|\1|' | sed 's/\\/\\\\/g')_simcad_clones
+fi
+
+
+if [ ! -d "${OUTPUT_DIR}" ]
+then
+	#echo ""
+	/bin/mkdir -p "${OUTPUT_DIR}"
+	/bin/chmod +rw "${OUTPUT_DIR}" 
+fi
+
+echo ""
+echo "${simcad_version}"
+
+if [ "${debug_mode}" = "true" ]
+then
+echo "verbose=${VERBOSE}"
+echo "o_source-xml=${O_SOURCE_XML}"
+echo "t_source-xml=${T_SOURCE_XML}"
+echo "output-dir=${OUTPUT_DIR}"
+echo "granularity=${GRANULARITY}"
+echo "clone-type=${CLONE_TYPE}"
+echo "clone_grouping=${CLONE_GROUPING}"
+fi
+echo ""
+
+#Detect Clone
+#echo ""
+#echo "java -Xmx1024m -jar ${lib}/tools/simLib.jar ${VERBOSE} ${O_SOURCE_XML} ${LANGUAGE} ${GRANULARITY} ${CLONE_TYPE} ${CLONE_GROUPING} ${SOURCE_TRANSFORM} ${OUTPUT_DIR}"
+
+java -Xmx1024m -cp ${lib}/tools/simLib.jar ca.usask.cs.srlab.simcad.SimCadXML ${VERBOSE} "${O_SOURCE_XML}" "${T_SOURCE_XML}" ${GRANULARITY} ${CLONE_TYPE} ${CLONE_GROUPING} "${OUTPUT_DIR}" 2>&1
+
+exit 0
+

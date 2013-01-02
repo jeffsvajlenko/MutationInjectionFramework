@@ -1,0 +1,28 @@
+Sun  9 Dec 2012 15:48:18 CST
+./txl/c-extract-functions.x -s 400 ALL.c >> examples/monit-4.2_functions.xml
+
+Sun  9 Dec 2012 15:48:23 CST
+
+Sun  9 Dec 2012 15:48:24 CST
+./tools/clonepairs.x examples/monit-4.2_functions.xml 0.0 10 2500 > examples/monit-4.2_functions-clones/monit-4.2_functions-clones-0.0.xml
+Processing examples/monit-4.2_functions.xml with difference threshold 0%, clone size 10 .. 2500 lines
+Reading pcs . done.
+Total 402/7500000 potential clones of 10 lines or more
+Used 6166/125000000 total pc lines
+Used 194304/750000000 unique line text chars
+ and 4191/15000000 unique lines
+Sorting pcs . done.
+Finding clones  done.
+Total 1093 pc comparisons
+Pruning embedded clone pairs . done.
+Pruned 0 embedded clone pairs
+Found 9 clone pairs
+Generating XML output . done.
+
+
+real	0m0.123s
+user	0m0.021s
+sys	0m0.057s
+
+Sun  9 Dec 2012 15:48:24 CST
+

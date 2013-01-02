@@ -1,0 +1,16 @@
+    public static org.omg.DynamicAny.DynStruct narrow (org.omg.CORBA.Object obj)
+    {
+        if (obj == null)
+            return null;
+        else if (obj instanceof org.omg.DynamicAny.DynStruct)
+            return (org.omg.DynamicAny.DynStruct)obj;
+        else if (!obj._is_a (id ()))
+            throw new org.omg.CORBA.BAD_PARAM ();
+        else
+        {
+            org.omg.CORBA.portable.Delegate delegate = ((org.omg.CORBA.portable.ObjectImpl)obj)._get_delegate ();
+            org.omg.DynamicAny._DynStructStub stub = new org.omg.DynamicAny._DynStructStub ();
+            stub._set_delegate(delegate);
+            return X;
+        }
+    }

@@ -1,0 +1,62 @@
+% C Lexemes, for processing C files as lines without parsing
+
+#pragma -idchars '$_' -esc '\\' -raw
+
+% Comments are /* */ and // to end of line
+comments
+    //
+    /* */
+end comments
+
+% Add the special literal constants of C
+tokens
+    number	| "\d+[LUlu]+"
+    		| "0[xX][\dAaBbCcDdEeFf]+(.\d*)?p\d+[FLfl]?"
+                | "0[xX][\dAaBbCcDdEeFf]+[LUlu]*"
+    		| ".\d+([eE][+-]?\d+)?[FLfl]?"
+    		| "\d+.\d*([eE][+-]?\d+)?[FLfl]?"
+                | "\d+(.\d*)?[eE][+-]?\d+[FLfl]?"
+                | "\d+(.\d*)?([eE][+-]?\d+)?[FLfl]"
+    long          "\d+[LUlu]+"
+    hex           "0[xX][\dAaBbCcDdEeFf]+(.\d*)?p\d+[FLfl]?"
+		| "0[xX][\dAaBbCcDdEeFf]+[LUlu]*"
+    stringlit     "\"[(\\\c)#\"]*\""
+    dotfloat      ".\d+([eE][+-]?\d+)?[FLfl]?"
+    float         "\d+.\d*([eE][+-]?\d+)?[FLfl]?#\:."
+		| "\d+(.\d*)?[eE][+-]?\d+[FLfl]?"
+		| "\d+(.\d*)?([eE][+-]?\d+)?[FLfl]"
+end tokens
+
+% C identifiers may begin with digits
+tokens
+    id		| "\d+\i+"
+end tokens
+
+% Preprocessor lines - treat as comments
+tokens
+    % A preprocessor line is one beginning with a # and then anything to end of line (\n#n*)
+    % If the line ends in backslash, then it continues on the next line (\\\n)
+    % Comments are assumed to be part of the preprocessor line (/\*#[(\*/)]*\*/)
+    comment	|  "\#[(\\\n)(/\*#[(\*/)]*\*/)#n]*"
+end tokens
+
+% Keywords of C
+keys
+    auto            double          int             struct
+    break           else            long            switch
+    case            enum            register        typedef
+    char            extern          return          union
+    const           float           short           unsigned
+    continue        for             signed          void
+    default         goto            sizeof          volatile
+    do              if              static          while
+end keys
+
+% Compound symbols of C
+compounds
+    ->      ++      --      <<      >>      <=      >=      ==      !=
+    &&      ||      *=      /=      '%=     +=      -=
+    <<=     >>=     &=      ^=      |=
+    % These are fro Gnu C
+    '.. '...
+end compounds

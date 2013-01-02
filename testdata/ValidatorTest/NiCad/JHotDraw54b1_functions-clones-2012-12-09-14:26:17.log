@@ -1,0 +1,33 @@
+
+Sun  9 Dec 2012 14:26:17 CST
+./tools/streamprocess.x './txl/java-rename-blind-functions.x stdin' < JHotDraw54b1_functions.xml > JHotDraw54b1_functions-blind.xml
+
+real	0m1.807s
+user	0m0.724s
+sys	0m0.613s
+
+Sun  9 Dec 2012 14:26:19 CST
+
+Sun  9 Dec 2012 14:26:19 CST
+./tools/clonepairs.x JHotDraw54b1_functions-blind.xml 0.0 10 2500 > JHotDraw54b1_functions-blind-clones/JHotDraw54b1_functions-blind-clones-0.0.xml
+Processing JHotDraw54b1_functions-blind.xml with difference threshold 0%, clone size 10 .. 2500 lines
+Reading pcs ... done.
+Total 2886/7500000 potential clones of 10 lines or more
+Used 6893/125000000 total pc lines
+Used 374027/750000000 unique line text chars
+ and 5227/15000000 unique lines
+Sorting pcs . done.
+Finding clones .. done.
+Total 5899 pc comparisons
+Pruning embedded clone pairs . done.
+Pruned 0 embedded clone pairs
+Found 18 clone pairs
+Generating XML output . done.
+
+
+real	0m0.215s
+user	0m0.030s
+sys	0m0.053s
+
+Sun  9 Dec 2012 14:26:19 CST
+

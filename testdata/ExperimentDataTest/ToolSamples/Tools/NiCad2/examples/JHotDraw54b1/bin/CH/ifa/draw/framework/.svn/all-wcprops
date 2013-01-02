@@ -1,0 +1,155 @@
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/bin/CH/ifa/draw/framework
+END
+JHotDrawRuntimeException.class
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/bin/CH/ifa/draw/framework/JHotDrawRuntimeException.class
+END
+DrawingChangeListener.class
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/bin/CH/ifa/draw/framework/DrawingChangeListener.class
+END
+Tool.class
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/bin/CH/ifa/draw/framework/Tool.class
+END
+FigureAttributeConstant.class
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/bin/CH/ifa/draw/framework/FigureAttributeConstant.class
+END
+Figure.class
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/bin/CH/ifa/draw/framework/Figure.class
+END
+ToolListener.class
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/bin/CH/ifa/draw/framework/ToolListener.class
+END
+DrawingView.class
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/bin/CH/ifa/draw/framework/DrawingView.class
+END
+ViewChangeListener.class
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/bin/CH/ifa/draw/framework/ViewChangeListener.class
+END
+FigureSelection.class
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/bin/CH/ifa/draw/framework/FigureSelection.class
+END
+FigureEnumeration.class
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/bin/CH/ifa/draw/framework/FigureEnumeration.class
+END
+FigureChangeEvent.class
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/bin/CH/ifa/draw/framework/FigureChangeEvent.class
+END
+Connector.class
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/bin/CH/ifa/draw/framework/Connector.class
+END
+Handle.class
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/bin/CH/ifa/draw/framework/Handle.class
+END
+Drawing.class
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/bin/CH/ifa/draw/framework/Drawing.class
+END
+FigureSelectionListener.class
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/bin/CH/ifa/draw/framework/FigureSelectionListener.class
+END
+FigureChangeListener.class
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/bin/CH/ifa/draw/framework/FigureChangeListener.class
+END
+FigureVisitor.class
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/bin/CH/ifa/draw/framework/FigureVisitor.class
+END
+ConnectionFigure.class
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/bin/CH/ifa/draw/framework/ConnectionFigure.class
+END
+JHotDrawException.class
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/bin/CH/ifa/draw/framework/JHotDrawException.class
+END
+PointConstrainer.class
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/bin/CH/ifa/draw/framework/PointConstrainer.class
+END
+DrawingEditor.class
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/bin/CH/ifa/draw/framework/DrawingEditor.class
+END
+HandleEnumeration.class
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/bin/CH/ifa/draw/framework/HandleEnumeration.class
+END
+Painter.class
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/bin/CH/ifa/draw/framework/Painter.class
+END
+DrawingChangeEvent.class
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/bin/CH/ifa/draw/framework/DrawingChangeEvent.class
+END
+Locator.class
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/srlab/jes518/!svn/ver/750/MyMutationInjectionFramework/tools/NiCad/examples/JHotDraw54b1/bin/CH/ifa/draw/framework/Locator.class
+END

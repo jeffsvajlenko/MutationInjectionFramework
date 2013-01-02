@@ -1,0 +1,57 @@
+% Java Lexemes, for processing Java files as lines without parsing
+#pragma -w 32767
+# pragma -esc '"'
+
+% Comments are /* */ and // to end of line
+comments
+    //
+    /* */
+    '#
+end comments
+
+tokens
+    space  "[ \t^L]+"
+    newline  "\n" | "^M" | "^M\n"
+    id  "[$\u][$\i]*"
+	| "@?[\a_][\a\d_]*"
+    number  "\d+[lL]?"  % DecimalIntegerLiteral | OctalIntegerLiteral
+          | "\d+.\d*([eE][+-]?\d+)?[fFdD]?"  % DecimalFloatingPointLiteral
+          | ".\d+([eE][+-]?\d+)?[fFdD]?"  % DecimalFloatingPointLiteral (cont.'d)
+          | "\d+[eE][+-]?\d+[fFdD]?"  % DecimalFloatingPointLiteral (cont.'d)
+          | "\d+([eE][+-]?\d+)?[fFdD]"  % DecimalFloatingPointLiteral (cont.'d)
+          | "0[xX][\dabcdefABCDEF]+.[pP][+-]?\d+[fFdD]?"  % HexadecimalFloatingPointLiteral
+          | "0[xX][\dabcdefABCDEF]*.[\dabcdefABCDEF]+[pP][+-]?\d+[fFdD]?"  % HexadecimalFloatingPointLiteral (cont.'d)
+          | "0[xX][\dabcdefABCDEF]+([pP][+-]?\d+)?[lLfFdD]?"  % HexIntegerLiteral | HexadecimalFloatingPointLiteral (cont.'d)
+	  | "0x[\dABCDEFabcdef]+[(UL)(Ul)(uL)(ul)(LU)(Lu)(lU)(lu)UuLl]?"
+	  | "\d+[(UL)(Ul)(uL)(ul)(LU)(Lu)(lU)(lu)UuLl]?"
+          | "\d+.\d+([eE][+-]?\d+)?[fFDdMm]?" 
+          | ".\d+([eE][+-]?\d+)?[fFDdMm]?"
+          | "\d+([eE][+-]?\d+)[fFDdMm]?"
+          | "\d+[fFDdMm]"
+   charlit "'[(\\\c)#']*'"
+   stringlit "\"[(\\\c)#\"]*\""
+			    |	      "@\"[(\"\")#\"]*\""
+end tokens
+
+keys
+    byte       case       catch      char       checked 
+    class      const      continue   decimal    default 
+    delegate   do         double     else       enum 
+    event      explicit   extern     false      finally 
+    fixed      float      for        foreach    goto 
+    if         implicit   in         int        interface 
+    internal   is         lock       long       namespace 
+    new        null       object     operator   out 
+    override   params     private    protected  public 
+    readonly   ref        return     sbyte      sealed 
+    short      sizeof     stackalloc static     string 
+    struct     switch     this       throw      true 
+    try        typeof     uint       ulong      unchecked 
+    unsafe     ushort     using      virtual    void 
+    volatile   while 
+end keys
+
+% Compound symbols of Java
+compounds
+	?? :: ++ -- && || -> == != <= >= += -= *= /= '%= &= |= ^= << <<= %% >> >>=
+end compounds

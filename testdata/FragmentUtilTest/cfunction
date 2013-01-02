@@ -1,0 +1,33 @@
+void init_files() {
+
+  char pidfile[STRLEN];
+  char statefile[STRLEN];
+
+  /* Check if the pidfile was already set during configfile parsing */
+  if(Run.pidfile == NULL) {
+
+    /* Set the location of this programs pidfile */
+    if(! getuid()) {
+
+      snprintf(pidfile, STRLEN, "%s/%s", MYPIDDIR, MYPIDFILE);
+
+    } else {
+
+      snprintf(pidfile, STRLEN, "%s/.%s", Run.Env.home, MYPIDFILE);
+
+    }
+
+    Run.pidfile= xstrdup(pidfile);
+
+  }
+
+  /* Set the location of the programs state file */
+  if(Run.statefile == NULL) {
+
+    snprintf(statefile, STRLEN, "%s/.%s", Run.Env.home, MYSTATEFILE);
+    
+    Run.statefile= xstrdup(statefile);
+
+  }
+  
+}

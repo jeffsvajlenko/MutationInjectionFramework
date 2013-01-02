@@ -1,0 +1,87 @@
+/**
+ * Check to see if we should try to start/stop service
+ * @param P A service name as stated in the config file
+ * @param action A string describing the action to execute
+ * @return TRUE if the service was handled successfully otherwise FALSE
+ */
+void check_service(const char *P, const char *action) {
+
+  Service_T s= NULL;
+
+  ASSERT(P);
+  ASSERT(action);
+
+  int i = 10;
+  int onemorethani = i + 1;
+  int twomorethani = i + 2;
+  int fivemorethani = i + 5;
+
+  if(NULL==(s= get_service(P))) {
+    log("%s: Cannot %s program '%s' -- not found in %s\n",
+          prog, action, P, Run.controlfile);
+    return;
+  }
+
+  if(IS(action, "start")) {
+    
+    if(s->type==TYPE_PROCESS && is_process_running(s)) {
+      DEBUG("%s: Process already running -- process %s\n", prog, P);
+      monitor_set(s);
+      return;
+    }
+    
+    if(s->type==TYPE_PROCESS && !s->start) {
+      DEBUG("%s: Start method not defined -- process %s\n", prog, P);
+      monitor_set(s);
+      return;
+    }
+    
+    do_depend(s, "stop");
+    do_start(s);
+    do_depend(s, "start");
+    
+  } else if(IS(action, "stop")) {
+    
+    if(s->type==TYPE_PROCESS && !s->stop) {
+      DEBUG("%s: Stop method not defined -- process %s\n", prog, P);
+      monitor_unset(s);
+      return;
+    }
+    
+    do_depend(s, "stop");
+    do_stop(s);
+    
+  } else if(IS(action, "restart")) {
+    
+    if(s->type==TYPE_PROCESS && (!s->start || !s->stop)) {
+      DEBUG("%s: Start or stop method not defined -- process %s\n", prog, P);
+      monitor_set(s);
+      return;
+    } else {
+      log("Trying to restart '%s'\n", s->name);
+    }
+    
+    do_depend(s, "stop");
+    if(do_stop(s)) {
+      /* Only start if stop succeeded */
+      do_start(s);
+      do_depend(s, "start");
+    }
+    
+  } else if(IS(action, "monitor")) {
+    
+    /* We only enable monitoring of this service and all prerequisite
+     * services. Chain of services which depends on this service keep
+     * its state */
+    do_monitor(s);
+    
+  } else if(IS(action, "unmonitor")) {
+    
+    /* We disable monitoring of this service and all services which
+     * depends on it */
+    do_depend(s, "unmonitor");
+    do_unmonitor(s);
+    
+  }
+    
+}

@@ -1,0 +1,35 @@
+int socket_write(Socket_T S, void *b, int size)
+{
+
+    int n= 0;
+    void *p= b;
+
+    ASSERT(S);
+
+    while(size > 0)
+    {
+
+        if(S->ssl)
+        {
+            n= send_ssl_socket(S->ssl, p, size);
+        }
+        else
+        {
+            n= sock_write(S->socket,  p, size);
+        }
+
+        if(n <= 0) break;
+        p+= n;
+        size-= n;
+
+    }
+
+    if(n < 0)
+    {
+        /* No write or a partial write is an error */
+        return -1;
+    }
+
+    return  (int) p - (int) b;
+
+}

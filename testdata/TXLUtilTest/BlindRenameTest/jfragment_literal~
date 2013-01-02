@@ -1,0 +1,31 @@
+{
+	int integer1 = 1234;
+	int integer2 = -1234;
+	int hex1 = 0x12f;
+	int hex2 = -0x12f;
+	int octal1 = 01;
+	int octal2 = -01;
+
+	float f1 = 1.1234;
+	float f2 = -1.1234;
+	float f3 = 123.4f;
+	float f4 = -123.4f;
+	float f5 = 1.234e2;
+	float f6 = -1.234e2;
+
+	boolean bool1 = true;
+	boolean bool2 = false;
+
+	double d1 = 123.4;
+	double d2 = 1.234e2;
+
+	String str = "hello";
+	
+	char c1 = "a";
+	char c2 = 'a';
+	char c3 = '\u2312';
+
+	short s = 10;
+	long l = 1000;
+	byte b = 100;
+}

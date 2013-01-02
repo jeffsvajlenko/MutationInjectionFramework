@@ -1,0 +1,44 @@
+Mon Nov  5 23:40:36 PST 2012
+./txl/cs-extract-functions.x -s 400 ALL.cs >> /home/jeff/Development/java/workspace/MutationInjectionFramework/testdata/SelectFragmentsTest/greenshot/_functions.xml
+
+Mon Nov  5 23:40:38 PST 2012
+
+Mon Nov  5 23:40:38 PST 2012
+./tools/clonepairs.x /home/jeff/Development/java/workspace/MutationInjectionFramework/testdata/SelectFragmentsTest/greenshot/_functions.xml 0.3 10 2500 > /home/jeff/Development/java/workspace/MutationInjectionFramework/testdata/SelectFragmentsTest/greenshot/_functions-clones/_functions-clones-0.3.xml
+Processing /home/jeff/Development/java/workspace/MutationInjectionFramework/testdata/SelectFragmentsTest/greenshot/_functions.xml with difference threshold 30%, clone size 10 .. 2500 lines
+Reading pcs . done.
+Total 310/7500000 potential clones of 10 lines or more
+Used 3211/125000000 total pc lines
+Used 248873/750000000 unique line text chars
+ and 3600/15000000 unique lines
+Sorting pcs . done.
+Finding clones  done.
+Total 1143 pc comparisons
+Pruning embedded clone pairs . done.
+Pruned 0 embedded clone pairs
+Found 1 clone pairs
+Generating XML output . done.
+
+
+real	0m0.190s
+user	0m0.020s
+sys	0m0.128s
+
+Mon Nov  5 23:40:38 PST 2012
+
+Mon Nov  5 23:40:38 PST 2012
+./tools/cloneclasses.x /home/jeff/Development/java/workspace/MutationInjectionFramework/testdata/SelectFragmentsTest/greenshot/_functions-clones/_functions-clones-0.3.xml > /home/jeff/Development/java/workspace/MutationInjectionFramework/testdata/SelectFragmentsTest/greenshot/_functions-clones/_functions-clones-0.3-classes.xml
+Processing /home/jeff/Development/java/workspace/MutationInjectionFramework/testdata/SelectFragmentsTest/greenshot/_functions-clones/_functions-clones-0.3.xml
+Reading clone pairs . done.
+Total 1 pairs
+Computing classes  done.
+Clustered clone pairs into 1 classes
+Generating XML output . done.
+
+
+real	0m0.114s
+user	0m0.044s
+sys	0m0.048s
+
+Mon Nov  5 23:40:38 PST 2012
+

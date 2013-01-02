@@ -1,0 +1,12 @@
+    {
+        DrawableContainer[] dcs = this.ToArray();
+        for(int i=0; i<dcs.Length; i++)
+        {
+            DrawableContainer dc = dcs[i];
+            if(elements.Contains(dc))
+            {
+                this.Remove(dc);
+                this.Add(dc);
+            }
+        }
+    }

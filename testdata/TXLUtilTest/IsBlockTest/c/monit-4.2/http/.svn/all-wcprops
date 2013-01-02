@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/srlab/jes518/!svn/ver/674/MyMutationInjectionFramework/data/systems/c/monit-4.2/http
+END
+base64.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/srlab/jes518/!svn/ver/674/MyMutationInjectionFramework/data/systems/c/monit-4.2/http/base64.c
+END
+cervlet.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/srlab/jes518/!svn/ver/674/MyMutationInjectionFramework/data/systems/c/monit-4.2/http/cervlet.c
+END
+processor.c.ifdefed
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/srlab/jes518/!svn/ver/674/MyMutationInjectionFramework/data/systems/c/monit-4.2/http/processor.c.ifdefed
+END
+processor.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/srlab/jes518/!svn/ver/674/MyMutationInjectionFramework/data/systems/c/monit-4.2/http/processor.h
+END
+engine.c
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/srlab/jes518/!svn/ver/674/MyMutationInjectionFramework/data/systems/c/monit-4.2/http/engine.c
+END
+base64.c.ifdefed
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/srlab/jes518/!svn/ver/674/MyMutationInjectionFramework/data/systems/c/monit-4.2/http/base64.c.ifdefed
+END
+base64.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/srlab/jes518/!svn/ver/674/MyMutationInjectionFramework/data/systems/c/monit-4.2/http/base64.h
+END
+cervlet.c.ifdefed
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/srlab/jes518/!svn/ver/674/MyMutationInjectionFramework/data/systems/c/monit-4.2/http/cervlet.c.ifdefed
+END
+cervlet.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/srlab/jes518/!svn/ver/674/MyMutationInjectionFramework/data/systems/c/monit-4.2/http/cervlet.h
+END
+engine.c.ifdefed
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/srlab/jes518/!svn/ver/674/MyMutationInjectionFramework/data/systems/c/monit-4.2/http/engine.c.ifdefed
+END
+engine.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/srlab/jes518/!svn/ver/674/MyMutationInjectionFramework/data/systems/c/monit-4.2/http/engine.h
+END
+processor.c
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/srlab/jes518/!svn/ver/674/MyMutationInjectionFramework/data/systems/c/monit-4.2/http/processor.c
+END

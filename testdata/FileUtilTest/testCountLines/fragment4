@@ -1,0 +1,28 @@
+void
+sumTimesExtended
+(int n, int m, int x, int y) {
+float sum=
+0.0;
+double product =
+1.0;
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+for (
+int i=1;
+i<=n;
+i++){
+sum=
+sum + (i * i);
+product=
+product * (i * i);
+fun
+(sum, product);
+}}

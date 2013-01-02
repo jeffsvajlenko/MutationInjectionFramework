@@ -1,0 +1,21 @@
+{
+    X X = 0;
+    X *X = X;
+    X (X);
+    while (X > 0) {
+        if (X->X) {
+            X = X (X->X, X, X);
+        }
+        else {
+            X = X (X->X, X, X);
+        }
+        if (X <= 0)
+            break;
+        X += X;
+        X -= X;
+    }
+    if (X < 0) {
+        return -0;
+    }
+    return (X) X - (X) X;
+}
