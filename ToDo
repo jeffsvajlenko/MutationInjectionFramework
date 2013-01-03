@@ -1,4 +1,7 @@
 1. Add manual generation.
 2. Change database interface to use prepared statements.
-3. Add to database tracking of experiment save.
 4. Finish interface.
+5. Make errors put experiment in error state.  Check for error state on loading.
+6. Update testing for CloneDetectionReport
+7. Update testing for location choosers.
+8. Update testing for ExperimentData? For stages?

@@ -2,8 +2,10 @@ package experiment;
 
 
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -14,6 +16,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
@@ -22,6 +25,7 @@ import main.ArtisticStyleFailedException;
 import main.FileSanetizationFailedException;
 import main.NormalizeSystem;
 import models.Clone;
+import models.CloneDetectionReport;
 import models.Fragment;
 import models.MutantBase;
 import models.VerifiedClone;
@@ -186,8 +190,6 @@ public class ExperimentData {
 			throw new IllegalArgumentException("experiment directory is invalid -- database is missing.");
 		}
 		
-		//setup stage
-		this.setStage(ExperimentData.EVALUATION_STAGE);
 		
 		// Create Database  Connection
 		connection = DriverManager.getConnection("jdbc:h2:" + database.toAbsolutePath().normalize().toString(), "sa", "");
@@ -313,7 +315,7 @@ public class ExperimentData {
 		} else if (this.getStage() == ExperimentData.RESULTS_STAGE) {
 			this.setStage(ExperimentData.EVALUATION_STAGE);
 		} else {
-			throw new IllegalStateException("There is no stage after Results.");
+			throw new IllegalStateException("Illegal stage move.");
 		}
 		return this.getStage();
 	}
@@ -1691,7 +1693,7 @@ public class ExperimentData {
 	 * @throws IllegalArgumentException If report does not have the installation directory as a parent or if the report is not a file or does not exist.
 	 * @throws IllegalStateException Can only be called during the evaluation stage.
 	 */
-	public CloneDetectionReportDB createCloneDetectionReport(int toolid, int baseid, Path report) throws SQLException, IOException, FileNotFoundException, IllegalStateException {
+	public CloneDetectionReportDB createCloneDetectionReport(int toolid, int baseid, Path report) throws SQLException, InputMismatchException, IOException, FileNotFoundException, IllegalStateException {
 		if(this.getStage() != ExperimentData.EVALUATION_STAGE) {
 			throw new IllegalStateException("Only valid during evaluation stage.");
 		}
@@ -1722,8 +1724,41 @@ public class ExperimentData {
 			connection.setAutoCommit(true);
 		}
 		
+		//Check/Normalize Report
+		CloneDetectionReport cdr = new CloneDetectionReport(report);
+		Path cdr_norm = Files.createTempFile(getTemporaryPath(), "EvaluateTools", "NormCheckReport");
+		Clone c;
+		Path mb_path = getMutantBasePath().toAbsolutePath().normalize();
+		cdr.open();
+		PrintWriter pr = new PrintWriter(new FileWriter(cdr_norm.toFile()));
+		while((c = cdr.next()) != null) {
+			Path p1o = c.getFragment1().getSrcFile().toAbsolutePath().normalize();
+			Path p2o = c.getFragment2().getSrcFile().toAbsolutePath().normalize();
+			
+			//If clone src paths are not from mutant base, skip
+			if(!p1o.startsWith(mb_path)) {
+				continue;
+			}
+			if(!p2o.startsWith(mb_path)) {
+				continue;
+			}
+			
+			Path p1 = mb_path.relativize(p1o).normalize();
+			int sl1 = c.getFragment1().getStartLine();
+			int el1 = c.getFragment1().getEndLine();
+			Path p2 = mb_path.relativize(p2o).normalize();
+			int sl2 = c.getFragment2().getStartLine();
+			int el2 = c.getFragment2().getEndLine();
+			
+			pr.println(p1.toString() + "," + sl1 + "," + el1 + "," + p2.toString() + "," + sl2 + "," + el2);
+		}
+		pr.flush();
+		cdr.close();
+		pr.close();
+		
 		//Copy File
-		Files.copy(report, reports.resolve(toolid + "-" + baseid), StandardCopyOption.REPLACE_EXISTING);
+		Files.copy(cdr_norm, reports.resolve(toolid + "-" + baseid), StandardCopyOption.REPLACE_EXISTING);
+		Files.delete(cdr_norm);
 		
 		//Prepare SQL
 		String sql = "INSERT INTO clone_detection_reports (tool_id, base_id, report) VALUES ("
@@ -1766,7 +1801,7 @@ public class ExperimentData {
 			int tool_id = rs.getInt("tool_id");
 			int base_id = rs.getInt("base_id");
 			Path report = reports.resolve(toolid + "-" + baseid).toAbsolutePath().normalize();
-			return new CloneDetectionReportDB(tool_id, base_id, report);
+			return new CloneDetectionReportDB(tool_id, base_id, report, getMutantBasePath().toAbsolutePath().normalize());
 		} else {
 			return null;
 		}
@@ -1797,7 +1832,7 @@ public class ExperimentData {
 			int tool_id = rs.getInt("tool_id");
 			int base_id = rs.getInt("base_id");
 			Path report = reports.resolve(tool_id + "-" + base_id).toAbsolutePath().normalize();
-			CloneDetectionReportDB cdr = new CloneDetectionReportDB(tool_id, base_id, report);
+			CloneDetectionReportDB cdr = new CloneDetectionReportDB(tool_id, base_id, report, getMutantBasePath().toAbsolutePath().normalize());
 			retval.add(cdr);
 		}
 		
@@ -1832,7 +1867,7 @@ public class ExperimentData {
 			assert(toolid == tool_id);
 			int base_id = rs.getInt("base_id");
 			Path report = reports.resolve(tool_id + "-" + base_id).toAbsolutePath().normalize();
-			CloneDetectionReportDB cdr = new CloneDetectionReportDB(tool_id, base_id, report);
+			CloneDetectionReportDB cdr = new CloneDetectionReportDB(tool_id, base_id, report, getMutantBasePath().toAbsolutePath().normalize());
 			retval.add(cdr);
 		}
 		
@@ -1867,7 +1902,7 @@ public class ExperimentData {
 			int base_id = rs.getInt("base_id");
 			assert(baseid == base_id);
 			Path report = reports.resolve(tool_id + "-" + base_id).toAbsolutePath().normalize();
-			CloneDetectionReportDB cdr = new CloneDetectionReportDB(tool_id, base_id, report);
+			CloneDetectionReportDB cdr = new CloneDetectionReportDB(tool_id, base_id, report, getMutantBasePath().toAbsolutePath().normalize());
 			retval.add(cdr);
 		}
 		
@@ -1915,7 +1950,7 @@ public class ExperimentData {
 	 * @throws IllegalStateException Can only be called during the evaluation stage.
 	 */
 	public boolean deleteCloneDetectionReport(int toolid, int baseid) throws SQLException, IOException, IllegalStateException {
-		if(this.getStage() != ExperimentData.EVALUATION_STAGE) {
+		if(this.getStage() != ExperimentData.EVALUATION_STAGE && this.getStage() != ExperimentData.EVALUATION_SETUP_STAGE) {
 			throw new IllegalStateException("Only valid during evaluation stage.");
 		}
 		
@@ -2853,10 +2888,6 @@ public class ExperimentData {
 	 * @throws IllegalArgumentException
 	 */
 	public List<UnitPrecision> getUnitPrecisionForTool(int toolid) throws SQLException, IllegalArgumentException, IllegalStateException {
-		if(this.getStage() != ExperimentData.RESULTS_STAGE) {
-			throw new IllegalStateException("Can only be called during results stage.");
-		}
-		
 		//Prepare Connection
 		if(!connection.getAutoCommit()) {
 			connection.rollback();

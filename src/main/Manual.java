@@ -8,6 +8,8 @@ import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 
+import models.Clone;
+import models.CloneDetectionReport;
 import models.InvalidToolRunnerException;
 
 import org.apache.commons.io.FileUtils;
@@ -21,7 +23,7 @@ import experiment.ToolDB;
 
 public class Manual {
 	public static void main(String args[]) throws IOException, IllegalStateException, SQLException, InterruptedException, ArtisticStyleFailedException, IllegalArgumentException, FileSanetizationFailedException, NullPointerException, InvalidToolRunnerException {
-
+/*
 		//Temporary Manual Interface
 //CREATION
 		//Setup Experiment Specification
@@ -41,7 +43,6 @@ public class Manual {
 		int minSizeLines = 15; es.setFragmentMinSizeLines(minSizeLines);
 		int minSizeTokens = 100; es.setFragmentMinSizeTokens(minSizeTokens);
 		es.setFragmentType(ExperimentSpecification.FUNCTION_FRAGMENT_TYPE);
-		es.setGenerationType(ExperimentSpecification.AUTOMATIC_GENERATION_TYPE);
 		es.setInjectNumber(1);
 		es.setMaxFragments(1);
 		es.setMutationAttempts(25);
@@ -54,7 +55,7 @@ public class Manual {
 		
 		//Create Experiment
 		System.out.println("----Setting Up Experiment----");
-		Experiment e = Experiment.createExperiment(es, System.out);
+		Experiment e = Experiment.createAutomaticExperiment(es, System.out);
 		ExperimentData ed = e.getExperimentData();
 				
 //SETUP PHASE
@@ -84,13 +85,11 @@ public class Manual {
 			oplist.add(operator.getId());
 			e.addMutator(operator.getDescription(), oplist);
 		}
-
-//		Experiment e = Experiment.loadExperiment(Paths.get("experiments/Test/"), System.out, false);
-//		ExperimentData ed = e.getExperimentData();
+*/
+		Experiment e = Experiment.loadExperiment(Paths.get("experiments/Test/"), System.out, false);
+		ExperimentData ed = e.getExperimentData();
 		System.out.println("----Settings Log----");
 		System.out.println("Generation Settings:");
-		//System.out.println("\tSystem: " + es.getSystemPath());
-		//System.out.println("\tRepository: " + es.getRepository());
 		System.out.println("\tLanguage: " + ExperimentSpecification.languageToString(ed.getLanguage()));
 		System.out.println("\tGeneration Type: " + ed.getGenerationType());
 		System.out.println("\tOperator Attempts: " + ed.getOperatorAttempts());
@@ -127,21 +126,20 @@ public class Manual {
 		}
 
 		
-//GENERATION PHASE
-		System.out.println("----Generation Phase----");
-		e.generateAutomatic();
+//Generation Phase
+		//e.generateAutomatic();
 		
 //EVALUATION PHASE
-
-		//e.addTool("NiCad", "NiCad-3.4 near miss clone detector.", Paths.get("tools/NiCad-3.4/"), Paths.get("tools/NiCad-3.4/NiCadRunner/NiCadRunner"));
+		ed.previousStage();//ed.previousStage();
+		ed.deleteTools();
+		e.addTool("NiCad", "NiCad-3.4 near miss clone detector.", Paths.get("tools/NiCad-3.4/"), Paths.get("tools/NiCad-3.4/NiCadRunner/NiCadRunner"));
 		//e.addTool("SimCad", "SimCad-2.1 simhash based clone detector.", Paths.get("tools/SimCad-2.1/"), Paths.get("tools/SimCad-2.1/SimCadRunner/SimCadRunner"));
-		e.addTool("iclones", "iclones-0.1 incremental clone detector.", Paths.get("tools/iclones-0.1/"), Paths.get("tools/iclones-0.1/IClonesRunner/IClonesRunner"));
+		//e.addTool("iclones", "iclones-0.1 incremental clone detector.", Paths.get("tools/iclones-0.1/"), Paths.get("tools/iclones-0.1/IClonesRunner/IClonesRunner"));
 		//e.addTool("CCFinderX", "CCFinderX 10.2.7.4.", Paths.get("tools/CCFinderx-10.2.7.4/bin/"), Paths.get("tools/CCFinderx-10.2.7.4/CCFinderRunner/CCFinderRunner"));
 		//e.addTool("Deckard", "Deckard clone detector.", Paths.get("tools/Deckard-1.2.3/"), Paths.get("tools/Deckard-1.2.3/DeckardRunner/DeckardRunner"));
 		//e.addTool("Simian", "Simian-2.3.33", Paths.get("tools/Simian-2.3.33/bin/"), Paths.get("tools/Simian-2.3.33/SimianRunner/SimianRunner/"));
 		
 		e.evaluateTools(false);
 		e.outputResults();
-		
 	}
 }

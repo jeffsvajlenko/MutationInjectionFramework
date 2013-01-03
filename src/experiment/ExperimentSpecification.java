@@ -205,17 +205,17 @@ public class ExperimentSpecification {
 	public int getGenerationType() {
 		return generationType;
 	}
-
-	/**
-	 * @param generationType The generation type to use.  Must be AUTOMATIC_GENERATION_TYPE or MANUAL_GENERATION_TYPE of this class.
-	 * @throws IllegalArgumentValue if the value is invalid.
-	 */
-	public void setGenerationType(int generationType) throws IllegalArgumentException {
-		if (!ExperimentSpecification.isGenerationTypeValid(generationType)) {
-			throw new IllegalArgumentException("Specified generation type is invalid.");
-		}
-		this.generationType = generationType;
-	}
+// -- Set my experiment
+//	/**
+//	 * @param generationType The generation type to use.  Must be AUTOMATIC_GENERATION_TYPE or MANUAL_GENERATION_TYPE of this class.
+//	 * @throws IllegalArgumentValue if the value is invalid.
+//	 */
+//	public void setGenerationType(int generationType) throws IllegalArgumentException {
+//		if (!ExperimentSpecification.isGenerationTypeValid(generationType)) {
+//			throw new IllegalArgumentException("Specified generation type is invalid.");
+//		}
+//		this.generationType = generationType;
+//	}
 
 //------------------------------------------------------------
 	

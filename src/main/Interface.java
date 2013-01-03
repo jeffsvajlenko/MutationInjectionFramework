@@ -798,7 +798,7 @@ public class Interface {
 					es.setOperatorAttempts(operatorAttempts);
 					
 					try {
-						Experiment e = Experiment.createExperiment(es, out);
+						Experiment e = Experiment.createAutomaticExperiment(es, out);
 						return e;
 					} catch (IllegalArgumentException e) {
 						e.printStackTrace();

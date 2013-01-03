@@ -3,6 +3,8 @@ package experiment;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.InvalidPathException;
 import java.nio.file.Path;
@@ -27,6 +29,7 @@ import util.FragmentUtil;
 import util.InjectionLocationChooser;
 import util.SelectBlockFragments;
 import util.SelectFunctionFragments;
+import util.SystemUtil;
 import util.TXLException;
 import util.TXLUtil;
 import validator.LineValidator;
@@ -108,7 +111,7 @@ public class Experiment {
 	
 	/**
 
-	 * Creates a new experiment.
+	 * Creates a new automatic generation experiment using the specified properties.
 	 * @param spec The experiment specification.
 	 * @param log A print stream to write logging messages to.
 	 * @return The experiment object.
@@ -120,11 +123,11 @@ public class Experiment {
 	 * @throws InterruptedException
 	 * @throws  
 	 */
-	public static Experiment createExperiment(ExperimentSpecification spec, PrintStream log) throws SQLException, IOException, InterruptedException, ArtisticStyleFailedException, IllegalArgumentException, FileSanetizationFailedException {
+	public static Experiment createAutomaticExperiment(ExperimentSpecification spec, PrintStream log) throws SQLException, IOException, InterruptedException, ArtisticStyleFailedException, IllegalArgumentException, FileSanetizationFailedException {
 		//Create Data
 		ExperimentData ed = new ExperimentData(spec.getDataPath(), spec.getSystem(), spec.getRepository(), spec.getLanguage(), log);
 		
-		//Set Properties
+		//Set Properties From Spec
 		ed.setAllowedFragmentDifference(spec.getAllowedFragmentDifference());
 		ed.setFragmentMinimumSizeLines(spec.getFragmentMinSizeLines());
 		ed.setFragmentMaximumSizeLines(spec.getFragmentMaxSizeLines());
@@ -142,13 +145,53 @@ public class Experiment {
 		ed.setRecallRequiredSimilarity(spec.getRecallRequiredSimilarity());
 		ed.setSubsumeMatcherTolerance(spec.getSubsumeMatcherTolerance());
 		
+		//Set Experiment Type
+		ed.setGenerationType(ExperimentSpecification.AUTOMATIC_GENERATION_TYPE);
+		
 		//Create Experiment object
 		Experiment e = new Experiment(ed, log);
 		
-		//Return for analysis
+		//Return
 		return e;
 	}
 
+	public static Experiment createManualExperiment(ExperimentSpecification spec, Path manual_spec, PrintStream log) throws IllegalStateException, IllegalArgumentException, SQLException, IOException, InterruptedException, ArtisticStyleFailedException, FileSanetizationFailedException {
+		//Create Data
+		Path empty_repo = Files.createTempDirectory(SystemUtil.getTemporaryDirectory(), "manual_repository");
+		ExperimentData ed = new ExperimentData(spec.getDataPath(), spec.getSystem(), empty_repo, spec.getLanguage(), log);
+		Files.delete(empty_repo);
+		
+		//Set Properties From Spec
+		ed.setAllowedFragmentDifference(spec.getAllowedFragmentDifference());
+		ed.setFragmentMinimumSizeLines(spec.getFragmentMinSizeLines());
+		ed.setFragmentMaximumSizeLines(spec.getFragmentMaxSizeLines());
+		ed.setFragmentMinimumSizeTokens(spec.getFragmentMinSizeTokens());
+		ed.setFragmentMaximumSizeTokens(spec.getFragmentMaxSizeTokens());
+		ed.setFragmentType(spec.getFragmentType());
+		ed.setGenerationType(spec.getGenerationType());
+		ed.setInjectionNumber(spec.getInjectNumber());
+		ed.setLanguage(spec.getLanguage());
+		ed.setMaxFragments(spec.getMaxFragments());
+		ed.setMutationAttempts(spec.getMutationAttempts());
+		ed.setMutationContainment(spec.getMutationContainment());
+		ed.setOperatorAttempts(spec.getOperatorAttempts());
+		ed.setPrecisionRequiredSimilarity(spec.getPrecisionRequiredSimilarity());
+		ed.setRecallRequiredSimilarity(spec.getRecallRequiredSimilarity());
+		ed.setSubsumeMatcherTolerance(spec.getSubsumeMatcherTolerance());
+		
+		//Set Experiment Type
+		ed.setGenerationType(ExperimentSpecification.MANUAL_GENERATION_TYPE);
+		
+		//Create Experiment object
+		Experiment e = new Experiment(ed, log);
+		
+		//Generate
+		e.generateManual(manual_spec);
+		
+		//Return For Evaluation
+		return e;
+	}
+	
 	/**
 	 * Loads a previous experiment by its output directory.
 	 * @param experiment_directory The experiment output directory.
@@ -571,7 +614,7 @@ public class Experiment {
 	}
 	
 	
-	public boolean generateManual(Path manual_spec) throws SQLException, AlreadyGeneratedException, FileNotFoundException {
+	private boolean generateManual(Path manual_spec) throws SQLException, AlreadyGeneratedException, FileNotFoundException {
 		log.println("[" + Calendar.getInstance().getTime() + "] (generateManual): " + "Start: Generating manual clones.");
 		Objects.requireNonNull(manual_spec);
 		if(!Files.exists(manual_spec)) {
@@ -594,13 +637,6 @@ public class Experiment {
 			//Progress to generation stage
 			ed.nextStage();
 			assert(ed.getCurrentStage() == ExperimentData.GENERATION_STAGE);
-			
-			//Generate Clones
-			//bretval = importClones(manual_spec);
-			//if(bretval == false) {
-			//	log.println("[" + Calendar.getInstance().getTime() + "] (generateManual): " + "Error: Manual clone import failed.  See previous error messages.");
-			//	return false;
-			//}
 			
 			//Create Mutant Bases
 			bretval = this.createMutantBases();
@@ -2237,7 +2273,7 @@ createbase_attempt:
 				
 				//Run tool only if have not in past
 				if(!ed.existsCloneDetectionReport(tool.getId(), mutantbase.getId())) {
-					log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): " + "\t\tRunning tool...");
+					log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): " + "\t\tRunning tool.");
 					//Evaluate mutant base with tool
 					CloneDetectionReport cdr;
 					try {
@@ -2275,32 +2311,9 @@ createbase_attempt:
 						return false;
 					}
 					
-					//Check Report
-					try {
-						cdr.open();
-						while(cdr.next() != null) {
-							
-						}
-						cdr.close();
-					} catch (FileNotFoundException e) {
-						log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): Error: Clone detection report generated by tool does not exist.");
-						e.printStackTrace();
-						try{cdr.close();} catch (Exception ee) {}
-						return false;
-					} catch (InputMismatchException e) {
-						log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): Error: Clone detection report generated by tool has invalid format.");
-						e.printStackTrace();
-						try{cdr.close();} catch (Exception ee) {}
-						return false;
-					} catch (IOException e) {
-						log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): Error: IO error while reading tool's clone detection report.");
-						e.printStackTrace();
-						try{cdr.close();} catch (Exception ee) {}
-						return false;
-					}
-					
 					//Add to database
 					try {
+						log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): " + "\t\tImporting clone detection report.  Clones not in the mutant base will be trimmed.");
 						ed.createCloneDetectionReport(tool.getId(), mutantbase.getId(), cdr.getReport());
 					} catch (FileNotFoundException e) {
 						log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): Error: When adding tool's detection report to database, the report could not be found.  Did you tamper with the file?");
@@ -2440,7 +2453,12 @@ createbase_attempt:
 		if(requiredSimilarity < 0 || requiredSimilarity > 1.0) throw new IllegalArgumentException("Required similarity msut be in range [0.0, 1.0]");
 		if(!ExperimentSpecification.isLanguageSupported(language)) throw new IllegalArgumentException("Unsupported language.");
 		
-		cdr = new CloneDetectionReport(cdr.getReport());//ensure uniquely used reader
+		//get unique reader
+		if(cdr.getRoot() == null) {
+			cdr = new CloneDetectionReport(cdr.getReport());
+		} else {
+			cdr = new CloneDetectionReport(cdr.getReport(), cdr.getRoot());
+		}
 		Clone aclone = new Clone(mutantbase.getOriginalFragment(), mutantbase.getMutantFragment());
 		Clone clone;
 		
@@ -2519,7 +2537,13 @@ createbase_attempt:
 		if(requiredSimilarity < 0 || requiredSimilarity > 1.0) throw new IllegalArgumentException("Required similarity msut be in range [0.0, 1.0]");
 		if(!ExperimentSpecification.isLanguageSupported(language)) throw new IllegalArgumentException("Unsupported language.");
 		
-		cdr = new CloneDetectionReport(cdr.getReport());//ensure uniquely used reader
+		//get unique reader
+		if(cdr.getRoot() == null) {
+			cdr = new CloneDetectionReport(cdr.getReport());
+		} else {
+			cdr = new CloneDetectionReport(cdr.getReport(), cdr.getRoot());
+		}
+				
 		Clone aclone = new Clone(mutantbase.getOriginalFragment(), mutantbase.getMutantFragment());
 		Clone clone;
 		List<VerifiedClone> clones = new LinkedList<VerifiedClone>();

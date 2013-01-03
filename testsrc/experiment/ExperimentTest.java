@@ -2930,7 +2930,7 @@ public class ExperimentTest {
 		es.setSubsumeMatcherTolerance(0.15);
 		
 		//Create Experiment
-		Experiment e = Experiment.createExperiment(es, System.out);
+		Experiment e = Experiment.createAutomaticExperiment(es, System.out);
 				
 //SETUP PHASE
 		//Operators
@@ -3053,7 +3053,7 @@ public class ExperimentTest {
 		es.setSubsumeMatcherTolerance(0.15);
 		
 		//Create Experiment
-		Experiment e = Experiment.createExperiment(es, System.out);
+		Experiment e = Experiment.createAutomaticExperiment(es, System.out);
 				
 //SETUP PHASE
 		//Operators

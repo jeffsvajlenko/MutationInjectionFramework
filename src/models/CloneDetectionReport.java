@@ -17,6 +17,7 @@ import java.util.Scanner;
 public class CloneDetectionReport {
 	
 	Path report;
+	private Path root;
 	private BufferedReader br;
 	private boolean closed = true;
 	
@@ -30,6 +31,22 @@ public class CloneDetectionReport {
 		Objects.requireNonNull(report);
 		this.report = report;
 		this.closed = true;
+		this.root = null;
+	}
+	
+	/**
+	 * Constructs a clone report object.
+	 * @param toolid id (from the database) of the tool which created this report (>=0).
+	 * @param baseid id (from the database) of the base which was analyzed (>=0).
+	 * @param report location of the clone detection report.
+	 */
+	public CloneDetectionReport(Path report, Path root) {
+		Objects.requireNonNull(report);
+		Objects.requireNonNull(root);
+		root = root.toAbsolutePath().normalize();
+		this.report = report;
+		this.closed = true;
+		this.root = root;
 	}
 	
 	/**
@@ -38,6 +55,10 @@ public class CloneDetectionReport {
 	 */
 	public Path getReport() {
 		return this.report;
+	}
+	
+	public Path getRoot() {
+		return this.root;
 	}
 	
 	/**
@@ -91,8 +112,14 @@ public class CloneDetectionReport {
 					s.close();
 					
 					// Construct the clone and return it
-					Fragment f1 = new Fragment(Paths.get(srcfile1), startline1, endline1);
-					Fragment f2 = new Fragment(Paths.get(srcfile2), startline2, endline2);
+					Fragment f1, f2;
+					if(root == null) {
+						f1 = new Fragment(Paths.get(srcfile1), startline1, endline1);
+						f2 = new Fragment(Paths.get(srcfile2), startline2, endline2);
+					} else {
+						f1 = new Fragment(root.resolve(Paths.get(srcfile1)), startline1, endline1);
+						f2 = new Fragment(root.resolve(Paths.get(srcfile2)), startline2, endline2);
+					}
 					Clone c = new Clone(f1,f2);
 					return c;	
 				} catch (InputMismatchException e) { // If input mismatch, then line is malformed

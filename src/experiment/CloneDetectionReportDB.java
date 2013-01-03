@@ -21,6 +21,12 @@ public class CloneDetectionReportDB extends CloneDetectionReport {
 		this.baseid = baseid;
 	}
 	
+	public CloneDetectionReportDB(int toolid, int baseid, Path report, Path root) {
+		super(report, root);
+		this.toolid = toolid;
+		this.baseid = baseid;
+	}
+	
 	/**
 	 * Returns the id of the tool which produced this report.
 	 * @return the id of the tool which produced this report.
