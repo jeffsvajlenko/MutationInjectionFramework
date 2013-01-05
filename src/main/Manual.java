@@ -132,7 +132,7 @@ public class Manual {
 //EVALUATION PHASE
 		ed.previousStage();//ed.previousStage();
 		ed.deleteTools();
-		e.addTool("NiCad", "NiCad-3.4 near miss clone detector.", Paths.get("tools/NiCad-3.4/"), Paths.get("tools/NiCad-3.4/NiCadRunner/NiCadRunner"));
+		//e.addTool("NiCad", "NiCad-3.4 near miss clone detector.", Paths.get("tools/NiCad-3.4/"), Paths.get("tools/NiCad-3.4/NiCadRunner/NiCadRunner"));
 		//e.addTool("SimCad", "SimCad-2.1 simhash based clone detector.", Paths.get("tools/SimCad-2.1/"), Paths.get("tools/SimCad-2.1/SimCadRunner/SimCadRunner"));
 		//e.addTool("iclones", "iclones-0.1 incremental clone detector.", Paths.get("tools/iclones-0.1/"), Paths.get("tools/iclones-0.1/IClonesRunner/IClonesRunner"));
 		//e.addTool("CCFinderX", "CCFinderX 10.2.7.4.", Paths.get("tools/CCFinderx-10.2.7.4/bin/"), Paths.get("tools/CCFinderx-10.2.7.4/CCFinderRunner/CCFinderRunner"));

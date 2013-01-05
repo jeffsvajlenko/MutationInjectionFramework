@@ -9,7 +9,7 @@
 
 sysdir=$1
 language=$2
-opts="-ignoreIdentifiers+ -ignoreLiterals+ -ignoreVariableNames+ -threshold=15"
+opts="" #"-ignoreIdentifiers+ -ignoreLiterals+ -ignoreVariableNames+ -threshold=15"
 installdir=$4
 outfile=$6/clones.txt
 memory="-Xms250m -Xmx1028m"

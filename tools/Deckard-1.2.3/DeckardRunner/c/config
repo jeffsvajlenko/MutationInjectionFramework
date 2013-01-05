@@ -17,12 +17,12 @@ FILE_PATTERN='*.c' # used for the 'find' command
 # where are the source files?
 SRC_DIR='.'
 # where is Deckard?
-DECKARD_DIR="/home/jeff/MutationInjectionFramework/tools/Deckard-1.2.3/"
+DECKARD_DIR="/home/jeff/Dropbox/MutationInjectionFramework/tools/Deckard-1.2.3/"
 # clone parameters; refer to paper.
-MIN_TOKENS='80'
-STRIDE='5'
+MIN_TOKENS='100'
+STRIDE='4'
 #DISTANCE='2.236 0.70711 1.58114'
-SIMILARITY='0.9'
+SIMILARITY='0.90'
 
 ###################################################################
 # Where to store result files?
