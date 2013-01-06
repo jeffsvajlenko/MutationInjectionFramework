@@ -55,19 +55,29 @@ public class Experiment {
 	private PrintStream log;
 	
 	/**
-	 * Setup phase.  Where experimental settings are configured before generation.
+	 * Error Stage.  Experiment has hit a critical error that has rendered it unusable.
 	 */
-	public static final int SETUP_PHASE = ExperimentData.GENERATION_SETUP_STAGE;
-	
+	static public final int ERROR_STAGE = ExperimentData.ERROR_STAGE;
 	/**
-	 * Generation Phase.  When clones and mutant bases are generated.
+	 * Generation Setup Stage. Experiment is in pre-generation phase where experiment is configured.
 	 */
-	public static final int GENERATION_PHASE = ExperimentData.GENERATION_STAGE;
-	
+	static public final int GENERATION_SETUP_STAGE = ExperimentData.GENERATION_SETUP_STAGE;
 	/**
-	 * Evaluation Phase.  When the experiment data is evaluted using the clone detection tools.
+	 * Generation Stage.  Experiment is in the generation stage, where clones and mutant bases are constructed.
 	 */
-	public static final int EVALUATION_PHASE = ExperimentData.EVALUATION_STAGE;
+	static public final int GENERATION_STAGE = ExperimentData.GENERATION_STAGE;
+	/**
+	 * Evaluation Setup Stage.  Generation is complete and evaluation is ready to be set up (tools setup and evaluation properties set).
+	 */
+	static public final int EVALUATION_SETUP_STAGE = ExperimentData.EVALUATION_SETUP_STAGE; 
+	/**
+	 * Evaluation Stage.  Generation is complete.  Tools can be managed and evaluated, and evaluation settings changed.
+	 */
+	static public final int EVALUATION_STAGE = ExperimentData.EVALUATION_STAGE;
+	/**
+	 * Results Stage.  Evaluation stage is complete.  Results can be queried.
+	 */
+	static public final int RESULTS_STAGE = ExperimentData.RESULTS_STAGE;
 	
 //-- Accessors ---------------------------------------------------------------------------------------------------------
 	
@@ -77,6 +87,13 @@ public class Experiment {
 	 */
 	public int currentPhase() throws SQLException {
 		return ed.getCurrentStage();
+	}
+	
+	/**
+	 * @return The location of the experiment.
+	 */
+	public Path getLocation() {
+		return ed.getPath().toAbsolutePath().normalize();
 	}
 	
 	/**
@@ -124,6 +141,9 @@ public class Experiment {
 	 * @throws  
 	 */
 	public static Experiment createAutomaticExperiment(ExperimentSpecification spec, PrintStream log) throws SQLException, IOException, InterruptedException, ArtisticStyleFailedException, IllegalArgumentException, FileSanetizationFailedException {
+		Objects.requireNonNull(spec);
+		Objects.requireNonNull(log);
+		
 		//Create Data
 		ExperimentData ed = new ExperimentData(spec.getDataPath(), spec.getSystem(), spec.getRepository(), spec.getLanguage(), log);
 		
@@ -155,7 +175,20 @@ public class Experiment {
 		return e;
 	}
 
-	public static Experiment createManualExperiment(ExperimentSpecification spec, Path manual_spec, PrintStream log) throws IllegalStateException, IllegalArgumentException, SQLException, IOException, InterruptedException, ArtisticStyleFailedException, FileSanetizationFailedException {
+	public static Experiment createManualExperiment(ExperimentSpecification spec, Path manual_spec, PrintStream log) throws IllegalStateException, IllegalArgumentException, SQLException, IOException, InterruptedException, ArtisticStyleFailedException, FileSanetizationFailedException, IllegalManualImportSpecification {
+		Objects.requireNonNull(spec);
+		Objects.requireNonNull(manual_spec);
+		Objects.requireNonNull(log);
+		if(!Files.exists(manual_spec)) {
+			throw new FileNotFoundException("Specified manual clone file does not exist.");
+		}
+		if(!Files.isRegularFile(manual_spec)) {
+			throw new IllegalArgumentException("Specified manual clone file is not a regular file.");
+		}
+		if(!Files.isReadable(manual_spec)) {
+			throw new IllegalArgumentException("Specified manual clone file is not readable.");
+		}
+		
 		//Create Data
 		Path empty_repo = Files.createTempDirectory(SystemUtil.getTemporaryDirectory(), "manual_repository");
 		ExperimentData ed = new ExperimentData(spec.getDataPath(), spec.getSystem(), empty_repo, spec.getLanguage(), log);
@@ -186,7 +219,10 @@ public class Experiment {
 		Experiment e = new Experiment(ed, log);
 		
 		//Generate
-		e.generateManual(manual_spec);
+		if(!e.importClones(manual_spec)) {
+			log.println("[" + Calendar.getInstance().getTime() + "] (createManualExperiment): " + "Error: Importing clones failed.  See previous log messages.");
+			return null;
+		}
 		
 		//Return For Evaluation
 		return e;
@@ -200,7 +236,7 @@ public class Experiment {
 	 * @throws IllegalArgumentException If directory does not exist, or if experiment directory appears to be invalid.
 	 * @throws SQLException
 	 */
-	public static Experiment loadExperiment(Path experiment_directory, PrintStream log, boolean verify) throws IllegalArgumentException, SQLException {
+	public static Experiment loadExperiment(Path experiment_directory, PrintStream log) throws IllegalArgumentException, SQLException {
 		Objects.requireNonNull(experiment_directory);
 		if(!Files.exists(experiment_directory)) {
 			throw new IllegalArgumentException("Experiment directory does not exist.");
@@ -208,8 +244,6 @@ public class Experiment {
 		
 		ExperimentData ed = new ExperimentData(experiment_directory);
 		Experiment e = new Experiment(ed, log);
-		if(verify)
-			e.verifyAutomaticGeneration();
 		return e;
 	}
 
@@ -444,6 +478,25 @@ public class Experiment {
 		}
 	}
 	
+	/**
+	 * 
+	 * @return
+	 * @throws SQLException
+	 */
+	public int numOperators() throws SQLException {
+		return ed.numOperators();
+	}
+	
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 * @throws SQLException
+	 */
+	public boolean existsOperator(int id) throws SQLException {
+		return ed.existsOperator(id);
+	}
+	
 //-- Mutators ------------------------------------------------------------------------------------------------------------	
 	
 	/**
@@ -479,6 +532,14 @@ public class Experiment {
 	 */
 	public List<MutatorDB> getMutators() throws SQLException {
 		return ed.getMutators();
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public int numMutators() throws SQLException {
+		return ed.numMutators();
 	}
 	
 	/**
@@ -562,15 +623,23 @@ public class Experiment {
 		
 	
 //-- Generation ----------------------------------------------------------------------------------------------------------	
+
+	// -- Public Interface ----
 	
-	//-- Public Interface ------------------------------------------------------------------------------------------------
-	/**
-	 * 
-	 * @return
-	 * @throws SQLException
-	 * @throws AlreadyGeneratedException
-	 */
-	public boolean generateAutomatic() throws SQLException, AlreadyGeneratedException {
+	public boolean generate() throws AlreadyGeneratedException, SQLException {
+		if(ed.getGenerationType() == ExperimentSpecification.AUTOMATIC_GENERATION_TYPE) {
+			return this.generateAutomatic();
+		} else if (ed.getGenerationType() == ExperimentSpecification.MANUAL_GENERATION_TYPE) {
+			return this.generateManual();
+		} else {
+			log.println("[" + Calendar.getInstance().getTime() + "] (generateAutomatic): " + "Error: Generation type not supported.");
+			return false;
+		}
+	}
+	
+	// -- Generate Logic
+	
+	private boolean generateAutomatic() throws SQLException, AlreadyGeneratedException {
 		if(ed.getCurrentStage() != ExperimentData.GENERATION_SETUP_STAGE) {
 			throw new AlreadyGeneratedException();
 		} else {
@@ -613,19 +682,8 @@ public class Experiment {
 		}
 	}
 	
-	
-	private boolean generateManual(Path manual_spec) throws SQLException, AlreadyGeneratedException, FileNotFoundException {
+	private boolean generateManual() throws SQLException, AlreadyGeneratedException {
 		log.println("[" + Calendar.getInstance().getTime() + "] (generateManual): " + "Start: Generating manual clones.");
-		Objects.requireNonNull(manual_spec);
-		if(!Files.exists(manual_spec)) {
-			throw new FileNotFoundException("Specified manual clone file does not exist.");
-		}
-		if(!Files.isRegularFile(manual_spec)) {
-			throw new IllegalArgumentException("Specified manual clone file is not a regular file.");
-		}
-		if(!Files.isReadable(manual_spec)) {
-			throw new IllegalArgumentException("Specified manual clone file is not readable.");
-		}
 		if(ed.getCurrentStage() != ExperimentData.GENERATION_SETUP_STAGE) {
 			throw new AlreadyGeneratedException();
 		} else {
@@ -768,6 +826,39 @@ public class Experiment {
 			}
 		}
 		
+	//Import into repository
+		List<Path> ref_fragments = fragments;
+		List<Path> ref_mfragments = mfragments;
+		fragments = new LinkedList<Path>();
+		mfragments = new LinkedList<Path>();
+		
+		int num = 0;
+		for(Path f : ref_fragments) {
+			num++;
+			Path fragment_path;
+			try {
+				fragment_path = Files.copy(f, ed.getRepositoryPath().resolve("f1"));
+				fragments.add(fragment_path);
+			} catch (IOException e) {
+				e.printStackTrace();
+				log.println("[" + Calendar.getInstance().getTime() + "] (importClones): " + "Error: IO exception when importing fragment 1 of clone " + num + " into the experiment data.");
+				return false;
+			}
+		}
+		num = 0;
+		for(Path mf : ref_fragments) {
+			num++;
+			Path mfragment_path;
+			try {
+				mfragment_path = Files.copy(mf, ed.getRepositoryPath().resolve("mf1"));
+				mfragments.add(mfragment_path);
+			} catch (IOException e) {
+				e.printStackTrace();
+				log.println("[" + Calendar.getInstance().getTime() + "] (importClones): " + "Error: IO exception when importing fragment 2 of clone " + num + " into the experiment data.");
+				return false;
+			}
+		}
+		
 	//Import into experiment and database
 		ed.deleteOperators();
 		ed.deleteMutators();
@@ -796,6 +887,7 @@ public class Experiment {
 			}
 			
 			//Mutant Fragment (fragment2)
+			@SuppressWarnings("unused")
 			MutantFragment mfragment;
 			try {
 				mfragment = ed.createMutantFragment(fragment.getId(), mutatorDB.getId(), mf);

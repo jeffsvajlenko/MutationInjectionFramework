@@ -46,6 +46,83 @@ import validator.ValidatorResult;
 public class ExperimentTest {
 
 	@Test
+	public void testCreateAutomaticExperiment() {
+		fail("unimplemented.");
+	}
+	
+	@Test
+	public void testCreateManualExperiment() throws IOException, IllegalArgumentException, SQLException, InterruptedException, ArtisticStyleFailedException, FileSanetizationFailedException, IllegalStateException, IllegalManualImportSpecification {
+		Path jrepository = Paths.get("data/systems/java/");
+		Path jsystem = Paths.get("data/systems/java/");
+		Path data = Paths.get("testdata/ExperimentTest/CreateManualExperiment_data");
+		if(Files.exists(data)) {
+			FileUtils.deleteDirectory(data.toFile());
+		}
+		
+		ExperimentSpecification es = new ExperimentSpecification(data, jsystem, jrepository, ExperimentSpecification.JAVA_LANGUAGE);
+		
+		//Generation Properties
+		es.setAllowedFragmentDifference(0.30);
+		int maxSizeLines = 200; es.setFragmentMaxSizeLines(maxSizeLines);
+		int maxSizeTokens = 2000; es.setFragmentMaxSizeTokens(maxSizeTokens);
+		int minSizeLines = 15; es.setFragmentMinSizeLines(minSizeLines);
+		int minSizeTokens = 100; es.setFragmentMinSizeTokens(minSizeTokens);
+		es.setFragmentType(ExperimentSpecification.BLOCK_FRAGMENT_TYPE);
+		es.setInjectNumber(1);
+		es.setMaxFragments(1);
+		es.setMutationAttempts(25);
+		es.setMutationContainment(0.15);
+		es.setOperatorAttempts(10);
+		es.setPrecisionRequiredSimilarity(0.50);
+		es.setRecallRequiredSimilarity(0.50);
+		es.setSubsumeMatcherTolerance(0.15);
+		
+		//Create Experiment
+		Experiment e = Experiment.createManualExperiment(es, Paths.get("testdata/ExperimentTest/CreateManualExperiment/import_spec"), System.out);
+		ExperimentData ed = e.getExperimentData();
+		
+		//Check copy into repository
+		assertTrue(FileUtils.contentEquals(ed.getRepositoryPath().resolve("f1").toFile(), Paths.get("testdata/ExperimentTest/CreateManualExperiment/f1").toFile()));
+		assertTrue(FileUtils.contentEquals(ed.getRepositoryPath().resolve("mf1").toFile(), Paths.get("testdata/ExperimentTest/CreateManualExperiment/mf1").toFile()));
+		
+		assertTrue(FileUtils.contentEquals(ed.getRepositoryPath().resolve("f2").toFile(), Paths.get("testdata/ExperimentTest/CreateManualExperiment/f2").toFile()));
+		assertTrue(FileUtils.contentEquals(ed.getRepositoryPath().resolve("mf2").toFile(), Paths.get("testdata/ExperimentTest/CreateManualExperiment/mf2").toFile()));
+		
+		assertTrue(FileUtils.contentEquals(ed.getRepositoryPath().resolve("f3").toFile(), Paths.get("testdata/ExperimentTest/CreateManualExperiment/f3").toFile()));
+		assertTrue(FileUtils.contentEquals(ed.getRepositoryPath().resolve("mf3").toFile(), Paths.get("testdata/ExperimentTest/CreateManualExperiment/mf3").toFile()));
+		
+		assertTrue(FileUtils.contentEquals(ed.getRepositoryPath().resolve("f4").toFile(), Paths.get("testdata/ExperimentTest/CreateManualExperiment/f4").toFile()));
+		assertTrue(FileUtils.contentEquals(ed.getRepositoryPath().resolve("mf4").toFile(), Paths.get("testdata/ExperimentTest/CreateManualExperiment/mf4").toFile()));
+		
+		//Check import fragment/mutantfragment/mutators
+		FragmentDB f;
+		MutantFragment mf;
+		f = ed.getFragment(1);
+		mf = ed.getMutantFragment(1);
+		assertTrue(FileUtils.contentEquals(f.getFragmentFile().toFile(), Paths.get("testdata/ExperimentTest/CreateManualExperiment/f1").toFile()));
+		assertTrue(FileUtils.contentEquals(mf.getFragmentFile().toFile(), Paths.get("testdata/ExperimentTest/CreateManualExperiment/mf1").toFile()));
+		
+		f = ed.getFragment(2);
+		mf = ed.getMutantFragment(2);
+		assertTrue(FileUtils.contentEquals(f.getFragmentFile().toFile(), Paths.get("testdata/ExperimentTest/CreateManualExperiment/f2").toFile()));
+		assertTrue(FileUtils.contentEquals(mf.getFragmentFile().toFile(), Paths.get("testdata/ExperimentTest/CreateManualExperiment/mf2").toFile()));
+		
+		f = ed.getFragment(3);
+		mf = ed.getMutantFragment(3);
+		assertTrue(FileUtils.contentEquals(f.getFragmentFile().toFile(), Paths.get("testdata/ExperimentTest/CreateManualExperiment/f3").toFile()));
+		assertTrue(FileUtils.contentEquals(mf.getFragmentFile().toFile(), Paths.get("testdata/ExperimentTest/CreateManualExperiment/mf3").toFile()));
+		
+		f = ed.getFragment(4);
+		mf = ed.getMutantFragment(4);
+		assertTrue(FileUtils.contentEquals(f.getFragmentFile().toFile(), Paths.get("testdata/ExperimentTest/CreateManualExperiment/f4").toFile()));
+		assertTrue(FileUtils.contentEquals(mf.getFragmentFile().toFile(), Paths.get("testdata/ExperimentTest/CreateManualExperiment/mf4").toFile()));
+		
+		//Cleanup
+		e.getExperimentData().close();
+		FileUtils.deleteDirectory(Paths.get("testdata/ExperimentTest/CreateManualExperiment_data").toFile());
+	}
+	
+	@Test
 	public void testEvaluateRecall() throws IllegalArgumentException, NullPointerException, FileNotFoundException, InterruptedException, IOException, InvalidToolRunnerException, InputMismatchException {
 		
 		Fragment f1 = new Fragment(Paths.get("testdata/ExperimentTest/EvaluateRecallTest/JHotDraw54b1/src/CH/ifa/draw/contrib/TextAreaFigure.java"), 714, 753); //1020
@@ -2919,7 +2996,7 @@ public class ExperimentTest {
 		int minSizeLines = 15; es.setFragmentMinSizeLines(minSizeLines);
 		int minSizeTokens = 50; es.setFragmentMinSizeTokens(minSizeTokens);
 		es.setFragmentType(ExperimentSpecification.FUNCTION_FRAGMENT_TYPE);
-		es.setGenerationType(ExperimentSpecification.AUTOMATIC_GENERATION_TYPE);
+		//es.setGenerationType(ExperimentSpecification.AUTOMATIC_GENERATION_TYPE);
 		es.setInjectNumber(1);
 		es.setMaxFragments(3);
 		es.setMutationAttempts(25);
@@ -2963,7 +3040,7 @@ public class ExperimentTest {
 		}
 
 //GENERATION PHASE
-		e.generateAutomatic();
+		e.generate();
 		
 //EVALUATION PHASE
 		ToolDB nicad1 = e.addTool("NiCad1", "NiCad Clone Detector", Paths.get("testdata/ExperimentTest/NiCad"), Paths.get("testdata/ExperimentTest/NiCadRunner/NiCadRunner"));
@@ -3042,7 +3119,7 @@ public class ExperimentTest {
 		int minSizeLines = 15; es.setFragmentMinSizeLines(minSizeLines);
 		int minSizeTokens = 50; es.setFragmentMinSizeTokens(minSizeTokens);
 		es.setFragmentType(ExperimentSpecification.FUNCTION_FRAGMENT_TYPE);
-		es.setGenerationType(ExperimentSpecification.AUTOMATIC_GENERATION_TYPE);
+		//es.setGenerationType(ExperimentSpecification.AUTOMATIC_GENERATION_TYPE);
 		es.setInjectNumber(1);
 		es.setMaxFragments(3);
 		es.setMutationAttempts(25);
@@ -3086,7 +3163,7 @@ public class ExperimentTest {
 		}
 
 //GENERATION PHASE
-		e.generateAutomatic();
+		e.generate();
 		
 //EVALUATION PHASE
 		ToolDB nicad1 = e.addTool("NiCad1", "NiCad Clone Detector", Paths.get("testdata/ExperimentTest/NiCad"), Paths.get("testdata/ExperimentTest/NiCadRunner/NiCadRunner"));
