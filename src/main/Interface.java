@@ -14,7 +14,6 @@ import java.util.List;
 
 import models.InvalidToolRunnerException;
 import experiment.Experiment;
-import experiment.ExperimentData;
 import experiment.ExperimentSpecification;
 import experiment.MutatorDB;
 import experiment.OperatorDB;
@@ -412,7 +411,12 @@ main:	while(true) {
 					}
 					
 					//Add operator
-					experiment.addMutator(description, operators);
+					MutatorDB mutator = experiment.addMutator(description, operators);
+					
+					out.println("\t\tMutator successfully added.  It's id is: " + mutator.getId());
+					out.println("\t\tPress enter to continue...");
+					in.readLine();
+					continue main;
 				} else {
 					System.out.println("\t\tERROR: No operators defined.  Can not create a mutator.");
 					out.println("\t\tPress enter to continue.");
