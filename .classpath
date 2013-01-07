@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="testsrc"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="dependencies/Apache-Commons/IO/commons-io-2.4.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/jeff/Dropbox/MutationInjectionFramework/dependencies/Apache-Commons/IO/commons-io-2.4-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="dependencies/h2-1.3.167.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
