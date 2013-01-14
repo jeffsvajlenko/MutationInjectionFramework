@@ -3266,7 +3266,7 @@ public class ExperimentTest {
 	
 	@Test
 	public void testEvaluateTools_UnitPrecision() throws SQLException, IOException, IllegalArgumentException, InterruptedException, ArtisticStyleFailedException, FileSanetizationFailedException {
-		Experiment e = Experiment.loadExperiment(Paths.get("testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/"), System.out, false);
+		Experiment e = Experiment.loadExperiment(Paths.get("testdata/ExperimentTest/EvaluateTools_UnitRecall/SampleExperiment/"), System.out);
 /*
 //Temporary Manual Interface
 //CREATION

@@ -16,7 +16,7 @@ public class ExperimentSpecificationTest {
 		assertEquals(Paths.get("testdata/ExperimentDataTest/repository/").toAbsolutePath().normalize(), es.getRepository().toAbsolutePath().normalize());
 		assertEquals(ExperimentSpecification.JAVA_LANGUAGE, es.getLanguage());
 
-		assertEquals(ExperimentSpecification.AUTOMATIC_GENERATION_TYPE, es.getGenerationType());
+		//assertEquals(ExperimentSpecification.AUTOMATIC_GENERATION_TYPE, es.getGenerationType());
 		assertEquals(ExperimentSpecification.FUNCTION_FRAGMENT_TYPE, es.getFragmentType());
 		assertEquals(15, es.getFragmentMinSizeLines());
 		assertEquals(50, es.getFragmentMinSizeTokens());
@@ -107,7 +107,7 @@ public class ExperimentSpecificationTest {
 		assertTrue(error);
 	}
 
-
+/*
 	@Test
 	public void testGenerationType() {
 		ExperimentSpecification es = new ExperimentSpecification(Paths.get("testdata/ExperimentDataTest/StoreDataHere/"), Paths.get("testdata/ExperimentDataTest/system/"), Paths.get("testdata/ExperimentDataTest/repository/"), ExperimentSpecification.JAVA_LANGUAGE);
@@ -125,7 +125,8 @@ public class ExperimentSpecificationTest {
 		}
 		assertTrue(error);
 	}
-
+*/
+	
 	@Test
 	public void testFragmentType() {
 		ExperimentSpecification es = new ExperimentSpecification(Paths.get("testdata/ExperimentDataTest/StoreDataHere/"), Paths.get("testdata/ExperimentDataTest/system/"), Paths.get("testdata/ExperimentDataTest/repository/"), ExperimentSpecification.JAVA_LANGUAGE);

@@ -17,7 +17,7 @@ public class ExperimentSpecification {
 	private Path repository;
 	private int language;
 	
-	private int generationType;
+	//private int generationType;
 	private int fragmentType;
 	private int fragmentMinSizeLines;
 	private int fragmentMaxSizeLines;
@@ -56,7 +56,7 @@ public class ExperimentSpecification {
 		this.language = language;
 		
 		//Some Defaults?
-		generationType = ExperimentSpecification.AUTOMATIC_GENERATION_TYPE;
+//		generationType = ExperimentSpecification.AUTOMATIC_GENERATION_TYPE;
 		fragmentType = ExperimentSpecification.FUNCTION_FRAGMENT_TYPE;
 		fragmentMinSizeLines = 15;
 		fragmentMinSizeTokens = 50;
@@ -199,12 +199,12 @@ public class ExperimentSpecification {
 		}
 	}
 	
-	/**
-	 * @return The generation type.
-	 */
-	public int getGenerationType() {
-		return generationType;
-	}
+//	/**
+//	 * @return The generation type.
+//	 */
+//	public int getGenerationType() {
+//		return generationType;
+//	}
 // -- Set my experiment
 //	/**
 //	 * @param generationType The generation type to use.  Must be AUTOMATIC_GENERATION_TYPE or MANUAL_GENERATION_TYPE of this class.

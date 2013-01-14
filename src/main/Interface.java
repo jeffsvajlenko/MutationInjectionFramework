@@ -29,12 +29,14 @@ public class Interface {
 	public static void main(String args[]) throws IOException, IllegalStateException, SQLException, InterruptedException, ArtisticStyleFailedException, IllegalArgumentException, FileSanetizationFailedException, NullPointerException, InvalidToolRunnerException {
 		printBanner();
 		
-		initialize_experiment();
-		if(experiment == null) {
+		while(true) {
+			initialize_experiment();
+			if(experiment == null) {
 			return;
-		}
+			}
 		
-		loaded_menu();
+			loaded_menu();
+		}
 	}
 	
 	private static void printBanner() {
@@ -48,7 +50,7 @@ public class Interface {
 			
 			if(experiment.getGenerationType() == ExperimentSpecification.AUTOMATIC_GENERATION_TYPE) {
 				// Evaluation Setup Stage
-				if(experiment.currentPhase() == Experiment.GENERATION_SETUP_STAGE) {
+				if(experiment.getStage() == Experiment.GENERATION_SETUP_STAGE) {
 					out.println("");
 					out.println("");
 					out.println("");
@@ -61,7 +63,7 @@ public class Interface {
 					out.println("    [1]: Setup Operators/Mutators");
 					out.println("    [2]: Begin Generation");
 					out.println("    [3]: Review Settings");
-					out.println("    [4]: Exit");
+					out.println("    [4]: Close Experiment");
 					out.println("--------------------------------------------------------------------------------");
 					out.println(":::: ");
 					String input = in.readLine();
@@ -113,27 +115,245 @@ public class Interface {
 						in.readLine();
 						continue;
 					}
-				// Evaluation Stage
+// Evaluation Stage Menu
 				} else if (experiment.getGenerationType() == Experiment.GENERATION_STAGE) {
-					//TODO
+					out.println("");
+					out.println("");
+					out.println("");
+					out.println("");
+					out.println("--------------------------------------------------------------------------------");
+					out.println("    MAIN MENU: Generation Stage");
+					out.println("--------------------------------------------------------------------------------");
+					out.println("  Experiment: " + experiment.getLocation());
+					out.println("--------------------------------------------------------------------------------");
+					out.println("The experiment is currently in the generation stage.  This should not occur");
+					out.println("unless the generation stage of this experiment was previously interrupted or");
+					out.println("otherwise failed.  In this case the experiment data is currupt.  You will need");
+					out.println("to create a new experiment from scratch.  Sorry!.");
+					out.println("--------------------------------------------------------------------------------");
+					out.println("Press enter to continue.  Currupt experiment will be closed.");
+					in.readLine();
 					return;
 				} else if (experiment.getGenerationType() == Experiment.EVALUATION_SETUP_STAGE) {
-					//TODO
-					return;
+					out.println("");
+					out.println("");
+					out.println("");
+					out.println("");
+					out.println("--------------------------------------------------------------------------------");
+					out.println("    MAIN MENU: Evaluation Setup Stage");
+					out.println("--------------------------------------------------------------------------------");
+					out.println("  Experiment: " + experiment.getLocation());
+					out.println("--------------------------------------------------------------------------------");
+					out.println("    [1]: Begin Evaluation (At least one tool must be defined.)");
+					out.println("    [2]: Add/Remove Tools");
+					out.println("    [3]: Configure Evaluation Settings");
+					out.println("    [4]: Close Experiment");
+					out.println("--------------------------------------------------------------------------------");
+					out.println(":::: ");
+					String input = in.readLine();
+					if (input.equals("1")) {
+						experiment.evaluateTools(false);
+						continue;
+					} else if (input.equals("2")) {
+						addRemoveTools();
+						continue;
+					} else if (input.equals("3")) {
+						configureEvaluationSettings();
+						continue;
+					} else if (input.equals("4")) {
+						return;
+					} else {
+						System.out.println("\t\tERROR: Invalid option.");
+						out.println("\t\tPress enter to continue.");
+						in.readLine();
+						continue;
+					}
 				} else if (experiment.getGenerationType() == Experiment.EVALUATION_STAGE) {
 					//TODO
 					return;
+
+//Results Stage Menu
 				} else if (experiment.getGenerationType() == Experiment.RESULTS_STAGE) {
-					//TODO
-					return;
+					out.println("");
+					out.println("");
+					out.println("");
+					out.println("");
+					out.println("--------------------------------------------------------------------------------");
+					out.println("    MAIN MENU");
+					out.println("--------------------------------------------------------------------------------");
+					out.println("  Experiment: " + experiment.getLocation());
+					out.println("--------------------------------------------------------------------------------");
+					out.println("  Results Stage");
+					out.println("When in the results stage, all of the tools have been fully evaluated for the ");
+					out.println("experiment's clone data.  While in this stage, all experiment data has been");
+					out.println("locked.  To add/remove tools from the experiment, or to re-evaluate with");
+					out.println("different evaluation settings, return to the evaluation stage.");
+					out.println("--------------------------------------------------------------------------------");
+					out.println("    [1]: Output Results");
+					out.println("    [2]: Return to Evaluation Stage");
+					out.println("    [3]: Close Experiment");
+					out.println("--------------------------------------------------------------------------------");
+					out.println(":::: ");
+					String input = in.readLine();
+					if(input.equals("1")) {
+						out.println("");
+						out.println("");
+						out.println("");
+						out.println("");
+						out.println("-Results------------------------------------------------------------------------");
+						experiment.outputResults();
+						out.println("--------------------------------------------------------------------------------");
+					} else if (input.equals("2")) {
+						experiment.previousStage();
+						System.out.println("\t\tReturning to Evaluation stage.  Press enter to continue.");
+						in.readLine();
+					} else if (input.equals("3")) {
+						return;
+					} else {
+						System.out.println("\t\tERROR: Invalid option.");
+						out.println("\t\tPress enter to continue.");
+						in.readLine();
+						continue;
+					}
 				} else if (experiment.getGenerationType() == Experiment.ERROR_STAGE) {
-					//TODO
+					out.println("");
+					out.println("");
+					out.println("");
+					out.println("");
+					out.println("--------------------------------------------------------------------------------");
+					out.println("    MAIN MENU: Error Stage");
+					out.println("--------------------------------------------------------------------------------");
+					out.println("  Experiment: " + experiment.getLocation());
+					out.println("--------------------------------------------------------------------------------");
+					out.println("The experiment is currently in the error stage.");
+					out.println("--------------------------------------------------------------------------------");
+					out.println("Press enter to continue.  Currupt experiment will be closed.");
+					in.readLine();
 					return;
 				}
 			}
 		}
 	}
 	
+	private static void configureEvaluationSettings() throws SQLException, IOException {
+		String input;
+		double indouble;
+		while (true) {
+			//Get Subsume Matcher Tolerance
+			out.println("");
+			out.println("Specify subsume matcher tolerance.");
+			out.println("");
+			out.println("When determining if a clone fragment proposed by a detection tool matches one");
+			out.println("in the system, the framework checks if the proposed fragment subsumes it.  This");
+			out.println("subsume matching algorithm is used to determine if a proposed clone matches an");
+			out.println("injected clone (the proposed clone's fragments must subsume the fragments of");
+			out.println("injected ones) when calculating unit recall.  It is also used to determine if");
+			out.println("a proposed clone captures at least one of the fragments of the injected clone");
+			out.println("when calculating unit precision.");
+			out.println("");
+			out.println("The tolernace allows a fragment to match/capture another by the subsume matcher");
+			out.println("even if it does not perfectly subsume it by defining the amount of the fragment");
+			out.println("it is allowed to miss from its begining and end.  The tolerance is specified");
+			out.println("as a percentage of the target (to be matched) fragment in lines.");
+			out.println("");
+			out.println("For example, if this value is 0.10 and a fragment of an injected clone is 20,");
+			out.println("then a proposed framgent will match this fragment by the subsume matcher even");
+			out.println("if it misses the first and/or last 2 lines.");
+			out.println("");
+			out.println("Subsume tolerance must be at least equal to the mutation containment to ensure");
+			out.println("that the clone detectors captured the mutated portion.");
+			out.println("");
+			out.println("Valid range: [0.0,0.5]");
+			out.println("Reccomended range: [" + experiment.getMutationContainment() + ",0.50");
+			out.println("--------------------------------------------------------------------------------");
+			out.print(":::: ");
+			input = in.readLine();
+			try {
+				indouble = Double.parseDouble(input);
+			} catch (NumberFormatException e) {
+				out.println("\t\tERROR: Invalid format.");
+				out.println("\t\tPress enter to continue...");
+				continue;
+			}
+			if(indouble < 0.0 || indouble > 0.5) {
+				out.println("\t\tERROR: Subsume matcher tolerance must be in range [0.0, 0.5].");
+				out.println("\t\tPress enter to continue...");
+				continue;
+			}
+			experiment.setSubsumeMatcherTolerance(indouble);
+			break;
+		}
+		while (true) {
+			out.println("");
+			out.println("Specify required unit recall required similarity.");
+			out.println("A clone detection tool is assigned a unit recall of 1.0 for a mutant base if it");
+			out.println("proposes a clone which both matches the injected clone (by the subsume matcher)");
+			out.println("and if that proposed clone has a similarity (by line or by token) of at least");
+			out.println("the unit recall required similarity.");
+			out.println("");
+			out.println("This value should ideally be less than the allowed fragment difference.");
+			out.println("");
+			out.println("Valid Values: [0.0, 1.0] ");
+			out.println("Reccomended Values: [0.0, " + experiment.getAllowedFragmentDifference() + "]");
+			out.println("--------------------------------------------------------------------------------");
+			out.print(":::: ");
+			input = in.readLine();
+			try {
+				indouble = Double.parseDouble(input);
+			} catch (NumberFormatException e) {
+				out.println("\t\tERROR: Invalid format.");
+				out.println("\t\tPress enter to continue...");
+				continue;
+			}
+			if(indouble < 0.0 || indouble > 1.0) {
+				out.println("\t\tERROR: Unit recall required similarity matcher tolerance must be in range [0.0, 1.0].");
+				out.println("\t\tPress enter to continue...");
+				continue;
+			}
+			experiment.setRecallRequiredSimilarity(indouble);
+			break;
+		}
+		while (true) {
+			out.println("");
+			out.println("Specify required unit recall required similarity.");
+			out.println("");
+			out.println("The framework measured unit precision by valdiating the clones proposed by the");
+			out.println("clone detection tool which contain at least one fragment which matches (subsume");
+			out.println("matcher) a fragment of the injected clone.  Validation is performed by measuring");
+			out.println("the proposed clone's similarity by line and by token.  If at least one of these");
+			out.println("similarity metrics is greater than this parameter, the proposed clone is");
+			out.println("validated as a true positive, otherwise it is validated as a false positive.");
+			out.println("This value should ideally be less than the allowed fragment difference.");
+			out.println("");
+			out.println("This value should ideally be less than the allowed fragment difference.");
+			out.println("");
+			out.println("Valid Values: [0.0, 1.0] ");
+			out.println("Reccomended Values: [0.0, " + experiment.getAllowedFragmentDifference() + "]");
+			out.println("--------------------------------------------------------------------------------");
+			out.print(":::: ");
+			input = in.readLine();
+			try {
+				indouble = Double.parseDouble(input);
+			} catch (NumberFormatException e) {
+				out.println("\t\tERROR: Invalid format.");
+				out.println("\t\tPress enter to continue...");
+				continue;
+			}
+			if(indouble < 0.0 || indouble > 1.0) {
+				out.println("\t\tERROR: Unit recall required similarity matcher tolerance must be in range [0.0, 1.0].");
+				out.println("\t\tPress enter to continue...");
+				continue;
+			}
+			experiment.setPrecisionRequiredSimilarity(indouble);
+			break;
+		}
+	}
+
+	private static void addRemoveTools() {
+		// TODO Auto-generated method stub
+		
+	}
+
 	private static void operator_mutator_menu() throws IOException, SQLException {
 main:	while(true) {
 			out.println("");
@@ -510,7 +730,7 @@ main:	while(true) {
 			out.println("Would you like to create a new experiment, or load an existing?");
 			out.println("    [1]:  Create New Experiment");
 			out.println("    [2]:  Load Existing Experiment");
-			out.println("    [3]:  Quit");
+			out.println("    [3]:  Exit");
 			out.println("--------------------------------------------------------------------------------");
 			out.print(":::: ");
 			
@@ -892,7 +1112,7 @@ main:	while(true) {
 			//Fragment Min Size Tokens
 			while(true) {
 				out.println("");
-				out.println("Specify minimum clone fragment size measured in tokens.");
+				out.println("Specify subsume matcher tolerance.  This defines how ");
 				out.println("Valid range: [1," + Integer.MAX_VALUE + "].");
 				out.println("--------------------------------------------------------------------------------");
 				out.print(":::: ");

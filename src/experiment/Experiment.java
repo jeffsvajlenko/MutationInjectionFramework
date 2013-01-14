@@ -3,8 +3,6 @@ package experiment;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintStream;
-import java.io.FileWriter;
-import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.InvalidPathException;
 import java.nio.file.Path;
@@ -79,15 +77,24 @@ public class Experiment {
 	 */
 	static public final int RESULTS_STAGE = ExperimentData.RESULTS_STAGE;
 	
-//-- Accessors ---------------------------------------------------------------------------------------------------------
-	
+//-- Stages ------------------------------------------------------------------------------------------------------------	
+
 	/**
 	 * @return The current phase of the experiment.
 	 * @throws SQLException 
 	 */
-	public int currentPhase() throws SQLException {
+	public int getStage() throws SQLException {
 		return ed.getCurrentStage();
 	}
+	
+	
+	public int previousStage() throws SQLException {
+		return ed.previousStage();
+	}
+	
+//-- Accessors ---------------------------------------------------------------------------------------------------------
+	
+
 	
 	/**
 	 * @return The location of the experiment.
@@ -154,7 +161,7 @@ public class Experiment {
 		ed.setFragmentMinimumSizeTokens(spec.getFragmentMinSizeTokens());
 		ed.setFragmentMaximumSizeTokens(spec.getFragmentMaxSizeTokens());
 		ed.setFragmentType(spec.getFragmentType());
-		ed.setGenerationType(spec.getGenerationType());
+		ed.setGenerationType(ExperimentSpecification.AUTOMATIC_GENERATION_TYPE);
 		ed.setInjectionNumber(spec.getInjectNumber());
 		ed.setLanguage(spec.getLanguage());
 		ed.setMaxFragments(spec.getMaxFragments());
@@ -164,9 +171,6 @@ public class Experiment {
 		ed.setPrecisionRequiredSimilarity(spec.getPrecisionRequiredSimilarity());
 		ed.setRecallRequiredSimilarity(spec.getRecallRequiredSimilarity());
 		ed.setSubsumeMatcherTolerance(spec.getSubsumeMatcherTolerance());
-		
-		//Set Experiment Type
-		ed.setGenerationType(ExperimentSpecification.AUTOMATIC_GENERATION_TYPE);
 		
 		//Create Experiment object
 		Experiment e = new Experiment(ed, log);
@@ -201,7 +205,7 @@ public class Experiment {
 		ed.setFragmentMinimumSizeTokens(spec.getFragmentMinSizeTokens());
 		ed.setFragmentMaximumSizeTokens(spec.getFragmentMaxSizeTokens());
 		ed.setFragmentType(spec.getFragmentType());
-		ed.setGenerationType(spec.getGenerationType());
+		ed.setGenerationType(ExperimentSpecification.MANUAL_GENERATION_TYPE);
 		ed.setInjectionNumber(spec.getInjectNumber());
 		ed.setLanguage(spec.getLanguage());
 		ed.setMaxFragments(spec.getMaxFragments());
@@ -211,9 +215,6 @@ public class Experiment {
 		ed.setPrecisionRequiredSimilarity(spec.getPrecisionRequiredSimilarity());
 		ed.setRecallRequiredSimilarity(spec.getRecallRequiredSimilarity());
 		ed.setSubsumeMatcherTolerance(spec.getSubsumeMatcherTolerance());
-		
-		//Set Experiment Type
-		ed.setGenerationType(ExperimentSpecification.MANUAL_GENERATION_TYPE);
 		
 		//Create Experiment object
 		Experiment e = new Experiment(ed, log);
@@ -2732,8 +2733,6 @@ cdrloop:	while((clone = cdr.next()) != null) {
 		}
 		
 		List<ToolDB> tools = ed.getTools();
-		
-		log.println("----- Analysis Results -----");
 		
 		//Iterate through each tool
 		for(ToolDB tool : tools) {

@@ -312,8 +312,12 @@ public class ExperimentData {
 			this.deleteUnitRecalls();
 			this.deleteUnitPrecisions();
 			this.setStage(ExperimentData.EVALUATION_SETUP_STAGE);
+			
+		//RESULTS_STAGE -> EVALUATION_STAGE
 		} else if (this.getStage() == ExperimentData.RESULTS_STAGE) {
 			this.setStage(ExperimentData.EVALUATION_STAGE);
+			
+		//Illegal Transition
 		} else {
 			throw new IllegalStateException("Illegal stage move.");
 		}
