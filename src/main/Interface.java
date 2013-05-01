@@ -18,31 +18,378 @@ import experiment.ExperimentSpecification;
 import experiment.MutatorDB;
 import experiment.OperatorDB;
 
-//TODO: Make operator menu.  Make mutator menu.  Make tool menu.  Make setup 
-
 public class Interface {
 	
 	private static BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 	private static PrintStream out = System.out;
 	private static Experiment experiment = null;
 	
-	public static void main(String args[]) throws IOException, IllegalStateException, SQLException, InterruptedException, ArtisticStyleFailedException, IllegalArgumentException, FileSanetizationFailedException, NullPointerException, InvalidToolRunnerException {
-		printBanner();
-		
-		while(true) {
-			initialize_experiment();
-			if(experiment == null) {
-			return;
-			}
-		
-			loaded_menu();
-		}
-	}
-	
-	private static void printBanner() {
+	public static void main(String args[]) throws IOException {
 		out.println("--------------------------------------------------------------------------------");
 		out.println("--------------------------Mutation Injection Framework--------------------------");
 		out.println("--------------------------------------------------------------------------------");
+		while(true) {
+			//Load or Create Experiment
+			root_menu();
+			
+			//Main Menu of Loaded Experiment
+			main_menu();
+		}
+	}
+//---- ROOT MENU ----------------------------------------------------------------------------------
+	/*
+	 * Root Menu.  For creating and loading experiments, and exiting the framework.  Returns once an
+	 * experiment is loaded ('experiment' field).  Close is done by System.exit.
+	 */
+	public static void root_menu() throws IOException {
+		while(true) {
+			out.println("");
+			out.println("");
+			out.println("");
+			out.println("");
+			out.println("--------------------------------------------------------------------------------");
+			out.println("    Root Menu");
+			out.println("--------------------------------------------------------------------------------");
+			out.println("[1]: Create New Experiment.");
+			out.println("[2]: Load Existing Experiment.");
+			out.println("");
+			out.println("[h]: Help.");
+			out.println("[x]: Exit Framework.");
+			out.println("--------------------------------------------------------------------------------");
+			out.  print(":::: ");
+			String input = in.readLine();
+			switch(input) {
+			case "1": // [1]: Create Experiment.
+				root_menu_create_experiment();
+				break;
+			case "2": // [2]: Load Existing Experiment.
+				root_menu_load_experiment();
+				if(experiment!=null) {
+					return;
+				}
+				break;
+			case "h": // [h]: Help.
+				
+				break;
+			case "x": // [x]: Exit Framework.
+				System.exit(0);
+				return;
+			default: // Invalid Selection
+				out.println("Invalid Selection.  Press enter to return to main menu...");
+				in.readLine();
+				break;
+			}
+		}
+	}
+	
+	/*
+	 * Root Menu - Create Experiment.  'experiment' field is set to the new experiment, or null if canceled.
+	 */
+	public static void root_menu_create_experiment() throws IOException {
+		out.println("");
+		out.println("");
+	
+		String input;
+		int language;
+		Path exp_dir;
+		Path rep_dir;
+		Path sub_dir;
+		
+		//Banner
+		out.println("--------------------------------------------------------------------------------");
+		out.println("    Create New Experiment");
+		out.println("--------------------------------------------------------------------------------");
+
+		//GetLanguage
+root_menu_create_experiment_get_language:
+		while(true) {
+			out.println("Specify experiment language:");
+			out.println("  [1]: Java");
+			out.println("  [2]: C");
+			out.println("  [3]: C#");
+			out.println("  [c]: Cancel");
+			out.println("--------------------------------------------------------------------------------");
+			out.print  (":::: ");
+			input = in.readLine();
+			switch(input) {
+			case "1":
+				language = ExperimentSpecification.JAVA_LANGUAGE;
+				break root_menu_create_experiment_get_language;
+			case "2":
+				language = ExperimentSpecification.C_LANGUAGE;
+				break root_menu_create_experiment_get_language;
+			case "3":
+				language = ExperimentSpecification.CS_LANGUAGE;
+				break root_menu_create_experiment_get_language;
+			case "c":
+				out.println("Experiment creation cancled.  Press enter to return to root menu.");
+				in.readLine();
+				break;
+			default:
+				out.println("Invalid Selection.  Press enter to retry...");
+				in.readLine();
+				continue;
+			}
+		}
+		
+		//GetExperimentDir
+root_menu_create_experiment_get_experiment_dir:
+		while(true) {
+			out.println("Specify a directory to store the experiment.  Provide full path to the");
+			out.println("directory.  Directory must not already exist (it will be created).  Leave");
+			out.println("blank to cancel new experiment creation.");
+			out.println("--------------------------------------------------------------------------------");
+			out.print  (":::: ");
+			input = in.readLine();
+			
+			//Cancled
+			if(input.equals("")) {
+				experiment = null;
+				out.println("--------------------------------------------------------------------------------");
+				out.println("Create experiment canceled.  Press enter to return to root menu...");
+				in.readLine();
+				return;
+				
+			//Dir
+			} else {
+				
+				//Check Path Valid
+				try {
+					exp_dir = Paths.get(input);
+				} catch (InvalidPathException e) {
+					out.println("--------------------------------------------------------------------------------");
+					out.println("Invalid path.  Press enter to retry...");
+					in.readLine();
+					continue root_menu_create_experiment_get_experiment_dir;
+				}
+				
+				//Check Not Exists
+				if(Files.exists(exp_dir)) {
+					out.println("--------------------------------------------------------------------------------");
+					out.println("Directory already exists.  Press enter to retry...");
+					in.readLine();
+					continue root_menu_create_experiment_get_experiment_dir;
+				}
+				
+				break root_menu_create_experiment_get_experiment_dir;
+			}
+		}
+	
+		//GetSubjectSystem
+root_menu_create_experiment_get_subject_system_dir:
+		while(true) {
+			out.println("Specify directory containing subject system.  Provide full path to the");
+			out.println("directory.  Subject system must be of the previously specified language.  Leave");
+			out.println("blank to cancel new experiment creation.");
+			out.println("--------------------------------------------------------------------------------");
+			out.print  ("::::");
+			input = in.readLine();
+			
+			//Canceled
+			if(input.equals("")) {
+				experiment = null;
+				out.println("--------------------------------------------------------------------------------");
+				out.println("Create experiment canceled.  Press enter to return to root menu...");
+				in.readLine();
+				return;
+			
+			//Dir
+			} else {
+				try {
+					sub_dir = Paths.get(input);
+				} catch (InvalidPathException e) {
+					out.println("--------------------------------------------------------------------------------");
+					out.println("Invalid path.  Press enter to retry...");
+					in.readLine();
+					continue root_menu_create_experiment_get_subject_system_dir;
+				}
+				
+				//Check Not Exists
+				if(!Files.exists(exp_dir)) {
+					out.println("--------------------------------------------------------------------------------");
+					out.println("Directory does not exists.  Press enter to retry...");
+					in.readLine();
+					continue root_menu_create_experiment_get_subject_system_dir;
+				}
+				
+				//Check Directory
+				if(!Files.isDirectory(exp_dir)) {
+					out.println("--------------------------------------------------------------------------------");
+					out.println("Specified path does not denote a directory.  Press enter to retry...");
+					in.readLine();
+					continue root_menu_create_experiment_get_subject_system_dir;
+				}
+				
+				break root_menu_create_experiment_get_subject_system_dir;
+			}
+		}
+		
+		//GetSourceRepository
+root_menu_create_experiment_get_source_repository_dir:
+		while(true) {
+			out.println("Specify directory containing source repository.  Provide full path to the");
+			out.println("directory.  Source repository must be of the previously specified language.");
+			out.println("Leave blank to cancel new experiment creation.");
+			out.println("--------------------------------------------------------------------------------");
+			out.print  (":::: ");
+			input = in.readLine();
+			
+			//Canceled
+			if(input.equals("")) {
+				experiment = null;
+				out.println("--------------------------------------------------------------------------------");
+				out.println("Create experiment canceled.  Press enter to return to root menu...");
+				in.readLine();
+				return;
+			
+			//ProcessDir
+			} else {
+				try {
+					rep_dir = Paths.get(input);
+				} catch (InvalidPathException e) {
+					out.println("--------------------------------------------------------------------------------");
+					out.println("Invalid path.  Press enter to retry...");
+					in.readLine();
+					continue root_menu_create_experiment_get_source_repository_dir;
+				}
+				
+				//Check Not Exists
+				if(!Files.exists(exp_dir)) {
+					out.println("--------------------------------------------------------------------------------");
+					out.println("Directory does not exists.  Press enter to retry...");
+					in.readLine();
+					continue root_menu_create_experiment_get_source_repository_dir;
+				}
+				
+				//Check Directory
+				if(!Files.isDirectory(exp_dir)) {
+					out.println("--------------------------------------------------------------------------------");
+					out.println("Specified path does not denote a directory.  Press enter to retry...");
+					in.readLine();
+					continue root_menu_create_experiment_get_source_repository_dir;
+				}
+				
+				break root_menu_create_experiment_get_source_repository_dir;
+			}
+		}
+		
+		out.println("The new experiment will now be initialized.  During which, the subject system");
+		out.println("and source repository will be imported.  They will be normalized for");
+		out.println("compatibility with the framework.  Depending on their size, this may take some");
+		out.println("time.");
+		out.println("--------------------------------------------------------------------------------");
+
+		ExperimentSpecification es = new ExperimentSpecification(exp_dir, sub_dir, rep_dir,language);
+		try {
+			experiment = Experiment.createAutomaticExperiment(es, System.out);
+		} catch (IllegalArgumentException | SQLException | InterruptedException | ArtisticStyleFailedException | FileSanetizationFailedException e) {
+			experiment = null;
+			out.println("Experiment creation failed for reason: " + e.getMessage());
+			out.println("--------------------------------------------------------------------------------");
+			out.println("Press enter to return to root menu...");
+			return;
+		}
+		
+		out.println("--------------------------------------------------------------------------------");
+		out.println("Experiment has been successfully initialized.  Press enter to continue...");
+	}
+	
+	/*
+	 * Root Menu - Load Experiment. 'experiment' field is set to the loaded experiment, or null if canceled.
+	 */
+	public static void root_menu_load_experiment() throws IOException {
+		while(true) {
+			out.println("");
+			out.println("");
+			
+			out.println("--------------------------------------------------------------------------------");
+			out.println("    Load Existing Experiment");
+			out.println("--------------------------------------------------------------------------------");
+			out.println("Specify complete path to experiment's directory.  Leave blank to cancel load.");
+			out.println("--------------------------------------------------------------------------------");
+			out.print  (":::: ");
+			String input = in.readLine();
+			
+			// If Cancel
+			if(input.equals("")) {
+				experiment = null;
+				out.println("--------------------------------------------------------------------------------");
+				out.println("Load experiment cancled.  Press enter to return to main menu...");
+				in.readLine();
+				return;
+			
+			// If Load
+			} else {
+				Path expd;
+				
+				//Check Path Valid
+				try {
+					expd= Paths.get(input);
+				} catch (InvalidPathException e) {
+					out.println("--------------------------------------------------------------------------------");
+					out.println("Specified path is invalid.  Press enter to retry...");
+					in.readLine();
+					continue;
+				}
+				
+				//Check Path Exists
+				if(!Files.exists(expd)) {
+					out.println("--------------------------------------------------------------------------------");
+					out.println("Specified path does not exist.  Press enter to retry...");
+					in.readLine();
+					continue;
+				}
+				
+				//Check Path Denotes a Directory
+				if(!Files.isDirectory(expd)) {
+					out.println("--------------------------------------------------------------------------------");
+					out.println("Specified path does not denote a directory.  Press enter to retry...");
+					in.readLine();
+					continue;
+				}
+				
+				//Load Experiment
+				try {
+					experiment = Experiment.loadExperiment(expd, System.out);
+				} catch (IllegalArgumentException | SQLException e) {
+					experiment = null;
+					out.println("--------------------------------------------------------------------------------");
+					out.println("Specified directory does not appear to contain an experiment, or the experiment");
+					out.println("is currupted.  Press enter to retry...");
+					in.readLine();
+					continue;
+				}
+				out.println("--------------------------------------------------------------------------------");
+				out.println("Experiment loaded successfully.  Press enter to continue to Main Menu...");
+				in.readLine();
+				continue;
+				
+			}
+		}
+	}
+	
+	public static void root_menu_help() {
+		out.println("");
+		out.println("[1]: Create New Experiment.");
+		out.println("    Creates a new evaluation experiment.  Upon selection, user is requested for");
+		out.println("    a directory to store the experiment in, the directory containing the source");
+		out.println("    repository, the directory containing the subject system, and the language");
+		out.println("    of the experiment.  The experiment is then initialized, and the source");
+		out.println("    repository and subject system imported.  This may take some time.");
+		out.println("[2]: Load Existing Experiment.");
+		out.println("    Loads an existing experiment.  User specifies the directory containing the");
+		out.println("    experiment.  The experiment resumes where it was left off previously.");
+		out.println("[h]: Help.");
+		out.println("    Shows this menu description.");
+		out.println("[x]: Exit Framework.");
+		out.println("    Closes the framework application..");
+		out.println("--------------------------------------------------------------------------------");
+		out.println("Press enter to return to main menu....");
+	}
+	
+//---- Main Menu ----------------------------------------------------------------------------------
+	public static void main_menu() {
+		
 	}
 	
 	private static void loaded_menu() throws SQLException, IOException {
