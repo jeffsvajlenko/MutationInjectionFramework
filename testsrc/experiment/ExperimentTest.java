@@ -3047,7 +3047,7 @@ public class ExperimentTest {
 		ToolDB nicad2 = e.addTool("NiCad2", "NiCad Clone Detector", Paths.get("testdata/ExperimentTest/NiCad"), Paths.get("testdata/ExperimentTest/NiCadRunner/NiCadRunner"));
 		ToolDB nicad3 = e.addTool("NiCad3", "NiCad Clone Detector", Paths.get("testdata/ExperimentTest/NiCad"), Paths.get("testdata/ExperimentTest/NiCadRunner/NiCadRunner"));
 
-		e.evaluateTools(true);
+		e.evaluateTools();
 
 //Redo Detection (two ways agree, then tested? prob not make same mistake twice)
 		if(Files.exists(Paths.get("testdata/ExperimentTest/DetectionTest/check/"))) {
@@ -3170,7 +3170,7 @@ public class ExperimentTest {
 		ToolDB nicad2 = e.addTool("NiCad2", "NiCad Clone Detector", Paths.get("testdata/ExperimentTest/NiCad"), Paths.get("testdata/ExperimentTest/NiCadRunner/NiCadRunner"));
 		ToolDB nicad3 = e.addTool("NiCad3", "NiCad Clone Detector", Paths.get("testdata/ExperimentTest/NiCad"), Paths.get("testdata/ExperimentTest/NiCadRunner/NiCadRunner"));
 
-		e.evaluateTools(false);
+		e.evaluateTools();
 		
 // ------- TEST
 		List<ToolDB> tools = e.getExperimentData().getTools();
@@ -3249,7 +3249,8 @@ public class ExperimentTest {
 		FileUtils.copyDirectory(Paths.get("testdata/ExperimentTest/EvaluateTools_RecallTest/replace/").toFile(), e.getExperimentData().getReportsPath().toFile());
 		
 //Redetect
-		e.evaluateTools(true);
+		//TODO: Fix
+		e.evaluateTools();
 		
 //Check
 		i = -1;
@@ -3428,7 +3429,8 @@ List<List<Double>> precisions = new LinkedList<List<Double>>();
 		FileUtils.copyDirectory(Paths.get("testdata/ExperimentTest/EvaluateTools_RecallTest/replace/").toFile(), e.getExperimentData().getReportsPath().toFile());
 				
 //Redetect
-		e.evaluateTools(true);
+		//TODO:Fix
+		e.evaluateTools();
 		
 //Check
 		i = -1;

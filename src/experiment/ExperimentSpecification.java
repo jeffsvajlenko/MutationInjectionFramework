@@ -69,7 +69,7 @@ public class ExperimentSpecification {
 		mutationContainment = 0.15;
 		mutationAttempts = 100;
 		operatorAttempts = 10;
-		maxFragments = 50;
+		maxFragments = 100;
 		precisionRequiredSimilarity = 0.70;
 		recallRequiredSimilarity = 0.70;
 	}

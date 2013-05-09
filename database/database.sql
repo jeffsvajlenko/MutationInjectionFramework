@@ -109,8 +109,6 @@ CREATE TABLE IF NOT EXISTS mutators (
 	
 	mutator_id			INTEGER 		DEFAULT nextval('mutators_mutator_id'),
 	description			VARCHAR(5000) 	NOT NULL,
-	target_clone_type	INTEGER 		CHECK (target_clone_type >= 1 and target_clone_type <= 4),
-	
 	PRIMARY KEY (mutator_id)
 	
 );

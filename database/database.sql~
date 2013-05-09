@@ -8,8 +8,13 @@ CREATE TABLE IF NOT EXISTS properties (
 	-- Type of Generation: automatic(0) or manual(1)
 	generation_type INTEGER DEFAULT 0 CHECK(generation_type = 0 OR generation_type = 1),
 	
-	-- Experiment Stage, -1 = error, 0 = setup, 1 = generation, 2 = evaluation
-	experiment_stage INTEGER DEFAULT 0 CHECK (experiment_stage = 0 OR experiment_stage = 1 OR experiment_stage = 2),
+	-- Experiment Stage
+	--	0 = Experiment Setup Stage
+	--	1 = Generation Stage
+	--	2 = Evaluation Setup Stage
+	--	3 = Evaluation Stage
+	--	4 = Results Stage
+	experiment_stage INTEGER DEFAULT 0 CHECK (experiment_stage = -1 OR experiment_stage = 0 OR experiment_stage = 1 OR experiment_stage = 2 OR experiment_stage = 3 OR experiment_stage = 4),
 	
 -- Generation Properties (if automatic generation) --
 	-- Type of Fragments: function(0) or block(1)
@@ -104,7 +109,7 @@ CREATE TABLE IF NOT EXISTS mutators (
 	
 	mutator_id			INTEGER 		DEFAULT nextval('mutators_mutator_id'),
 	description			VARCHAR(5000) 	NOT NULL,
-	target_clone_type	INTEGER 		CHECK (target_clone_type >= 1 and target_clone_type <= 4),
+	target_clone_type	INTEGER 		NOT NULL and CHECK (target_clone_type >= 1 and target_clone_type <= 4),
 	
 	PRIMARY KEY (mutator_id)
 	

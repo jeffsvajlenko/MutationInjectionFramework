@@ -17,6 +17,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
@@ -37,57 +38,93 @@ import util.FragmentUtil;
 import util.SystemUtil;
 
 /**
- * Represents the database.  Encapsulates a connection to the database, and allows data to be inserted, queried, and removed.
- *
- * This class assumes that all external data that is referenced by the database is in the framework's installation directory.
- * Before the data is added to the database, the installation directory is trimmed from the path, and replaced when queried.
- * THis allows that data to be portable should the installation directory be changed. 
+ * Encapsulates the experiment's data.
  * 
+ * Handles the initialization of an experiment's data, its modification.  Also tracks the stage of the experiment, and enforces data changes
+ * to the stages where it is valid.
  */
 public class ExperimentData {
 	
 // -- Fields
 	
-	private Connection connection;		//Database Connection
-	private Path folder;				// Experiment Folder
-	private Path system;				// Folder containing subject system
-	private Path repository;			// Folder containing fragment repository
-	private Path fragments;				// Folder containing the fragments
-	private Path mutantfragments;		// Folder containing the mutant fragments
-	private Path reports;				// Folder containing detection reports
-	private Path mutantbase;			// Folder containing a constructed mutant base
-	private Path temp;					// Folder for temporary experiment files
-	private Path database;				// Experiment database file
+	/** Database Connection */
+	private Connection connection;
 	
-// -- Stage Constants	
+	/** Experiment Folder */
+	private Path folder;
+	
+	/** Subject System Folder*/
+	private Path subjectsystem;
+	
+	/** Source Repository Folder */
+	private Path repository;
+
+	/** Selected Fragments Folder */
+	private Path fragments;
+	
+	/** Mutant Fragments Folder */
+	private Path mutantfragments;
+	
+	/** Clone Detection Reports Folder */
+	private Path reports;
+	
+	/** Constructed Mutant System Folder*/
+	private Path mutantsystem;
+	
+	/** Temporary Data Folder */
+	private Path temp;
+	
+	/** Embeded Database File */
+	private Path database;
+	
+// -- Constants	
 	
 	/**
-	 * Error Stage.  Experiment has hit a critical error that has rendered it unusable.
+	 * Error Stage.  Experiment has been corrupted (as judged by external logic).  Data is locked.
 	 */
 	static public final int ERROR_STAGE = -1;
+	
 	/**
-	 * Generation Setup Stage. Experiment is in pre-generation phase where experiment is configured.
+	 * Generation Setup Stage.  Operators, mutators, and generation properties may be modified.  Experiments are initialized to this stage.
 	 */
 	static public final int GENERATION_SETUP_STAGE = 0;
+	
 	/**
-	 * Generation Stage.  Experiment is in the generation stage, where clones and mutant bases are constructed.
+	 * Generation Stage.  Fragments, mutant fragments, and mutant systems may be modified.
 	 */
 	static public final int GENERATION_STAGE = 1;
+	
 	/**
-	 * Evaluation Setup Stage.  Generation is complete and evaluation is ready to be set up (tools setup and evaluation properties set).
+	 * Evaluation Setup Stage.  Subject tools and evaluation phase properties may be modified.  Reports, unit performances (recall/precision) may be deleted.
 	 */
 	static public final int EVALUATION_SETUP_STAGE = 2; 
+	
 	/**
-	 * Evaluation Stage.  Generation is complete.  Tools can be managed and evaluated, and evaluation settings changed.
+	 * Evaluation Stage.  Clone detection reports, unit recall, and unit precisions may be modified.
 	 */
 	static public final int EVALUATION_STAGE = 3;
+	
 	/**
-	 * Results Stage.  Evaluation stage is complete.  Results can be queried.
+	 * Results Stage.  Summary recall and precision can be queried.
 	 */
 	static public final int RESULTS_STAGE = 4;
 	
 // --- Constructors
-	//Creating new ExperimentData
+	
+	/**
+	 * Creates experiment data for a new experiment.
+	 * @param datafolder Where to store the experiment.  Should not already exist.
+	 * @param system The directory containing the desired subject system.
+	 * @param repository The directory containing the desired source repository.
+	 * @param language The language of the experiment.  
+	 * @param log
+	 * @throws SQLException
+	 * @throws IOException
+	 * @throws IllegalArgumentException
+	 * @throws InterruptedException
+	 * @throws ArtisticStyleFailedException
+	 * @throws FileSanetizationFailedException
+	 */
 	protected ExperimentData(Path datafolder, Path system, Path repository, int language, PrintStream log) throws SQLException, IOException, IllegalArgumentException, InterruptedException, ArtisticStyleFailedException, FileSanetizationFailedException {
 		//Check Arguments
 		Objects.requireNonNull(datafolder);
@@ -102,34 +139,37 @@ public class ExperimentData {
 		if(!Files.isDirectory(repository)) {
 			throw new IllegalArgumentException("repository is not a directory.");
 		}
+		if(ExperimentSpecification.isLanguageSupported(language)) {
+			throw new IllegalArgumentException("Language is not supported.");
+		}
 		
 		//Set Up Data Directories
 		datafolder = datafolder.toAbsolutePath().normalize();
 		this.folder = datafolder;
-		this.system = datafolder.resolve("system");
+		this.subjectsystem = datafolder.resolve("system");
 		this.repository = datafolder.resolve("repository");
 		this.fragments = datafolder.resolve("fragments");
 		this.mutantfragments = datafolder.resolve("mutantfragments");
 		this.reports = datafolder.resolve("reports");
-		this.mutantbase = datafolder.resolve("mutantbase");
+		this.mutantsystem = datafolder.resolve("mutantbase");
 		this.temp = datafolder.resolve("temp");
 		this.database = datafolder.resolve("database");
 		Files.createDirectories(this.folder);
-		Files.createDirectories(this.system);
+		Files.createDirectories(this.subjectsystem);
 		Files.createDirectories(this.repository);
 		Files.createDirectories(this.fragments);
 		Files.createDirectories(this.mutantfragments);
 		Files.createDirectories(this.reports);
-		Files.createDirectories(this.mutantbase);
+		Files.createDirectories(this.mutantsystem);
 		Files.createDirectories(this.temp);
 		
 		//Import
 		FileUtils.copyDirectory(repository.toFile(), this.repository.toFile());
-		FileUtils.copyDirectory(system.toFile(), this.system.toFile());
+		FileUtils.copyDirectory(system.toFile(), this.subjectsystem.toFile());
 		
 		//Normalize Imports
 		NormalizeSystem.normalizeSystem(this.repository, language, log);
-		NormalizeSystem.normalizeSystem(this.system, language, log);
+		NormalizeSystem.normalizeSystem(this.subjectsystem, language, log);
 		
 		// Create Database  Connection
 		connection = DriverManager.getConnection("jdbc:h2:" + database.toAbsolutePath().normalize().toString(), "sa", "");
@@ -152,12 +192,12 @@ public class ExperimentData {
 		//Setup Directories
 		datafolder = datafolder.toAbsolutePath().normalize();
 		this.folder = datafolder;
-		this.system = datafolder.resolve("system");
+		this.subjectsystem = datafolder.resolve("system");
 		this.repository = datafolder.resolve("repository");
 		this.fragments = datafolder.resolve("fragments");
 		this.mutantfragments = datafolder.resolve("mutantfragments");
 		this.reports = datafolder.resolve("reports");
-		this.mutantbase = datafolder.resolve("mutantbase");
+		this.mutantsystem = datafolder.resolve("mutantbase");
 		this.temp = datafolder.resolve("temp");
 		this.database = datafolder.resolve("database");
 		
@@ -165,7 +205,7 @@ public class ExperimentData {
 		if(!Files.isDirectory(this.folder)) {
 			throw new IllegalArgumentException("experiment directory is invalid -- missing root folder.");
 		}
-		if(!Files.isDirectory(this.system)) {
+		if(!Files.isDirectory(this.subjectsystem)) {
 			throw new IllegalArgumentException("experiment directory is invalid -- system is missing.");
 		}
 		if(!Files.isDirectory(this.repository)) {
@@ -180,7 +220,7 @@ public class ExperimentData {
 		if(!Files.isDirectory(this.reports)) {
 			throw new IllegalArgumentException("experiment directory is invalid -- reports is missing.");
 		}
-		if(!Files.isDirectory(this.mutantbase)) {
+		if(!Files.isDirectory(this.mutantsystem)) {
 			throw new IllegalArgumentException("experiment directory is invalid -- mutantbase is missing.");
 		}
 		if(!Files.isDirectory(this.temp)) {
@@ -212,10 +252,10 @@ public class ExperimentData {
 		}
 			//mutantbase
 		for(MutantBaseDB mutantbase : this.getMutantBases()) {
-			if(!Files.exists(this.system.resolve(this.mutantbase.relativize(mutantbase.getOriginalFragment().getSrcFile())))) {
+			if(!Files.exists(this.subjectsystem.resolve(this.mutantsystem.relativize(mutantbase.getOriginalFragment().getSrcFile())))) {
 				throw new IllegalArgumentException("Data is incomplete, a file in the system which is to be injected into is missing: " + mutantbase.getOriginalFragment().getSrcFile()+ ".");
 			}
-			if(!Files.exists(this.system.resolve(this.mutantbase.relativize(mutantbase.getMutantFragment().getSrcFile())))) {
+			if(!Files.exists(this.subjectsystem.resolve(this.mutantsystem.relativize(mutantbase.getMutantFragment().getSrcFile())))) {
 				throw new IllegalArgumentException("Data is incomplete, a file in the system which is to be injected into is missing: " + mutantbase.getMutantFragment().getSrcFile() + ".");
 			}
 		}
@@ -306,16 +346,14 @@ public class ExperimentData {
 	 * @throws IllegalStateException Called when invalid to revert stage.
 	 * @throws SQLException 
 	 */
-	public int previousStage() throws SQLException, IllegalStateException {
+	public int returnToEvaluationSetup() throws SQLException, IllegalStateException {
 		//EVALUATION -> EVALUATION SETUP
 		if(this.getStage() == ExperimentData.EVALUATION_STAGE) {
-			this.deleteUnitRecalls();
-			this.deleteUnitPrecisions();
 			this.setStage(ExperimentData.EVALUATION_SETUP_STAGE);
 			
 		//RESULTS_STAGE -> EVALUATION_STAGE
 		} else if (this.getStage() == ExperimentData.RESULTS_STAGE) {
-			this.setStage(ExperimentData.EVALUATION_STAGE);
+			this.setStage(ExperimentData.EVALUATION_SETUP_STAGE);
 			
 		//Illegal Transition
 		} else {
@@ -332,7 +370,7 @@ public class ExperimentData {
 	}
 
 	public Path getSystemPath() {
-		return this.system.toAbsolutePath().normalize();
+		return this.subjectsystem.toAbsolutePath().normalize();
 	}
 
 	public Path getRepositoryPath() {
@@ -352,7 +390,7 @@ public class ExperimentData {
 	}
 
 	public Path getMutantBasePath() {
-		return this.mutantbase.toAbsolutePath().normalize();
+		return this.mutantsystem.toAbsolutePath().normalize();
 	}
 
 	public Path getTemporaryPath() {
@@ -1139,8 +1177,8 @@ public class ExperimentData {
 		}
 		
 		//Prepare SQL
-		Path osourcepath = system.toAbsolutePath().normalize().relativize(original_inject_srcfile.toAbsolutePath().normalize());
-		Path msourcepath = system.toAbsolutePath().normalize().relativize(mutant_inject_srcfile.toAbsolutePath().normalize());
+		Path osourcepath = subjectsystem.toAbsolutePath().normalize().relativize(original_inject_srcfile.toAbsolutePath().normalize());
+		Path msourcepath = subjectsystem.toAbsolutePath().normalize().relativize(mutant_inject_srcfile.toAbsolutePath().normalize());
 		
 		MutantFragment mf = getMutantFragment(mutant_fragment_id);
 		FragmentDB f = getFragment(mf.getFragmentId());
@@ -1155,7 +1193,7 @@ public class ExperimentData {
 		int mstartline = mutant_inject_line;
 		int mendline = mstartline + mfnumlines - 1;
 		
-		String sdirectory = mutantbase.toAbsolutePath().normalize().relativize(mutantbase.toAbsolutePath().normalize()).toString();
+		String sdirectory = mutantsystem.toAbsolutePath().normalize().relativize(mutantsystem.toAbsolutePath().normalize()).toString();
 		
 		String sql = "INSERT INTO mutant_bases (directory, mutant_id, isrcfile, istartline, iendline, osrcfile, ostartline, oendline) VALUES ("
 				+ "'" + sdirectory + "',"
@@ -1213,17 +1251,17 @@ public class ExperimentData {
 		if(rs.next()) {
 			int base_id = rs.getInt("base_id");
 			String directory = rs.getString("directory");
-			Path directorypath = mutantbase.toAbsolutePath().normalize();
+			Path directorypath = mutantsystem.toAbsolutePath().normalize();
 			
 			assert(Paths.get(directory).toAbsolutePath().normalize().equals(directorypath));
 			
 			int mutant_id = rs.getInt("mutant_id");
 			String isrcfile = rs.getString("isrcfile");
-			Path isrcpath = mutantbase.toAbsolutePath().normalize().resolve(isrcfile).toAbsolutePath().normalize();
+			Path isrcpath = mutantsystem.toAbsolutePath().normalize().resolve(isrcfile).toAbsolutePath().normalize();
 			int istartline = rs.getInt("istartline");
 			int iendline = rs.getInt("iendline");
 			String osrcfile = rs.getString("osrcfile");
-			Path osrcpath = mutantbase.toAbsolutePath().normalize().resolve(osrcfile).toAbsolutePath().normalize();
+			Path osrcpath = mutantsystem.toAbsolutePath().normalize().resolve(osrcfile).toAbsolutePath().normalize();
 			int ostartline = rs.getInt("ostartline");
 			int oendline = rs.getInt("oendline");
 			return new MutantBaseDB(base_id, directorypath, mutant_id, new Fragment(osrcpath, ostartline, oendline), new Fragment(isrcpath, istartline, iendline));
@@ -1256,17 +1294,17 @@ public class ExperimentData {
 		while(rs.next()) {
 			int base_id = rs.getInt("base_id");
 			String directory = rs.getString("directory");
-			Path directorypath = mutantbase.toAbsolutePath().normalize();
+			Path directorypath = mutantsystem.toAbsolutePath().normalize();
 			
 			assert(Paths.get(directory).toAbsolutePath().normalize().equals(directorypath));
 			
 			int mutant_id = rs.getInt("mutant_id");
 			String isrcfile = rs.getString("isrcfile");
-			Path isrcpath = mutantbase.toAbsolutePath().normalize().resolve(isrcfile).toAbsolutePath().normalize();
+			Path isrcpath = mutantsystem.toAbsolutePath().normalize().resolve(isrcfile).toAbsolutePath().normalize();
 			int istartline = rs.getInt("istartline");
 			int iendline = rs.getInt("iendline");
 			String osrcfile = rs.getString("osrcfile");
-			Path osrcpath = mutantbase.toAbsolutePath().normalize().resolve(osrcfile).toAbsolutePath().normalize();
+			Path osrcpath = mutantsystem.toAbsolutePath().normalize().resolve(osrcfile).toAbsolutePath().normalize();
 			int ostartline = rs.getInt("ostartline");
 			int oendline = rs.getInt("oendline");
 			retval.add(new MutantBaseDB(base_id, directorypath, mutant_id, new Fragment(osrcpath, ostartline, oendline), new Fragment(isrcpath, istartline, iendline)));
@@ -1993,8 +2031,8 @@ public class ExperimentData {
 	 * @throws IllegalStateException Can only be called during the evaluation stage.
 	 */
 	public int deleteCloneDetectionReportsByToolId(int toolid) throws SQLException, IOException, IllegalStateException {
-		if(this.getStage() != ExperimentData.EVALUATION_STAGE) {
-			throw new IllegalStateException("Only valid during evaluation stage.");
+		if(this.getStage() != ExperimentData.EVALUATION_STAGE && this.getStage() != ExperimentData.EVALUATION_SETUP_STAGE) {
+			throw new IllegalStateException("Only valid during evaluation stage and evaluation setup stage.");
 		}
 		
 		//Prepare Connection
@@ -2175,10 +2213,10 @@ public class ExperimentData {
 			throw new IllegalArgumentException("UnitRecall already exists.");
 		}
 		if(c != null) {
-			if(!c.getFragment1().getSrcFile().toAbsolutePath().normalize().startsWith(mutantbase.toAbsolutePath().normalize())) {
+			if(!c.getFragment1().getSrcFile().toAbsolutePath().normalize().startsWith(mutantsystem.toAbsolutePath().normalize())) {
 				throw new IllegalArgumentException("Fragment1 of clone is not from mutant base.");
 			}
-			if(!c.getFragment2().getSrcFile().toAbsolutePath().normalize().startsWith(mutantbase.toAbsolutePath().normalize())) {
+			if(!c.getFragment2().getSrcFile().toAbsolutePath().normalize().startsWith(mutantsystem.toAbsolutePath().normalize())) {
 				throw new IllegalArgumentException("Fragment2 of clone is not from mutant base.");
 			}
 		}
@@ -2192,8 +2230,8 @@ public class ExperimentData {
 		//Prepare SQL
 		String sql;
 		if(c != null) {
-			Path srcfile1 = mutantbase.toAbsolutePath().normalize().relativize(c.getFragment1().getSrcFile().toAbsolutePath().normalize());
-			Path srcfile2 = mutantbase.toAbsolutePath().normalize().relativize(c.getFragment2().getSrcFile().toAbsolutePath().normalize());
+			Path srcfile1 = mutantsystem.toAbsolutePath().normalize().relativize(c.getFragment1().getSrcFile().toAbsolutePath().normalize());
+			Path srcfile2 = mutantsystem.toAbsolutePath().normalize().relativize(c.getFragment2().getSrcFile().toAbsolutePath().normalize());
 			sql = "INSERT INTO unit_recall (tool_id, base_id, recall, srcfile1, startline1, endline1, srcfile2, startline2, endline2) VALUES ("
 					+ toolid + ","
 					+ baseid + ","
@@ -2259,9 +2297,9 @@ public class ExperimentData {
 
 			} else { //else none are null
 				int startline1 = rs.getInt("startline1");
-				Path srcfile1 = mutantbase.resolve(rs.getString("srcfile1"));
+				Path srcfile1 = mutantsystem.resolve(rs.getString("srcfile1"));
 				int endline1 = rs.getInt("endline1");
-				Path srcfile2 = mutantbase.resolve(rs.getString("srcfile2"));
+				Path srcfile2 = mutantsystem.resolve(rs.getString("srcfile2"));
 				int startline2 = rs.getInt("startline2");
 				int endline2 = rs.getInt("endline2");
 				clone = new Clone(new Fragment(srcfile1,startline1,endline1), new Fragment(srcfile2,startline2,endline2));
@@ -2414,9 +2452,9 @@ public class ExperimentData {
 
 			} else {
 				int startline1 = rs.getInt("startline1");
-				Path srcfile1 = mutantbase.resolve(rs.getString("srcfile1"));
+				Path srcfile1 = mutantsystem.resolve(rs.getString("srcfile1"));
 				int endline1 = rs.getInt("endline1");
-				Path srcfile2 = mutantbase.resolve(rs.getString("srcfile2"));
+				Path srcfile2 = mutantsystem.resolve(rs.getString("srcfile2"));
 				int startline2 = rs.getInt("startline2");
 				int endline2 = rs.getInt("endline2");
 				clone = new Clone(new Fragment(srcfile1,startline1,endline1), new Fragment(srcfile2,startline2,endline2));
@@ -2506,8 +2544,8 @@ public class ExperimentData {
 	 * @throws IllegalStateException
 	 */
 	public int deleteUnitRecalls() throws SQLException, IllegalStateException {
-		if(this.getStage() != ExperimentData.EVALUATION_STAGE) {
-			throw new IllegalStateException("Only valid during evaluation stage.");
+		if(this.getStage() != ExperimentData.EVALUATION_STAGE && this.getStage() != ExperimentData.EVALUATION_SETUP_STAGE) {
+			throw new IllegalStateException("Only valid during evaluation stage or evaluation setup stage.");
 		}
 		
 		//Prepare Connection
@@ -2527,9 +2565,9 @@ public class ExperimentData {
 		return num;
 	}
 	
-	public int deleteUnitRecallsByTool(int tool_id) throws SQLException {
-		if(this.getStage() != ExperimentData.EVALUATION_STAGE) {
-			throw new IllegalStateException("Only valid during evaluation stage.");
+	public int deleteUnitRecallsByTool(int tool_id) throws SQLException, IllegalStateException {
+		if(this.getStage() != ExperimentData.EVALUATION_STAGE && this.getStage() != ExperimentData.EVALUATION_SETUP_STAGE) {
+			throw new IllegalStateException("Only valid during evaluation stage or evaluation setup stage.");
 		}
 		
 		//Prepare Connection
@@ -2571,7 +2609,8 @@ public class ExperimentData {
 		return num;
 	}
 	
-// PRECISION
+// PRECISION ---------------------------------------------------------------------------------------------------------------------------------------------------------
+	
 	/**
 	 * Adds a unit precision value to the database for the specified tool and base.
 	 * @param toolid the id of the tool.
@@ -2600,10 +2639,10 @@ public class ExperimentData {
 			throw new IllegalArgumentException("Clones list is empty when precision is not 1.0.");
 		}
 		for(VerifiedClone vc : clones) {
-			if(!vc.getFragment1().getSrcFile().toAbsolutePath().normalize().startsWith(mutantbase.toAbsolutePath().normalize())) {
+			if(!vc.getFragment1().getSrcFile().toAbsolutePath().normalize().startsWith(mutantsystem.toAbsolutePath().normalize())) {
 				throw new IllegalArgumentException("One of the clones's first fragment is not form mutant base.");
 			}
-			if(!vc.getFragment2().getSrcFile().toAbsolutePath().normalize().startsWith(mutantbase.toAbsolutePath().normalize())) {
+			if(!vc.getFragment2().getSrcFile().toAbsolutePath().normalize().startsWith(mutantsystem.toAbsolutePath().normalize())) {
 				throw new IllegalArgumentException("One of the clones's first fragment is not form mutant base.");
 			}
 		}
@@ -2624,8 +2663,8 @@ public class ExperimentData {
 		
 		//Insert Verified Clones
 		for(VerifiedClone vc : clones) {
-			Path srcfile1 = mutantbase.toAbsolutePath().normalize().relativize(vc.getFragment1().getSrcFile().toAbsolutePath().normalize());
-			Path srcfile2 = mutantbase.toAbsolutePath().normalize().relativize(vc.getFragment2().getSrcFile().toAbsolutePath().normalize());
+			Path srcfile1 = mutantsystem.toAbsolutePath().normalize().relativize(vc.getFragment1().getSrcFile().toAbsolutePath().normalize());
+			Path srcfile2 = mutantsystem.toAbsolutePath().normalize().relativize(vc.getFragment2().getSrcFile().toAbsolutePath().normalize());
 			sql = "INSERT INTO unit_precision_clones_considered (tool_id, base_id, isclone, verifiersuccess, srcfile1, startline1, endline1, srcfile2, startline2, endline2) VALUES ("
 					+ toolid + ","
 					+ baseid + ","
@@ -2689,10 +2728,10 @@ public class ExperimentData {
 				
 				boolean isclone = rs.getBoolean("isclone");
 				boolean verifiersuccess = rs.getBoolean("verifiersuccess");
-				Path srcfile1 = mutantbase.resolve(rs.getString("srcfile1")).toAbsolutePath().normalize();
+				Path srcfile1 = mutantsystem.resolve(rs.getString("srcfile1")).toAbsolutePath().normalize();
 				int startline1 = rs.getInt("startline1");
 				int endline1 = rs.getInt("endline1");
-				Path srcfile2 = mutantbase.resolve(rs.getString("srcfile2")).toAbsolutePath().normalize();
+				Path srcfile2 = mutantsystem.resolve(rs.getString("srcfile2")).toAbsolutePath().normalize();
 				int startline2 = rs.getInt("startline2");
 				int endline2 = rs.getInt("endline2");
 				clones.add(new VerifiedClone(new Fragment(srcfile1, startline1, endline1), new Fragment(srcfile2, startline2, endline2), isclone, verifiersuccess));
@@ -2778,9 +2817,9 @@ public class ExperimentData {
 	 * @return the number of entries removed.
 	 * @throws SQLException
 	 */
-	public int deleteUnitPrecisions(int tool_id) throws SQLException {
-		if(this.getStage() != ExperimentData.EVALUATION_STAGE) {
-			throw new IllegalStateException("Only valid during evaluation stage.");
+	public int deleteUnitPrecisions(int tool_id) throws SQLException, IllegalStateException {
+		if(this.getStage() != ExperimentData.EVALUATION_STAGE && this.getStage() != ExperimentData.EVALUATION_SETUP_STAGE) {
+			throw new IllegalStateException("Only valid during evaluation stage and evaluation setup stage.");
 		}
 		
 		//Prepare Connection
@@ -2808,8 +2847,8 @@ public class ExperimentData {
 	 * @throws SQLException
 	 */
 	public int deleteUnitPrecisions() throws SQLException {
-		if(this.getStage() != ExperimentData.EVALUATION_STAGE) {
-			throw new IllegalStateException("Only valid during evaluation stage.");
+		if(this.getStage() != ExperimentData.EVALUATION_STAGE && this.getStage() != ExperimentData.EVALUATION_SETUP_STAGE) {
+			throw new IllegalStateException("Only valid during evaluation stage and evaluation setup stage.");
 		}
 		
 		//Prepare Connection
@@ -2864,10 +2903,10 @@ public class ExperimentData {
 				
 				boolean isclone = rs2.getBoolean("isclone");
 				boolean verifiersuccess = rs2.getBoolean("verifiersuccess");
-				Path srcfile1 = mutantbase.resolve(rs2.getString("srcfile1")).toAbsolutePath().normalize();
+				Path srcfile1 = mutantsystem.resolve(rs2.getString("srcfile1")).toAbsolutePath().normalize();
 				int startline1 = rs2.getInt("startline1");
 				int endline1 = rs2.getInt("endline1");
-				Path srcfile2 = mutantbase.resolve(rs2.getString("srcfile2")).toAbsolutePath().normalize();
+				Path srcfile2 = mutantsystem.resolve(rs2.getString("srcfile2")).toAbsolutePath().normalize();
 				int startline2 = rs2.getInt("startline2");
 				int endline2 = rs2.getInt("endline2");
 				clones.add(new VerifiedClone(new Fragment(srcfile1, startline1, endline1), new Fragment(srcfile2, startline2, endline2), isclone, verifiersuccess));
@@ -2926,10 +2965,10 @@ public class ExperimentData {
 				
 				boolean isclone = rs2.getBoolean("isclone");
 				boolean verifiersuccess = rs2.getBoolean("verifiersuccess");
-				Path srcfile1 = mutantbase.resolve(rs2.getString("srcfile1")).toAbsolutePath().normalize();
+				Path srcfile1 = mutantsystem.resolve(rs2.getString("srcfile1")).toAbsolutePath().normalize();
 				int startline1 = rs2.getInt("startline1");
 				int endline1 = rs2.getInt("endline1");
-				Path srcfile2 = mutantbase.resolve(rs2.getString("srcfile2")).toAbsolutePath().normalize();
+				Path srcfile2 = mutantsystem.resolve(rs2.getString("srcfile2")).toAbsolutePath().normalize();
 				int startline2 = rs2.getInt("startline2");
 				int endline2 = rs2.getInt("endline2");
 				clones.add(new VerifiedClone(new Fragment(srcfile1, startline1, endline1), new Fragment(srcfile2, startline2, endline2), isclone, verifiersuccess));
@@ -2998,7 +3037,416 @@ public class ExperimentData {
 		return retval;
 	}
 	
+// Recall ------------------------------------------------------------------------------------------------------------------------------
 	
+	public double getRecall(int tool_id) throws SQLException, IllegalStateException, IllegalArgumentException {
+		//Check state and existance of tool
+		if(this.getStage() != ExperimentData.RESULTS_STAGE) {
+			throw new IllegalStateException("Can only be called during results stage.");
+		}
+		if(!this.existsTool(tool_id)) {
+			throw new IllegalArgumentException("No tool with id " + tool_id + ".");
+		}
+				
+		//Prepare Connection
+		if(!connection.getAutoCommit()) {
+			connection.rollback();
+			connection.setAutoCommit(true);
+		}
+		
+		//Create and Execute Statement
+		String sql = "SELECT AVG(recall) AS recall FROM unit_recall WHERE tool_id = " + tool_id;
+		Statement stmt = connection.createStatement();
+		ResultSet rs = stmt.executeQuery(sql);
+		
+		//Get Result
+		rs.next();
+		double recall = rs.getDouble("recall");
+		
+		//Clean-up
+		rs.close();
+		stmt.close();
+		
+		//return result
+		return recall;
+	}
+	
+	/**
+	 * 
+	 * @param tool_id
+	 * @param type
+	 * @return The recall for the type and tool id.  -1 if no clones of this type in the corpus.
+	 * @throws SQLException
+	 * @throws IllegalStateException
+	 * @throws IllegalArgumentException
+	 */
+	public double getRecallForCloneType(int tool_id, int type) throws SQLException, IllegalStateException, IllegalArgumentException {
+		//Check state and existance of tool
+		if(this.getStage() != ExperimentData.RESULTS_STAGE) {
+			throw new IllegalStateException("Can only be called during results stage.");
+		}
+		if(!this.existsTool(tool_id)) {
+			throw new IllegalArgumentException("No tool with id " + tool_id + ".");
+		}
+		
+		//Prepare Connection
+		if(!connection.getAutoCommit()) {
+			connection.rollback();
+			connection.setAutoCommit(true);
+		}
+		
+		//Get mutator ids for target clone type
+		List<MutatorDB> mutators = this.getMutators();
+		List<MutatorDB> rmutators = new LinkedList<MutatorDB>();
+		for(MutatorDB mutator : mutators) {
+			if(mutator.getTargetCloneType() == type) {
+				rmutators.add(mutator);
+			}
+		}
+		mutators=null;
+		
+		//If none, send no mutators for this type flag
+		if(rmutators.size() == 0) {
+			return -1;
+		}
+		
+		//Create and execute statement
+		String sql = "SELECT AVG(ur.recall) AS recall " +
+		             "FROM unit_recall ur, mutant_bases mb, mutant_fragments mf, mutators m " +
+		             "WHERE mb.base_id = ur.base_id AND " +
+		             "mf.mutant_id = mb.mutant_id AND " +
+		             "m.mutator_id = mf.mutator_id AND " +
+		             "ur.tool_id = " + tool_id + " AND ( ";
+		Iterator<MutatorDB> iterator = rmutators.iterator();
+		MutatorDB mutator;
+		while(iterator.hasNext()) {
+			mutator = iterator.next();
+			sql += "m.mutator_id = " + mutator.getId() + " ";
+			if(iterator.hasNext()) {
+				sql += "OR ";
+			} else {
+				sql += ") ";
+			}
+		}
+		
+		Statement stmt = connection.createStatement();
+		ResultSet rs = stmt.executeQuery(sql);
+		
+		//Get Result
+		rs.next();
+		double recall = rs.getDouble("recall");
+		
+		//Cleanup
+		rs.close();
+		stmt.close();
+		
+		//Return Result
+		return recall;
+	}
+	
+	public double getRecallForMutator(int tool_id, int mutator_id) throws SQLException, IllegalStateException, IllegalArgumentException {
+		//Check state and existance of tool
+		if(this.getStage() != ExperimentData.RESULTS_STAGE) {
+			throw new IllegalStateException("Can only be called during results stage.");
+		}
+		if(!this.existsTool(tool_id)) {
+			throw new IllegalArgumentException("No tool with id " + tool_id + ".");
+		}
+		if(!this.existsMutator(mutator_id)) {
+			throw new IllegalArgumentException("No mutator with id " + mutator_id + ".");
+		}
+		
+		//Prepare Connection
+		if(!connection.getAutoCommit()) {
+			connection.rollback();
+			connection.setAutoCommit(true);
+		}
+		
+		//Create and execute statement
+		String sql = "SELECT AVG(ur.recall) AS recall " +
+		             "FROM unit_recall ur, mutant_bases mb, mutant_fragments mf, mutators m " +
+		             "WHERE mb.base_id = ur.base_id AND " +
+		             "mf.mutant_id = mb.mutant_id AND " +
+		             "m.mutator_id = mf.mutator_id AND " +
+		             "ur.tool_id = " + tool_id + " AND " + 
+		             "m.mutator_id = " + mutator_id;
+		Statement stmt = connection.createStatement();
+		ResultSet rs = stmt.executeQuery(sql);
+		
+		//Get Result
+		rs.next();
+		double recall = rs.getDouble("recall");
+		
+		//Cleanup
+		rs.close();
+		stmt.close();
+		
+		//Return Result
+		return recall;
+	}
+	
+	public double getRecallForOperator(int tool_id, int operator_id) throws SQLException, IllegalStateException, IllegalArgumentException {
+		//Check state and existance of tool
+		if(this.getStage() != ExperimentData.RESULTS_STAGE) {
+			throw new IllegalStateException("Can only be called during results stage.");
+		}
+		if(!this.existsTool(tool_id)) {
+			throw new IllegalArgumentException("No tool with id " + tool_id + ".");
+		}
+		
+		//Prepare Connection
+		if(!connection.getAutoCommit()) {
+			connection.rollback();
+			connection.setAutoCommit(true);
+		}
+		
+		//Get mutator ids for target clone type
+		List<MutatorDB> mutators = this.getMutators();
+		List<MutatorDB> rmutators = new LinkedList<MutatorDB>();
+		for(MutatorDB mutator : mutators) {
+			if(mutator.includesOperator(operator_id)) {
+				rmutators.add(mutator);
+			}
+		}
+		mutators=null;
+		
+		//If none, send no mutators for this type flag
+		if(rmutators.size() == 0) {
+			return -1;
+		}
+		
+		//Create and execute statement
+		String sql = "SELECT AVG(ur.recall) AS recall " +
+		             "FROM unit_recall ur, mutant_bases mb, mutant_fragments mf, mutators m " +
+		             "WHERE mb.base_id = ur.base_id AND " +
+		             "mf.mutant_id = mb.mutant_id AND " +
+		             "m.mutator_id = mf.mutator_id AND " +
+		             "ur.tool_id = " + tool_id + " AND ( ";
+		Iterator<MutatorDB> iterator = rmutators.iterator();
+		MutatorDB mutator;
+		while(iterator.hasNext()) {
+			mutator = iterator.next();
+			sql += "m.mutator_id = " + mutator.getId() + " ";
+			if(iterator.hasNext()) {
+				sql += "OR ";
+			} else {
+				sql += ") ";
+			}
+		}
+		
+		Statement stmt = connection.createStatement();
+		ResultSet rs = stmt.executeQuery(sql);
+		
+		//Get Result
+		rs.next();
+		double recall = rs.getDouble("recall");
+		
+		//Cleanup
+		rs.close();
+		stmt.close();
+		
+		//Return Result
+		return recall;
+	}
+	
+// Precision ---------------------------------------------------------------------------------------------------------------------------
+	
+	public double getPrecision(int tool_id) throws SQLException, IllegalStateException, IllegalArgumentException {
+		//Check state and existance of tool
+		if(this.getStage() != ExperimentData.RESULTS_STAGE) {
+			throw new IllegalStateException("Can only be called during results stage.");
+		}
+		if(!this.existsTool(tool_id)) {
+			throw new IllegalArgumentException("No tool with id " + tool_id + ".");
+		}
+				
+		//Prepare Connection
+		if(!connection.getAutoCommit()) {
+			connection.rollback();
+			connection.setAutoCommit(true);
+		}
+		
+		//Create and Execute Statement
+		String sql = "SELECT AVG(precision) AS precision FROM unit_precision WHERE tool_id = " + tool_id;
+		Statement stmt = connection.createStatement();
+		ResultSet rs = stmt.executeQuery(sql);
+		
+		//Get Result
+		rs.next();
+		double precision = rs.getDouble("precision");
+		
+		//Clean-up
+		rs.close();
+		stmt.close();
+		
+		//return result
+		return precision;
+	}
+	
+	public double getPrecisionForCloneType(int tool_id, int type) throws SQLException, IllegalStateException, IllegalArgumentException {
+		//Check state and existance of tool
+		if(this.getStage() != ExperimentData.RESULTS_STAGE) {
+			throw new IllegalStateException("Can only be called during results stage.");
+		}
+		if(!this.existsTool(tool_id)) {
+			throw new IllegalArgumentException("No tool with id " + tool_id + ".");
+		}
+		
+		//Prepare Connection
+		if(!connection.getAutoCommit()) {
+			connection.rollback();
+			connection.setAutoCommit(true);
+		}
+		
+		//Get mutator ids for target clone type
+		List<MutatorDB> mutators = this.getMutators();
+		List<MutatorDB> rmutators = new LinkedList<MutatorDB>();
+		for(MutatorDB mutator : mutators) {
+			if(mutator.getTargetCloneType() == type) {
+				rmutators.add(mutator);
+			}
+		}
+		mutators=null;
+		
+		if(rmutators.size() == 0) {
+			return -1;
+		}
+		
+		//Create and execute statement
+		String sql = "SELECT AVG(up.precision) AS precision " +
+		             "FROM unit_precision up, mutant_bases mb, mutant_fragments mf, mutators m " +
+		             "WHERE mb.base_id = up.base_id AND " +
+		             "mf.mutant_id = mb.mutant_id AND " +
+		             "m.mutator_id = mf.mutator_id AND " +
+		             "up.tool_id = " + tool_id + " AND ( "; 
+ 		Iterator<MutatorDB> iterator = rmutators.iterator();
+		MutatorDB mutator;
+		while(iterator.hasNext()) {
+			mutator = iterator.next();
+			sql += "m.mutator_id = " + mutator.getId() + " ";
+			if(iterator.hasNext()) {
+				sql += "OR ";
+			} else {
+				sql += ") ";
+			}
+		}
+		Statement stmt = connection.createStatement();
+		ResultSet rs = stmt.executeQuery(sql);
+		
+		//Get Result
+		rs.next();
+		double precision = rs.getDouble("precision");
+		
+		//Cleanup
+		rs.close();
+		stmt.close();
+		
+		//Return Result
+		return precision;
+	}
+	
+	public double getPrecisionForMutator(int tool_id, int mutator_id) throws SQLException, IllegalStateException, IllegalArgumentException {
+		//Check state and existance of tool
+		if(this.getStage() != ExperimentData.RESULTS_STAGE) {
+			throw new IllegalStateException("Can only be called during results stage.");
+		}
+		if(!this.existsTool(tool_id)) {
+			throw new IllegalArgumentException("No tool with id " + tool_id + ".");
+		}
+		if(!this.existsMutator(mutator_id)) {
+			throw new IllegalArgumentException("No mutator with id " + mutator_id + ".");
+		}
+		
+		//Prepare Connection
+		if(!connection.getAutoCommit()) {
+			connection.rollback();
+			connection.setAutoCommit(true);
+		}
+		
+		//Create and execute statement
+		String sql = "SELECT AVG(up.precision) AS precision " +
+		             "FROM unit_precision up, mutant_bases mb, mutant_fragments mf, mutators m " +
+		             "WHERE mb.base_id = up.base_id AND " +
+		             "mf.mutant_id = mb.mutant_id AND " +
+		             "m.mutator_id = mf.mutator_id AND " +
+		             "up.tool_id = " + tool_id + " AND " + 
+		             "m.mutator_id = " + mutator_id;
+		Statement stmt = connection.createStatement();
+		ResultSet rs = stmt.executeQuery(sql);
+		
+		//Get Result
+		rs.next();
+		double recall = rs.getDouble("precision");
+		
+		//Cleanup
+		rs.close();
+		stmt.close();
+		
+		//Return Result
+		return recall;
+	}
+	
+	public double getPrecisionForOperator(int tool_id, int operator_id) throws SQLException, IllegalStateException, IllegalArgumentException {
+		//Check state and existance of tool
+		if(this.getStage() != ExperimentData.RESULTS_STAGE) {
+			throw new IllegalStateException("Can only be called during results stage.");
+		}
+		if(!this.existsTool(tool_id)) {
+			throw new IllegalArgumentException("No tool with id " + tool_id + ".");
+		}
+		
+		//Prepare Connection
+		if(!connection.getAutoCommit()) {
+			connection.rollback();
+			connection.setAutoCommit(true);
+		}
+		
+		//Get mutator ids for target clone type
+		List<MutatorDB> mutators = this.getMutators();
+		List<MutatorDB> rmutators = new LinkedList<MutatorDB>();
+		for(MutatorDB mutator : mutators) {
+			if(mutator.includesOperator(operator_id)) {
+				rmutators.add(mutator);
+			}
+		}
+		mutators=null;
+		
+		if(rmutators.size() == 0) {
+			return -1;
+		}
+		
+		//Create and execute statement
+		String sql = "SELECT AVG(up.precision) AS precision " +
+		             "FROM unit_precision up, mutant_bases mb, mutant_fragments mf, mutators m " +
+		             "WHERE mb.base_id = up.base_id AND " +
+		             "mf.mutant_id = mb.mutant_id AND " +
+		             "m.mutator_id = mf.mutator_id AND " +
+		             "up.tool_id = " + tool_id + " AND ( "; 
+ 		Iterator<MutatorDB> iterator = rmutators.iterator();
+		MutatorDB mutator;
+		while(iterator.hasNext()) {
+			mutator = iterator.next();
+			sql += "m.mutator_id = " + mutator.getId() + " ";
+			if(iterator.hasNext()) {
+				sql += "OR ";
+			} else {
+				sql += ") ";
+			}
+		}
+		Statement stmt = connection.createStatement();
+		ResultSet rs = stmt.executeQuery(sql);
+		
+		//Get Result
+		rs.next();
+		double precision = rs.getDouble("precision");
+		
+		//Cleanup
+		rs.close();
+		stmt.close();
+		
+		//Return Result
+		return precision;
+	}
 	
 // OPERATORS
 	
@@ -3135,7 +3583,7 @@ public class ExperimentData {
 	 * @return The number removed.
 	 * @throws SQLException
 	 */
-	public int deleteOperators() throws SQLException {
+	public int deleteOperators() throws SQLException, IllegalStateException {
 		if(this.getStage() != ExperimentData.GENERATION_SETUP_STAGE) {
 			throw new IllegalStateException("Only valid during setup stage.");
 		}
@@ -3703,7 +4151,7 @@ public class ExperimentData {
 		}
 		if(num <= 0) {
 			throw new IllegalArgumentException();
-		} else if (!(num <= this.getFragmentMaximumSizeTokens())) {
+		} else if (!(num < this.getFragmentMaximumSizeTokens())) {
 			throw new IllegalArgumentException();
 		} else {
 			String sql = "UPDATE properties SET fragment_min_size_tokens = " + num;
@@ -3726,7 +4174,7 @@ public class ExperimentData {
 		}
 		if(num <= 0) {
 			throw new IllegalArgumentException();
-		} else if(!(num >= this.getFragmentMinimumSizeTokens())) {
+		} else if(!(num > this.getFragmentMinimumSizeTokens())) {
 			throw new IllegalArgumentException();
 		} else {
 			String sql = "UPDATE properties SET fragment_max_size_tokens = " + num;
@@ -3981,6 +4429,7 @@ public class ExperimentData {
 		stmt.executeUpdate(sql);
 		stmt.close();
 	}
+	
 	private int getStage() throws SQLException {
 		String sql = "SELECT experiment_stage FROM properties";
 		Statement stmt = connection.createStatement();
@@ -4054,8 +4503,8 @@ public class ExperimentData {
 	 */
 	private void constructBaseHelper(MutantBase mb) throws SQLException, FileNotFoundException, IOException {
 		//Clear Mutant Base Directory
-		FileUtils.deleteDirectory(this.mutantbase.toAbsolutePath().normalize().toFile());
-		Files.createDirectories(mutantbase);
+		FileUtils.deleteDirectory(this.mutantsystem.toAbsolutePath().normalize().toFile());
+		Files.createDirectories(mutantsystem);
 		
 		//Needed variable/data
 		MutantFragment mf = getMutantFragment(mb.getMutantId());

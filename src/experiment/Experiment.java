@@ -3,11 +3,13 @@ package experiment;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.InvalidPathException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -89,7 +91,7 @@ public class Experiment {
 	
 	
 	public int previousStage() throws SQLException {
-		return ed.previousStage();
+		return ed.returnToEvaluationSetup();
 	}
 	
 //-- Accessors ---------------------------------------------------------------------------------------------------------
@@ -250,7 +252,75 @@ public class Experiment {
 
 //-- Properties ----------------------------------------------------------------------------------------------------------
 	
-	//-- Generation Settings (can query not set, set at experiment creation)
+	public Path getDirectory() {
+		return ed.getPath();
+	}
+	
+	/**
+	 * Sets the clone granularity.  Can only be performed during the generation setup stage.
+	 * @param granularity The clone granularity.  Must be one of FUNCTION_FRAGMENT_TYPE or BLOCK_FRAGMENT_TYPE.
+	 * @throws IllegalStateException If called not during the generation setup stage.
+	 * @throws IllegalArgumentException If granularity is invalid.
+	 * @throws SQLException
+	 */
+	public void setCloneGranularity(int granularity) throws IllegalStateException, IllegalArgumentException, SQLException {
+		ed.setFragmentType(granularity);
+	}
+	
+	/**
+	 * 
+	 * @param num
+	 * @throws IllegalStateException
+	 * @throws IllegalArgumentException
+	 * @throws SQLException
+	 */
+	public void setMaxFragments(int num) throws IllegalStateException, IllegalArgumentException, SQLException {
+		ed.setMaxFragments(num);
+	}
+	
+	/**
+	 * 
+	 * @param size
+	 * @throws IllegalStateException
+	 * @throws IllegalArgumentException
+	 * @throws SQLException
+	 */
+	public void setFragmentMinimumSizeLines(int size) throws IllegalStateException, IllegalArgumentException, SQLException {
+		ed.setFragmentMinimumSizeLines(size);
+	}
+	
+	/**
+	 * 
+	 * @param size
+	 * @throws IllegalStateException
+	 * @throws IllegalArgumentException
+	 * @throws SQLException
+	 */
+	public void setFragmentMaximumSizeLines(int size) throws IllegalStateException, IllegalArgumentException, SQLException {
+		ed.setFragmentMaximumSizeLines(size);
+	}
+	
+	/**
+	 * 
+	 * @param size
+	 * @throws IllegalStateException
+	 * @throws IllegalArgumentException
+	 * @throws SQLException
+	 */
+	public void setFragmentMinimumSizeTokens(int size) throws IllegalStateException, IllegalArgumentException, SQLException {
+		ed.setFragmentMinimumSizeTokens(size);
+	}
+	
+	/**
+	 * 
+	 * @param size
+	 * @throws IllegalStateException
+	 * @throws IllegalArgumentException
+	 * @throws SQLException
+	 */
+	public void setFragmentMaximumSizeTokens(int size) throws IllegalStateException, IllegalArgumentException, SQLException {
+		ed.setFragmentMaximumSizeTokens(size);
+	}
 	
 	/**
 	 * 
@@ -277,6 +347,17 @@ public class Experiment {
 	 */
 	public int getInjectionNumber() throws SQLException {
 		return ed.getInjectionNumber();
+	}
+	
+	/**
+	 * 
+	 * @param number
+	 * @throws IllegalStateException
+	 * @throws IllegalArgumentException
+	 * @throws SQLException
+	 */
+	public void setInjectionNumber(int number) throws IllegalStateException, IllegalArgumentException, SQLException {
+		ed.setInjectionNumber(number);
 	}
 	
 	/**
@@ -344,6 +425,17 @@ public class Experiment {
 	
 	/**
 	 * 
+	 * @param difference
+	 * @throws IllegalStateException
+	 * @throws IllegalArgumentException
+	 * @throws SQLException
+	 */
+	public void setAllowedFragmentDifference(double difference) throws IllegalStateException, IllegalArgumentException, SQLException {
+		ed.setAllowedFragmentDifference(difference);
+	}
+	
+	/**
+	 * 
 	 * @return
 	 * @throws SQLException
 	 */
@@ -353,11 +445,33 @@ public class Experiment {
 	
 	/**
 	 * 
+	 * @param containment
+	 * @throws IllegalStateException
+	 * @throws IllegalArgumentException
+	 * @throws SQLException
+	 */
+	public void setMutationContainment(double containment) throws IllegalStateException, IllegalArgumentException, SQLException {
+		ed.setMutationContainment(containment);
+	}
+	
+	/**
+	 * 
 	 * @return
 	 * @throws SQLException
 	 */
 	public int getMutationAttempts() throws SQLException {
 		return ed.getMutationAttempts();
+	}
+
+	/**
+	 * 
+	 * @param number
+	 * @throws SQLException 
+	 * @throws IllegalArgumentException 
+	 * @throws IllegalStateException 
+	 */
+	public void setMutationAttempts(int number) throws IllegalStateException, IllegalArgumentException, SQLException {
+		ed.setMutationAttempts(number);
 	}
 	
 	/**
@@ -369,6 +483,17 @@ public class Experiment {
 		return ed.getOperatorAttempts();
 	}
 
+	/**
+	 * 
+	 * @param number
+	 * @throws IllegalStateException
+	 * @throws IllegalArgumentException
+	 * @throws SQLException
+	 */
+	public void setOperatorAttempts(int number) throws IllegalStateException, IllegalArgumentException, SQLException {
+		ed.setOperatorAttempts(number);
+	}
+	
 	//-- Evaluation Settings (can query and set)
 	
 	/**
@@ -380,13 +505,27 @@ public class Experiment {
 		return ed.getSubsumeMatcherTolerance();
 	}
 	
+	public double getUnitRecallRequiredSimilarity() throws SQLException {
+		return ed.getRecallRequiredSimilarity();
+	}
+	
 	/**
 	 * 
 	 * @param tolerance
 	 * @throws SQLException
 	 */
 	public void setSubsumeMatcherTolerance(double tolerance) throws SQLException {
+		ed.deleteUnitRecalls();
+		ed.deleteUnitPrecisions();
 		ed.setSubsumeMatcherTolerance(tolerance);
+	}
+	
+	public boolean isToolDetectionComplete(int id) throws SQLException {
+		if(ed.numCloneDetectionReports(id) == ed.numMutantBases()) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	/**
@@ -405,6 +544,7 @@ public class Experiment {
 	 */
 	public void setRecallRequiredSimilarity(double similarity) throws SQLException {
 		ed.setRecallRequiredSimilarity(similarity);
+		ed.deleteUnitRecalls();
 	}
 	
 	/**
@@ -423,6 +563,7 @@ public class Experiment {
 	 */
 	public void setPrecisionRequiredSimilarity(double similarity) throws SQLException {
 		ed.setPrecisionRequiredSimilarity(similarity);
+		ed.deleteUnitPrecisions();
 	}
 	
 //-- Operators -----------------------------------------------------------------------------------------------------------
@@ -472,11 +613,11 @@ public class Experiment {
 	 * @throws IllegalStateException
 	 */
 	public boolean removeOperator(int id) throws SQLException, IllegalStateException {
-		if(ed.getCurrentStage() != ExperimentData.GENERATION_SETUP_STAGE) {
-			throw new IllegalStateException("Can not remove operator after generation phase is complete.");
-		} else {
-			return ed.deleteOperator(id);
-		}
+		return ed.deleteOperator(id);
+	}
+	
+	public int removeOperators() throws SQLException, IllegalStateException {
+		return ed.deleteOperators();
 	}
 	
 	/**
@@ -541,6 +682,15 @@ public class Experiment {
 	 */
 	public int numMutators() throws SQLException {
 		return ed.numMutators();
+	}
+	
+	/**
+	 * 
+	 * @return
+	 * @throws SQLException 
+	 */
+	public int numSubjectTools() throws SQLException {
+		return ed.numTools();
 	}
 	
 	/**
@@ -613,6 +763,51 @@ public class Experiment {
 		return ed.deleteTool(id);
 	}
 	
+	public int removeTools() throws SQLException, IOException {
+		return ed.deleteTools();
+	}
+	
+	public boolean deleteToolEvaluationData(int id) throws SQLException, IllegalStateException, IOException {
+		if(ed.getCurrentStage() != ExperimentData.EVALUATION_SETUP_STAGE) {
+			throw new IllegalStateException("Can only delete tool evaluation data during evaluation setup stage.");
+		}
+		
+		if(!ed.existsTool(id)) {
+			return false;
+		} else {
+			ed.deleteUnitRecallsByTool(id);
+			ed.deleteUnitPrecisions(id);
+			ed.deleteCloneDetectionReportsByToolId(id);
+			return true;
+		}
+	}
+	
+	/**
+	 * 
+	 * @return
+	 * @throws IllegalStateException Only valid in evaluation setup stage.
+	 * @throws SQLException
+	 */
+	public int deleteUnitRecallAllTools() throws IllegalStateException, SQLException {
+		if(ed.getCurrentStage() != ExperimentData.EVALUATION_SETUP_STAGE) {
+			throw new IllegalStateException("Only valid during evaluation setup stage.");
+		}
+		return ed.deleteUnitRecalls();
+	}
+	
+	/**
+	 * 
+	 * @return
+	 * @throws IllegalStateException Only valid during evaluation setup stage.
+	 * @throws SQLException
+	 */
+	public int deleteUnitPrecisionAllTools() throws IllegalStateException, SQLException {
+		if(ed.getCurrentStage() != ExperimentData.EVALUATION_SETUP_STAGE) {
+			throw new IllegalStateException("Only valid during evaluation setup stage.");
+		}
+		return ed.deleteUnitPrecisions();
+	}
+	
 	/**
 	 * Returns a list of the tools in the experiment.
 	 * @return a list of the tools in the experiment.
@@ -621,7 +816,40 @@ public class Experiment {
 	public List<ToolDB> getTools() throws SQLException {
 		return ed.getTools();
 	}
-		
+	
+//-- Results -------------------------------------------------------------------------------------------------------------
+	
+	public double getRecall(int tool_id) throws IllegalStateException, IllegalArgumentException, SQLException {
+		return ed.getRecall(tool_id);
+	}
+	
+	public double getPrecision(int tool_id) throws IllegalStateException, IllegalArgumentException, SQLException {
+		return ed.getPrecision(tool_id);
+	}
+	
+	public double getRecallForCloneType(int tool_id, int type) throws IllegalStateException, IllegalArgumentException, SQLException {
+		return ed.getRecallForCloneType(tool_id, type);
+	}
+	
+	public double getPrecisionForCloneType(int tool_id, int type) throws IllegalStateException, IllegalArgumentException, SQLException {
+		return ed.getPrecisionForCloneType(tool_id, type);
+	}
+	
+	public double getRecallForMutator(int tool_id, int mutator_id) throws IllegalStateException, IllegalArgumentException, SQLException {
+		return ed.getRecallForMutator(tool_id, mutator_id);
+	}
+	
+	public double getPrecisionForMutator(int tool_id, int mutator_id) throws IllegalStateException, IllegalArgumentException, SQLException {
+		return ed.getPrecisionForMutator(tool_id, mutator_id);
+	}
+	
+	public double getRecallForOperator(int tool_id, int operator_id) throws IllegalStateException, IllegalArgumentException, SQLException {
+		return ed.getRecallForOperator(tool_id, operator_id);
+	}
+	
+	public double getPrecisionForOperator(int tool_id, int operator_id) throws IllegalStateException, IllegalArgumentException, SQLException {
+		return ed.getPrecisionForOperator(tool_id, operator_id);
+	}
 	
 //-- Generation ----------------------------------------------------------------------------------------------------------	
 
@@ -631,7 +859,7 @@ public class Experiment {
 		if(ed.getGenerationType() == ExperimentSpecification.AUTOMATIC_GENERATION_TYPE) {
 			return this.generateAutomatic();
 		} else if (ed.getGenerationType() == ExperimentSpecification.MANUAL_GENERATION_TYPE) {
-			return this.generateManual();
+			return false;//return this.generateManual();
 		} else {
 			log.println("[" + Calendar.getInstance().getTime() + "] (generateAutomatic): " + "Error: Generation type not supported.");
 			return false;
@@ -683,39 +911,39 @@ public class Experiment {
 		}
 	}
 	
-	private boolean generateManual() throws SQLException, AlreadyGeneratedException {
-		log.println("[" + Calendar.getInstance().getTime() + "] (generateManual): " + "Start: Generating manual clones.");
-		if(ed.getCurrentStage() != ExperimentData.GENERATION_SETUP_STAGE) {
-			throw new AlreadyGeneratedException();
-		} else {
-			boolean bretval;
-			
-			//Assert Generation Type
-			ed.setGenerationType(ExperimentSpecification.MANUAL_GENERATION_TYPE);
-			
-			//Progress to generation stage
-			ed.nextStage();
-			assert(ed.getCurrentStage() == ExperimentData.GENERATION_STAGE);
-			
-			//Create Mutant Bases
-			bretval = this.createMutantBases();
-			if(bretval == false) {
-				log.println("[" + Calendar.getInstance().getTime() + "] (generateManual): " + "Error: Mutant base creation failed.  See previous error messages.");
-				return false;
-			}
-			
-			//Verify Generation
-			bretval = this.verifyManualGeneration();
-			if(bretval == false) {
-				log.println("[" + Calendar.getInstance().getTime() + "] (generateManual): " + "Error: Generation verification failed.  See previous error messages.");
-				return false;
-			}
-			
-			//Full process succeeded
-			log.println("[" + Calendar.getInstance().getTime() + "] (generateManual): " + "End: Generating manual clones.");
-			return true;
-		}
-	}
+//	private boolean generateManual() throws SQLException, AlreadyGeneratedException {
+//		log.println("[" + Calendar.getInstance().getTime() + "] (generateManual): " + "Start: Generating manual clones.");
+//		if(ed.getCurrentStage() != ExperimentData.GENERATION_SETUP_STAGE) {
+//			throw new AlreadyGeneratedException();
+//		} else {
+//			boolean bretval;
+//			
+//			//Assert Generation Type
+//			ed.setGenerationType(ExperimentSpecification.MANUAL_GENERATION_TYPE);
+//			
+//			//Progress to generation stage
+//			ed.nextStage();
+//			assert(ed.getCurrentStage() == ExperimentData.GENERATION_STAGE);
+//			
+//			//Create Mutant Bases
+//			bretval = this.createMutantBases();
+//			if(bretval == false) {
+//				log.println("[" + Calendar.getInstance().getTime() + "] (generateManual): " + "Error: Mutant base creation failed.  See previous error messages.");
+//				return false;
+//			}
+//			
+//			//Verify Generation
+//			bretval = this.verifyManualGeneration();
+//			if(bretval == false) {
+//				log.println("[" + Calendar.getInstance().getTime() + "] (generateManual): " + "Error: Generation verification failed.  See previous error messages.");
+//				return false;
+//			}
+//			
+//			//Full process succeeded
+//			log.println("[" + Calendar.getInstance().getTime() + "] (generateManual): " + "End: Generating manual clones.");
+//			return true;
+//		}
+//	}
 	
 	private boolean importClones(Path manual_spec) throws FileNotFoundException, IllegalArgumentException, IllegalManualImportSpecification, SQLException {
 		log.println("[" + Calendar.getInstance().getTime() + "] (importClones): " + "Start: Importing manual clones.");
@@ -1491,248 +1719,248 @@ createbase_attempt:
 		return true;
 	}
 	
-	public boolean verifyManualGeneration() throws SQLException {
-		try {
-			log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "Start: Verifying generated data.");
-				
-			ExperimentData ed = this.getExperimentData();
-			List<MutatorDB> mutators = ed.getMutators();
-		
-		//Fragments
-			//TODO
-			
-		//Mutant Fragments
-			//TODO
-			
-		//Mutant Bases
-			log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "\tVerifying mutantbases...");
-			List<MutantBaseDB> mutantbases = ed.getMutantBases();
-			
-			//Check Mutant Bases (individually)
-			for(MutantBaseDB mutantbase : mutantbases) {
-				log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "\t\tChecking mutant base " + mutantbase.getId() + ".");
-			//Requied Data
-				MutantFragment mutantfragment = ed.getMutantFragment(mutantbase.getMutantId());
-				FragmentDB fragment = ed.getFragment(mutantfragment.getFragmentId());
-				
-			//Construct Base
-				ed.constructBase(mutantbase.getId());
-				
-			//Tmp Files
-				Path extractedFragment = Files.createTempFile(ed.getTemporaryPath(), "ExperimentTest_", "_fragment");
-				Path extractedMutant = Files.createTempFile(ed.getTemporaryPath(), "ExperimentTest_", "_fragment");
-				Path checkfile = Files.createTempFile(ed.getTemporaryPath(), "ExperimentTest_", "_fragment");
-				
-			//Check Injected Files Valid (txl pretty print)		
-				if(!TXLUtil.prettyPrintSourceFile(mutantbase.getOriginalFragment().getSrcFile(), checkfile, ed.getLanguage())) {
-					log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "\tMutant Base: " + mutantbase.getId() + " (fragment: " + fragment.getId() + ",mutant: " + mutantfragment.getId() + ") File which original fragment was injected into is invalid (improper syntax).");
-					return false;
-				}
-				if(!TXLUtil.prettyPrintSourceFile(mutantbase.getMutantFragment().getSrcFile(), checkfile, ed.getLanguage())) {
-					log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "\tMutant Base: " + mutantbase.getId() + " (fragment: " + fragment.getId() + ",mutant: " + mutantfragment.getId() + ") File which mutant fragment was injected into is invalid (improper syntax).");
-					return false;
-				}
-				
-			//Check Injections (match stored versions)
-				FragmentUtil.extractFragment(mutantbase.getOriginalFragment(), extractedFragment);
-				FragmentUtil.extractFragment(mutantbase.getMutantFragment(), extractedMutant);
-				if(!(FileUtils.contentEquals(extractedFragment.toFile(), fragment.getFragmentFile().toFile()))) {
-					log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "\tMutant Base: " + mutantbase.getId() + " (fragment: " + fragment.getId() + ",mutant: " + mutantfragment.getId() + ") Original fragment was no injected properly (tried to extract it and it does not match original fragment file in output directory).");
-					return false;
-				}
-				if(!(FileUtils.contentEquals(extractedMutant.toFile(), mutantfragment.getFragmentFile().toFile()))) {
-					log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "\tMutant Base: " + mutantbase.getId() + " (fragment: " + fragment.getId() + ",mutant: " + mutantfragment.getId() + ") Mutant fragment was no injected properly (tried to extract it and it does not match mutant fragment file in output directory).");
-					return false;
-				}
-				
-				
-			//Check Mutant Base Contents (match original, except for modified)
-				Path psystem = ed.getSystemPath().toAbsolutePath().normalize();
-				Path pmutantbase = ed.getMutantBasePath().toAbsolutePath().normalize();
-				Path fragmentifile = mutantbase.getOriginalFragment().getSrcFile().toAbsolutePath().normalize();
-				Path mutantifile = mutantbase.getMutantFragment().getSrcFile().toAbsolutePath().normalize();
-				List<Path> ofiles = FileUtil.fileInventory(ed.getSystemPath());
-				List<Path> odirs = FileUtil.directoryInventory(ed.getSystemPath());
-				List<Path> mbfiles = FileUtil.fileInventory(ed.getMutantBasePath());
-				List<Path> mbdirs = FileUtil.directoryInventory(ed.getMutantBasePath());
-				
-				//Check Directories
-					//Mutant base has all the directoreis from original
-				for(Path path : odirs) {
-					Path normalized = pmutantbase.resolve(psystem.relativize(path)).toAbsolutePath().normalize();
-					if(!mbdirs.contains(normalized)) {
-						log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "\tMutant Base: " + mutantbase.getId() + " (fragment: " + fragment.getId() + ",mutant: " + mutantfragment.getId() + ") Is missing a directory from the original system: " + path + ".");
-						return false;
-					}
-				}
-					//Mutant base does not have directories not in original
-				for(Path path : mbdirs) {
-					Path normalized = psystem.resolve(pmutantbase.relativize(path)).toAbsolutePath().normalize();
-					if(!odirs.contains(normalized)) {
-						log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "\tMutant Base: " + mutantbase.getId() + " (fragment: " + fragment.getId() + ",mutant: " + mutantfragment.getId() + ") Has a directory not from the original system: " + path + ".");
-						return false;
-					}
-				}
-				
-				//Check Files
-					//Mutant Base has all files it should, and contents are equal (except for altered)
-				for(Path path : ofiles) {
-					Path normalized = pmutantbase.resolve(psystem.relativize(path)).toAbsolutePath().normalize();
-					if(!mbfiles.contains(normalized)) {
-						log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "\tMutant Base: " + mutantbase.getId() + " (fragment: " + fragment.getId() + ",mutant: " + mutantfragment.getId() + ") Is missing a file from the original system: " + path + ".");
-						return false;
-					}
-					if(!normalized.equals(fragmentifile) && !normalized.equals(mutantifile)) {
-						if(!FileUtils.contentEquals(path.toFile(), normalized.toFile())) {
-							log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "\tMutant Base: " + mutantbase.getId() + " (fragment: " + fragment.getId() + ",mutant: " + mutantfragment.getId() + ") Has a file that was modified that shouldn't have been (wasn't one of the files injected into): " + normalized + ".");
-							return false;
-						}
-					}
-				}
-					//Mutant base should not have extra files
-				for(Path path : mbfiles) {
-					Path normalized = psystem.resolve(pmutantbase.relativize(path)).toAbsolutePath().normalize();
-					if(!ofiles.contains(normalized)) {
-						log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "\tMutant Base: " + mutantbase.getId() + " (fragment: " + fragment.getId() + ",mutant: " + mutantfragment.getId() + ") Has a file not from the original system: " + path + ".");
-						return false;
-					}
-				}
-			}
-			
-			//Check Mutant Bases injection locations
-				//build hash map containing the mutant bases per fragment
-			HashMap<Integer,List<MutantBaseDB>> mutantBasesPerFragment = new HashMap<Integer,List<MutantBaseDB>>();
-			for(MutantBaseDB mutantbase : mutantbases) {
-				MutantFragment mutant = ed.getMutantFragment(mutantbase.getMutantId());
-				FragmentDB fragment = ed.getFragment(mutant.getFragmentId());
-				if(!mutantBasesPerFragment.containsKey(fragment.getId())) {
-					List<MutantBaseDB> list = new LinkedList<MutantBaseDB>();
-					list.add(mutantbase);
-					mutantBasesPerFragment.put(fragment.getId(), list);
-				} else {
-					mutantBasesPerFragment.get(fragment.getId()).add(mutantbase);
-				}
-			}
-			
-			//for each fragment, all injections should be the same (per injection)
-			if(ed.getInjectionNumber() == 0) { //for 1 injection (faster)
-				for(Integer fragmentid : ed.getFragmentIds()) {
-					List<MutantBaseDB> mutantBasesForFragment = mutantBasesPerFragment.get(fragmentid);
-					MutantBaseDB mb = mutantBasesForFragment.get(0);
-					InjectionLocation finject = new InjectionLocation(mb.getOriginalFragment().getSrcFile(), mb.getOriginalFragment().getStartLine());
-					InjectionLocation minject = new InjectionLocation(mb.getMutantFragment().getSrcFile(), mb.getMutantFragment().getStartLine());
-					for(MutantBaseDB mbc: mutantBasesForFragment) {
-						InjectionLocation finjectc = new InjectionLocation(mbc.getOriginalFragment().getSrcFile(), mbc.getOriginalFragment().getStartLine());
-						InjectionLocation minjectc = new InjectionLocation(mbc.getMutantFragment().getSrcFile(), mbc.getMutantFragment().getStartLine());
-						if(!finjectc.equals(finject)) {
-							log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "Fragment " + fragmentid + " is not injected in the same place for all of its generated clones.");
-							return false;
-						}
-						if(!minjectc.equals(minject)) {
-							log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "Fragment " + fragmentid + " mutants are not all injected in the same place.");
-							return false;
-						}
-						
-					}
-				}
-			} else { //for > 1 injections
-				//Sort mutant bases per fragments into per mutator
-				for(Integer fragmentid : ed.getFragmentIds()) {
-					List<MutantBaseDB> mutantBasesForFragment = mutantBasesPerFragment.get(fragmentid);
-					
-					//Sort into hashmap per mutator id
-					HashMap<Integer,LinkedList<MutantBaseDB>> mutantBasesPerMutator = new HashMap<Integer, LinkedList<MutantBaseDB>>();
-					for(MutantBaseDB mb : mutantBasesForFragment) {
-						int mid = ed.getMutantFragment(mb.getMutantId()).getMutatorId();
-						if(!mutantBasesPerMutator.containsKey(mid)) {
-							mutantBasesPerMutator.put(mid, new LinkedList<MutantBaseDB>());
-						}
-						mutantBasesPerMutator.get(mid).add(mb);
-					}
-					
-					//Get list of injection locations from the first mutator
-					List<InjectionLocation> oilocations = new LinkedList<InjectionLocation>();
-					List<InjectionLocation> milocations = new LinkedList<InjectionLocation>();
-					int key = mutantBasesPerMutator.keySet().iterator().next();
-					List<MutantBaseDB> mbs = mutantBasesPerMutator.get(key);
-					for(MutantBaseDB mb : mbs) {
-						oilocations.add(new InjectionLocation(mb.getOriginalFragment().getSrcFile(), mb.getOriginalFragment().getStartLine()));
-						milocations.add(new InjectionLocation(mb.getMutantFragment().getSrcFile(), mb.getMutantFragment().getStartLine()));
-					}
-					
-					//Check injection locations not repeated
-					List<InjectionLocation> oilocations_checkrepeat = new LinkedList<InjectionLocation>(oilocations);
-					List<InjectionLocation> milocations_checkrepeat = new LinkedList<InjectionLocation>(milocations);
-					InjectionLocation repeat;
-					
-					while(oilocations_checkrepeat.size() != 0) {
-						repeat = oilocations_checkrepeat.remove(0);
-						if(oilocations_checkrepeat.contains(repeat)) {
-							log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "Fragment " + fragmentid + " has an injection location repeated (original fragment).");
-							return false;
-						}
-					}
-					
-					while(milocations_checkrepeat.size() != 0) {
-						repeat = milocations_checkrepeat.remove(0);
-						if(milocations_checkrepeat.contains(repeat)) {
-							log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "Fragment " + fragmentid + " has an injection location repeated (mutant fragment).");
-							return false;
-						}
-					}
-					
-					//Check for each mutator
-					for(int i : ed.getMutatorIds()) {
-						List<MutantBaseDB> mbdbs = mutantBasesPerMutator.get(i);
-						
-						//Get injection locations for this mutator
-						List<InjectionLocation> coilocations = new LinkedList<InjectionLocation>();
-						List<InjectionLocation> cmilocations = new LinkedList<InjectionLocation>();
-						for(MutantBaseDB mb : mbdbs) {
-							coilocations.add(new InjectionLocation(mb.getOriginalFragment().getSrcFile(), mb.getOriginalFragment().getStartLine()));
-							cmilocations.add(new InjectionLocation(mb.getMutantFragment().getSrcFile(), mb.getMutantFragment().getStartLine()));
-						}
-						
-						//Check the injection locations for this mutator and for the reference are the same sets
-						for(InjectionLocation il : coilocations) {
-							if(!oilocations.contains(il)) {
-								log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "Fragment " + fragmentid + " multiple injections is incorrect.  Original injection locations not correct.");
-								return false;
-							}
-						}
-						
-						for(InjectionLocation il : oilocations) {
-							if(!coilocations.contains(il)) {
-								log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "Fragment " + fragmentid + " multiple injections is incorrect.  Original injection locations not correct.");
-								return false;
-							}
-						}
-						
-						for(InjectionLocation il : cmilocations) {
-							if(!milocations.contains(il)) {
-								log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "Fragment " + fragmentid + " multiple injections is incorrect.  Mutant injection locations not correct.");
-								return false;
-							}
-						}
-						
-						for(InjectionLocation il : milocations) {
-							if(!cmilocations.contains(il)) {
-								log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "Fragment " + fragmentid + " multiple injections is incorrect.  Mutant injection locations not correct.");
-								return false;
-							}
-						}
-						
-					}
-				}
-			}
-			
-			return true;
-		}  catch (Exception e) {
-			e.printStackTrace();
-			log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): Generation validation failed, some component threw an exception (see exception log previous).");
-			return false;
-		}
-	}
+//	public boolean verifyManualGeneration() throws SQLException {
+//		try {
+//			log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "Start: Verifying generated data.");
+//				
+//			ExperimentData ed = this.getExperimentData();
+//			List<MutatorDB> mutators = ed.getMutators();
+//		
+//		//Fragments
+//			//TODO
+//			
+//		//Mutant Fragments
+//			//TODO
+//			
+//		//Mutant Bases
+//			log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "\tVerifying mutantbases...");
+//			List<MutantBaseDB> mutantbases = ed.getMutantBases();
+//			
+//			//Check Mutant Bases (individually)
+//			for(MutantBaseDB mutantbase : mutantbases) {
+//				log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "\t\tChecking mutant base " + mutantbase.getId() + ".");
+//			//Requied Data
+//				MutantFragment mutantfragment = ed.getMutantFragment(mutantbase.getMutantId());
+//				FragmentDB fragment = ed.getFragment(mutantfragment.getFragmentId());
+//				
+//			//Construct Base
+//				ed.constructBase(mutantbase.getId());
+//				
+//			//Tmp Files
+//				Path extractedFragment = Files.createTempFile(ed.getTemporaryPath(), "ExperimentTest_", "_fragment");
+//				Path extractedMutant = Files.createTempFile(ed.getTemporaryPath(), "ExperimentTest_", "_fragment");
+//				Path checkfile = Files.createTempFile(ed.getTemporaryPath(), "ExperimentTest_", "_fragment");
+//				
+//			//Check Injected Files Valid (txl pretty print)		
+//				if(!TXLUtil.prettyPrintSourceFile(mutantbase.getOriginalFragment().getSrcFile(), checkfile, ed.getLanguage())) {
+//					log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "\tMutant Base: " + mutantbase.getId() + " (fragment: " + fragment.getId() + ",mutant: " + mutantfragment.getId() + ") File which original fragment was injected into is invalid (improper syntax).");
+//					return false;
+//				}
+//				if(!TXLUtil.prettyPrintSourceFile(mutantbase.getMutantFragment().getSrcFile(), checkfile, ed.getLanguage())) {
+//					log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "\tMutant Base: " + mutantbase.getId() + " (fragment: " + fragment.getId() + ",mutant: " + mutantfragment.getId() + ") File which mutant fragment was injected into is invalid (improper syntax).");
+//					return false;
+//				}
+//				
+//			//Check Injections (match stored versions)
+//				FragmentUtil.extractFragment(mutantbase.getOriginalFragment(), extractedFragment);
+//				FragmentUtil.extractFragment(mutantbase.getMutantFragment(), extractedMutant);
+//				if(!(FileUtils.contentEquals(extractedFragment.toFile(), fragment.getFragmentFile().toFile()))) {
+//					log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "\tMutant Base: " + mutantbase.getId() + " (fragment: " + fragment.getId() + ",mutant: " + mutantfragment.getId() + ") Original fragment was no injected properly (tried to extract it and it does not match original fragment file in output directory).");
+//					return false;
+//				}
+//				if(!(FileUtils.contentEquals(extractedMutant.toFile(), mutantfragment.getFragmentFile().toFile()))) {
+//					log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "\tMutant Base: " + mutantbase.getId() + " (fragment: " + fragment.getId() + ",mutant: " + mutantfragment.getId() + ") Mutant fragment was no injected properly (tried to extract it and it does not match mutant fragment file in output directory).");
+//					return false;
+//				}
+//				
+//				
+//			//Check Mutant Base Contents (match original, except for modified)
+//				Path psystem = ed.getSystemPath().toAbsolutePath().normalize();
+//				Path pmutantbase = ed.getMutantBasePath().toAbsolutePath().normalize();
+//				Path fragmentifile = mutantbase.getOriginalFragment().getSrcFile().toAbsolutePath().normalize();
+//				Path mutantifile = mutantbase.getMutantFragment().getSrcFile().toAbsolutePath().normalize();
+//				List<Path> ofiles = FileUtil.fileInventory(ed.getSystemPath());
+//				List<Path> odirs = FileUtil.directoryInventory(ed.getSystemPath());
+//				List<Path> mbfiles = FileUtil.fileInventory(ed.getMutantBasePath());
+//				List<Path> mbdirs = FileUtil.directoryInventory(ed.getMutantBasePath());
+//				
+//				//Check Directories
+//					//Mutant base has all the directoreis from original
+//				for(Path path : odirs) {
+//					Path normalized = pmutantbase.resolve(psystem.relativize(path)).toAbsolutePath().normalize();
+//					if(!mbdirs.contains(normalized)) {
+//						log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "\tMutant Base: " + mutantbase.getId() + " (fragment: " + fragment.getId() + ",mutant: " + mutantfragment.getId() + ") Is missing a directory from the original system: " + path + ".");
+//						return false;
+//					}
+//				}
+//					//Mutant base does not have directories not in original
+//				for(Path path : mbdirs) {
+//					Path normalized = psystem.resolve(pmutantbase.relativize(path)).toAbsolutePath().normalize();
+//					if(!odirs.contains(normalized)) {
+//						log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "\tMutant Base: " + mutantbase.getId() + " (fragment: " + fragment.getId() + ",mutant: " + mutantfragment.getId() + ") Has a directory not from the original system: " + path + ".");
+//						return false;
+//					}
+//				}
+//				
+//				//Check Files
+//					//Mutant Base has all files it should, and contents are equal (except for altered)
+//				for(Path path : ofiles) {
+//					Path normalized = pmutantbase.resolve(psystem.relativize(path)).toAbsolutePath().normalize();
+//					if(!mbfiles.contains(normalized)) {
+//						log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "\tMutant Base: " + mutantbase.getId() + " (fragment: " + fragment.getId() + ",mutant: " + mutantfragment.getId() + ") Is missing a file from the original system: " + path + ".");
+//						return false;
+//					}
+//					if(!normalized.equals(fragmentifile) && !normalized.equals(mutantifile)) {
+//						if(!FileUtils.contentEquals(path.toFile(), normalized.toFile())) {
+//							log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "\tMutant Base: " + mutantbase.getId() + " (fragment: " + fragment.getId() + ",mutant: " + mutantfragment.getId() + ") Has a file that was modified that shouldn't have been (wasn't one of the files injected into): " + normalized + ".");
+//							return false;
+//						}
+//					}
+//				}
+//					//Mutant base should not have extra files
+//				for(Path path : mbfiles) {
+//					Path normalized = psystem.resolve(pmutantbase.relativize(path)).toAbsolutePath().normalize();
+//					if(!ofiles.contains(normalized)) {
+//						log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "\tMutant Base: " + mutantbase.getId() + " (fragment: " + fragment.getId() + ",mutant: " + mutantfragment.getId() + ") Has a file not from the original system: " + path + ".");
+//						return false;
+//					}
+//				}
+//			}
+//			
+//			//Check Mutant Bases injection locations
+//				//build hash map containing the mutant bases per fragment
+//			HashMap<Integer,List<MutantBaseDB>> mutantBasesPerFragment = new HashMap<Integer,List<MutantBaseDB>>();
+//			for(MutantBaseDB mutantbase : mutantbases) {
+//				MutantFragment mutant = ed.getMutantFragment(mutantbase.getMutantId());
+//				FragmentDB fragment = ed.getFragment(mutant.getFragmentId());
+//				if(!mutantBasesPerFragment.containsKey(fragment.getId())) {
+//					List<MutantBaseDB> list = new LinkedList<MutantBaseDB>();
+//					list.add(mutantbase);
+//					mutantBasesPerFragment.put(fragment.getId(), list);
+//				} else {
+//					mutantBasesPerFragment.get(fragment.getId()).add(mutantbase);
+//				}
+//			}
+//			
+//			//for each fragment, all injections should be the same (per injection)
+//			if(ed.getInjectionNumber() == 0) { //for 1 injection (faster)
+//				for(Integer fragmentid : ed.getFragmentIds()) {
+//					List<MutantBaseDB> mutantBasesForFragment = mutantBasesPerFragment.get(fragmentid);
+//					MutantBaseDB mb = mutantBasesForFragment.get(0);
+//					InjectionLocation finject = new InjectionLocation(mb.getOriginalFragment().getSrcFile(), mb.getOriginalFragment().getStartLine());
+//					InjectionLocation minject = new InjectionLocation(mb.getMutantFragment().getSrcFile(), mb.getMutantFragment().getStartLine());
+//					for(MutantBaseDB mbc: mutantBasesForFragment) {
+//						InjectionLocation finjectc = new InjectionLocation(mbc.getOriginalFragment().getSrcFile(), mbc.getOriginalFragment().getStartLine());
+//						InjectionLocation minjectc = new InjectionLocation(mbc.getMutantFragment().getSrcFile(), mbc.getMutantFragment().getStartLine());
+//						if(!finjectc.equals(finject)) {
+//							log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "Fragment " + fragmentid + " is not injected in the same place for all of its generated clones.");
+//							return false;
+//						}
+//						if(!minjectc.equals(minject)) {
+//							log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "Fragment " + fragmentid + " mutants are not all injected in the same place.");
+//							return false;
+//						}
+//						
+//					}
+//				}
+//			} else { //for > 1 injections
+//				//Sort mutant bases per fragments into per mutator
+//				for(Integer fragmentid : ed.getFragmentIds()) {
+//					List<MutantBaseDB> mutantBasesForFragment = mutantBasesPerFragment.get(fragmentid);
+//					
+//					//Sort into hashmap per mutator id
+//					HashMap<Integer,LinkedList<MutantBaseDB>> mutantBasesPerMutator = new HashMap<Integer, LinkedList<MutantBaseDB>>();
+//					for(MutantBaseDB mb : mutantBasesForFragment) {
+//						int mid = ed.getMutantFragment(mb.getMutantId()).getMutatorId();
+//						if(!mutantBasesPerMutator.containsKey(mid)) {
+//							mutantBasesPerMutator.put(mid, new LinkedList<MutantBaseDB>());
+//						}
+//						mutantBasesPerMutator.get(mid).add(mb);
+//					}
+//					
+//					//Get list of injection locations from the first mutator
+//					List<InjectionLocation> oilocations = new LinkedList<InjectionLocation>();
+//					List<InjectionLocation> milocations = new LinkedList<InjectionLocation>();
+//					int key = mutantBasesPerMutator.keySet().iterator().next();
+//					List<MutantBaseDB> mbs = mutantBasesPerMutator.get(key);
+//					for(MutantBaseDB mb : mbs) {
+//						oilocations.add(new InjectionLocation(mb.getOriginalFragment().getSrcFile(), mb.getOriginalFragment().getStartLine()));
+//						milocations.add(new InjectionLocation(mb.getMutantFragment().getSrcFile(), mb.getMutantFragment().getStartLine()));
+//					}
+//					
+//					//Check injection locations not repeated
+//					List<InjectionLocation> oilocations_checkrepeat = new LinkedList<InjectionLocation>(oilocations);
+//					List<InjectionLocation> milocations_checkrepeat = new LinkedList<InjectionLocation>(milocations);
+//					InjectionLocation repeat;
+//					
+//					while(oilocations_checkrepeat.size() != 0) {
+//						repeat = oilocations_checkrepeat.remove(0);
+//						if(oilocations_checkrepeat.contains(repeat)) {
+//							log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "Fragment " + fragmentid + " has an injection location repeated (original fragment).");
+//							return false;
+//						}
+//					}
+//					
+//					while(milocations_checkrepeat.size() != 0) {
+//						repeat = milocations_checkrepeat.remove(0);
+//						if(milocations_checkrepeat.contains(repeat)) {
+//							log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "Fragment " + fragmentid + " has an injection location repeated (mutant fragment).");
+//							return false;
+//						}
+//					}
+//					
+//					//Check for each mutator
+//					for(int i : ed.getMutatorIds()) {
+//						List<MutantBaseDB> mbdbs = mutantBasesPerMutator.get(i);
+//						
+//						//Get injection locations for this mutator
+//						List<InjectionLocation> coilocations = new LinkedList<InjectionLocation>();
+//						List<InjectionLocation> cmilocations = new LinkedList<InjectionLocation>();
+//						for(MutantBaseDB mb : mbdbs) {
+//							coilocations.add(new InjectionLocation(mb.getOriginalFragment().getSrcFile(), mb.getOriginalFragment().getStartLine()));
+//							cmilocations.add(new InjectionLocation(mb.getMutantFragment().getSrcFile(), mb.getMutantFragment().getStartLine()));
+//						}
+//						
+//						//Check the injection locations for this mutator and for the reference are the same sets
+//						for(InjectionLocation il : coilocations) {
+//							if(!oilocations.contains(il)) {
+//								log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "Fragment " + fragmentid + " multiple injections is incorrect.  Original injection locations not correct.");
+//								return false;
+//							}
+//						}
+//						
+//						for(InjectionLocation il : oilocations) {
+//							if(!coilocations.contains(il)) {
+//								log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "Fragment " + fragmentid + " multiple injections is incorrect.  Original injection locations not correct.");
+//								return false;
+//							}
+//						}
+//						
+//						for(InjectionLocation il : cmilocations) {
+//							if(!milocations.contains(il)) {
+//								log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "Fragment " + fragmentid + " multiple injections is incorrect.  Mutant injection locations not correct.");
+//								return false;
+//							}
+//						}
+//						
+//						for(InjectionLocation il : milocations) {
+//							if(!cmilocations.contains(il)) {
+//								log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): " + "Fragment " + fragmentid + " multiple injections is incorrect.  Mutant injection locations not correct.");
+//								return false;
+//							}
+//						}
+//						
+//					}
+//				}
+//			}
+//			
+//			return true;
+//		}  catch (Exception e) {
+//			e.printStackTrace();
+//			log.println("[" + Calendar.getInstance().getTime() + "] (verifyManualGeneration): Generation validation failed, some component threw an exception (see exception log previous).");
+//			return false;
+//		}
+//	}
 	
 	public boolean verifyAutomaticGeneration() throws SQLException {
 		try {
@@ -2300,7 +2528,7 @@ createbase_attempt:
 	
 //-- Evaluation Phase -------------------------------------------------------------------------------------------------
 	
-	public boolean evaluateTools(boolean reuseReports) throws SQLException, IOException {
+	public boolean evaluateTools() throws SQLException, IOException {
 		if(ed.getCurrentStage() != ExperimentData.EVALUATION_SETUP_STAGE) {
 			throw new IllegalStateException("Evaluation must be done in evaluation setup phase.");
 		}
@@ -2308,15 +2536,6 @@ createbase_attempt:
 		assert(ed.getCurrentStage() == ExperimentData.EVALUATION_STAGE);
 
 		log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): " + "Start: Evaluate Tools.");
-		
-		if(!reuseReports) {
-			log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): " + "Deleting previous evaluation (CloneReports/UnitRecall/UnitPrecision).");
-			ed.deleteCloneDetectionReports();
-		} else {
-			log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): " + "Deleting previous evaluation (UnitRecall/UnitPrecision).");
-		}
-		ed.deleteUnitRecalls();
-		ed.deleteUnitPrecisions();
 		
 		//Needed experiment properties
 		int language = ed.getLanguage();
@@ -2336,6 +2555,7 @@ createbase_attempt:
 		int num_tools = ed.numTools();
 		int count_tools = 0;
 		
+		//for each mutant base, for each tool
 		for(MutantBaseDB mutantbase : ed.getMutantBases()) {
 			count_mutantbases++;
 			count_tools = 0;
@@ -2347,21 +2567,25 @@ createbase_attempt:
 				
 				
 				//Build Mutant Base
-				log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): " + "\t\tConstructing mutant base (fresh copy)...");
-				try {
-					ed.constructBase(mutantbase.getId());
-				} catch (FileNotFoundException e) {
-					log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): Error: When constructing the mutant base, could not find the files to inject into.  Either you have tampered with the output directory, or bug.");
-					e.printStackTrace();
-					return false;
-				} catch (IllegalArgumentException e) {
-					log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): Error: Could not construct mutant base because it does not exist (bug!).");
-					e.printStackTrace();
-					return false;
-				} catch (IOException e) {
-					log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): Error: When constructing the mutant base, an IO exception(error) occured.  Either you have tampered with the output directory, or bug.");
-					e.printStackTrace();
-					return false;
+				if(!ed.existsCloneDetectionReport(tool.getId(), mutantbase.getId()) || !ed.existsUnitRecall(tool.getId(), mutantbase.getId()) || !ed.existsUnitPrecision(tool.getId(), mutantbase.getId())) {
+					log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): " + "\t\tConstructing mutant base (fresh copy)...");
+					try {
+						ed.constructBase(mutantbase.getId());
+					} catch (FileNotFoundException e) {
+						log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): Error: When constructing the mutant base, could not find the files to inject into.  Either you have tampered with the output directory, or bug.");
+						e.printStackTrace();
+						return false;
+					} catch (IllegalArgumentException e) {
+						log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): Error: Could not construct mutant base because it does not exist (bug!).");
+						e.printStackTrace();
+						return false;
+					} catch (IOException e) {
+						log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): Error: When constructing the mutant base, an IO exception(error) occured.  Either you have tampered with the output directory, or bug.");
+						e.printStackTrace();
+						return false;
+					}
+				} else {
+					//log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): " + "\t\tSkipping construction of mutant base, evaluation already exists for this tool and mutant system.");
 				}
 				
 				//Run tool only if have not in past
@@ -2431,92 +2655,102 @@ createbase_attempt:
 			//Evaluate Unit Recall
 				//Evaluate
 				log.print("[" + Calendar.getInstance().getTime() + "] (evaluateTools): " + "\t\tCalculating unit recall... ");
-				UnitRecall ur;
-				try {
-					ur = Experiment.evaluateRecall(cdr, tool, mutantbase, recallRequiredSimilarity, subsumeTolerance, language, log);
-				} catch (InputMismatchException e) {
-					log.println();
-					log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): Error: Clone detection report had illegal format.");
-					e.printStackTrace();
-					return false;
-				} catch (FileNotFoundException e) {
-					log.println();
-					log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): Error: Clone detection report file was missing.  Did you mess with the output directory?");
-					e.printStackTrace();
-					return false;
-				} catch (IOException e) {
-					log.println();
-					log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): Error: IO error while reading the clone detection report.");
-					e.printStackTrace();
-					return false;
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-					log.println();
-					log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): Error: While evaluating unit recall, a required process was interrupted.  Probably a process required by the clone verifiers.");
-					return false;
+				if(!ed.existsUnitRecall(tool.getId(), mutantbase.getId())) {
+					UnitRecall ur;
+					try {
+						ur = Experiment.evaluateRecall(cdr, tool, mutantbase, recallRequiredSimilarity, subsumeTolerance, language, log);
+					} catch (InputMismatchException e) {
+						log.println();
+						log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): Error: Clone detection report had illegal format.");
+						e.printStackTrace();
+						return false;
+					} catch (FileNotFoundException e) {
+						log.println();
+						log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): Error: Clone detection report file was missing.  Did you mess with the output directory?");
+						e.printStackTrace();
+						return false;
+					} catch (IOException e) {
+						log.println();
+						log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): Error: IO error while reading the clone detection report.");
+						e.printStackTrace();
+						return false;
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+						log.println();
+						log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): Error: While evaluating unit recall, a required process was interrupted.  Probably a process required by the clone verifiers.");
+						return false;
+					}
+					
+					//Add To Database
+					ed.deleteUnitRecall(tool.getId(), mutantbase.getId());
+					try {
+						ed.createUnitRecall(tool.getId(), mutantbase.getId(), ur.getRecall(), ur.getClone());
+					} catch (IllegalArgumentException e) {
+						log.println();
+						log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): Error: When unit recall was added to database, illegal argument was specified (probably a bug!!).");
+						e.printStackTrace();
+						return false;
+					} catch (NullPointerException e) {
+						log.println();
+						log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): Error: When unit recall was added to database, clone was null when recall was not 0.0 (probably a bug!!).");
+						e.printStackTrace();
+						return false;
+					}
+					log.println(ur.getRecall());
+				} else {
+					UnitRecall ur = ed.getUnitRecall(tool.getId(), mutantbase.getId());
+					log.println(ur.getRecall() + " (found calculation from previous evaluation).");
 				}
-				
-				//Add To Database
-				ed.deleteUnitRecall(tool.getId(), mutantbase.getId());
-				try {
-					ed.createUnitRecall(tool.getId(), mutantbase.getId(), ur.getRecall(), ur.getClone());
-				} catch (IllegalArgumentException e) {
-					log.println();
-					log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): Error: When unit recall was added to database, illegal argument was specified (probably a bug!!).");
-					e.printStackTrace();
-					return false;
-				} catch (NullPointerException e) {
-					log.println();
-					log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): Error: When unit recall was added to database, clone was null when recall was not 0.0 (probably a bug!!).");
-					e.printStackTrace();
-					return false;
-				}
-				log.println(ur.getRecall());
 				
 			//Evaluate Unit Precision
 				//Evaluate
 				log.print("[" + Calendar.getInstance().getTime() + "] (evaluateTools): " + "\t\tCalculating unit precision... ");
-				UnitPrecision up;
-				try {
-					up = Experiment.evaluatePrecision(cdr, tool, mutantbase, precisionRequiredSimilarity, subsumeTolerance, language, log);
-				} catch (InputMismatchException e) {
-					log.println();
-					log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): Error: Clone detection report had illegal format.");
-					e.printStackTrace();
-					return false;
-				} catch (FileNotFoundException e) {
-					log.println();
-					log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): Error: Clone detection report file was missing.  Did you mess with the output directory?");
-					e.printStackTrace();
-					return false;
-				} catch (IOException e) {
-					log.println();
-					log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): Error: IO error while reading the clone detection report.");
-					e.printStackTrace();
-					return false;
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-					log.println();
-					log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): Error: While evaluating unit recall, a required process was interrupted.  Probably a process required by the clone verifiers.");
-					return false;
+				if(!ed.existsUnitPrecision(tool.getId(), mutantbase.getId())) {
+					UnitPrecision up;
+					try {
+						up = Experiment.evaluatePrecision(cdr, tool, mutantbase, precisionRequiredSimilarity, subsumeTolerance, language, log);
+					} catch (InputMismatchException e) {
+						log.println();
+						log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): Error: Clone detection report had illegal format.");
+						e.printStackTrace();
+						return false;
+					} catch (FileNotFoundException e) {
+						log.println();
+						log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): Error: Clone detection report file was missing.  Did you mess with the output directory?");
+						e.printStackTrace();
+						return false;
+					} catch (IOException e) {
+						log.println();
+						log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): Error: IO error while reading the clone detection report.");
+						e.printStackTrace();
+						return false;
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+						log.println();
+						log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): Error: While evaluating unit recall, a required process was interrupted.  Probably a process required by the clone verifiers.");
+						return false;
+					}
+					
+					//Add To Database
+					ed.deleteUnitPrecision(tool.getId(), mutantbase.getId());
+					try {
+						ed.createUnitPrecision(tool.getId(), mutantbase.getId(), up.getPrecision(), up.getClones());
+					} catch (IllegalArgumentException e) {
+						log.println();
+						log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): Error: When unit precision was added to database, illegal argument was specified (probably a bug!!).");
+						e.printStackTrace();
+						return false;
+					} catch (NullPointerException e) {
+						log.println();
+						log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): Error: When unit precision was added to database, clone was null when recall was not 0.0 (probably a bug!!).");
+						e.printStackTrace();
+						return false;
+					}
+					log.println(up.getPrecision() + " (from " + up.getClones().size() + " clones capturing one of the injected fragments).");
+				} else {
+					UnitPrecision up = ed.getUnitPrecision(tool.getId(), mutantbase.getId());
+					log.println(up.getPrecision() + " (found calculation from previous evaluation).");
 				}
-				
-				//Add To Database
-				ed.deleteUnitPrecision(tool.getId(), mutantbase.getId());
-				try {
-					ed.createUnitPrecision(tool.getId(), mutantbase.getId(), up.getPrecision(), up.getClones());
-				} catch (IllegalArgumentException e) {
-					log.println();
-					log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): Error: When unit precision was added to database, illegal argument was specified (probably a bug!!).");
-					e.printStackTrace();
-					return false;
-				} catch (NullPointerException e) {
-					log.println();
-					log.println("[" + Calendar.getInstance().getTime() + "] (evaluateTools): Error: When unit precision was added to database, clone was null when recall was not 0.0 (probably a bug!!).");
-					e.printStackTrace();
-					return false;
-				}
-				log.println(up.getPrecision() + " (from " + up.getClones().size() + " clones capturing one of the injected fragments)");
 				
 			}
 		}
@@ -2726,6 +2960,160 @@ cdrloop:	while((clone = cdr.next()) != null) {
 	}
 	
 //-- Output Results ---------------------------------------------------------------------------------------------------
+	
+	public Path generateReport(Path report) throws SQLException, FileAlreadyExistsException, IOException {
+		if(ed.getCurrentStage() != ExperimentData.RESULTS_STAGE) {
+			throw new IllegalStateException("Can only generate report in the results stage.");
+		}
+		if(Files.exists(report)) {
+			throw new FileAlreadyExistsException("Must specify a non-existing file.");
+		}
+		
+		DecimalFormat df = new DecimalFormat("0.0000");
+		
+		Files.createFile(report);
+		PrintStream out = new PrintStream(report.toFile());
+		
+		
+		out.println("********************************************************************************");
+		out.println("****************************   Evaluation  Report   ****************************");
+		out.println("********************************************************************************");
+		out.println("Experiment: " + ed.getPath());
+		out.println("");
+		out.println("");
+		
+		out.println("********************************************************************************");
+		out.println("                                     Corpus                                     ");
+		out.println("********************************************************************************");
+		
+		out.println("================================================================================");
+		out.println("    Properties:");
+		out.println("================================================================================");
+		out.println("                          Language: " + ExperimentSpecification.languageToString(ed.getLanguage()));
+		out.println("                 Clone Granularity: " + ExperimentSpecification.fragmentTypeToString(ed.getFragmentType()));
+		out.println("                     Max Fragments: " + ed.getMaxFragments());
+		out.println("                  Injection Number: " + ed.getInjectionNumber());
+		out.println("          Minimum Clone Similarity: " + (1 - ed.getAllowedFragmentDifference()));
+		out.println("              Mutation Containment: " + ed.getMutationContainment());
+		out.println(" Minimum Clone Fragment Size Lines: " + ed.getFragmentMinimumSizeLines());
+		out.println(" Maximum Clone Fragment Size Lines: " + ed.getFragmentMaximumSizeLines());
+		out.println("Minimum Clone Fragment Size Tokens: " + ed.getFragmentMinimumSizeTokens());
+		out.println("Maximum Clone Fragment Size Tokens: " + ed.getFragmentMaximumSizeTokens());
+		out.println("                 Operator Attempts: " + ed.getOperatorAttempts());
+		out.println("                  Mutator Attempts: " + ed.getMutationAttempts());
+		out.println("--------------------------------------------------------------------------------");
+		out.println("");
+		
+		out.println("================================================================================");
+		out.println("    Statistics:");
+		out.println("================================================================================");
+		out.println("Number Selected Fragments: " + ed.numFragments());
+		out.println("Number of Geneated Clones: " + ed.numMutantFragments());
+		out.println(" Number of Mutant Systems: " + ed.numMutantBases());
+		out.println("--------------------------------------------------------------------------------");
+		out.println("");
+		
+		out.println("================================================================================");
+		out.println("    Mutation Operators:");
+		out.println("================================================================================");
+		for(OperatorDB operator : ed.getOperators()) {
+			out.println("[" + operator.getId() + "]");
+			out.println("        Name: " + operator.getName());
+			out.println("  Description: " + operator.getDescription());
+			out.println("  Clone Type: " + operator.getTargetCloneType());
+			out.println("  Executable: " + operator.getMutator());
+		}
+		out.println("--------------------------------------------------------------------------------");
+		out.println("");
+		
+		out.println("================================================================================");
+		out.println("    Mutators:");
+		out.println("================================================================================");
+		for(MutatorDB mutator : ed.getMutators()) {
+			out.println("[" + mutator.getId() + "]");
+			out.println("    Description: " + mutator.getDescription());
+			out.println("     Clone Type: " + mutator.getTargetCloneType());
+			out.print  ("  Operator List: ");
+			for(OperatorDB operator : mutator.getOperators()) {
+				out.print(operator.getId() + " ");
+			}
+			out.println("");
+		}
+		out.println("--------------------------------------------------------------------------------");
+		out.println("");
+		out.println("");
+		
+		out.println("********************************************************************************");
+		out.println("                              Evaluation  Settings                              ");
+		out.println("********************************************************************************");
+		
+		out.println("================================================================================");
+		out.println("    Properties:");
+		out.println("================================================================================");
+		out.println("            Subsume Tolerance: " + ed.getSubsumeMatcherTolerance());
+		out.println("   Recall Required Similarity: " + ed.getRecallRequiredSimilarity());
+		out.println("Precision Required Similarity: " + ed.getPrecisionRequiredSimilarity());
+		out.println("--------------------------------------------------------------------------------");
+		out.println("");
+		
+		out.println("================================================================================");
+		out.println("    Subject Tools:");
+		out.println("================================================================================");
+		for(ToolDB t : ed.getTools()) {
+		out.println("[" + t.getId() + "]");
+		out.println("         Name: " + t.getName());
+		out.println("  Description: " + t.getDescription());
+		out.println("  Install Dir: " + t.getDirectory());
+		out.println("  Tool Runner: " + t.getToolRunner());
+		}
+		out.println("--------------------------------------------------------------------------------");
+		out.println("");
+		
+		out.println("********************************************************************************");
+		out.println("                                  Tool Results                                  ");
+		out.println("********************************************************************************");
+		for(ToolDB tool : ed.getTools()) {
+			double type1r = getRecallForCloneType(tool.getId(), 1);
+			double type2r = getRecallForCloneType(tool.getId(), 2);
+			double type3r = getRecallForCloneType(tool.getId(), 3);
+			double type1p = getPrecisionForCloneType(tool.getId(), 1);
+			double type2p = getPrecisionForCloneType(tool.getId(), 2);
+			double type3p = getPrecisionForCloneType(tool.getId(), 3);
+			
+			out.println("[" + tool.getId() + "] - " + tool.getName());
+			out.println("  Per Type:");
+			if(type1r >= 0) {
+			out.println("    1 - Recall: " + df.format(type1r) + ", Precision: " + df.format(type1p));
+			}
+			if(type2r >= 0) {
+			out.println("    2 - Recall: " + df.format(type2r) + ", Precision: " + df.format(type2p));
+			}
+			if(type3r >= 0) {
+			out.println("    3 - Recall: " + df.format(type3r) + ", Precision: " + df.format(type3p));
+			}
+			out.println("  Per Mutator:");
+			for(MutatorDB mutator : getMutators()) {
+				double recall = getRecallForMutator(tool.getId(), mutator.getId());
+				double precision = getPrecisionForMutator(tool.getId(), mutator.getId());
+				out.println("    " + mutator.getId() + " - Recall: " + df.format(recall) + ", Precision: " + df.format(precision));
+			}
+			out.println("  Per Mutation Operator:");
+			for(OperatorDB operator : getOperators()) {
+				double recall = getRecallForOperator(tool.getId(), operator.getId());
+				double precision = getPrecisionForOperator(tool.getId(), operator.getId());
+				out.println("    " + operator.getId() + " - Recall: " + df.format(recall) + ", Precision: " + df.format(precision));
+			}
+		}
+		out.println("--------------------------------------------------------------------------------");
+		out.println("");
+		out.println("********************************************************************************");
+		out.println("********************************************************************************");
+		
+		
+		out.flush();
+		out.close();
+		return report;
+	}
 	
 	public boolean outputResults() throws SQLException, IllegalStateException {
 		if(ed.getCurrentStage() != ExperimentData.RESULTS_STAGE) {
