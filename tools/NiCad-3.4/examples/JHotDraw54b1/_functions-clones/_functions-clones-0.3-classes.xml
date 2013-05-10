@@ -1,7 +1,7 @@
 <clones>
 <systeminfo processor="nicad3" system="_" granularity="unctions" threshold="30%" minlines="10" maxlines="2500"/>
 <cloneinfo npcs="2886" npairs="41"/>
-<runinfo ncompares="39527" cputime="30000"/>
+<runinfo ncompares="39527" cputime="180000"/>
 <classinfo nclasses="24"/>
 
 <class classid="1" nclones="2" nlines="42" similarity="71">
