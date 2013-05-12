@@ -139,7 +139,7 @@ public class ExperimentData {
 		if(!Files.isDirectory(repository)) {
 			throw new IllegalArgumentException("repository is not a directory.");
 		}
-		if(ExperimentSpecification.isLanguageSupported(language)) {
+		if(!ExperimentSpecification.isLanguageSupported(language)) {
 			throw new IllegalArgumentException("Language is not supported.");
 		}
 		

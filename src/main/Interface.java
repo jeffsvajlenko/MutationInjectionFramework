@@ -294,7 +294,7 @@ root_menu_create_experiment_get_source_repository_dir:
 		out.print("--------------------------------------------------------------------------------");
 		in.readLine();
 		
-		ExperimentSpecification es = new ExperimentSpecification(exp_dir, sub_dir, rep_dir,language);
+		ExperimentSpecification es = new ExperimentSpecification(exp_dir, sub_dir, rep_dir, language);
 		try {
 			experiment = Experiment.createAutomaticExperiment(es, System.out);
 		} catch (IllegalArgumentException | SQLException | InterruptedException | ArtisticStyleFailedException | FileSanetizationFailedException e) {
