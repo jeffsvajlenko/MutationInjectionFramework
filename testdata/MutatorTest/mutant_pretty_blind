@@ -9,8 +9,8 @@ public X X (X X) {
     } else {
         X.X (X.X (0) + X.X ());
     }
-    X.X (X.X (X.X));
     X.X (X.X () != X && X.X (X.X));
+    X.X (X.X (0) + X.X ());
     X.X ().X ();
     X.X (X);
     X.X (X.X.X ());

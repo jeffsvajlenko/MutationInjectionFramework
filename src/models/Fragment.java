@@ -79,7 +79,7 @@ public class Fragment {
 	 * @param relaxer The number of lines of 'another' that this fragmnet is allowed to miss while still being considered to have subsumed it.
 	 * @return True if this fragment subsumes 'another'.
 	 */
-	private boolean subsumesHelper(Fragment another, int relaxer){
+	public boolean subsumes(Fragment another, int relaxer){
 		if(this.getSrcFile().toAbsolutePath().normalize().equals(another.getSrcFile().toAbsolutePath().normalize()) 
 				&& this.startLine - relaxer <= another.getStartLine() 
 				&& this.getEndLine() + relaxer >= another.getEndLine()){
@@ -110,7 +110,7 @@ public class Fragment {
 		int size = another.endLine - another.startLine + 1;
 		int relaxer = (int)(size * tolerance);
 		
-		return subsumesHelper(another, relaxer);
+		return subsumes(another, relaxer);
 	}
 	
 	public boolean equals(Object obj) {

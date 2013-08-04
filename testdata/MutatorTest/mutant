@@ -14,17 +14,17 @@
             }
             else
             {
-                sortMenuItem.setText(Labels.getLabel("menu.columns.sortBy") + fetcher.getName());
-            }
+                sortMenuItem.setText(Labels.getLabel("ArtificialStringReplacement") + fetcher.getName());
+            } // EOL Comment
 
             // disable these menu items if scanning
-            sortMenuItem.setEnabled(stateMachine.inState(ScanningState.IDLE));
-            /* Comment */  preferencesMenuItem.setEnabled(fetcher.getPreferencesClass() != null && stateMachine.inState(ScanningState.IDLE));
+            preferencesMenuItem.setEnabled(fetcher.getPreferencesClass() != null && stateMachine.inState(ScanningState.IDLE));
 
+            aboutMenuItem.setText(Labels.getLabel("menu.columns.about") + fetcher.getName());
 
             // focus the table to make Enter work after using the menu
             tableColumn.getParent().forceFocus();
- // EOL Comment
+
             // remember the clicked column (see SortBy, FetcherPreferences, and AboutFetcher below)
             columnsMenu.setData(tableColumn);
 

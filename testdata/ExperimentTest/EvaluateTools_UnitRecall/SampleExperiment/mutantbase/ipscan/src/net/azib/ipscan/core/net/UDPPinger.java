@@ -83,6 +83,38 @@ public class UDPPinger implements Pinger
 
         return result;
     }
+    static String getLocalizedMessage(Throwable e)
+    {
+        String localizedMessage;
+        try
+        {
+            // try to load localized message
+            if (e instanceof UserErrorException)
+            {
+                localizedMessage = e.getMessage();
+            }
+            else
+            {
+                String exceptionClassName = e.getClass().getSimpleName();
+                String originalMessage = e.getMessage();
+                localizedMessage = Labels.getLabel("exception." + exceptionClassName + (originalMessage != null ? "." + originalMessage : ""));
+            }
+            // add cause summary, if it exists
+            if (e.getCause() != null)
+            {
+                localizedMessage += "\n\n" + e.getCause().toString();
+            }
+            LOG.log(Level.FINE, "error", e);
+        }
+        catch (Exception e2)
+        {
+            // fallback to default text
+            localizedMessage = e.toString();
+            // output stack trace to the console
+            LOG.log(Level.SEVERE, "unexpected error", e);
+        }
+        return localizedMessage;
+    }
 
     public void close() throws IOException
     {

@@ -1,6 +1,9 @@
 package experiment;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -8,7 +11,6 @@ import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
 import java.sql.SQLException;
 import java.util.InputMismatchException;
 import java.util.LinkedList;
@@ -17,31 +19,18 @@ import java.util.Random;
 
 import main.ArtisticStyleFailedException;
 import main.FileSanetizationFailedException;
-import models.AbstractMutator;
 import models.Clone;
 import models.CloneDetectionReport;
 import models.Fragment;
 import models.InvalidToolRunnerException;
-import models.MutantBase;
-import models.Tool;
 import models.VerifiedClone;
 
 import org.apache.commons.io.FileUtils;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
-import sun.security.x509.EDIPartyName;
 import util.FileUtil;
-import util.FragmentUtil;
-import util.SystemUtil;
-import util.TXLException;
-import util.TXLUtil;
 import validator.LineValidator;
 import validator.TokenValidator;
-import validator.ValidatorResult;
 
 public class ExperimentTest {
 
@@ -237,8 +226,8 @@ public class ExperimentTest {
 		assertEquals(0.0, ur.getRecall(), 0.001);
 		//assertTrue(ur.getClone().getFragment1().equals(new Fragment(f1.getSrcFile(),
 		//		713, 746)));
-		//assertTrue(ur.getClone().getFragment2().equals(f3));
-		assertTrue(ur.getClone()== null);
+		assertTrue(ur.getClone().getFragment2().equals(f3));
+		assertTrue(ur.getClone() == null);
 		
 		CloneDetectionReport cdr112 = new CloneDetectionReport(Paths.get("testdata/ExperimentTest/EvaluateRecallTest/112"));
 		ur = Experiment.evaluateRecall(cdr112, nicad, mb, 0, subsumeTolerance, ExperimentSpecification.JAVA_LANGUAGE, System.out);
@@ -279,9 +268,9 @@ public class ExperimentTest {
 		CloneDetectionReport cdr121 = new CloneDetectionReport(Paths.get("testdata/ExperimentTest/EvaluateRecallTest/121"));
 		ur = Experiment.evaluateRecall(cdr121, nicad, mb, 0, subsumeTolerance, ExperimentSpecification.JAVA_LANGUAGE, System.out);
 		assertEquals(0.0, ur.getRecall(), 0.001);
-		//assertTrue(ur.getClone().getFragment1().equals(new Fragment(f1.getSrcFile(),
-		//		714, 746)));
-		//assertTrue(ur.getClone().getFragment2().equals(f3));
+		assertTrue(ur.getClone().getFragment1().equals(new Fragment(f1.getSrcFile(),
+				714, 746)));
+		assertTrue(ur.getClone().getFragment2().equals(f3));
 		assertTrue(ur.getClone()== null);
 		
 		CloneDetectionReport cdr122 = new CloneDetectionReport(Paths.get("testdata/ExperimentTest/EvaluateRecallTest/122"));
@@ -323,9 +312,9 @@ public class ExperimentTest {
 		CloneDetectionReport cdr131 = new CloneDetectionReport(Paths.get("testdata/ExperimentTest/EvaluateRecallTest/131"));
 		ur = Experiment.evaluateRecall(cdr131, nicad, mb, 0, subsumeTolerance, ExperimentSpecification.JAVA_LANGUAGE, System.out);
 		assertEquals(0.0, ur.getRecall(), 0.001);
-		//assertTrue(ur.getClone().getFragment1().equals(new Fragment(f1.getSrcFile(),
-		//		717, 746)));
-		//assertTrue(ur.getClone().getFragment2().equals(f3));
+		assertTrue(ur.getClone().getFragment1().equals(new Fragment(f1.getSrcFile(),
+				717, 746)));
+		assertTrue(ur.getClone().getFragment2().equals(f3));
 		assertTrue(ur.getClone()== null);
 		
 		CloneDetectionReport cdr132 = new CloneDetectionReport(Paths.get("testdata/ExperimentTest/EvaluateRecallTest/132"));
@@ -367,9 +356,9 @@ public class ExperimentTest {
 		CloneDetectionReport cdr141 = new CloneDetectionReport(Paths.get("testdata/ExperimentTest/EvaluateRecallTest/141"));
 		ur = Experiment.evaluateRecall(cdr141, nicad, mb, 0, subsumeTolerance, ExperimentSpecification.JAVA_LANGUAGE, System.out);
 		assertEquals(0.0, ur.getRecall(), 0.001);
-		//assertTrue(ur.getClone().getFragment1().equals(new Fragment(f1.getSrcFile(),
-		//		720, 746)));
-		//assertTrue(ur.getClone().getFragment2().equals(f3));
+		assertTrue(ur.getClone().getFragment1().equals(new Fragment(f1.getSrcFile(),
+				720, 746)));
+		assertTrue(ur.getClone().getFragment2().equals(f3));
 		assertTrue(ur.getClone()== null);
 		
 		CloneDetectionReport cdr142 = new CloneDetectionReport(Paths.get("testdata/ExperimentTest/EvaluateRecallTest/142"));
@@ -411,41 +400,41 @@ public class ExperimentTest {
 		CloneDetectionReport cdr151 = new CloneDetectionReport(Paths.get("testdata/ExperimentTest/EvaluateRecallTest/151"));
 		ur = Experiment.evaluateRecall(cdr151, nicad, mb, 0, subsumeTolerance, ExperimentSpecification.JAVA_LANGUAGE, System.out);
 		assertEquals(0.0, ur.getRecall(), 0.001);
-		//assertTrue(ur.getClone().getFragment1().equals(new Fragment(f1.getSrcFile(),
-		//		721, 746)));
-		//assertTrue(ur.getClone().getFragment2().equals(f3));
+		assertTrue(ur.getClone().getFragment1().equals(new Fragment(f1.getSrcFile(),
+				721, 746)));
+		assertTrue(ur.getClone().getFragment2().equals(f3));
 		assertTrue(ur.getClone()== null);
 		
 		CloneDetectionReport cdr152 = new CloneDetectionReport(Paths.get("testdata/ExperimentTest/EvaluateRecallTest/152"));
 		ur = Experiment.evaluateRecall(cdr152, nicad, mb, 0, subsumeTolerance, ExperimentSpecification.JAVA_LANGUAGE, System.out);
 		assertEquals(0.0, ur.getRecall(), 0.001);
-		//assertTrue(ur.getClone().getFragment1().equals(new Fragment(f1.getSrcFile(),
-		//		721, 747)));
-		//assertTrue(ur.getClone().getFragment2().equals(f3));
+		assertTrue(ur.getClone().getFragment1().equals(new Fragment(f1.getSrcFile(),
+				721, 747)));
+		assertTrue(ur.getClone().getFragment2().equals(f3));
 		assertTrue(ur.getClone()== null);
 		
 		CloneDetectionReport cdr153 = new CloneDetectionReport(Paths.get("testdata/ExperimentTest/EvaluateRecallTest/153"));
 		ur = Experiment.evaluateRecall(cdr153, nicad, mb, 0, subsumeTolerance, ExperimentSpecification.JAVA_LANGUAGE, System.out);
 		assertEquals(0.0, ur.getRecall(), 0.001);
-		//assertTrue(ur.getClone().getFragment1().equals(new Fragment(f1.getSrcFile(),
-		//		721, 750)));
-		//assertTrue(ur.getClone().getFragment2().equals(f3));
+		assertTrue(ur.getClone().getFragment1().equals(new Fragment(f1.getSrcFile(),
+				721, 750)));
+		assertTrue(ur.getClone().getFragment2().equals(f3));
 		assertTrue(ur.getClone()== null);
 		
 		CloneDetectionReport cdr154 = new CloneDetectionReport(Paths.get("testdata/ExperimentTest/EvaluateRecallTest/154"));
 		ur = Experiment.evaluateRecall(cdr154, nicad, mb, 0, subsumeTolerance, ExperimentSpecification.JAVA_LANGUAGE, System.out);
 		assertEquals(0.0, ur.getRecall(), 0.001);
-		//assertTrue(ur.getClone().getFragment1().equals(new Fragment(f1.getSrcFile(),
-		//		721, 753)));
-		//assertTrue(ur.getClone().getFragment2().equals(f3));
+		assertTrue(ur.getClone().getFragment1().equals(new Fragment(f1.getSrcFile(),
+				721, 753)));
+		assertTrue(ur.getClone().getFragment2().equals(f3));
 		assertTrue(ur.getClone()== null);
 		
 		CloneDetectionReport cdr155 = new CloneDetectionReport(Paths.get("testdata/ExperimentTest/EvaluateRecallTest/155"));
 		ur = Experiment.evaluateRecall(cdr155, nicad, mb, 0, subsumeTolerance, ExperimentSpecification.JAVA_LANGUAGE, System.out);
 		assertEquals(0.0, ur.getRecall(), 0.001);
-		//assertTrue(ur.getClone().getFragment1().equals(new Fragment(f1.getSrcFile(),
-		//		721, 754)));
-		//assertTrue(ur.getClone().getFragment2().equals(f3));
+		assertTrue(ur.getClone().getFragment1().equals(new Fragment(f1.getSrcFile(),
+				721, 754)));
+		assertTrue(ur.getClone().getFragment2().equals(f3));
 		assertTrue(ur.getClone()== null);
 		
 		CloneDetectionReport cdr1sa = new CloneDetectionReport(Paths.get("testdata/ExperimentTest/EvaluateRecallTest/1sa"));
@@ -469,13 +458,13 @@ public class ExperimentTest {
 		assertTrue(ur.getClone()== null);
 
 		
-		//alterative, swap fragments, stillvay the same fragment
+		//alterative, swap fragments, still vary the same fragment		
 		CloneDetectionReport cdr111a = new CloneDetectionReport(Paths.get("testdata/ExperimentTest/EvaluateRecallTest/111a"));
 		ur = Experiment.evaluateRecall(cdr111a, nicad, mb, 0, subsumeTolerance, ExperimentSpecification.JAVA_LANGUAGE, System.out);
 		assertEquals(0.0, ur.getRecall(), 0.001);
-		//assertTrue(ur.getClone().getFragment2().equals(new Fragment(f1.getSrcFile(),
-		//		713, 746)));
-		//assertTrue(ur.getClone().getFragment1().equals(f3));
+		assertTrue(ur.getClone().getFragment2().equals(new Fragment(f1.getSrcFile(),
+				713, 746)));
+		assertTrue(ur.getClone().getFragment1().equals(f3));
 		assertTrue(ur.getClone()== null);
 		
 		CloneDetectionReport cdr112a = new CloneDetectionReport(Paths.get("testdata/ExperimentTest/EvaluateRecallTest/112a"));
@@ -517,9 +506,9 @@ public class ExperimentTest {
 		CloneDetectionReport cdr121a = new CloneDetectionReport(Paths.get("testdata/ExperimentTest/EvaluateRecallTest/121a"));
 		ur = Experiment.evaluateRecall(cdr121a, nicad, mb, 0, subsumeTolerance, ExperimentSpecification.JAVA_LANGUAGE, System.out);
 		assertEquals(0.0, ur.getRecall(), 0.001);
-		//assertTrue(ur.getClone().getFragment2().equals(new Fragment(f1.getSrcFile(),
-		//		714, 746)));
-		//assertTrue(ur.getClone().getFragment1().equals(f3));
+		assertTrue(ur.getClone().getFragment2().equals(new Fragment(f1.getSrcFile(),
+				714, 746)));
+		assertTrue(ur.getClone().getFragment1().equals(f3));
 		assertTrue(ur.getClone()== null);
 		
 		CloneDetectionReport cdr122a = new CloneDetectionReport(Paths.get("testdata/ExperimentTest/EvaluateRecallTest/122a"));
@@ -561,9 +550,9 @@ public class ExperimentTest {
 		CloneDetectionReport cdr131a = new CloneDetectionReport(Paths.get("testdata/ExperimentTest/EvaluateRecallTest/131a"));
 		ur = Experiment.evaluateRecall(cdr131a, nicad, mb, 0, subsumeTolerance, ExperimentSpecification.JAVA_LANGUAGE, System.out);
 		assertEquals(0.0, ur.getRecall(), 0.001);
-		//assertTrue(ur.getClone().getFragment2().equals(new Fragment(f1.getSrcFile(),
-		//		717, 746)));
-		//assertTrue(ur.getClone().getFragment1().equals(f3));
+		assertTrue(ur.getClone().getFragment2().equals(new Fragment(f1.getSrcFile(),
+				717, 746)));
+		assertTrue(ur.getClone().getFragment1().equals(f3));
 		assertTrue(ur.getClone()== null);
 		
 		CloneDetectionReport cdr132a = new CloneDetectionReport(Paths.get("testdata/ExperimentTest/EvaluateRecallTest/132a"));
@@ -605,9 +594,9 @@ public class ExperimentTest {
 		CloneDetectionReport cdr141a = new CloneDetectionReport(Paths.get("testdata/ExperimentTest/EvaluateRecallTest/141a"));
 		ur = Experiment.evaluateRecall(cdr141a, nicad, mb, 0, subsumeTolerance, ExperimentSpecification.JAVA_LANGUAGE, System.out);
 		assertEquals(0.0, ur.getRecall(), 0.001);
-		//assertTrue(ur.getClone().getFragment2().equals(new Fragment(f1.getSrcFile(),
-		//		720, 746)));
-		//assertTrue(ur.getClone().getFragment1().equals(f3));
+		assertTrue(ur.getClone().getFragment2().equals(new Fragment(f1.getSrcFile(),
+				720, 746)));
+		assertTrue(ur.getClone().getFragment1().equals(f3));
 		assertTrue(ur.getClone()== null);
 		
 		CloneDetectionReport cdr142a = new CloneDetectionReport(Paths.get("testdata/ExperimentTest/EvaluateRecallTest/142a"));
@@ -649,41 +638,41 @@ public class ExperimentTest {
 		CloneDetectionReport cdr151a = new CloneDetectionReport(Paths.get("testdata/ExperimentTest/EvaluateRecallTest/151a"));
 		ur = Experiment.evaluateRecall(cdr151a, nicad, mb, 0, subsumeTolerance, ExperimentSpecification.JAVA_LANGUAGE, System.out);
 		assertEquals(0.0, ur.getRecall(), 0.001);
-		//assertTrue(ur.getClone().getFragment2().equals(new Fragment(f1.getSrcFile(),
-		//		721, 746)));
-		//assertTrue(ur.getClone().getFragment1().equals(f3));
+		assertTrue(ur.getClone().getFragment2().equals(new Fragment(f1.getSrcFile(),
+				721, 746)));
+		assertTrue(ur.getClone().getFragment1().equals(f3));
 		assertTrue(ur.getClone()== null);
 		
 		CloneDetectionReport cdr152a = new CloneDetectionReport(Paths.get("testdata/ExperimentTest/EvaluateRecallTest/152a"));
 		ur = Experiment.evaluateRecall(cdr152a, nicad, mb, 0, subsumeTolerance, ExperimentSpecification.JAVA_LANGUAGE, System.out);
 		assertEquals(0.0, ur.getRecall(), 0.001);
-		//assertTrue(ur.getClone().getFragment2().equals(new Fragment(f1.getSrcFile(),
-		//		721, 747)));
-		//assertTrue(ur.getClone().getFragment1().equals(f3));
+		assertTrue(ur.getClone().getFragment2().equals(new Fragment(f1.getSrcFile(),
+				721, 747)));
+		assertTrue(ur.getClone().getFragment1().equals(f3));
 		assertTrue(ur.getClone()== null);
 		
 		CloneDetectionReport cdr153a = new CloneDetectionReport(Paths.get("testdata/ExperimentTest/EvaluateRecallTest/153a"));
 		ur = Experiment.evaluateRecall(cdr153a, nicad, mb, 0, subsumeTolerance, ExperimentSpecification.JAVA_LANGUAGE, System.out);
 		assertEquals(0.0, ur.getRecall(), 0.001);
-		//assertTrue(ur.getClone().getFragment2().equals(new Fragment(f1.getSrcFile(),
-		//		721, 750)));
-		//assertTrue(ur.getClone().getFragment1().equals(f3));
+		assertTrue(ur.getClone().getFragment2().equals(new Fragment(f1.getSrcFile(),
+				721, 750)));
+		assertTrue(ur.getClone().getFragment1().equals(f3));
 		assertTrue(ur.getClone()== null);
 		
 		CloneDetectionReport cdr154a = new CloneDetectionReport(Paths.get("testdata/ExperimentTest/EvaluateRecallTest/154a"));
 		ur = Experiment.evaluateRecall(cdr154a, nicad, mb, 0, subsumeTolerance, ExperimentSpecification.JAVA_LANGUAGE, System.out);
 		assertEquals(0.0, ur.getRecall(), 0.001);
-		//assertTrue(ur.getClone().getFragment2().equals(new Fragment(f1.getSrcFile(),
-		//		721, 753)));
-		//assertTrue(ur.getClone().getFragment1().equals(f3));
+		assertTrue(ur.getClone().getFragment2().equals(new Fragment(f1.getSrcFile(),
+				721, 753)));
+		assertTrue(ur.getClone().getFragment1().equals(f3));
 		assertTrue(ur.getClone()== null);
 		
 		CloneDetectionReport cdr155a = new CloneDetectionReport(Paths.get("testdata/ExperimentTest/EvaluateRecallTest/155a"));
 		ur = Experiment.evaluateRecall(cdr155a, nicad, mb, 0, subsumeTolerance, ExperimentSpecification.JAVA_LANGUAGE, System.out);
 		assertEquals(0.0, ur.getRecall(), 0.001);
-		//assertTrue(ur.getClone().getFragment2().equals(new Fragment(f1.getSrcFile(),
-		//		721, 754)));
-		//assertTrue(ur.getClone().getFragment1().equals(f3));
+		assertTrue(ur.getClone().getFragment2().equals(new Fragment(f1.getSrcFile(),
+				721, 754)));
+		assertTrue(ur.getClone().getFragment1().equals(f3));
 		assertTrue(ur.getClone()== null);
 		
 		CloneDetectionReport cdr1saa = new CloneDetectionReport(Paths.get("testdata/ExperimentTest/EvaluateRecallTest/1saa"));
@@ -706,16 +695,16 @@ public class ExperimentTest {
 		assertEquals(0.0, ur.getRecall(), 0.001);
 		assertTrue(ur.getClone()== null);
 		
-	//Vary fragment 2
+	//Vary fragment 2 (mutant)
 
 		//Set #1: f1 match varies, f3 perfect match
 		CloneDetectionReport cdr211 = new CloneDetectionReport(Paths.get("testdata/ExperimentTest/EvaluateRecallTest/211"));
 		ur = Experiment.evaluateRecall(cdr211, nicad, mb, 0, subsumeTolerance, ExperimentSpecification.JAVA_LANGUAGE, System.out);
 		assertEquals(0.0, ur.getRecall(), 0.001);
 		assertTrue(ur.getClone() == null);
-		//assertTrue(ur.getClone().getFragment2().equals(new Fragment(f3.getSrcFile(),
-		//		207, 234)));
-		//assertTrue(ur.getClone().getFragment1().equals(f1));
+		assertTrue(ur.getClone().getFragment2().equals(new Fragment(f3.getSrcFile(),
+				207, 234)));
+		assertTrue(ur.getClone().getFragment1().equals(f1));
 
 		CloneDetectionReport cdr212 = new CloneDetectionReport(Paths.get("testdata/ExperimentTest/EvaluateRecallTest/212"));
 		ur = Experiment.evaluateRecall(cdr212, nicad, mb, 0, subsumeTolerance, ExperimentSpecification.JAVA_LANGUAGE, System.out);
@@ -1509,6 +1498,25 @@ public class ExperimentTest {
 			caught = true;
 		}
 		assertTrue(caught);
+	}
+	
+	private void generateSingleItemReport(Fragment f1, Fragment f2, Path report) throws IOException {
+		Files.createFile(report);
+		PrintWriter pw = new PrintWriter(report.toFile());
+		pw.print(f1.getSrcFile());
+		pw.print(",");
+		pw.print(f1.getStartLine());
+		pw.print(",");
+		pw.print(f1.getEndLine());
+		pw.print(",");
+		pw.print(f2.getSrcFile());
+		pw.print(",");
+		pw.print(f2.getStartLine());
+		pw.print(",");
+		pw.print(f2.getEndLine());
+		pw.print("\n");
+		pw.flush();
+		pw.close();
 	}
 	
 	@Test
@@ -3059,7 +3067,21 @@ public class ExperimentTest {
 			for(MutantBaseDB mb : ed.getMutantBases()) {
 				ed.constructBase(mb.getId());
 				CloneDetectionReport cdr = tool.runTool(mb.getDirectory(), ed.getLanguage(), ed.getFragmentType(), ed.getFragmentMinimumSizeLines(), ed.getFragmentMinimumSizeTokens(), ed.getFragmentMaximumSizeLines(), ed.getFragmentMaximumSizeTokens(), ed.getAllowedFragmentDifference());
-				Files.copy(cdr.getReport(), Paths.get("testdata/ExperimentTest/DetectionTest/check/" + tool.getId() + "-" + mb.getId()));
+				Path out = Paths.get("testdata/ExperimentTest/DetectionTest/check/" + tool.getId() + "-" + mb.getId());
+				PrintWriter pw = new PrintWriter(out.toFile());
+				cdr.open();
+				Clone c = cdr.next();
+				while(c != null) {
+					Fragment f1 = c.getFragment1();
+					Fragment f2 = c.getFragment2();
+					String file1 = mb.getDirectory().relativize(c.getFragment1().getSrcFile()).toString();
+					String file2 = mb.getDirectory().relativize(c.getFragment2().getSrcFile()).toString();
+					pw.println(file1 + "," + f1.getStartLine() + "," + f1.getEndLine() + "," + file2 + "," + f2.getStartLine() + "," + f2.getEndLine());
+					c = cdr.next();
+				}
+				pw.close();
+				cdr.close();
+				//Files.copy(cdr.getReport(), );
 			}
 		}
 		
@@ -3070,32 +3092,37 @@ public class ExperimentTest {
 				List<Clone> clones = new LinkedList<Clone>();
 				Clone clone;
 				
+				System.out.println(tool.getId() + " " + mb.getId());
+				
 				CloneDetectionReport cdr1 = ed.getCloneDetectionReport(tool.getId(), mb.getId());
 				cdr1.open();
 				clone = cdr1.next();
 				while(clone != null) {
+					System.out.println(clone);
 					clones.add(clone);
 					clone = cdr1.next();
 				}
 				cdr1.close();
-				
+				System.out.println("\n-----\n");
 				CloneDetectionReport cdr2 = new CloneDetectionReport(Paths.get("testdata/ExperimentTest/DetectionTest/check/" + tool.getId() + "-" + mb.getId()));
 				cdr2.open();
 				clone = cdr2.next();
 				while(clone != null) {
+					System.out.println(clone);
 					check.add(clone);
 					clone = cdr2.next();
 				}
 				cdr2.close();
 				
-				for(Clone c :clones) {
+				for(Clone c : clones) {
+					System.out.println(c);
 					assertTrue(check.contains(c));
 				}
 				for(Clone c : check) {
 					assertTrue(clones.contains(c));
 				}
-				
-				assertTrue(FileUtils.contentEquals(cdr1.getReport().toFile(), cdr2.getReport().toFile()));
+				System.out.println(cdr1.getReport() + "=/=" + cdr2.getReport());
+				assertTrue(cdr1.getReport() + "=/=" + cdr2.getReport(), FileUtils.contentEquals(cdr1.getReport().toFile(), mb.getDirectory().toAbsolutePath().normalize().toFile()));
 			}
 		}
 	}
@@ -3164,6 +3191,7 @@ public class ExperimentTest {
 
 //GENERATION PHASE
 		e.generate();
+		
 		
 //EVALUATION PHASE
 		ToolDB nicad1 = e.addTool("NiCad1", "NiCad Clone Detector", Paths.get("testdata/ExperimentTest/NiCad"), Paths.get("testdata/ExperimentTest/NiCadRunner/NiCadRunner"));
@@ -3249,7 +3277,8 @@ public class ExperimentTest {
 		FileUtils.copyDirectory(Paths.get("testdata/ExperimentTest/EvaluateTools_RecallTest/replace/").toFile(), e.getExperimentData().getReportsPath().toFile());
 		
 //Redetect
-		//TODO: Fix
+		e.previousStage();
+		e.deleteUnitRecallAllTools();
 		e.evaluateTools();
 		
 //Check
@@ -3429,7 +3458,8 @@ List<List<Double>> precisions = new LinkedList<List<Double>>();
 		FileUtils.copyDirectory(Paths.get("testdata/ExperimentTest/EvaluateTools_RecallTest/replace/").toFile(), e.getExperimentData().getReportsPath().toFile());
 				
 //Redetect
-		//TODO:Fix
+		e.previousStage();
+		e.deleteUnitPrecisionAllTools();
 		e.evaluateTools();
 		
 //Check
@@ -3440,7 +3470,7 @@ List<List<Double>> precisions = new LinkedList<List<Double>>();
 			j = -1;
 			for(MutantBaseDB mb : e.getExperimentData().getMutantBases()) {
 				j++;
-				assertTrue(precisions.get(i).get(j).equals(e.getExperimentData().getUnitPrecision(t.getId(), mb.getId()).getPrecision()));
+				assertEquals(precisions.get(i).get(j).doubleValue(), e.getExperimentData().getUnitPrecision(t.getId(), mb.getId()).getPrecision(), 0.001);
 			}
 		}
 	}

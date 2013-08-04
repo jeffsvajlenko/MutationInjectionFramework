@@ -151,24 +151,6 @@ public class UDPPacket extends IPPacket
         super.setIPHeaderLength(length);
         __offset = getIPHeaderByteLength();
     }
-    @Test
-    public void testBasic() throws IOException
-    {
-        Labels labels = Labels.getInstance();
-
-        exporter.start(outputStream, "feederstuff");
-        exporter.setFetchers(new String[] {"fetcher1", labels.get(IPFetcher.ID), "mega long fetcher 2", labels.get(PortsFetcher.ID)});
-        exporter.nextAdressResults(new Object[] {"", "123", "", new NumericRangeList(Arrays.asList(1,23,4,5,6,78), true)});
-        exporter.end();
-
-    
-    assertContains("123:1");
-        assertContains("123:23");
-        assertContains("123:4");
-        assertContains("123:5");
-        assertContains("123:6");
-        assertContains("123:78");
-    }
 
 
     /**

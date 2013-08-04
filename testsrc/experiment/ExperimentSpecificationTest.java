@@ -29,7 +29,7 @@ public class ExperimentSpecificationTest {
 		assertEquals(0.15, es.getMutationContainment(), 0.00001);
 		assertEquals(100, es.getMutationAttempts());
 		assertEquals(10, es.getOperatorAttempts());
-		assertEquals(50, es.getMaxFragments());
+		assertEquals(100, es.getMaxFragments());
 		assertEquals(0.70, es.getPrecisionRequiredSimilarity(), 0.00001);
 		assertEquals(0.70, es.getRecallRequiredSimilarity(), 0.00001);
 	}

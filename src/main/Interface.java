@@ -1815,7 +1815,7 @@ root_menu_create_experiment_get_source_repository_dir:
 	public static boolean main_menu_evaluation_setup_stage() throws IOException, SQLException {
 		String input;
 		out.println("================================================================================");
-		out.println("    Stage 3 of 5: Evaluation Phase Execution");
+		out.println("    Stage 3 of 5: Evaluation Phase Setup");
 		out.println("================================================================================");
 		out.println("Experiment: " + experiment.getDirectory());
 		out.println("================================================================================");

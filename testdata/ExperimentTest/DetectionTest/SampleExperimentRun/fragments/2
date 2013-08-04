@@ -1,57 +1,28 @@
-    public void parse(String ...args)
+    private void onFinish()
     {
-        for (int i = 0; i < args.length; i++)
+        Display.getDefault().asyncExec(new Runnable()
         {
-            String arg = args[i];
+            public void run()
+            {
+                successProgressBar.setMaximum(configDetector.getExpectedSuccessfulConnectCount());
+                startButton.setEnabled(true);
+                closeButton.setEnabled(true);
 
-            if (arg.startsWith("-f:"))
-            {
-                if (feederCreator != null)
-                    throw new IllegalArgumentException("Only one feeder is allowed");
-                feederCreator = findFeederCreator("feeder." + arg.substring(3));
-                feederArgs = new String[feederCreator.serializePartsLabels().length];
-                for (int j = 0; j < feederArgs.length; j++)
+                // tell the user about results
+                if (configDetector.getExpectedSuccessfulConnectCount() > configDetector.getActualSuccessfulConnectCount())
                 {
-                    feederArgs[j] = args[++i];
-                    if (feederArgs[j].startsWith("-"))
-                        throw new IllegalArgumentException(feederCreator.getFeederName() + " requires " + feederArgs.length + " arguments");
+                    MessageBox box = new MessageBox(shell, SWT.OK | SWT.ICON_ERROR);
+                    box.setText(Labels.getLabel("title.configDetect"));
+                    box.setMessage(String.format(Labels.getLabel("text.configDetect.failed"), configDetector.getInitialConnectCount(), configDetector.getExpectedSuccessfulConnectCount(), configDetector.getActualSuccessfulConnectCount()));
+                    box.open();
+                }
+                else
+                {
+                    MessageBox box = new MessageBox(shell, SWT.OK | SWT.ICON_INFORMATION);
+                    box.setText(Labels.getLabel("title.configDetect"));
+                    box.setMessage(String.format(Labels.getLabel("text.configDetect.success"), config.maxThreads));
+                    box.open();
                 }
             }
-            else if (arg.equals("-o"))
-            {
-                if (outputFilename != null)
-                    throw new IllegalArgumentException("Only one exporter is allowed");
-                outputFilename = args[++i];
-                if (outputFilename.startsWith("-"))
-                    throw new IllegalArgumentException("Output filename missing");
-                exporter = findExporter(outputFilename);
-                // assume autoStart if exporting was specified
-                autoStart = true;
-            }
-            else if (arg.startsWith("-"))
-            {
-                for (char option : arg.substring(1).toCharArray())
-                {
-                    switch (option)
-                    {
-                    case 's':
-                        autoStart = true;
-                        break;
-                    case 'q':
-                        autoQuit = true;
-                        break;
-                    case 'a':
-                        appendToFile = true;
-                        break;
-                    default:
-                        throw new IllegalArgumentException("Unknown option: " + option);
-                    }
-                }
-            }
-            else
-                throw new IllegalArgumentException("Unknown argument: " + arg);
-        }
-        if (feederCreator == null)
-            throw new IllegalArgumentException("Feeder missing");
-        feederCreator.unserialize(feederArgs);
+        });
     }

@@ -1,7 +1,7 @@
 <clones>
 <systeminfo processor="nicad3" system="_" granularity="unctions-blind-abstract" threshold="35%" minlines="15" maxlines="2500"/>
 <cloneinfo npcs="2886" npairs="19"/>
-<runinfo ncompares="9446" cputime="220000"/>
+<runinfo ncompares="9446" cputime="100000"/>
 
 <clone nlines="42" similarity="100">
 <source file="../JHotDraw//src/CH/ifa/draw/contrib/MDIDesktopPane.java" startline="477" endline="529" pcid="1340"></source>

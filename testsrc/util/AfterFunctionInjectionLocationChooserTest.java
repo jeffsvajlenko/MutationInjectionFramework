@@ -17,13 +17,12 @@ import org.junit.Test;
 import experiment.ExperimentSpecification;
 
 public class AfterFunctionInjectionLocationChooserTest {
-
 	@Test
 	public void testJava() throws SQLException, FileNotFoundException, IOException, InterruptedException {
 		Path system = Paths.get("testdata/AfterFunctionInjectionLocationChooserTest/java/");
 		AfterFunctionInjectionLocationChooser ilc = new AfterFunctionInjectionLocationChooser(system, ExperimentSpecification.JAVA_LANGUAGE);
 		List<Fragment> fragments = SelectFunctionFragments.getFragments(system.toFile(), ExperimentSpecification.JAVA_LANGUAGE);
-		for(int i = 0; i < 1000; i++) {
+		for(int i = 0; i < 40; i++) {
 			InjectionLocation il = ilc.generateInjectionLocation();
 			assertTrue(il != null);
 			boolean found = false;
@@ -44,7 +43,7 @@ public class AfterFunctionInjectionLocationChooserTest {
 		Path system = Paths.get("testdata/AfterFunctionInjectionLocationChooserTest/c/");
 		AfterFunctionInjectionLocationChooser ilc = new AfterFunctionInjectionLocationChooser(system, ExperimentSpecification.C_LANGUAGE);
 		List<Fragment> fragments = SelectFunctionFragments.getFragments(system.toFile(), ExperimentSpecification.C_LANGUAGE);
-		for(int i = 0; i < 1000; i++) {
+		for(int i = 0; i < 40; i++) {
 			InjectionLocation il = ilc.generateInjectionLocation();
 			assertTrue(il != null);
 			boolean found = false;
@@ -65,7 +64,7 @@ public class AfterFunctionInjectionLocationChooserTest {
 		Path system = Paths.get("testdata/AfterFunctionInjectionLocationChooserTest/cs/");
 		AfterFunctionInjectionLocationChooser ilc = new AfterFunctionInjectionLocationChooser(system, ExperimentSpecification.CS_LANGUAGE);
 		List<Fragment> fragments = SelectFunctionFragments.getFragments(system.toFile(), ExperimentSpecification.CS_LANGUAGE);
-		for(int i = 0; i < 1000; i++) {
+		for(int i = 0; i < 40; i++) {
 			InjectionLocation il = ilc.generateInjectionLocation();
 			assertTrue(il != null);
 			boolean found = false;
@@ -80,6 +79,4 @@ public class AfterFunctionInjectionLocationChooserTest {
 			assertTrue(found);
 		}
 	}
-
-
 }

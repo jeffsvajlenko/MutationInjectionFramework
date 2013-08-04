@@ -701,7 +701,7 @@ public class TXLUtil {
 					try {if (fragment != null) Files.deleteIfExists(fragment);} catch (Exception exception) {};
 					try {if (fragment_tokstream != null) Files.deleteIfExists(fragment_tokstream);} catch (Exception exception) {};
 					try {if (fragment_beforeRemoveEmptyLines != null) Files.deleteIfExists(fragment_beforeRemoveEmptyLines);} catch (Exception exception) {};
-					System.out.println("here1");
+					//System.out.println("here1");
 					return false;
 				}
 			} catch (InterruptedException e1) {
@@ -723,7 +723,6 @@ public class TXLUtil {
 					try {if (fragment != null) Files.deleteIfExists(fragment);} catch (Exception exception) {};
 					try {if (fragment_tokstream != null) Files.deleteIfExists(fragment_tokstream);} catch (Exception exception) {};
 					try {if (fragment_beforeRemoveEmptyLines != null) Files.deleteIfExists(fragment_beforeRemoveEmptyLines);} catch (Exception exception) {};
-					System.out.println("here2");
 					return false;
 				}
 			} catch (InterruptedException e1) {
@@ -765,7 +764,6 @@ public class TXLUtil {
 					try {if (fragment != null) Files.deleteIfExists(fragment);} catch (Exception exception) {};
 					try {if (fragment_tokstream != null) Files.deleteIfExists(fragment_tokstream);} catch (Exception exception) {};
 					try {if (fragment_beforeRemoveEmptyLines != null) Files.deleteIfExists(fragment_beforeRemoveEmptyLines);} catch (Exception exception) {};
-					System.out.println("here3");
 					return false;
 				}
 			} catch (InterruptedException e1) {
@@ -798,7 +796,6 @@ public class TXLUtil {
 				try {if (fragment != null) Files.deleteIfExists(fragment);} catch (Exception exception) {};
 				try {if (fragment_tokstream != null) Files.deleteIfExists(fragment_tokstream);} catch (Exception exception) {};
 				try {if (fragment_beforeRemoveEmptyLines != null) Files.deleteIfExists(fragment_beforeRemoveEmptyLines);} catch (Exception exception) {};
-				System.out.println("here4");
 				return false;
 			}
 			
@@ -825,7 +822,6 @@ public class TXLUtil {
 					try {if (fragment != null) Files.deleteIfExists(fragment);} catch (Exception exception) {};
 					try {if (fragment_tokstream != null) Files.deleteIfExists(fragment_tokstream);} catch (Exception exception) {};
 					try {if (fragment_beforeRemoveEmptyLines != null) Files.deleteIfExists(fragment_beforeRemoveEmptyLines);} catch (Exception exception) {};
-					System.out.println("here5");
 					return false;
 				}
 			} catch (InterruptedException e1) {
@@ -869,9 +865,9 @@ public class TXLUtil {
 			Pattern p = Pattern.compile(fragmentpattern);
 			Matcher m = p.matcher(file);
 			if(!m.find()) {
-				System.out.println(fragmentpattern);
-				System.out.println(file);
-				System.out.println("here6");
+				//System.out.println(fragmentpattern);
+				//System.out.println(file);
+				//System.out.println("here6");
 				return false;
 			}
 			String pfragment = m.group();

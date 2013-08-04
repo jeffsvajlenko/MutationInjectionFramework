@@ -7,10 +7,10 @@ public void handleEvent (Event e) {
     if (tableColumn.getParent ().getSortColumn () == tableColumn) {
         sortMenuItem.setText (Labels.getLabel ("menu.columns.sortDirection"));
     } else {
-        sortMenuItem.setText (Labels.getLabel ("menu.columns.sortBy") + fetcher.getName ());
+        sortMenuItem.setText (Labels.getLabel ("ArtificialStringReplacement") + fetcher.getName ());
     }
-    sortMenuItem.setEnabled (stateMachine.inState (ScanningState.IDLE));
     preferencesMenuItem.setEnabled (fetcher.getPreferencesClass () != null && stateMachine.inState (ScanningState.IDLE));
+    aboutMenuItem.setText (Labels.getLabel ("menu.columns.about") + fetcher.getName ());
     tableColumn.getParent ().forceFocus ();
     columnsMenu.setData (tableColumn);
     columnsMenu.setLocation (e.display.getCursorLocation ());

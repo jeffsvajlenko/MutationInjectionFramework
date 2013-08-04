@@ -6,4 +6,4 @@
 #$4 infile
 #$5 outfile
 ulimit -s hard
-"$1" -s 400 -o "$5" "$4"  "$3"/"$2"/mIL.txl
+"$1" -s 600 -o "$5" "$4"  "$3"/"$2"/mIL.txl

@@ -2780,6 +2780,9 @@ createbase_attempt:
 		if(requiredSimilarity < 0 || requiredSimilarity > 1.0) throw new IllegalArgumentException("Required similarity msut be in range [0.0, 1.0]");
 		if(!ExperimentSpecification.isLanguageSupported(language)) throw new IllegalArgumentException("Unsupported language.");
 		
+		//get tolernace in lines
+		int subsumeToleranceLines = (int) (mutantbase.getOriginalFragment().getNumberOfLines() * subsumeTolerance);
+		
 		//get unique reader
 		if(cdr.getRoot() == null) {
 			cdr = new CloneDetectionReport(cdr.getReport());
@@ -2794,8 +2797,8 @@ createbase_attempt:
 			//Check each clone found to see if it matches
 			while((clone = cdr.next()) != null) {
 				//If matches (subsumes) within tolerance
-				if(	(clone.getFragment1().subsumes(aclone.getFragment1(), subsumeTolerance)) && (clone.getFragment2().subsumes(aclone.getFragment2(), subsumeTolerance)) || 
-						(clone.getFragment2().subsumes(aclone.getFragment1(), subsumeTolerance)) && (clone.getFragment1().subsumes(aclone.getFragment2(), subsumeTolerance))) {
+				if(	(clone.getFragment1().subsumes(aclone.getFragment1(), subsumeToleranceLines)) && (clone.getFragment2().subsumes(aclone.getFragment2(), subsumeToleranceLines)) || 
+						(clone.getFragment2().subsumes(aclone.getFragment1(), subsumeToleranceLines)) && (clone.getFragment1().subsumes(aclone.getFragment2(), subsumeToleranceLines))) {
 					
 					//Check fragments are valid
 					if(clone.getFragment1().getEndLine() > FileUtil.countLines(clone.getFragment1().getSrcFile())) {
@@ -2864,6 +2867,9 @@ createbase_attempt:
 		if(requiredSimilarity < 0 || requiredSimilarity > 1.0) throw new IllegalArgumentException("Required similarity msut be in range [0.0, 1.0]");
 		if(!ExperimentSpecification.isLanguageSupported(language)) throw new IllegalArgumentException("Unsupported language.");
 		
+		//get tolernace in lines
+		int subsumeToleranceLines = (int) (mutantbase.getOriginalFragment().getNumberOfLines() * subsumeTolerance);	
+		
 		//get unique reader
 		if(cdr.getRoot() == null) {
 			cdr = new CloneDetectionReport(cdr.getReport());
@@ -2880,10 +2886,10 @@ createbase_attempt:
 		try {
 			cdr.open();
 cdrloop:	while((clone = cdr.next()) != null) {
-				if(clone.getFragment1().subsumes(aclone.getFragment1(), subsumeTolerance) ||
-				   clone.getFragment1().subsumes(aclone.getFragment2(), subsumeTolerance) ||
-				   clone.getFragment2().subsumes(aclone.getFragment1(), subsumeTolerance) || 
-				   clone.getFragment2().subsumes(aclone.getFragment2(), subsumeTolerance)
+				if(clone.getFragment1().subsumes(aclone.getFragment1(), subsumeToleranceLines) ||
+				   clone.getFragment1().subsumes(aclone.getFragment2(), subsumeToleranceLines) ||
+				   clone.getFragment2().subsumes(aclone.getFragment1(), subsumeToleranceLines) || 
+				   clone.getFragment2().subsumes(aclone.getFragment2(), subsumeToleranceLines)
 						) {
 					//Update Num
 					num_clones_running++;

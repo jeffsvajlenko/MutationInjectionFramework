@@ -136,7 +136,7 @@ public class Operator {
 			int pretval = p.waitFor();
 			// If mutation failed, give up (not possible to do the mutation even if retry)
 			if(pretval != 0) {
-				break;
+				continue;
 			}
 			
 			// Check if mutation produced valid output
