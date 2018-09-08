@@ -44,7 +44,7 @@ Tool runners implement a communication protocol between the framework and the cl
 
 After executing the tool for the subject software system, the tool should output to stdout the full path to the clone detection report summarizing the detected clone pairs.  The clone detection report file should be formatted as a newline delimited list of clone pairs, where each line has a clone pair in format: 'srcfile1,startline1,endline1,srcfile2,startline2,endline2'.  For example:
 
-/Path/to/File1.java,5,10,/Path/to/File2,20,25
+/Path/to/File1.java,5,10,/Path/to/File2,20,25\
 /Path/to/File2,20,25,/Path/to/File3,50,55
 
 An example tool runner is included in exampleToolRunner/.  Note that this is included as an example, and won't necissary work on your system.
@@ -53,13 +53,13 @@ Import Manual Clones
 ====================
 The framework supports importing manually constructed clones.  It requires a import file which lists the clone pairs in the following format:
 
-/Some/Path/CodeFragment1Clone1
+/Some/Path/CodeFragment1Clone1\
 /Some/Path/CodeFragment2Clone1
 
-/Some/Path/CodeFragment1Clone2
+/Some/Path/CodeFragment1Clone2\
 /Some/Path/CodeFragment2Clone12
 
-/Some/Path/CodeFragment1Clone3
+/Some/Path/CodeFragment1Clone3\
 /Some/Path/CodeFragment2Clone3
 
 An example of such an import is included in exampleImport/.
