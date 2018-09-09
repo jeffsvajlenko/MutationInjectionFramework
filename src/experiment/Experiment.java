@@ -197,8 +197,12 @@ public class Experiment {
 		
 		//Create Data
 		Path empty_repo = Files.createTempDirectory(SystemUtil.getTemporaryDirectory(), "manual_repository");
+		Files.createFile(empty_repo.resolve("mock.java"));
+		Files.createFile(empty_repo.resolve("mock.cs"));
+		Files.createFile(empty_repo.resolve("mock.c"));
+		Files.createFile(empty_repo.resolve("mock.h"));
 		ExperimentData ed = new ExperimentData(spec.getDataPath(), spec.getSystem(), empty_repo, spec.getLanguage(), log);
-		Files.delete(empty_repo);
+		FileUtils.deleteDirectory(empty_repo.toFile());
 		
 		//Set Properties From Spec
 		ed.setAllowedFragmentDifference(spec.getAllowedFragmentDifference());
@@ -859,7 +863,7 @@ public class Experiment {
 		if(ed.getGenerationType() == ExperimentSpecification.AUTOMATIC_GENERATION_TYPE) {
 			return this.generateAutomatic();
 		} else if (ed.getGenerationType() == ExperimentSpecification.MANUAL_GENERATION_TYPE) {
-			return false;//return this.generateManual();
+			return this.generateManual();
 		} else {
 			log.println("[" + Calendar.getInstance().getTime() + "] (generateAutomatic): " + "Error: Generation type not supported.");
 			return false;
@@ -911,39 +915,43 @@ public class Experiment {
 		}
 	}
 	
-//	private boolean generateManual() throws SQLException, AlreadyGeneratedException {
-//		log.println("[" + Calendar.getInstance().getTime() + "] (generateManual): " + "Start: Generating manual clones.");
-//		if(ed.getCurrentStage() != ExperimentData.GENERATION_SETUP_STAGE) {
-//			throw new AlreadyGeneratedException();
-//		} else {
-//			boolean bretval;
-//			
-//			//Assert Generation Type
-//			ed.setGenerationType(ExperimentSpecification.MANUAL_GENERATION_TYPE);
-//			
-//			//Progress to generation stage
-//			ed.nextStage();
-//			assert(ed.getCurrentStage() == ExperimentData.GENERATION_STAGE);
-//			
-//			//Create Mutant Bases
-//			bretval = this.createMutantBases();
-//			if(bretval == false) {
-//				log.println("[" + Calendar.getInstance().getTime() + "] (generateManual): " + "Error: Mutant base creation failed.  See previous error messages.");
-//				return false;
-//			}
-//			
-//			//Verify Generation
-//			bretval = this.verifyManualGeneration();
-//			if(bretval == false) {
-//				log.println("[" + Calendar.getInstance().getTime() + "] (generateManual): " + "Error: Generation verification failed.  See previous error messages.");
-//				return false;
-//			}
-//			
-//			//Full process succeeded
-//			log.println("[" + Calendar.getInstance().getTime() + "] (generateManual): " + "End: Generating manual clones.");
-//			return true;
-//		}
-//	}
+	private boolean generateManual() throws SQLException, AlreadyGeneratedException {
+		log.println("[" + Calendar.getInstance().getTime() + "] (generateManual): " + "Start: Generating manual clones.");
+		if(ed.getCurrentStage() != ExperimentData.GENERATION_STAGE) {
+			throw new AlreadyGeneratedException();
+		} else {
+			boolean bretval;
+			
+			//Assert Generation Type
+			//ed.setGenerationType(ExperimentSpecification.MANUAL_GENERATION_TYPE);
+			
+			//Progress to generation stage
+			//ed.nextStage();
+			//assert(ed.getCurrentStage() == ExperimentData.GENERATION_STAGE);
+			
+			//Create Mutant Bases
+			bretval = this.createMutantBases();
+			if(bretval == false) {
+				log.println("[" + Calendar.getInstance().getTime() + "] (generateManual): " + "Error: Mutant base creation failed.  See previous error messages.");
+				return false;
+			}
+			
+			//Verify Generation
+			//bretval = this.verifyAutomaticGeneration();
+			//if(bretval == false) {
+			//	log.println("[" + Calendar.getInstance().getTime() + "] (generateManual): " + "Error: Generation verification failed.  See previous error messages.");
+			//	return false;
+			//}
+			
+			//Progress to evaluation setup stage
+			ed.nextStage();
+			assert(ed.getCurrentStage() == ExperimentData.EVALUATION_SETUP_STAGE);
+			
+			//Full process succeeded
+			log.println("[" + Calendar.getInstance().getTime() + "] (generateManual): " + "End: Generating manual clones.");
+			return true;
+		}
+	}
 	
 	private boolean importClones(Path manual_spec) throws FileNotFoundException, IllegalArgumentException, IllegalManualImportSpecification, SQLException {
 		log.println("[" + Calendar.getInstance().getTime() + "] (importClones): " + "Start: Importing manual clones.");
@@ -1003,6 +1011,8 @@ public class Experiment {
 		}
 		fs.close();
 		
+		System.out.println(ed.getFragmentType());
+		
 	//Check Clones
 		for(int i = 0; i < fragments.size(); i ++) {
 			Path f = fragments.get(i);
@@ -1018,7 +1028,7 @@ public class Experiment {
 				return false;
 			}
 			try {
-				if(!TXLUtil.isFragmentType(f, ed.getFragmentType())) {
+				if(!TXLUtil.isFragmentType(f, ed.getFragmentType(), ed.getLanguage())) {
 					log.println("[" + Calendar.getInstance().getTime() + "] (importClones): " + "Error: Fragment 1 of clone " + i + " is not correct fragment type.");
 					return false;
 				}
@@ -1040,7 +1050,7 @@ public class Experiment {
 				throw new IllegalManualImportSpecification("Fragment 2 of clone " + i + " is not a regular file.");
 			}
 			try {
-				if(!TXLUtil.isFragmentType(mf, ed.getFragmentType())) {
+				if(!TXLUtil.isFragmentType(mf, ed.getFragmentType(), ed.getLanguage())) {
 					log.println("[" + Calendar.getInstance().getTime() + "] (importClones): " + "Error: Fragment 2 of clone " + i + " is not correct fragment type.");
 					return false;
 				}
@@ -1066,7 +1076,7 @@ public class Experiment {
 			num++;
 			Path fragment_path;
 			try {
-				fragment_path = Files.copy(f, ed.getRepositoryPath().resolve("f1"));
+				fragment_path = Files.copy(f, ed.getRepositoryPath().resolve("f" + num));
 				fragments.add(fragment_path);
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -1075,11 +1085,11 @@ public class Experiment {
 			}
 		}
 		num = 0;
-		for(Path mf : ref_fragments) {
+		for(Path mf : ref_mfragments) {
 			num++;
 			Path mfragment_path;
 			try {
-				mfragment_path = Files.copy(mf, ed.getRepositoryPath().resolve("mf1"));
+				mfragment_path = Files.copy(mf, ed.getRepositoryPath().resolve("mf" + num));
 				mfragments.add(mfragment_path);
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -1091,38 +1101,37 @@ public class Experiment {
 	//Import into experiment and database
 		ed.deleteOperators();
 		ed.deleteMutators();
-		OperatorDB operatorDB = ed.createOperator("ManualOperator", "Pretend Operator for manaul clones.", 1, Paths.get("operators/mNC"));
+		OperatorDB operatorDB = ed.createOperator("ManualOperator", "Pretend Operator for manaul clones.", 3, Paths.get("operators/mNC"));
 		List<Integer> ops = new LinkedList<Integer>();
 		ops.add(operatorDB.getId());
+		MutatorDB mutatorDB = ed.createMutator("ManualCloneMutator", ops);
+		
+		ed.nextStage();
 		
 		//Adding Clones to Database (fragment 1 as fragment, fragment 2 as mutant fragment, and a new mutator for each imported clone)
 		for(int i = 0; i < fragments.size(); i ++) {
-			log.println("[" + Calendar.getInstance().getTime() + "] (importClones): " + "Importing manual clone " + (i+1) + " into the experiment.");
+			log.println("[" + Calendar.getInstance().getTime() + "] (importClones): " + "Importing manual clone " + (i) + " into the experiment.");
 
 			Path f = fragments.get(i);
 			Path mf = mfragments.get(i);
-			
-			//Mutator for this clone
-			MutatorDB mutatorDB = ed.createMutator("Clone#1", ops);
-			
+
 			//Fragment (fragment1)
 			FragmentDB fragment;
 			try {
 				fragment = ed.createFragment(new Fragment(f, 1, FileUtil.countLines(f)));
 			} catch (IOException e) {
 				e.printStackTrace();
-				log.println("[" + Calendar.getInstance().getTime() + "] (importClones): " + "Error: IO exception when adding fragment 1 of clone " + (i+1) + " into the experiment.");
+				log.println("[" + Calendar.getInstance().getTime() + "] (importClones): " + "Error: IO exception when adding fragment 1 of clone " + (i) + " into the experiment.");
 				return false;
 			}
 			
 			//Mutant Fragment (fragment2)
-			@SuppressWarnings("unused")
 			MutantFragment mfragment;
 			try {
 				mfragment = ed.createMutantFragment(fragment.getId(), mutatorDB.getId(), mf);
 			} catch (IOException e) {
 				e.printStackTrace();
-				log.println("[" + Calendar.getInstance().getTime() + "] (importClones): " + "Error: IO exception when adding fragment 2 of clone " + (i+1) + " into the experiment.");
+				log.println("[" + Calendar.getInstance().getTime() + "] (importClones): " + "Error: IO exception when adding fragment 2 of clone " + (i) + " into the experiment.");
 				return false;
 			}
 		}

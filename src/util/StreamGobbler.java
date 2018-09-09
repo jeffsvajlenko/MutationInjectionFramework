@@ -31,10 +31,11 @@ public class StreamGobbler extends Thread
      */
     public void run()
     {
+    	String line;
     	try {
     		InputStreamReader isr = new InputStreamReader(is);
     		BufferedReader br = new BufferedReader(isr);
-			while ( (br.readLine()) != null) {
+			while ( (line = br.readLine()) != null) {
 				//System.out.println(line);
 			}
 			isr.close();

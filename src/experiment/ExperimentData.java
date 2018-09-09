@@ -168,8 +168,8 @@ public class ExperimentData {
 		FileUtils.copyDirectory(system.toFile(), this.subjectsystem.toFile());
 		
 		//Normalize Imports
-		NormalizeSystem.normalizeSystem(this.repository, language, log);
 		NormalizeSystem.normalizeSystem(this.subjectsystem, language, log);
+		NormalizeSystem.normalizeSystem(this.repository, language, log);
 		
 		// Create Database  Connection
 		connection = DriverManager.getConnection("jdbc:h2:" + database.toAbsolutePath().normalize().toString(), "sa", "");

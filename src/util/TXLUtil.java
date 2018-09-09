@@ -313,6 +313,7 @@ public class TXLUtil {
 		command[0] = SystemUtil.getScriptsLocation() + "/unlimitedstack";
 		command[1] = SystemUtil.getTxlExecutable() + " -s 400 -o " + outputFile.toAbsolutePath().normalize().toString() + " " + inputFile.toAbsolutePath().normalize().toString() + " " + txlScript.toAbsolutePath().normalize().toString();
 		Process process = null;
+		System.out.println(command[0] + " " + command[1]);
 		int retval;
 		try {
 			process = Runtime.getRuntime().exec(command);
@@ -361,15 +362,12 @@ public class TXLUtil {
 	 * @throws InterruptedException If dependent TXL process is interrupted.
 	 * @throws IllegalArgumentException
 	 */
-	public static boolean isFragmentType(Path fragment, int fragmentType) throws FileNotFoundException, IOException, InterruptedException, IllegalArgumentException {
+	public static boolean isFragmentType(Path fragment, int fragmentType, int language) throws FileNotFoundException, IOException, InterruptedException, IllegalArgumentException {
 		Objects.requireNonNull(fragment);
-		if(ExperimentSpecification.isFragmentTypeValid(fragmentType)) {
-			throw new IllegalArgumentException("Fragment type is not valid.");
-		}
 		if(fragmentType == ExperimentSpecification.BLOCK_FRAGMENT_TYPE) {
-			return TXLUtil.isBlock(fragment, fragmentType);
+			return TXLUtil.isBlock(fragment, language);
 		} else if (fragmentType == ExperimentSpecification.FUNCTION_FRAGMENT_TYPE) {
-			return TXLUtil.isFunction(fragment, fragmentType);
+			return TXLUtil.isFunction(fragment, language);
 		} else {
 			throw new IllegalArgumentException("Fragment type is not valid.");
 		}
@@ -387,7 +385,7 @@ public class TXLUtil {
 	 */
 	public static boolean isFragmentType(Fragment fragment, int fragmentType) throws FileNotFoundException, IOException, InterruptedException, IllegalArgumentException {
 		Objects.requireNonNull(fragment);
-		if(ExperimentSpecification.isFragmentTypeValid(fragmentType)) {
+		if(!ExperimentSpecification.isFragmentTypeValid(fragmentType)) {
 			throw new IllegalArgumentException("Fragment type is not valid.");
 		}
 		if(fragmentType == ExperimentSpecification.BLOCK_FRAGMENT_TYPE) {

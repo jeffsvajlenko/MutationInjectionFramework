@@ -53,17 +53,17 @@ public class NormalizeSystem {
 		} else if (language == ExperimentSpecification.C_LANGUAGE) {
 			command += system.toAbsolutePath().normalize() + "/*.c " + system.toAbsolutePath().normalize() + "/*.h";
 		} else if (language == ExperimentSpecification.CS_LANGUAGE) {
-			command += system.toAbsolutePath().normalize() + "/*.cs";
+			command +=  system.toAbsolutePath().normalize() + "/*.cs";
 		} else {
 			throw new IllegalArgumentException("Language not supported.");
 		}
-
+		
 		//Run Command
 		log.println("[" + Calendar.getInstance().getTime() + "] (NormalizeSystem)\tRunning Artistic Style...");
 		int retval;
 		Process process=null;
 		try {
-			process = Runtime.getRuntime().exec(command, null, system.toAbsolutePath().normalize().toFile());
+			process = Runtime.getRuntime().exec(command, null, null);
 			new StreamGobbler(process.getInputStream()).run();
 			new StreamGobbler(process.getErrorStream()).run();
 			retval = process.waitFor();
@@ -83,12 +83,13 @@ public class NormalizeSystem {
 		
 		//Check Success
 		if(retval != 0) {
+			System.out.println(command);
 			throw new ArtisticStyleFailedException("ArtisticStyle returned error status.");
 		}
 	
 		List<Path> files = FileUtil.fileInventory(system);
 	
-//Sanetize (unix newlines, EOF ends with newline), done to prevent errords with TXL scripts
+//Sanetize (unix newlines, EOF ends with newline), done to prevent errors with TXL scripts
 		log.println("[" + Calendar.getInstance().getTime() + "] (NormalizeSystem)\tSanetizing Files (normalize newlines to unix, ensure EOF is newline).");
 		for(Path path : files) {
 			log.println("[" + Calendar.getInstance().getTime() + "] (NormalizeSystem)\t\tSanetizing: " + path);
@@ -133,7 +134,7 @@ public class NormalizeSystem {
 				}
 			}
 		}
-		Files.delete(tmpfile);
+		Files.deleteIfExists(tmpfile);
 
 //Remove file that can no be pretty-print
 		log.println("[" + Calendar.getInstance().getTime() + "] (NormalizeSystem)\tRemoving files that can not be pretty printed by arbitrary source fragment pretty printer. (Avoid automatic validation problems)");
@@ -154,7 +155,7 @@ public class NormalizeSystem {
 				}
 			}
 		}
-		Files.delete(tmpfile);
+		Files.deleteIfExists(tmpfile);
 	}
 	
 	public static void main(String args[]) throws IllegalArgumentException, InterruptedException, IOException, ArtisticStyleFailedException, FileSanetizationFailedException {

@@ -15,9 +15,11 @@ import java.util.List;
 
 import experiment.Experiment;
 import experiment.ExperimentSpecification;
+import experiment.IllegalManualImportSpecification;
 import experiment.MutatorDB;
 import experiment.OperatorDB;
 import experiment.ToolDB;
+import util.SystemUtil;
 
 public class Interface {
 	
@@ -106,12 +108,51 @@ public class Interface {
 		Path exp_dir;
 		Path rep_dir;
 		Path sub_dir;
+		Path import_file = null;
+		int granularity = ExperimentSpecification.FUNCTION_FRAGMENT_TYPE;
+		int generation_type;
 		
 		//Banner
 		out.println("");
 		out.println("================================================================================");;
 		out.println("   >Create New Experiment");
 
+		//GetLanguage
+root_menu_create_experiment_get_experiment_type:
+		while(true) {
+			out.println("================================================================================");
+			out.println("Specify type of experiment:");
+			out.println("  [1] Automatic clone synthesis experiment (default).");
+			out.println("  [2] Import manual function clones.");
+			out.println("  [3] Import manual block clones.");
+			out.println("  [c] Cancel");
+			out.println("--------------------------------------------------------------------------------");
+			out.print  (":::: ");
+			input = in.readLine();
+			switch(input) {
+			case "1":
+				generation_type = ExperimentSpecification.AUTOMATIC_GENERATION_TYPE;
+				break root_menu_create_experiment_get_experiment_type;
+			case "2":
+				generation_type = ExperimentSpecification.MANUAL_GENERATION_TYPE;
+				granularity = ExperimentSpecification.FUNCTION_FRAGMENT_TYPE;
+				break root_menu_create_experiment_get_experiment_type;
+			case "3":
+				generation_type = ExperimentSpecification.MANUAL_GENERATION_TYPE;
+				granularity = ExperimentSpecification.BLOCK_FRAGMENT_TYPE;
+				break root_menu_create_experiment_get_experiment_type;
+			case "c":
+				experiment = null;
+				out.print("Experiment creation canceled.  Press enter to return to root menu.");
+				in.readLine();
+				return;
+			default:
+				out.print("Invalid Selection.  Press enter to retry...");
+				in.readLine();
+				continue;
+			}
+		}
+		
 		//GetLanguage
 root_menu_create_experiment_get_language:
 		while(true) {
@@ -237,53 +278,107 @@ root_menu_create_experiment_get_subject_system_dir:
 			}
 		}
 		
-		//GetSourceRepository
-root_menu_create_experiment_get_source_repository_dir:
-		while(true) {
-			out.println("");
-			out.println("Specify directory containing source repository.  Provide full path to the");
-			out.println("directory.  Source repository must be of the previously specified language.");
-			out.println("Leave blank to cancel new experiment creation.");
-			out.println("--------------------------------------------------------------------------------");
-			out.print  (":::: ");
-			input = in.readLine();
-			
-			//Canceled
-			if(input.equals("")) {
-				experiment = null;
+		if(generation_type == ExperimentSpecification.AUTOMATIC_GENERATION_TYPE) {
+			//GetSourceRepository
+	root_menu_create_experiment_get_source_repository_dir:
+			while(true) {
 				out.println("");
-				out.print  ("Create experiment canceled.  Press enter to return to root menu...");
-				in.readLine();
-				return;
-			
-			//ProcessDir
-			} else {
-				try {
-					rep_dir = Paths.get(input);
-				} catch (InvalidPathException e) {
+				out.println("Specify directory containing source repository.  Provide full path to the");
+				out.println("directory.  Source repository must be of the previously specified language.");
+				out.println("Leave blank to cancel new experiment creation.");
+				out.println("--------------------------------------------------------------------------------");
+				out.print  (":::: ");
+				input = in.readLine();
+				
+				//Canceled
+				if(input.equals("")) {
+					experiment = null;
 					out.println("");
-					out.print  ("Invalid path.  Press enter to retry...");
+					out.print  ("Create experiment canceled.  Press enter to return to root menu...");
 					in.readLine();
-					continue root_menu_create_experiment_get_source_repository_dir;
-				}
+					return;
 				
-				//Check Not Exists
-				if(!Files.exists(rep_dir)) {
-					out.print  ("Directory does not exists.  Press enter to retry...");
-					in.readLine();
-					continue root_menu_create_experiment_get_source_repository_dir;
+				//ProcessDir
+				} else {
+					try {
+						rep_dir = Paths.get(input);
+					} catch (InvalidPathException e) {
+						out.println("");
+						out.print  ("Invalid path.  Press enter to retry...");
+						in.readLine();
+						continue root_menu_create_experiment_get_source_repository_dir;
+					}
+					
+					//Check Not Exists
+					if(!Files.exists(rep_dir)) {
+						out.print  ("Directory does not exists.  Press enter to retry...");
+						in.readLine();
+						continue root_menu_create_experiment_get_source_repository_dir;
+					}
+					
+					//Check Directory
+					if(!Files.isDirectory(rep_dir)) {
+						out.println("");
+						out.print  ("Specified path does not denote a directory.  Press enter to retry...");
+						in.readLine();
+						continue root_menu_create_experiment_get_source_repository_dir;
+					}
+					
+					break root_menu_create_experiment_get_source_repository_dir;
 				}
-				
-				//Check Directory
-				if(!Files.isDirectory(rep_dir)) {
-					out.println("");
-					out.print  ("Specified path does not denote a directory.  Press enter to retry...");
-					in.readLine();
-					continue root_menu_create_experiment_get_source_repository_dir;
-				}
-				
-				break root_menu_create_experiment_get_source_repository_dir;
 			}
+		} else {
+			rep_dir = Files.createTempDirectory(SystemUtil.getTemporaryDirectory(), "fake_repository");
+		}
+		
+		if(generation_type == ExperimentSpecification.MANUAL_GENERATION_TYPE) {
+			root_menu_create_experiment_get_import_file:
+				while(true) {
+					out.println("");
+					out.println("Specify import clone specification. Provide full path to the file. The specified");
+					out.println("clones must be of the same language and granularity as specified previously.");
+					out.println("Leave blank to cancel new experiment creation.");
+					out.println("--------------------------------------------------------------------------------");
+					out.print  (":::: ");
+					input = in.readLine();
+					
+					//Canceled
+					if(input.equals("")) {
+						experiment = null;
+						out.println("");
+						out.print  ("Create experiment canceled.  Press enter to return to root menu...");
+						in.readLine();
+						return;
+					
+					//ProcessDFile
+					} else {
+						try {
+							import_file = Paths.get(input);
+						} catch (InvalidPathException e) {
+							out.println("");
+							out.print  ("Invalid path.  Press enter to retry...");
+							in.readLine();
+							continue root_menu_create_experiment_get_import_file;
+						}
+						
+						//Check Not Exists
+						if(!Files.exists(import_file)) {
+							out.print  ("File does not exists.  Press enter to retry...");
+							in.readLine();
+							continue root_menu_create_experiment_get_import_file;
+						}
+						
+						//Check Directory
+						if(!Files.isRegularFile(import_file)) {
+							out.println("");
+							out.print  ("Specified path does not denote a file.  Press enter to retry...");
+							in.readLine();
+							continue root_menu_create_experiment_get_import_file;
+						}
+						
+						break root_menu_create_experiment_get_import_file;
+					}
+				}
 		}
 		
 		out.println("");
@@ -294,17 +389,51 @@ root_menu_create_experiment_get_source_repository_dir:
 		out.print("--------------------------------------------------------------------------------");
 		in.readLine();
 		
+		
 		ExperimentSpecification es = new ExperimentSpecification(exp_dir, sub_dir, rep_dir, language);
+		
 		try {
-			experiment = Experiment.createAutomaticExperiment(es, System.out);
-		} catch (IllegalArgumentException | SQLException | InterruptedException | ArtisticStyleFailedException | FileSanetizationFailedException e) {
+			if(generation_type == ExperimentSpecification.AUTOMATIC_GENERATION_TYPE) {
+				experiment = Experiment.createAutomaticExperiment(es, System.out);
+			} else {
+				es.setFragmentMaxSizeLines(Integer.MAX_VALUE);
+				es.setFragmentMaxSizeTokens(Integer.MAX_VALUE);
+				es.setFragmentMinSizeLines(1);
+				es.setFragmentMinSizeTokens(1);
+				es.setFragmentType(granularity);
+				es.setInjectNumber(1);
+				es.setMaxFragments(1);
+				es.setMutationAttempts(25);
+				es.setMutationContainment(0);
+				es.setOperatorAttempts(10);
+				es.setPrecisionRequiredSimilarity(0.50);
+				es.setRecallRequiredSimilarity(0.50);
+				es.setSubsumeMatcherTolerance(0.15);
+				es.setLanguage(language);
+				experiment = Experiment.createManualExperiment(es, import_file, System.out);
+				boolean success = experiment.generate();
+				if(success) {
+					out.println("--------------------------------------------------------------------------------");
+					out.print  ("Generation phase completed successfully.  Press enter to return to main menu...");
+					in.readLine();
+				} else {
+					out.println("--------------------------------------------------------------------------------");
+					out.println("Generation phase errored.  Please see execution log for details.  Experiment is");
+					out.print  ("now currrupt.  Press enter to return to main menu.");
+					in.readLine();
+				}
+			}
+			
+		} catch (IllegalArgumentException | SQLException | InterruptedException | ArtisticStyleFailedException | FileSanetizationFailedException | IllegalStateException | IllegalManualImportSpecification e) {
 			experiment = null;
 			out.print("--------------------------------------------------------------------------------");
 			out.println("");
 			out.println("Experiment creation failed for reason: " + e.getMessage());
+			e.printStackTrace(out);
 			out.println("Press enter to return to root menu...");
 			return;
 		}
+		
 		out.print("--------------------------------------------------------------------------------");
 		out.println("");
 		out.print  ("The experiment has been successfully initialized.  Press enter to continue...");
