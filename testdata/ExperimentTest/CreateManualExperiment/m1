@@ -1,0 +1,65 @@
+    {
+        int algIndex = filterKey.indexOf('.');
+
+        if (algIndex < 0)
+        {
+            // There must be a dot in the filter, and the dot
+            // shouldn't be at the beginning of this string.
+            throw new InvalidParameterException("Invalid filter");
+        }
+
+        String serviceName = filterKey.substring(0, algIndex);
+        String algName = null;
+        String attrName = null;
+
+        if (filterValue.length() == 0)
+        {
+            // The filterValue is an empty string. So the filterKey
+            // should be in the format of <crypto_service>.<algorithm_or_type>.
+            algName = filterKey.substring(algIndex + 1).trim();
+            if (algName.length() == 0)
+            {
+                // There must be a algorithm or type name.
+                throw new InvalidParameterException("Invalid filter");
+            }
+        }
+        else
+        {
+            // The filterValue is a non-empty string. So the filterKey must be
+            // in the format of
+            // <crypto_service>.<algorithm_or_type> <attribute_name>
+            int attrIndex = filterKey.indexOf(' ');
+
+            if (attrIndex == -1)
+            {
+                // There is no attribute name in the filter.
+                throw new InvalidParameterException("Invalid filter");
+            }
+            else
+            {
+                attrName = filterKey.substring(attrIndex + 1).trim();
+                if (attrName.length() == 0)
+                {
+                    // There is no attribute name in the filter.
+                    throw new InvalidParameterException("Invalid filter");
+                }
+            }
+
+            // There must be an algorithm name in the filter.
+            if ((attrIndex < algIndex) ||
+                    (algIndex == attrIndex - 1))
+            {
+                throw new InvalidParameterException("Invalid filter");
+            }
+            else
+            {
+            }
+        }
+
+        String[] result = new String[3];
+        result[0] = serviceName;
+        result[1] = algName;
+        result[2] = attrName;
+
+        return result;
+    }

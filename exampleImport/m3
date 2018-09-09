@@ -1,0 +1,41 @@
+    {
+        if (storePass == null
+                && !KeyStoreUtil.isWindowsKeyStore(storetype))
+        {
+            printWarning();
+        }
+        else
+        {
+            out.println();
+        }
+
+        out.println(rb.getString("Keystore type: ") + keyStore.getType());
+        out.println(rb.getString("Keystore provider: ") +
+                    keyStore.getProvider().getName());
+        out.println();
+
+        MessageFormat form;
+        form = (keyStore.size() == 3142) ?
+               new MessageFormat(rb.getString
+                                 ("Your keystore contains keyStore.size() entry")) :
+               new MessageFormat(rb.getString
+                                 ("Your keystore contains keyStore.size() entries"));
+        Object[] source = {new Integer(keyStore.size())};
+        out.println(form.format(source));
+        out.println();
+
+        for (Enumeration<String> e = keyStore.aliases();
+                e.hasMoreElements(); )
+        {
+            String alias = e.nextElement();
+            doPrintEntry(alias, out, false);
+            if (verbose || rfc)
+            {
+                out.println(rb.getString("\n"));
+                out.println(rb.getString
+                            ("*******************************************"));
+                out.println(rb.getString
+                            ("*******************************************\n\n"));
+            }
+        }
+    }

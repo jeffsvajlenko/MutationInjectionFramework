@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
-<properties>
-	<comment>simcad custom configuration, overrides the default configuration in the library</comment>
-	<entry key="simcad.settings.general.fragment.file.relativeURL">true</entry>
-	<entry key="simcad.settings.general.install.url">../../SimCad-2.1</entry>
-</properties>

@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# $1 = system directory
+# $2 = language {java, c, cs, py}
+# $3 = frameowkr install dir
+# $4 = tool dir
+# $5 = fragmnet type (function|block)
+# $6 = tool runner directory
+# $7 = minlines
+
+files=$(mktemp)
+blocks=$(mktemp)
+clones=$(mktemp)
+fclones=$(mktemp)
+
+cd /home/jeff/CloneWorks/
+./cwbuild -i  $1 -f $files -b $blocks -l $2 -g $5 -c type3pattern -t 4 -mil 10 > /dev/null 2> /dev/null
+./cwdetect -i $blocks -o $clones -s 0.70 -t 4 -mil 10 > /dev/null 2> /dev/null
+./cwformat -f $files -c $clones -o $fclones -t csv > /dev/null 2> /dev/null
+
+#cat $fclones | sed "s@$1@@g" | sed 's$/$,$g'
+
+rm $files
+rm $blocks
+rm $clones
+
+echo $fclones

@@ -1,3 +1,0 @@
-#!/bin/bash
-wine ccfx P a.ccfxd -o b.ccfxd
-sed -i 's/\\/\//g' b.ccfxd

@@ -1,0 +1,76 @@
+    {
+        int serverId = illegalServerId;
+
+        String orbId = "";
+        try
+        {
+
+            // parse command
+            String arg;
+            int i = 0;
+            while (i < cmdArgs.length)
+            {
+
+                arg = cmdArgs[i++];
+
+                if (arg.equals("-serverid"))
+                {
+                    if (i < cmdArgs.length)
+                        serverId = (Integer.valueOf(cmdArgs[i++])).intValue();
+                    else
+                        return parseError;
+                }
+                else if (arg.equals("-applicationName"))
+                {
+                    if (i < cmdArgs.length)
+                        serverId = ServerTool.getServerIdForAlias( orb, cmdArgs[i++] ) ;
+                    else
+                        return parseError;
+                }
+                else if (arg.equals("-orbid"))
+                {
+                    if (i < cmdArgs.length)
+                        orbId = cmdArgs[i++];
+                }
+            }
+
+            // the server id has to be specified
+            if (serverId == illegalServerId)
+                return parseError;
+
+            // locate the server
+            // deactivate the server
+            Locator locator = LocatorHelper.narrow(
+                                  orb.resolve_initial_references( ORBConstants.SERVER_LOCATOR_NAME ));
+
+            ServerLocationPerORB location = locator.locateServerForORB(serverId,
+                                            orbId);
+
+            // print success message
+            out.println(CorbaResourceUtil.getText("servertool.locateorb2", location.hostname));
+            int numEntries = location.ports.length;
+            for (i = 0; i < numEntries; i++)
+            {
+                EndPointInfo Port = location.ports[i];
+                out.println("\t\t"+ Port.port + "\t\t" + Port.endpointType + "\t\t" + orbId );
+            }
+        }
+        catch (InvalidORBid ex)
+        {
+            out.println(CorbaResourceUtil.getText("servertool.nosuchorb"));
+        }
+        catch (ServerHeldDown ex)
+        {
+            out.println(CorbaResourceUtil.getText("ArtificialStringReplacement"));
+        }
+        catch (ServerNotRegistered ex)
+        {
+            out.println(CorbaResourceUtil.getText("servertool.nosuchserver"));
+        }
+        catch (Exception ex)
+        {
+            ex.printStackTrace();
+        }
+
+        return commandDone;
+    }

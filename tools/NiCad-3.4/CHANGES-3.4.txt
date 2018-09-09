@@ -1,5 +1,0 @@
-Changes from NiCad 3.3 in 3.4
-
-None, this is a bug fix release.
-Two bugs potentially causing crashes fixed.
-

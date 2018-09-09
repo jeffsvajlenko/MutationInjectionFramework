@@ -1,5 +1,0 @@
-Merging all clone reports into ./clusters/cluster_vdb_100_8_allg_.90_50 ...
-real	0m1.626s
-user	0m0.160s
-sys	0m0.412s
-Done merging ./clusters/cluster_vdb_100_8_all_.90_50. Log: ./times/merging_100_8_.90_50

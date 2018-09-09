@@ -1,5 +1,0 @@
-Post processing ./clusters/cluster_vdb_100_8_allg_.90_50 ...
-real	0m0.742s
-user	0m0.300s
-sys	0m0.020s
-Done post-processing ./clusters/cluster_vdb_100_8_allg_.90_50. Log: ./times/post_cluster_vdb_100_8_allg_.90_50
