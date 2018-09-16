@@ -5,6 +5,12 @@ A framework for evaluating clone detection tools based upon source code mutation
 
 For any questions or problems, please contact me at jeff.svajlenko@gmail.com.
 
+Versioning
+==========
+Master branch contains the latest bug fixes and features.
+
+Consider pulling a release version instead (e.g., v1.0) to get a version which has been field tested.  Master branch may have regressions due to feature work.
+
 Dependencies
 ============
 The following commands must be installed and available on the $PATH variable: txl, astyle, dos2unix, and sed.
