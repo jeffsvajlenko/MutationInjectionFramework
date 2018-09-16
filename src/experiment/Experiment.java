@@ -2084,7 +2084,7 @@ createbase_attempt:
 			log.println("[" + Calendar.getInstance().getTime() + "] (verifyAutomaticGeneration): " + "\tVerifying mutant fragments...");
 			
 			//Check number of mutants (total number, number per mutator)
-			if(!(ed.getMaxFragments()*mutators.size() == ed.numMutantFragments())) {
+			if(!(ed.getFragments().size()*mutators.size() == ed.numMutantFragments())) {
 				log.println("[" + Calendar.getInstance().getTime() + "] (verifyAutomaticGeneration): " + "\tThe number of mutant fragments should be the (#fragments)*(#mutators) but it is not.");
 				return false;
 			}
